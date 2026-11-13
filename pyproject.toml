@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atmo-scoops"
+version = "0.1.0"
+description = "Atmospheric scoop diver mass, energy, and delivered-liquid payoff trade study"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2", "scipy>=1.14", "matplotlib>=3.9", "pymsis>=0.11", "cantera>=3.2,<4"]
+
+[project.scripts]
+atmo-scoops = "atmo_scoops.__main__:main"
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["atmo_scoops*"]

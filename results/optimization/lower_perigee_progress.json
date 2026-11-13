@@ -1,0 +1,605 @@
+{
+  "seed": 37,
+  "trace": [
+    {
+      "generation": 1,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 37.384786746057216
+    },
+    {
+      "generation": 2,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 37.67393330403138
+    },
+    {
+      "generation": 3,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 37.958633862028364
+    },
+    {
+      "generation": 4,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 38.251465792011004
+    },
+    {
+      "generation": 5,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 38.58264981105458
+    },
+    {
+      "generation": 6,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 38.89875299605774
+    },
+    {
+      "generation": 7,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 39.19245510001201
+    },
+    {
+      "generation": 8,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 39.48259778902866
+    },
+    {
+      "generation": 9,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 39.82731052604504
+    },
+    {
+      "generation": 10,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 40.118165914027486
+    },
+    {
+      "generation": 11,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 40.457178625045344
+    },
+    {
+      "generation": 12,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 40.75292110105511
+    },
+    {
+      "generation": 13,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 41.0294561740011
+    },
+    {
+      "generation": 14,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 41.338879684044514
+    },
+    {
+      "generation": 15,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 41.64521833101753
+    },
+    {
+      "generation": 16,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 41.96359239105368
+    },
+    {
+      "generation": 17,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 42.253565121034626
+    },
+    {
+      "generation": 18,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 42.547150285041425
+    },
+    {
+      "generation": 19,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 42.83206979505485
+    },
+    {
+      "generation": 20,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 43.11786309501622
+    },
+    {
+      "generation": 21,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 43.4185690030572
+    },
+    {
+      "generation": 22,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 43.7034812180209
+    },
+    {
+      "generation": 23,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 44.00177086802432
+    },
+    {
+      "generation": 24,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 44.29100645304425
+    },
+    {
+      "generation": 25,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 44.60319943504874
+    },
+    {
+      "generation": 26,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 44.919694095035084
+    },
+    {
+      "generation": 27,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 45.22070816199994
+    },
+    {
+      "generation": 28,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 45.51688989304239
+    },
+    {
+      "generation": 29,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 45.83120673400117
+    },
+    {
+      "generation": 30,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 46.14585630904185
+    },
+    {
+      "generation": 31,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 46.43544537801063
+    },
+    {
+      "generation": 32,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 46.68668059504125
+    },
+    {
+      "generation": 33,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 46.97240737004904
+    },
+    {
+      "generation": 34,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 47.24708995304536
+    },
+    {
+      "generation": 35,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 47.5326686000335
+    },
+    {
+      "generation": 36,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 47.857571472006384
+    },
+    {
+      "generation": 37,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 48.10514537303243
+    },
+    {
+      "generation": 38,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 48.38098312501097
+    },
+    {
+      "generation": 39,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 48.6794379450148
+    },
+    {
+      "generation": 40,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 48.95557178405579
+    },
+    {
+      "generation": 41,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 49.26869894104311
+    },
+    {
+      "generation": 42,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 49.54746980202617
+    },
+    {
+      "generation": 43,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 49.80942863901146
+    },
+    {
+      "generation": 44,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 50.0819465360255
+    },
+    {
+      "generation": 45,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 50.355241453042254
+    },
+    {
+      "generation": 46,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 50.64560959505616
+    },
+    {
+      "generation": 47,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 50.948005277023185
+    },
+    {
+      "generation": 48,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 51.247640514047816
+    },
+    {
+      "generation": 49,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 51.54762192105409
+    },
+    {
+      "generation": 50,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 51.81870693701785
+    },
+    {
+      "generation": 51,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 52.083876664051786
+    },
+    {
+      "generation": 52,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 52.40130660205614
+    },
+    {
+      "generation": 53,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 52.688579981040675
+    },
+    {
+      "generation": 54,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 52.98194309900282
+    },
+    {
+      "generation": 55,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 53.218358662037645
+    },
+    {
+      "generation": 56,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 53.50840805604821
+    },
+    {
+      "generation": 57,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 53.80703908705618
+    },
+    {
+      "generation": 58,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 54.07602024200605
+    },
+    {
+      "generation": 59,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 54.383699757047
+    },
+    {
+      "generation": 60,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 54.6589347680565
+    },
+    {
+      "generation": 61,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 54.92442730104085
+    },
+    {
+      "generation": 62,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 55.25244103604928
+    },
+    {
+      "generation": 63,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 55.50970724900253
+    },
+    {
+      "generation": 64,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 55.7779188400018
+    },
+    {
+      "generation": 65,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 56.0454277600511
+    },
+    {
+      "generation": 66,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 56.33660909900209
+    },
+    {
+      "generation": 67,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 56.6219817600213
+    },
+    {
+      "generation": 68,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 56.91308376000961
+    },
+    {
+      "generation": 69,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 57.227433623047546
+    },
+    {
+      "generation": 70,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 57.525410135043785
+    },
+    {
+      "generation": 71,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 57.801388612017035
+    },
+    {
+      "generation": 72,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 58.08915383502608
+    },
+    {
+      "generation": 73,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 58.35183122201124
+    },
+    {
+      "generation": 74,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 58.63905891601462
+    },
+    {
+      "generation": 75,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 58.96745733305579
+    },
+    {
+      "generation": 76,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 59.25110419205157
+    },
+    {
+      "generation": 77,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 59.492127700010315
+    },
+    {
+      "generation": 78,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 59.78090317104943
+    },
+    {
+      "generation": 79,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 60.01724420505343
+    },
+    {
+      "generation": 80,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 60.26656521600671
+    },
+    {
+      "generation": 81,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 60.56566843402106
+    },
+    {
+      "generation": 82,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 60.81787475402234
+    },
+    {
+      "generation": 83,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 61.0915860030218
+    },
+    {
+      "generation": 84,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 61.35697588400217
+    },
+    {
+      "generation": 85,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 61.59625674900599
+    },
+    {
+      "generation": 86,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 61.84972929704236
+    },
+    {
+      "generation": 87,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 62.09846458904212
+    },
+    {
+      "generation": 88,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 62.39796589402249
+    },
+    {
+      "generation": 89,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 62.65771903801942
+    },
+    {
+      "generation": 90,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 62.92072666401509
+    },
+    {
+      "generation": 91,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 63.16320675803581
+    },
+    {
+      "generation": 92,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 63.40352171502309
+    },
+    {
+      "generation": 93,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 63.63850026001455
+    },
+    {
+      "generation": 94,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 63.91276649100473
+    },
+    {
+      "generation": 95,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 64.18536844605114
+    },
+    {
+      "generation": 96,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 64.46268728101859
+    },
+    {
+      "generation": 97,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 64.7638411700027
+    },
+    {
+      "generation": 98,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 65.0638891820563
+    },
+    {
+      "generation": 99,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 65.31009969202569
+    },
+    {
+      "generation": 100,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 65.57229784800438
+    },
+    {
+      "generation": 101,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 65.85919634305174
+    },
+    {
+      "generation": 102,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 66.09306847001426
+    },
+    {
+      "generation": 103,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 66.32740451802965
+    },
+    {
+      "generation": 104,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 66.58565178402932
+    },
+    {
+      "generation": 105,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 66.82218163303332
+    },
+    {
+      "generation": 106,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 67.08805988100357
+    },
+    {
+      "generation": 107,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 67.34425966104027
+    },
+    {
+      "generation": 108,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 67.61601048801094
+    },
+    {
+      "generation": 109,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 67.8352672260371
+    },
+    {
+      "generation": 110,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 68.06131986703258
+    },
+    {
+      "generation": 111,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 68.31983284105081
+    },
+    {
+      "generation": 112,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 68.55769998201868
+    },
+    {
+      "generation": 113,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 68.79263323103078
+    },
+    {
+      "generation": 114,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 69.03406171902316
+    },
+    {
+      "generation": 115,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 69.29317211604211
+    },
+    {
+      "generation": 116,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 69.52220328105614
+    },
+    {
+      "generation": 117,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 69.74452665803256
+    },
+    {
+      "generation": 118,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 69.9529041130445
+    },
+    {
+      "generation": 119,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 70.16943850804819
+    },
+    {
+      "generation": 120,
+      "payoff_days": 440.8594461716473,
+      "elapsed_s": 70.3860074680415
+    }
+  ]
+}

@@ -1,0 +1,1442 @@
+{
+  "label": "free_orbit_reserve10",
+  "objective": "Operating-orbit dry-mass payoff days; circular delivery excluded",
+  "variable_names": [
+    "front_depth_m",
+    "rear_depth_m",
+    "mouth_diameter_m",
+    "front_diameter_m",
+    "rear_diameter_m",
+    "perigee_km",
+    "apogee_km",
+    "opening_ram_fraction",
+    "compressor_inlet_K",
+    "metal_cold_K",
+    "gas_metal_approach_K",
+    "foil_thickness_m",
+    "inlet_pressure_fraction",
+    "intermediate_Pa",
+    "recovery_s",
+    "front_residual_fraction",
+    "warm_radiator_K",
+    "thrust_burst_s",
+    "isp_s"
+  ],
+  "bounds": {
+    "front_depth_m": [
+      25.0,
+      450.0,
+      true
+    ],
+    "rear_depth_m": [
+      10.0,
+      100.0,
+      true
+    ],
+    "mouth_diameter_m": [
+      10.0,
+      30.0,
+      false
+    ],
+    "front_diameter_m": [
+      10.0,
+      36.0,
+      false
+    ],
+    "rear_diameter_m": [
+      6.0,
+      36.0,
+      false
+    ],
+    "perigee_km": [
+      90.0,
+      120.0,
+      false
+    ],
+    "apogee_km": [
+      500.0,
+      10000.0,
+      true
+    ],
+    "opening_ram_fraction": [
+      0.1,
+      0.8,
+      false
+    ],
+    "compressor_inlet_K": [
+      420.0,
+      1200.0,
+      false
+    ],
+    "metal_cold_K": [
+      298.0,
+      600.0,
+      false
+    ],
+    "gas_metal_approach_K": [
+      50.0,
+      200.0,
+      false
+    ],
+    "foil_thickness_m": [
+      0.0001,
+      0.002,
+      true
+    ],
+    "inlet_pressure_fraction": [
+      0.4,
+      0.8,
+      false
+    ],
+    "intermediate_Pa": [
+      100.0,
+      10000.0,
+      true
+    ],
+    "recovery_s": [
+      300.0,
+      600.0,
+      false
+    ],
+    "front_residual_fraction": [
+      0.01,
+      0.3,
+      true
+    ],
+    "warm_radiator_K": [
+      280.0,
+      360.0,
+      false
+    ],
+    "thrust_burst_s": [
+      60.0,
+      300.0,
+      false
+    ],
+    "isp_s": [
+      3200.0,
+      6000.0,
+      false
+    ]
+  },
+  "fixed_inputs": {
+    "hardware": {
+      "shell_TPS_kg_m2": 4.0,
+      "compressor_kg_per_m3_s": 30.0,
+      "compressor_electric_W_kg": 1000.0,
+      "thruster_kg_kW": 2.0,
+      "distribution_kg_kW": 1.0,
+      "rear_min_gauge_m": 0.001,
+      "rear_allowable_Pa": 150000000.0,
+      "rear_material_density": 2700.0,
+      "rear_pressure_factor": 1.5,
+      "rear_support_fraction": 0.5,
+      "rear_insulation_kg_m2": 1.0,
+      "sheet_deployment_kg_m2": 1.0,
+      "mouth_closure_kg_m2": 10.0,
+      "compressor_bulkhead_kg_m2": 10.0,
+      "warm_aftercooler_W_kg": 20000.0,
+      "separator_kg_kW": 5.0,
+      "liquid_system_fixed_kg": 500.0,
+      "avionics_attitude_fixed_kg": 1000.0,
+      "warm_loop_fluid_kg_m2": 0.25,
+      "design_margin": 0.25,
+      "compressor_open_fraction": 0.3,
+      "access_discharge_coefficient": 0.8
+    },
+    "performance": {
+      "isothermal_efficiency": 0.5,
+      "motor_efficiency": 0.95,
+      "deploy_s": 300.0,
+      "retract_s": 300.0,
+      "metal_density_kg_m3": 7870.0,
+      "hot_emissivity": 0.8,
+      "solar_W_m2": 250.0,
+      "solar_W_kg": 150.0,
+      "warm_buffer_J_kg": 200000.0,
+      "battery_Wh_kg": 150.0,
+      "battery_usable": 0.8,
+      "battery_W_kg": 1500.0,
+      "battery_charge_efficiency": 0.95,
+      "battery_discharge_efficiency": 0.95,
+      "thruster_efficiency": 0.6,
+      "thruster_loss_retained": 0.2,
+      "auxiliary_W": 10000.0,
+      "compressor_min_inlet_Pa": 0.1
+    },
+    "process": {
+      "carnot_fraction": 0.15,
+      "heat_pump_kg_W_equivalent_cold": 0.25,
+      "exchanger_conductance_W_K_kg": 200.0,
+      "condenser_approach_K": 5.0,
+      "precooler_effective_approach_K": 20.0,
+      "radiator_kg_m2": 5.0,
+      "emissivity": 0.85,
+      "view_factor": 0.8,
+      "environment_W_m2": 80.0,
+      "solar_W_kg": 150.0,
+      "reject_approach_K": 20.0
+    },
+    "scenario": {
+      "atmosphere_name": "reference",
+      "total_impulse_over_capture": 1.0,
+      "open_mouth_support_over_ram": 1.0,
+      "open_mouth_discharge_coefficient": 0.8
+    },
+    "design": {
+      "machinery_depth_m": 20.0,
+      "radial_clearance_m": 0.85,
+      "pump_suction_m3_s": null,
+      "mouth_closure": true
+    }
+  },
+  "optimizer": {
+    "method": "Differential evolution + bounded Powell",
+    "population_multiplier": 6,
+    "max_generations": 100,
+    "search_samples": 101,
+    "verification_samples": 1601
+  },
+  "search_constraints": {
+    "max_length_m": 520,
+    "front_bore_at_least_mouth": true,
+    "oxygen_reserve_fraction": 0.1
+  },
+  "runs": [
+    {
+      "seed": 17,
+      "de_success": true,
+      "de_message": "Optimization terminated successfully.",
+      "generations": 59,
+      "de_evaluations": 6840,
+      "local_evaluations": 1027,
+      "search_payoff_days": 508.79095873651755,
+      "verified_payoff_days": 508.7922068070495,
+      "max_normalized_violation": 0.0,
+      "trace": [
+        {
+          "generation": 1,
+          "payoff_days": 845.0520723904297,
+          "elapsed_s": 1.317620322050061
+        },
+        {
+          "generation": 2,
+          "payoff_days": 739.101813473977,
+          "elapsed_s": 1.6009912629961036
+        },
+        {
+          "generation": 3,
+          "payoff_days": 695.040064240404,
+          "elapsed_s": 1.9348696420202032
+        },
+        {
+          "generation": 4,
+          "payoff_days": 686.5072092359813,
+          "elapsed_s": 2.2983285560039803
+        },
+        {
+          "generation": 5,
+          "payoff_days": 684.4742886670438,
+          "elapsed_s": 2.6389534560148604
+        },
+        {
+          "generation": 6,
+          "payoff_days": 666.1460921652323,
+          "elapsed_s": 2.9867984160082415
+        },
+        {
+          "generation": 7,
+          "payoff_days": 666.1460921652323,
+          "elapsed_s": 3.308740648033563
+        },
+        {
+          "generation": 8,
+          "payoff_days": 651.7551507418838,
+          "elapsed_s": 3.643627491022926
+        },
+        {
+          "generation": 9,
+          "payoff_days": 639.4500300506003,
+          "elapsed_s": 3.979643816011958
+        },
+        {
+          "generation": 10,
+          "payoff_days": 615.4679890586053,
+          "elapsed_s": 4.356785248033702
+        },
+        {
+          "generation": 11,
+          "payoff_days": 615.4679890586053,
+          "elapsed_s": 4.6863094990258105
+        },
+        {
+          "generation": 12,
+          "payoff_days": 615.4679890586053,
+          "elapsed_s": 5.003225001040846
+        },
+        {
+          "generation": 13,
+          "payoff_days": 611.0557474918295,
+          "elapsed_s": 5.332063504029065
+        },
+        {
+          "generation": 14,
+          "payoff_days": 611.0557474918295,
+          "elapsed_s": 5.647604844009038
+        },
+        {
+          "generation": 15,
+          "payoff_days": 611.0557474918295,
+          "elapsed_s": 5.985787447018083
+        },
+        {
+          "generation": 16,
+          "payoff_days": 599.7387129041981,
+          "elapsed_s": 6.303862466011196
+        },
+        {
+          "generation": 17,
+          "payoff_days": 575.2934900898598,
+          "elapsed_s": 6.655816163052805
+        },
+        {
+          "generation": 18,
+          "payoff_days": 575.2934900898598,
+          "elapsed_s": 7.039106874028221
+        },
+        {
+          "generation": 19,
+          "payoff_days": 574.7305973181549,
+          "elapsed_s": 7.427207447995897
+        },
+        {
+          "generation": 20,
+          "payoff_days": 557.328360724517,
+          "elapsed_s": 7.79650135099655
+        },
+        {
+          "generation": 21,
+          "payoff_days": 557.328360724517,
+          "elapsed_s": 8.1676667490392
+        },
+        {
+          "generation": 22,
+          "payoff_days": 557.328360724517,
+          "elapsed_s": 8.542267840006389
+        },
+        {
+          "generation": 23,
+          "payoff_days": 557.328360724517,
+          "elapsed_s": 8.89142104703933
+        },
+        {
+          "generation": 24,
+          "payoff_days": 557.328360724517,
+          "elapsed_s": 9.244270285998937
+        },
+        {
+          "generation": 25,
+          "payoff_days": 554.9415007530145,
+          "elapsed_s": 9.626721550012007
+        },
+        {
+          "generation": 26,
+          "payoff_days": 554.9415007530145,
+          "elapsed_s": 9.959655044018291
+        },
+        {
+          "generation": 27,
+          "payoff_days": 554.9415007530145,
+          "elapsed_s": 10.329927596030757
+        },
+        {
+          "generation": 28,
+          "payoff_days": 551.9883848500208,
+          "elapsed_s": 10.719876702001784
+        },
+        {
+          "generation": 29,
+          "payoff_days": 548.3106025120042,
+          "elapsed_s": 11.09884398302529
+        },
+        {
+          "generation": 30,
+          "payoff_days": 537.4003378226759,
+          "elapsed_s": 11.435590740002226
+        },
+        {
+          "generation": 31,
+          "payoff_days": 533.9016723678284,
+          "elapsed_s": 11.799373873043805
+        },
+        {
+          "generation": 32,
+          "payoff_days": 533.9016723678284,
+          "elapsed_s": 12.18897877202835
+        },
+        {
+          "generation": 33,
+          "payoff_days": 533.9016723678284,
+          "elapsed_s": 12.522779154998716
+        },
+        {
+          "generation": 34,
+          "payoff_days": 533.9016723678284,
+          "elapsed_s": 12.875281031010672
+        },
+        {
+          "generation": 35,
+          "payoff_days": 533.9016723678284,
+          "elapsed_s": 13.238868376996834
+        },
+        {
+          "generation": 36,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 13.566557522048242
+        },
+        {
+          "generation": 37,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 13.927942401031032
+        },
+        {
+          "generation": 38,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 14.305391311005224
+        },
+        {
+          "generation": 39,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 14.65983929199865
+        },
+        {
+          "generation": 40,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 15.042696328018792
+        },
+        {
+          "generation": 41,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 15.454934465000406
+        },
+        {
+          "generation": 42,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 15.845484790042974
+        },
+        {
+          "generation": 43,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 16.231429726001807
+        },
+        {
+          "generation": 44,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 16.617657433031127
+        },
+        {
+          "generation": 45,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 16.992209702031687
+        },
+        {
+          "generation": 46,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 17.371925479033962
+        },
+        {
+          "generation": 47,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 17.74519741302356
+        },
+        {
+          "generation": 48,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 18.136566226021387
+        },
+        {
+          "generation": 49,
+          "payoff_days": 523.6160250767568,
+          "elapsed_s": 18.509565539017785
+        },
+        {
+          "generation": 50,
+          "payoff_days": 523.4604411132475,
+          "elapsed_s": 18.90464881702792
+        },
+        {
+          "generation": 51,
+          "payoff_days": 523.4604411132475,
+          "elapsed_s": 19.269333183008712
+        },
+        {
+          "generation": 52,
+          "payoff_days": 523.4604411132475,
+          "elapsed_s": 19.73405133304186
+        },
+        {
+          "generation": 53,
+          "payoff_days": 523.4604411132475,
+          "elapsed_s": 20.22551045601722
+        },
+        {
+          "generation": 54,
+          "payoff_days": 521.3137084438019,
+          "elapsed_s": 20.605904607044067
+        },
+        {
+          "generation": 55,
+          "payoff_days": 521.3137084438019,
+          "elapsed_s": 20.943628909008112
+        },
+        {
+          "generation": 56,
+          "payoff_days": 521.3137084438019,
+          "elapsed_s": 21.3064382430166
+        },
+        {
+          "generation": 57,
+          "payoff_days": 521.3137084438019,
+          "elapsed_s": 21.659289486007765
+        },
+        {
+          "generation": 58,
+          "payoff_days": 521.3137084438019,
+          "elapsed_s": 22.035602111020125
+        },
+        {
+          "generation": 59,
+          "payoff_days": 521.3137084438019,
+          "elapsed_s": 22.393527182051912
+        }
+      ],
+      "design": {
+        "front_depth_m": 25.00340025592176,
+        "rear_depth_m": 26.218414708426938,
+        "mouth_diameter_m": 29.683498926625298,
+        "front_diameter_m": 29.684459816955165,
+        "rear_diameter_m": 20.62885037669842,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 90.00137382705996,
+        "apogee_km": 963.485201486235,
+        "opening_ram_fraction": 0.10004627487294633,
+        "compressor_inlet_K": 708.5738167321135,
+        "metal_cold_K": 298.0199643023283,
+        "gas_metal_approach_K": 50.00991604420278,
+        "foil_thickness_m": 0.0019997287029335804,
+        "inlet_pressure_fraction": 0.7999735572154593,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 5863.162507743862,
+        "recovery_s": 599.9801679115944,
+        "front_residual_fraction": 0.010002248681029025,
+        "warm_radiator_K": 359.99471144309183,
+        "thrust_burst_s": 299.98413432927555,
+        "isp_s": 3694.8728603868376
+      }
+    },
+    {
+      "seed": 37,
+      "de_success": false,
+      "de_message": "Maximum number of iterations has been exceeded.",
+      "generations": 100,
+      "de_evaluations": 11514,
+      "local_evaluations": 355,
+      "search_payoff_days": 508.786580869147,
+      "verified_payoff_days": 508.787833527905,
+      "max_normalized_violation": 0.0,
+      "trace": [
+        {
+          "generation": 1,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 32.271873118996155
+        },
+        {
+          "generation": 2,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 32.52605936804321
+        },
+        {
+          "generation": 3,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 32.7971915230155
+        },
+        {
+          "generation": 4,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 33.086155939032324
+        },
+        {
+          "generation": 5,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 33.35774681600742
+        },
+        {
+          "generation": 6,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 33.64692941203248
+        },
+        {
+          "generation": 7,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 33.92504679603735
+        },
+        {
+          "generation": 8,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 34.210842761036474
+        },
+        {
+          "generation": 9,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 34.5090559880482
+        },
+        {
+          "generation": 10,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 34.80300905305194
+        },
+        {
+          "generation": 11,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 35.3003251060145
+        },
+        {
+          "generation": 12,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 35.69446421100292
+        },
+        {
+          "generation": 13,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 36.05405275605153
+        },
+        {
+          "generation": 14,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 36.4018605860183
+        },
+        {
+          "generation": 15,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 36.75037796900142
+        },
+        {
+          "generation": 16,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 37.09399612102425
+        },
+        {
+          "generation": 17,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 37.468817135028075
+        },
+        {
+          "generation": 18,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 37.84535885002697
+        },
+        {
+          "generation": 19,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 38.230473206029274
+        },
+        {
+          "generation": 20,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 38.60946691600839
+        },
+        {
+          "generation": 21,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 38.951157969015185
+        },
+        {
+          "generation": 22,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 39.327005269995425
+        },
+        {
+          "generation": 23,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 39.69938364601694
+        },
+        {
+          "generation": 24,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 40.0813124999986
+        },
+        {
+          "generation": 25,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 40.43300082802307
+        },
+        {
+          "generation": 26,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 40.767972210014705
+        },
+        {
+          "generation": 27,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 41.13313544599805
+        },
+        {
+          "generation": 28,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 41.49984426400624
+        },
+        {
+          "generation": 29,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 41.87011357903248
+        },
+        {
+          "generation": 30,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 42.21930286299903
+        },
+        {
+          "generation": 31,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 42.55070629500551
+        },
+        {
+          "generation": 32,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 42.90332521003438
+        },
+        {
+          "generation": 33,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 43.29777692304924
+        },
+        {
+          "generation": 34,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 43.65753063804004
+        },
+        {
+          "generation": 35,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 43.99653450399637
+        },
+        {
+          "generation": 36,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 44.35698017902905
+        },
+        {
+          "generation": 37,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 44.73353131301701
+        },
+        {
+          "generation": 38,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 45.10865416302113
+        },
+        {
+          "generation": 39,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 45.4737389710499
+        },
+        {
+          "generation": 40,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 45.83824012405239
+        },
+        {
+          "generation": 41,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 46.19801891600946
+        },
+        {
+          "generation": 42,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 46.573833566042595
+        },
+        {
+          "generation": 43,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 46.93705805100035
+        },
+        {
+          "generation": 44,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 47.31942896405235
+        },
+        {
+          "generation": 45,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 47.69817587104626
+        },
+        {
+          "generation": 46,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 48.12951371003874
+        },
+        {
+          "generation": 47,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 48.508672830997966
+        },
+        {
+          "generation": 48,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 48.8589003260131
+        },
+        {
+          "generation": 49,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 49.22871638904326
+        },
+        {
+          "generation": 50,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 49.594904388999566
+        },
+        {
+          "generation": 51,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 49.953267624019645
+        },
+        {
+          "generation": 52,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 50.31672169000376
+        },
+        {
+          "generation": 53,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 50.680780390044674
+        },
+        {
+          "generation": 54,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 51.06892567902105
+        },
+        {
+          "generation": 55,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 51.488818031037226
+        },
+        {
+          "generation": 56,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 51.867823805019725
+        },
+        {
+          "generation": 57,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 52.261829740018584
+        },
+        {
+          "generation": 58,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 52.63533710601041
+        },
+        {
+          "generation": 59,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 53.00779775704723
+        },
+        {
+          "generation": 60,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 53.386474232014734
+        },
+        {
+          "generation": 61,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 53.763823454035446
+        },
+        {
+          "generation": 62,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 54.16146714199567
+        },
+        {
+          "generation": 63,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 54.52596565900603
+        },
+        {
+          "generation": 64,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 54.901286862033885
+        },
+        {
+          "generation": 65,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 55.30734981101705
+        },
+        {
+          "generation": 66,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 55.706715072039515
+        },
+        {
+          "generation": 67,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 56.100002918043174
+        },
+        {
+          "generation": 68,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 56.48520107101649
+        },
+        {
+          "generation": 69,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 56.8346235640347
+        },
+        {
+          "generation": 70,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 57.21650319499895
+        },
+        {
+          "generation": 71,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 57.59650479903212
+        },
+        {
+          "generation": 72,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 57.9639745260356
+        },
+        {
+          "generation": 73,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 58.34078073804267
+        },
+        {
+          "generation": 74,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 58.72068172204308
+        },
+        {
+          "generation": 75,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 59.123553268029355
+        },
+        {
+          "generation": 76,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 59.537071159051266
+        },
+        {
+          "generation": 77,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 59.93053463601973
+        },
+        {
+          "generation": 78,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 60.34983458503848
+        },
+        {
+          "generation": 79,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 60.7317523380043
+        },
+        {
+          "generation": 80,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 61.10976891301107
+        },
+        {
+          "generation": 81,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 61.48953162803082
+        },
+        {
+          "generation": 82,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 61.85602478100918
+        },
+        {
+          "generation": 83,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 62.24010269000428
+        },
+        {
+          "generation": 84,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 62.63248054799624
+        },
+        {
+          "generation": 85,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 63.019746014033444
+        },
+        {
+          "generation": 86,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 63.434614451020025
+        },
+        {
+          "generation": 87,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 63.80823296599556
+        },
+        {
+          "generation": 88,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 64.20166743802838
+        },
+        {
+          "generation": 89,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 64.59034642903134
+        },
+        {
+          "generation": 90,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 64.97422049503075
+        },
+        {
+          "generation": 91,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 65.3709220730234
+        },
+        {
+          "generation": 92,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 65.75279980001505
+        },
+        {
+          "generation": 93,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 66.13607215601951
+        },
+        {
+          "generation": 94,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 66.50424236000981
+        },
+        {
+          "generation": 95,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 66.9007631179993
+        },
+        {
+          "generation": 96,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 67.30827693303581
+        },
+        {
+          "generation": 97,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 67.69683358300244
+        },
+        {
+          "generation": 98,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 68.1000313720433
+        },
+        {
+          "generation": 99,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 68.4647701200447
+        },
+        {
+          "generation": 100,
+          "payoff_days": 508.79095873651755,
+          "elapsed_s": 68.84152701904532
+        }
+      ],
+      "design": {
+        "front_depth_m": 25.003404861534946,
+        "rear_depth_m": 26.126578313178914,
+        "mouth_diameter_m": 29.683837326844362,
+        "front_diameter_m": 29.684459816955165,
+        "rear_diameter_m": 20.621911154807027,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 90.00138068987008,
+        "apogee_km": 964.2120306393687,
+        "opening_ram_fraction": 0.10004627487294633,
+        "compressor_inlet_K": 708.5163252917512,
+        "metal_cold_K": 298.0199643023283,
+        "gas_metal_approach_K": 50.00991604420278,
+        "foil_thickness_m": 0.0019997287103853223,
+        "inlet_pressure_fraction": 0.7999735572154593,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 5865.658762508519,
+        "recovery_s": 599.9801679115944,
+        "front_residual_fraction": 0.01000184883369419,
+        "warm_radiator_K": 359.99471144309183,
+        "thrust_burst_s": 299.98413432927555,
+        "isp_s": 3694.8728603868376
+      }
+    }
+  ],
+  "best": {
+    "status": "Conditional current-architecture cycle; no shock validation or circular-delivery payoff",
+    "inputs": {
+      "design": {
+        "front_depth_m": 24.999999999999996,
+        "rear_depth_m": 26.370292219985423,
+        "mouth_diameter_m": 30.0,
+        "front_diameter_m": 30.000152773813376,
+        "rear_diameter_m": 20.732124774701575,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 90.0,
+        "apogee_km": 964.1816653978846,
+        "opening_ram_fraction": 0.1,
+        "compressor_inlet_K": 708.5407313797914,
+        "metal_cold_K": 298.0,
+        "gas_metal_approach_K": 50.0,
+        "foil_thickness_m": 0.0020000000000000005,
+        "inlet_pressure_fraction": 0.8,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 5865.658762508519,
+        "recovery_s": 599.9801679115944,
+        "front_residual_fraction": 0.010000000000000004,
+        "mouth_closure": true,
+        "warm_radiator_K": 360.0,
+        "thrust_burst_s": 300.0,
+        "isp_s": 3694.827180728521
+      },
+      "hardware": {
+        "shell_TPS_kg_m2": 4.0,
+        "compressor_kg_per_m3_s": 30.0,
+        "compressor_electric_W_kg": 1000.0,
+        "thruster_kg_kW": 2.0,
+        "distribution_kg_kW": 1.0,
+        "rear_min_gauge_m": 0.001,
+        "rear_allowable_Pa": 150000000.0,
+        "rear_material_density": 2700.0,
+        "rear_pressure_factor": 1.5,
+        "rear_support_fraction": 0.5,
+        "rear_insulation_kg_m2": 1.0,
+        "sheet_deployment_kg_m2": 1.0,
+        "mouth_closure_kg_m2": 10.0,
+        "compressor_bulkhead_kg_m2": 10.0,
+        "warm_aftercooler_W_kg": 20000.0,
+        "separator_kg_kW": 5.0,
+        "liquid_system_fixed_kg": 500.0,
+        "avionics_attitude_fixed_kg": 1000.0,
+        "warm_loop_fluid_kg_m2": 0.25,
+        "design_margin": 0.25,
+        "compressor_open_fraction": 0.3,
+        "access_discharge_coefficient": 0.8
+      },
+      "performance": {
+        "isothermal_efficiency": 0.5,
+        "motor_efficiency": 0.95,
+        "deploy_s": 300.0,
+        "retract_s": 300.0,
+        "metal_density_kg_m3": 7870.0,
+        "hot_emissivity": 0.8,
+        "solar_W_m2": 250.0,
+        "solar_W_kg": 150.0,
+        "warm_buffer_J_kg": 200000.0,
+        "battery_Wh_kg": 150.0,
+        "battery_usable": 0.8,
+        "battery_W_kg": 1500.0,
+        "battery_charge_efficiency": 0.95,
+        "battery_discharge_efficiency": 0.95,
+        "thruster_efficiency": 0.6,
+        "thruster_loss_retained": 0.2,
+        "auxiliary_W": 10000.0,
+        "compressor_min_inlet_Pa": 0.1
+      },
+      "process": {
+        "carnot_fraction": 0.15,
+        "heat_pump_kg_W_equivalent_cold": 0.25,
+        "exchanger_conductance_W_K_kg": 200.0,
+        "condenser_approach_K": 5.0,
+        "precooler_effective_approach_K": 20.0,
+        "radiator_kg_m2": 5.0,
+        "emissivity": 0.85,
+        "view_factor": 0.8,
+        "environment_W_m2": 80.0,
+        "solar_W_kg": 150.0,
+        "reject_approach_K": 20.0
+      },
+      "scenario": {
+        "atmosphere_name": "reference",
+        "total_impulse_over_capture": 1.0,
+        "open_mouth_support_over_ram": 1.0,
+        "open_mouth_discharge_coefficient": 0.8
+      }
+    },
+    "outputs": {
+      "front_depth_m": 24.999999999999996,
+      "rear_depth_m": 26.370292219985423,
+      "diameter_m": 30.000152773813376,
+      "rear_diameter_m": 20.732124774701575,
+      "overall_length_allowance_m": 71.37029221998542,
+      "rear_geometry": {
+        "volume_m3": 7735.639057534161,
+        "surface_m2": 1974.2250699812475,
+        "barrel_m": 16.004229832634635,
+        "head_depth_m": 5.183031193675394
+      },
+      "rear_pressure_Pa": 28690.38026967298,
+      "front_pressure_Pa": 143.73430364760546,
+      "captured_kg": 2034.7084839806075,
+      "retained_kg": 2034.5836022049327,
+      "net_liquid_equivalent_kg": 1604.6493365131016,
+      "net_liquid_equivalent_kg_day": 24278.166434351948,
+      "propellant_kg": 427.89968208962614,
+      "vent_kg": 0.12488177567472379,
+      "mouth_closure": true,
+      "mouth_leakage_kg": 0.0,
+      "final_front_vent_kg": 0.12488177567472379,
+      "outbound_admitted_kg": 0.0,
+      "inbound_admitted_kg": 2034.7084839806075,
+      "pump_stop_reason": "residual_fraction_target",
+      "front_pressure_at_pump_stop_Pa": 1.4373430364760538,
+      "collected_before_closure_kg": 2022.2203064131352,
+      "recovered_after_closure_kg": 12.363295791797555,
+      "solar_area_m2": 1346333.5250433816,
+      "warm_radiator_panel_m2": 25219.47599658602,
+      "warm_radiator_emitting_m2": 50438.95199317204,
+      "metal_panel_m2": 20760.17991060159,
+      "metal_emitting_m2": 41520.35982120318,
+      "solar_MW": 336.58338126084544,
+      "ideal_metal_cooldown_s": 1081.0264685642153,
+      "peak_intake_kg_s": 16.660709652044936,
+      "hot_absorbed_GJ": 61.64820934244824,
+      "hot_suction_m3_s": 23574.696269916836,
+      "recovery_suction_m3_s": 135.63932250406992,
+      "warm_suction_m3_s": 309.8193344342649,
+      "coast_feed_suction_m3_s": 13.812817117667839,
+      "compressor_peak_MW": 32.50815672728684,
+      "compressor_kWh": 1102.6518184422791,
+      "compressor_mass_kg": 717525.1025236588,
+      "masses_kg": {
+        "hot_metal": 326765.2317928691,
+        "shell_TPS_allowance": 28430.774727228094,
+        "solar": 2243889.2084056363,
+        "battery": 1175793.8391614018,
+        "warm_radiator": 252194.75996586023,
+        "warm_buffer": 318939.77091462613,
+        "refrigerator": 39828.63139517473,
+        "compressor_hot": 707240.8880975051,
+        "compressor_warm": 9294.580033027945,
+        "compressor_coast": 989.6343931257516,
+        "rear_tank_and_supports": 25753.675238528733,
+        "propulsion_hardware": 3121038.0940591474,
+        "power_distribution": 1593037.2037568605,
+        "hot_sheet_deployment": 20760.17991060159,
+        "compressor_bulkhead": 7068.65546372381,
+        "mouth_closure": 7068.583470577034,
+        "warm_aftercooler": 339.22522123580785,
+        "product_heat_exchangers": 146.5044948487211,
+        "separator": 942.346522874438,
+        "liquid_storage_valves_plumbing": 500.0,
+        "avionics_attitude": 1000.0,
+        "design_margin": 2470255.4467562134
+      },
+      "total_dry_kg": 12351277.233781068,
+      "circulating_warm_fluid_kg": 12609.73799829301,
+      "oxygen_available_kg": 475.4470457700846,
+      "oxygen_mass_margin_kg": 47.54736368045849,
+      "oxygen_propellant_fraction": 0.8999944071511776,
+      "total_with_loop_fluid_kg": 12363886.971779361,
+      "hot_sound_speed_m_s": 526.5923733871523,
+      "acoustic_transit_s": 0.04747505141252762,
+      "front_turnover_s": 0.7496019654709156,
+      "pressure_rise_pump_off_Pa_s": 191.75860426176737,
+      "required_compressor_open_area_m2": 96.3070058521474,
+      "available_compressor_open_area_m2": 212.0596639117143,
+      "suction_choking_bound_m3_s": 51909.43403945351,
+      "access_bound_pass": true,
+      "estimated_access_dynamic_pressure_fraction": 0.030381407670382575,
+      "rear_wall_gauge_mm": 2.974062717922482,
+      "cold_duty_kW": 270.6133089484248,
+      "cryoplant_electric_kW": 4156.377408176393,
+      "reboost_peak_MW": 1560.5190470295736,
+      "reboost_MWh": 130.04325391913113,
+      "cycle": {
+        "orbit_s": 5710.550796725878,
+        "collection_s": 216.28844215032586,
+        "recovery_s": 599.9801679115944,
+        "deploy_s": 300.0,
+        "retract_s": 300.0,
+        "deploy_complete_s": 920.9885298416489,
+        "retract_start_s": 4789.56226688423,
+        "deployed_s": 3868.573737042581,
+        "sunlit_s": 1613.0309443721703
+      },
+      "metal_hot_K": 658.5407313797914,
+      "metal_capacity_kJ_kg": 188.66208318492707,
+      "intake_and_front_storage_heat_GJ": 58.231158148683406,
+      "hot_compression_heat_GJ": 3.4195658142350847,
+      "thermal_energy_balance_residual_J": 0.0,
+      "front_pressure_target_ratio_actual": 0.7999536783031238,
+      "operating_mass_payoff_days": 508.7401170586282,
+      "delivered_mass_payoff_days": null
+    },
+    "constraints": {
+      "margins": {
+        "front_pressure_ratio": 4.6321696876239216e-05,
+        "compressor_access_m2": 115.7526580595669,
+        "oxygen_kg": 47.54736368045849,
+        "metal_radiation_time_s": 2787.5472684783654,
+        "positive_production_kg": 1604.6493365131016
+      },
+      "all_implemented_screens_pass": true,
+      "unresolved": [
+        "Shock position/start margin and actual capture",
+        "Open-mouth pressure support, admission and leakage coefficients",
+        "Gas-to-metal conductance, rack pressure loss and temperature distribution",
+        "Compressor performance map, spin-up and installed mass capability",
+        "Hull drag, structural/dynamic loads and deployable mechanisms",
+        "Finite-thrust orbit restoration and circular-apogee export"
+      ]
+    },
+    "resolved_cycle_inputs": {
+      "atmosphere_name": "reference",
+      "opening_ram_fraction": 0.1,
+      "perigee_km": 90.0,
+      "apogee_km": 964.1816653978846,
+      "total_length_m": 71.37029221998542,
+      "outside_diameter_m": 31.700152773813375,
+      "mouth_m": 30.0,
+      "front_bore_m": 30.000152773813376,
+      "front_length_m": 24.999999999999996,
+      "gas_K": 708.5407313797914,
+      "inlet_pressure_fraction": 0.8,
+      "suction_capacity_factor": 1.0,
+      "open_suction_override_m3_s": null,
+      "recovery_s": 599.9801679115944,
+      "front_residual_fraction": 0.010000000000000004,
+      "mouth_closure": true,
+      "compressor_min_inlet_Pa": 0.1,
+      "open_mouth_support_over_ram": 1.0,
+      "open_mouth_discharge_coefficient": 0.8,
+      "intermediate_Pa": 5865.658762508519,
+      "receiver_m3": 7735.639057534161,
+      "receiver_K": 380.0,
+      "isothermal_efficiency": 0.5,
+      "motor_efficiency": 0.95,
+      "deploy_s": 300.0,
+      "retract_s": 300.0,
+      "metal_cold_K": 298.0,
+      "metal_hot_K": 658.5407313797914,
+      "foil_thickness_m": 0.0020000000000000005,
+      "metal_density_kg_m3": 7870.0,
+      "hot_emissivity": 0.8,
+      "warm_radiator_K": 360.0,
+      "solar_W_m2": 250.0,
+      "solar_W_kg": 150.0,
+      "warm_buffer_J_kg": 200000.0,
+      "battery_Wh_kg": 150.0,
+      "battery_usable": 0.8,
+      "battery_W_kg": 1500.0,
+      "battery_charge_efficiency": 0.95,
+      "battery_discharge_efficiency": 0.95,
+      "exhaust_m_s": 36233.876971891346,
+      "thruster_efficiency": 0.6,
+      "total_impulse_over_capture": 1.0,
+      "thrust_burst_s": 300.0,
+      "thruster_loss_retained": 0.2,
+      "auxiliary_W": 10000.0
+    },
+    "numerics": {
+      "samples": 3201
+    }
+  },
+  "best_payoff_days": 508.7401170586282,
+  "elapsed_s": 71.72822787100449,
+  "coupled_followup": {
+    "initial_payoff_days": 508.787833527905,
+    "steps": [
+      {
+        "change": "joint diameter scaling",
+        "search_payoff_days": 508.770998396855
+      },
+      {
+        "change": "fixed metal-hot endpoint, reduced approach",
+        "search_payoff_days": 508.7704337013436
+      },
+      {
+        "change": "coordinate front_depth_m",
+        "search_payoff_days": 508.7703581284142
+      },
+      {
+        "change": "coordinate rear_depth_m",
+        "search_payoff_days": 508.77030982672807
+      },
+      {
+        "change": "coordinate front_diameter_m",
+        "search_payoff_days": 508.7702633591085
+      },
+      {
+        "change": "coordinate rear_diameter_m",
+        "search_payoff_days": 508.77025459368537
+      },
+      {
+        "change": "coordinate perigee_km",
+        "search_payoff_days": 508.7612712229499
+      },
+      {
+        "change": "coordinate opening_ram_fraction",
+        "search_payoff_days": 508.76061640635993
+      },
+      {
+        "change": "coordinate compressor_inlet_K",
+        "search_payoff_days": 508.7606162121908
+      },
+      {
+        "change": "coordinate metal_cold_K",
+        "search_payoff_days": 508.7597653635557
+      },
+      {
+        "change": "coordinate foil_thickness_m",
+        "search_payoff_days": 508.7596203616535
+      },
+      {
+        "change": "coordinate inlet_pressure_fraction",
+        "search_payoff_days": 508.75838630592045
+      },
+      {
+        "change": "coordinate front_residual_fraction",
+        "search_payoff_days": 508.75837918426186
+      },
+      {
+        "change": "coordinate warm_radiator_K",
+        "search_payoff_days": 508.75770008684566
+      },
+      {
+        "change": "coordinate thrust_burst_s",
+        "search_payoff_days": 508.744951837551
+      },
+      {
+        "change": "coordinate isp_s",
+        "search_payoff_days": 508.7412330400177
+      },
+      {
+        "change": "coordinate rear_depth_m",
+        "search_payoff_days": 508.74123143273147
+      },
+      {
+        "change": "coordinate apogee_km",
+        "search_payoff_days": 508.7388609849077
+      }
+    ],
+    "verified_payoff_days": 508.74012076530977,
+    "max_normalized_violation": 0.0,
+    "samples": [
+      1601,
+      3201
+    ],
+    "relative_change": {
+      "total_dry_kg": 3.4600190823574906e-08,
+      "captured_kg": 2.2298470403470105e-08,
+      "net_liquid_equivalent_kg": 2.2296723023451648e-08,
+      "compressor_kWh": 2.5949171094108436e-06
+    }
+  },
+  "current_model_replay": {
+    "samples": 3201,
+    "note": "Candidate inputs replayed; continuous search not repeated for architecture-option comparison."
+  }
+}

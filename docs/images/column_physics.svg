@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="740" viewBox="0 0 1440 740" role="img" aria-labelledby="title desc"><title id="title">Atmospheric column and confined gas depth</title><desc id="desc">An inbound geometric path of 638.6 kilometres has the mass of a 519.7 kilometre column at perigee density. With the stated nitrogen-equivalent gas at 1000 kelvin and confinement pressure 0.7 times rho u squared, density compression is 145.64 and the equal-area unpumped chamber would be 3.568 kilometres deep. Lengths are schematic.</desc>
+<rect width="1440" height="740" rx="22" fill="#0b1424"/>
+<defs>
+<marker id="gas" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#ff9969"/></marker>
+<marker id="heat" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#ffc36b"/></marker>
+<marker id="blue" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#76b7ff"/></marker>
+<marker id="teal" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#75e4d0"/></marker>
+<marker id="muted" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#91afc8"/></marker>
+<marker id="purple" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#c8b5ff"/></marker>
+<linearGradient id="hot"><stop stop-color="#7c342c"/><stop offset="1" stop-color="#a96831"/></linearGradient><linearGradient id="air"><stop stop-color="#462b30"/><stop offset="1" stop-color="#b75b3b"/></linearGradient></defs>
+<text x="55" y="65" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="bold" text-anchor="start">A LONG COLUMN OF AIR, A FINITE DENSITY RATIO</text>
+<text x="55" y="105" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="normal" text-anchor="start">100 × 2,000 km orbit • inbound half-peak window → perigee • no compressor transfer</text>
+<text x="70" y="167" fill="#ff9969" font-family="DejaVu Sans, sans-serif" font-size="23" font-weight="bold" text-anchor="start">Geometric path: 638.6 km</text>
+<rect x="70" y="194" width="865" height="75" rx="2" fill="url(#air)" stroke="#ff9969" stroke-width="2"/>
+<path d="M147 203 V260" fill="none" stroke="#ff9969" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M224 203 V260" fill="none" stroke="#ff9969" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M301 203 V260" fill="none" stroke="#ff9969" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M378 203 V260" fill="none" stroke="#ff9969" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M455 203 V260" fill="none" stroke="#ff9969" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M532 203 V260" fill="none" stroke="#ff9969" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M609 203 V260" fill="none" stroke="#ff9969" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M686 203 V260" fill="none" stroke="#ff9969" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M763 203 V260" fill="none" stroke="#ff9969" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M840 203 V260" fill="none" stroke="#ff9969" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="70" y="306" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="19" font-weight="normal" text-anchor="start">Density increases toward perigee →</text>
+<text x="70" y="368" fill="#ffc36b" font-family="DejaVu Sans, sans-serif" font-size="23" font-weight="bold" text-anchor="start">Equivalent at perigee density: 519.7 km</text>
+<rect x="70" y="394" width="704" height="75" rx="2" fill="#875437" stroke="#ffc36b" stroke-width="2"/>
+<path d="M147 403 V460" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M224 403 V460" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M301 403 V460" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M378 403 V460" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M455 403 V460" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M532 403 V460" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M609 403 V460" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M686 403 V460" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M802 432 H1080" fill="none" stroke="#75e4d0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="946" y="404" fill="#75e4d0" font-family="DejaVu Sans, sans-serif" font-size="23" font-weight="normal" text-anchor="middle">÷ χ = 145.6</text>
+<rect x="1110" y="394" width="248" height="75" rx="2" fill="#1c4c53" stroke="#75e4d0" stroke-width="2"/>
+<text x="1234" y="439" fill="#75e4d0" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="bold" text-anchor="middle">3.57 km deep</text>
+<text x="1108" y="293" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="normal" text-anchor="start">Same captured mass</text>
+<text x="1108" y="322" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="normal" text-anchor="start">Same mouth / chamber area</text>
+<text x="1108" y="351" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="normal" text-anchor="start">Confined at 1,000 K</text>
+<rect x="60" y="525" width="1320" height="153" rx="10" fill="#14243a" stroke="none" stroke-width="2"/>
+<text x="85" y="568" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" text-anchor="start">p = κ ρ u² ;    ρc = p / (R T)</text>
+<text x="85" y="617" fill="#75e4d0" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="bold" text-anchor="start">χ = ρc / ρ = κ u² / (R T)</text>
+<text x="805" y="564" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">Density cancels; temperature remains.</text>
+<text x="805" y="596" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">κ = 0.7, u = 7.858 km/s, R = 296.8 J/(kg K)</text>
+<text x="805" y="628" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">More cooling increases density at the same pressure.</text>
+<text x="65" y="717" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="normal" text-anchor="start">Lengths shown schematically • this is unpumped capacity at peak pressure, not a shock or vehicle-feasibility solution.</text>
+</svg>

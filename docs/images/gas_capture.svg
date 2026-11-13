@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="670" viewBox="0 0 1440 670" role="img" aria-labelledby="title desc"><title id="title">Gas capture and compressor separation</title><desc id="desc">Gas passes from an open mouth through shock and diffusion, solid precooling and compressor banks to rear storage. Front pressure is limited by inlet behavior; rear pressure is carried by structure. No pump module count or shock position is specified.</desc>
+<rect width="1440" height="670" rx="22" fill="#0b1424"/>
+<defs>
+<marker id="gas" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#ff9969"/></marker>
+<marker id="heat" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#ffc36b"/></marker>
+<marker id="blue" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#76b7ff"/></marker>
+<marker id="teal" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#75e4d0"/></marker>
+<marker id="muted" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#91afc8"/></marker>
+<marker id="purple" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#c8b5ff"/></marker>
+<linearGradient id="hot"><stop stop-color="#7c342c"/><stop offset="1" stop-color="#a96831"/></linearGradient><linearGradient id="air"><stop stop-color="#462b30"/><stop offset="1" stop-color="#b75b3b"/></linearGradient></defs>
+<text x="55" y="63" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="bold" text-anchor="start">FROM HYPERSONIC INFLOW TO STORED GAS</text>
+<text x="55" y="103" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="normal" text-anchor="start">The compressor separates atmospheric pressure support from tank pressure containment.</text>
+<rect x="60" y="164" width="238" height="148" rx="10" fill="#14243a" stroke="#ff9969" stroke-width="2"/>
+<text x="78" y="200" fill="#ff9969" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="bold" text-anchor="start">Open mouth</text>
+<text x="78" y="243" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="start">New atmospheric gas</text>
+<text x="78" y="273" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="start">Mass + momentum + heat</text>
+<path d="M301 235 H320" fill="none" stroke="#ff9969" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gas)"/>
+<rect x="330" y="164" width="238" height="148" rx="10" fill="#14243a" stroke="#ff9969" stroke-width="2"/>
+<text x="348" y="200" fill="#ff9969" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="bold" text-anchor="start">Shock / diffuser</text>
+<text x="348" y="243" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="start">Slow the incoming flow</text>
+<text x="348" y="273" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="start">Recover usable pressure</text>
+<path d="M571 235 H590" fill="none" stroke="#ff9969" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gas)"/>
+<rect x="600" y="164" width="238" height="148" rx="10" fill="#14243a" stroke="#ffc36b" stroke-width="2"/>
+<text x="618" y="200" fill="#ffc36b" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="bold" text-anchor="start">Metal rack</text>
+<text x="618" y="243" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="start">Transfer heat to solids</text>
+<text x="618" y="273" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="start">Set suction gas state</text>
+<path d="M841 235 H860" fill="none" stroke="#ffc36b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#heat)"/>
+<rect x="870" y="164" width="238" height="148" rx="10" fill="#14243a" stroke="#75e4d0" stroke-width="2"/>
+<text x="888" y="200" fill="#75e4d0" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="bold" text-anchor="start">Compressor banks</text>
+<text x="888" y="243" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="start">Transfer mass aft</text>
+<text x="888" y="273" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="start">Work + cooling required</text>
+<path d="M1111 235 H1130" fill="none" stroke="#75e4d0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="1140" y="164" width="238" height="148" rx="10" fill="#14243a" stroke="#75e4d0" stroke-width="2"/>
+<text x="1158" y="200" fill="#75e4d0" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="bold" text-anchor="start">Rear storage</text>
+<text x="1158" y="243" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="start">Higher-pressure gas</text>
+<text x="1158" y="273" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="start">Coast liquefaction</text>
+<path d="M75 337 H830 M75 329 V345 M830 329 V345" fill="none" stroke="#91afc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="450" y="374" fill="#ffc36b" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">FRONT VOLUME</text>
+<path d="M1150 337 H1365 M1150 329 V345 M1365 329 V345" fill="none" stroke="#91afc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1255" y="374" fill="#75e4d0" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">REAR VOLUME</text>
+<rect x="60" y="405" width="635" height="180" rx="10" fill="#14243a" stroke="none" stroke-width="2"/>
+<text x="83" y="445" fill="#ffc36b" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" text-anchor="start">The inlet sets the front pressure envelope</text>
+<text x="83" y="484" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">Suction, cooling and backpressure interact with the shock.</text>
+<text x="83" y="513" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">A boundary can move outside the mouth; capture may fall</text>
+<text x="83" y="542" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">and gas may escape. Its location needs a flow solution.</text>
+<rect x="725" y="405" width="653" height="180" rx="10" fill="#14243a" stroke="none" stroke-width="2"/>
+<text x="748" y="445" fill="#75e4d0" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" text-anchor="start">The tanks set the rear pressure envelope</text>
+<text x="748" y="484" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">Rear volume and temperature set storage pressure.</text>
+<text x="748" y="513" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">Compressors must cross that pressure ratio; isolation</text>
+<text x="748" y="542" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">valves prevent rear storage from draining back out.</text>
+<text x="60" y="630" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="normal" text-anchor="start">Block diagram • arrows indicate net gas transfer • compressor count, stages and inlet geometry are not selected.</text>
+</svg>

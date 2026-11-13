@@ -1,0 +1,335 @@
+{
+  "status": "passed",
+  "cycle_cases": [
+    {
+      "design": {
+        "front_depth_m": 250.0,
+        "rear_depth_m": 25.0,
+        "mouth_diameter_m": 18.3,
+        "front_diameter_m": 18.3,
+        "rear_diameter_m": 18.3,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 100.0,
+        "apogee_km": 2000.0,
+        "opening_ram_fraction": 0.5,
+        "compressor_inlet_K": 1000.0,
+        "metal_cold_K": 500.0,
+        "gas_metal_approach_K": 100.0,
+        "foil_thickness_m": 0.00025,
+        "inlet_pressure_fraction": 0.7,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 300.0,
+        "recovery_s": 450.0,
+        "front_residual_fraction": 0.1,
+        "mouth_closure": true,
+        "warm_radiator_K": 320.0,
+        "thrust_burst_s": 180.0,
+        "isp_s": 4000.0
+      },
+      "scenario": {
+        "atmosphere_name": "reference",
+        "total_impulse_over_capture": 1.0,
+        "open_mouth_support_over_ram": 1.0,
+        "open_mouth_discharge_coefficient": 0.8
+      },
+      "relative_resolution_errors": {
+        "captured_kg": 4.428988737981143e-07,
+        "retained_kg": 4.414556770138134e-07,
+        "total_dry_kg": 2.571510708815339e-07,
+        "compressor_kWh": 1.4248927527216182e-05,
+        "hot_absorbed_GJ": 1.1724485482478286e-06
+      },
+      "thermal_residual_J": 0.0
+    },
+    {
+      "design": {
+        "front_depth_m": 250.0,
+        "rear_depth_m": 25.0,
+        "mouth_diameter_m": 18.3,
+        "front_diameter_m": 18.3,
+        "rear_diameter_m": 18.3,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 100.0,
+        "apogee_km": 2000.0,
+        "opening_ram_fraction": 0.5,
+        "compressor_inlet_K": 650,
+        "metal_cold_K": 500.0,
+        "gas_metal_approach_K": 100.0,
+        "foil_thickness_m": 0.00025,
+        "inlet_pressure_fraction": 0.7,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 300.0,
+        "recovery_s": 450.0,
+        "front_residual_fraction": 0.1,
+        "mouth_closure": true,
+        "warm_radiator_K": 320.0,
+        "thrust_burst_s": 180.0,
+        "isp_s": 4000.0
+      },
+      "scenario": {
+        "atmosphere_name": "reference",
+        "total_impulse_over_capture": 1.0,
+        "open_mouth_support_over_ram": 1.0,
+        "open_mouth_discharge_coefficient": 0.8
+      },
+      "relative_resolution_errors": {
+        "captured_kg": 4.428988737981143e-07,
+        "retained_kg": 4.4075858984804483e-07,
+        "total_dry_kg": 3.4521678127230615e-07,
+        "compressor_kWh": 9.484718617169818e-06,
+        "hot_absorbed_GJ": 7.633616128099874e-07
+      },
+      "thermal_residual_J": 0.0
+    },
+    {
+      "design": {
+        "front_depth_m": 250.0,
+        "rear_depth_m": 25.0,
+        "mouth_diameter_m": 18.3,
+        "front_diameter_m": 18.3,
+        "rear_diameter_m": 18.3,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 100.0,
+        "apogee_km": 2000.0,
+        "opening_ram_fraction": 0.5,
+        "compressor_inlet_K": 750,
+        "metal_cold_K": 500.0,
+        "gas_metal_approach_K": 100.0,
+        "foil_thickness_m": 0.00025,
+        "inlet_pressure_fraction": 0.7,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 300.0,
+        "recovery_s": 450.0,
+        "front_residual_fraction": 0.1,
+        "mouth_closure": true,
+        "warm_radiator_K": 320.0,
+        "thrust_burst_s": 180.0,
+        "isp_s": 4000.0
+      },
+      "scenario": {
+        "atmosphere_name": "reference",
+        "total_impulse_over_capture": 1.0,
+        "open_mouth_support_over_ram": 1.0,
+        "open_mouth_discharge_coefficient": 0.8
+      },
+      "relative_resolution_errors": {
+        "captured_kg": 4.428988737981143e-07,
+        "retained_kg": 4.4101487550740615e-07,
+        "total_dry_kg": 2.9413269519995566e-07,
+        "compressor_kWh": 1.0663226231444334e-05,
+        "hot_absorbed_GJ": 8.648199864014217e-07
+      },
+      "thermal_residual_J": 0.0
+    },
+    {
+      "design": {
+        "front_depth_m": 250.0,
+        "rear_depth_m": 25.0,
+        "mouth_diameter_m": 18.3,
+        "front_diameter_m": 18.3,
+        "rear_diameter_m": 18.3,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 100.0,
+        "apogee_km": 2000.0,
+        "opening_ram_fraction": 0.5,
+        "compressor_inlet_K": 1100,
+        "metal_cold_K": 500.0,
+        "gas_metal_approach_K": 100.0,
+        "foil_thickness_m": 0.00025,
+        "inlet_pressure_fraction": 0.7,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 300.0,
+        "recovery_s": 450.0,
+        "front_residual_fraction": 0.1,
+        "mouth_closure": true,
+        "warm_radiator_K": 320.0,
+        "thrust_burst_s": 180.0,
+        "isp_s": 4000.0
+      },
+      "scenario": {
+        "atmosphere_name": "reference",
+        "total_impulse_over_capture": 1.0,
+        "open_mouth_support_over_ram": 1.0,
+        "open_mouth_discharge_coefficient": 0.8
+      },
+      "relative_resolution_errors": {
+        "captured_kg": 4.428988737981143e-07,
+        "retained_kg": 4.415805446855714e-07,
+        "total_dry_kg": 2.474647309291811e-07,
+        "compressor_kWh": 1.566404425379364e-05,
+        "hot_absorbed_GJ": 1.316471095136329e-06
+      },
+      "thermal_residual_J": 0.0
+    },
+    {
+      "design": {
+        "front_depth_m": 25,
+        "rear_depth_m": 10,
+        "mouth_diameter_m": 18.3,
+        "front_diameter_m": 18.3,
+        "rear_diameter_m": 18.3,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 100.0,
+        "apogee_km": 2000.0,
+        "opening_ram_fraction": 0.5,
+        "compressor_inlet_K": 1000.0,
+        "metal_cold_K": 500.0,
+        "gas_metal_approach_K": 100.0,
+        "foil_thickness_m": 0.00025,
+        "inlet_pressure_fraction": 0.7,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 300.0,
+        "recovery_s": 450.0,
+        "front_residual_fraction": 0.1,
+        "mouth_closure": true,
+        "warm_radiator_K": 320.0,
+        "thrust_burst_s": 180.0,
+        "isp_s": 4000.0
+      },
+      "scenario": {
+        "atmosphere_name": "reference",
+        "total_impulse_over_capture": 1.0,
+        "open_mouth_support_over_ram": 1.0,
+        "open_mouth_discharge_coefficient": 0.8
+      },
+      "relative_resolution_errors": {
+        "captured_kg": 4.428988737981143e-07,
+        "retained_kg": 4.4275221899869877e-07,
+        "total_dry_kg": 3.9801788531690363e-07,
+        "compressor_kWh": 9.151257766615295e-05,
+        "hot_absorbed_GJ": 5.707524133313768e-06
+      },
+      "thermal_residual_J": 0.0
+    },
+    {
+      "design": {
+        "front_depth_m": 400,
+        "rear_depth_m": 100,
+        "mouth_diameter_m": 18.3,
+        "front_diameter_m": 18.3,
+        "rear_diameter_m": 18.3,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 100.0,
+        "apogee_km": 2000.0,
+        "opening_ram_fraction": 0.5,
+        "compressor_inlet_K": 1000.0,
+        "metal_cold_K": 500.0,
+        "gas_metal_approach_K": 100.0,
+        "foil_thickness_m": 0.00025,
+        "inlet_pressure_fraction": 0.7,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 300.0,
+        "recovery_s": 450.0,
+        "front_residual_fraction": 0.1,
+        "mouth_closure": true,
+        "warm_radiator_K": 320.0,
+        "thrust_burst_s": 180.0,
+        "isp_s": 4000.0
+      },
+      "scenario": {
+        "atmosphere_name": "reference",
+        "total_impulse_over_capture": 1.0,
+        "open_mouth_support_over_ram": 1.0,
+        "open_mouth_discharge_coefficient": 0.8
+      },
+      "relative_resolution_errors": {
+        "captured_kg": 4.428988737981143e-07,
+        "retained_kg": 4.406841443982401e-07,
+        "total_dry_kg": 2.3315739150486792e-07,
+        "compressor_kWh": 1.030905942811522e-05,
+        "hot_absorbed_GJ": 9.170328839624986e-07
+      },
+      "thermal_residual_J": 0.0
+    },
+    {
+      "design": {
+        "front_depth_m": 250.0,
+        "rear_depth_m": 25.0,
+        "mouth_diameter_m": 18.3,
+        "front_diameter_m": 18.3,
+        "rear_diameter_m": 18.3,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 100.0,
+        "apogee_km": 2000.0,
+        "opening_ram_fraction": 0.5,
+        "compressor_inlet_K": 1000.0,
+        "metal_cold_K": 500.0,
+        "gas_metal_approach_K": 100.0,
+        "foil_thickness_m": 0.00025,
+        "inlet_pressure_fraction": 0.7,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 300.0,
+        "recovery_s": 450.0,
+        "front_residual_fraction": 0.1,
+        "mouth_closure": false,
+        "warm_radiator_K": 320.0,
+        "thrust_burst_s": 180.0,
+        "isp_s": 4000.0
+      },
+      "scenario": {
+        "atmosphere_name": "reference",
+        "total_impulse_over_capture": 1.0,
+        "open_mouth_support_over_ram": 1.0,
+        "open_mouth_discharge_coefficient": 0.8
+      },
+      "relative_resolution_errors": {
+        "captured_kg": 1.385700926226363e-07,
+        "retained_kg": 1.3858627401219792e-07,
+        "total_dry_kg": 2.4703329826181175e-07,
+        "compressor_kWh": 2.3690095320993976e-06,
+        "hot_absorbed_GJ": 4.2941958211528686e-08
+      },
+      "thermal_residual_J": 0.0
+    },
+    {
+      "design": {
+        "front_depth_m": 250.0,
+        "rear_depth_m": 25.0,
+        "mouth_diameter_m": 18.3,
+        "front_diameter_m": 18.3,
+        "rear_diameter_m": 18.3,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 100.0,
+        "apogee_km": 2000.0,
+        "opening_ram_fraction": 0.5,
+        "compressor_inlet_K": 1000.0,
+        "metal_cold_K": 500.0,
+        "gas_metal_approach_K": 100.0,
+        "foil_thickness_m": 0.00025,
+        "inlet_pressure_fraction": 0.7,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 300.0,
+        "recovery_s": 450.0,
+        "front_residual_fraction": 0.1,
+        "mouth_closure": false,
+        "warm_radiator_K": 320.0,
+        "thrust_burst_s": 180.0,
+        "isp_s": 4000.0
+      },
+      "scenario": {
+        "atmosphere_name": "reference",
+        "total_impulse_over_capture": 1.0,
+        "open_mouth_support_over_ram": 0.3,
+        "open_mouth_discharge_coefficient": 0.8
+      },
+      "relative_resolution_errors": {
+        "captured_kg": 2.7002824443123075e-07,
+        "retained_kg": 2.0356321761560991e-07,
+        "total_dry_kg": 1.422161628461538e-07,
+        "compressor_kWh": 5.661613980856295e-06,
+        "hot_absorbed_GJ": 8.428207931565623e-08
+      },
+      "thermal_residual_J": -4.76837158203125e-07
+    }
+  ],
+  "orbit_energy_angular_invariants": "passed",
+  "scope": "Current lumped cycle conservation and resolution; not a thrust trajectory, inlet CFD or hardware validation"
+}

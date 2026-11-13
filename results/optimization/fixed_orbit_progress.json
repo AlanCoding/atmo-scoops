@@ -1,0 +1,505 @@
+{
+  "seed": 29,
+  "trace": [
+    {
+      "generation": 1,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 28.282579549995717
+    },
+    {
+      "generation": 2,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 28.568467297998723
+    },
+    {
+      "generation": 3,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 28.851590803998988
+    },
+    {
+      "generation": 4,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 29.154188685002737
+    },
+    {
+      "generation": 5,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 29.479668190004304
+    },
+    {
+      "generation": 6,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 29.779520033975132
+    },
+    {
+      "generation": 7,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 30.083218161016703
+    },
+    {
+      "generation": 8,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 30.34881255601067
+    },
+    {
+      "generation": 9,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 30.590076815977227
+    },
+    {
+      "generation": 10,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 30.817082246008795
+    },
+    {
+      "generation": 11,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 31.09052980999695
+    },
+    {
+      "generation": 12,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 31.372062148002442
+    },
+    {
+      "generation": 13,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 31.620171593967825
+    },
+    {
+      "generation": 14,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 31.876870060979854
+    },
+    {
+      "generation": 15,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 32.109889496001415
+    },
+    {
+      "generation": 16,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 32.35496510396479
+    },
+    {
+      "generation": 17,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 32.64058662200114
+    },
+    {
+      "generation": 18,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 32.91243503300939
+    },
+    {
+      "generation": 19,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 33.19199614797253
+    },
+    {
+      "generation": 20,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 33.46036943199579
+    },
+    {
+      "generation": 21,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 33.69913743296638
+    },
+    {
+      "generation": 22,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 33.97772959899157
+    },
+    {
+      "generation": 23,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 34.253888144972734
+    },
+    {
+      "generation": 24,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 34.49320314399665
+    },
+    {
+      "generation": 25,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 34.753129392978735
+    },
+    {
+      "generation": 26,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 34.988791110983584
+    },
+    {
+      "generation": 27,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 35.24021118396195
+    },
+    {
+      "generation": 28,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 35.48179087700555
+    },
+    {
+      "generation": 29,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 35.724614906008355
+    },
+    {
+      "generation": 30,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 35.99253281397978
+    },
+    {
+      "generation": 31,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 36.26846129796468
+    },
+    {
+      "generation": 32,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 36.55575726000825
+    },
+    {
+      "generation": 33,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 36.84310498996638
+    },
+    {
+      "generation": 34,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 37.09599979297491
+    },
+    {
+      "generation": 35,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 37.33670384099241
+    },
+    {
+      "generation": 36,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 37.61360019200947
+    },
+    {
+      "generation": 37,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 37.92217181297019
+    },
+    {
+      "generation": 38,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 38.20283611997729
+    },
+    {
+      "generation": 39,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 38.446208900015336
+    },
+    {
+      "generation": 40,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 38.69700850796653
+    },
+    {
+      "generation": 41,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 38.94455541798379
+    },
+    {
+      "generation": 42,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 39.19269562198315
+    },
+    {
+      "generation": 43,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 39.423701916006394
+    },
+    {
+      "generation": 44,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 39.671980699989945
+    },
+    {
+      "generation": 45,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 39.92846024601022
+    },
+    {
+      "generation": 46,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 40.137083301960956
+    },
+    {
+      "generation": 47,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 40.52716917498037
+    },
+    {
+      "generation": 48,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 40.78484902495984
+    },
+    {
+      "generation": 49,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 41.050097369996365
+    },
+    {
+      "generation": 50,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 41.370394271973055
+    },
+    {
+      "generation": 51,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 41.63344309601234
+    },
+    {
+      "generation": 52,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 41.86763405101374
+    },
+    {
+      "generation": 53,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 42.12820971000474
+    },
+    {
+      "generation": 54,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 42.367567388981115
+    },
+    {
+      "generation": 55,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 42.63046895596199
+    },
+    {
+      "generation": 56,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 42.89434884098591
+    },
+    {
+      "generation": 57,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 43.15145326999482
+    },
+    {
+      "generation": 58,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 43.4080362910172
+    },
+    {
+      "generation": 59,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 43.68973056296818
+    },
+    {
+      "generation": 60,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 43.93359531700844
+    },
+    {
+      "generation": 61,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 44.17125751200365
+    },
+    {
+      "generation": 62,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 44.440304060000926
+    },
+    {
+      "generation": 63,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 44.71058044797974
+    },
+    {
+      "generation": 64,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 44.96574570599478
+    },
+    {
+      "generation": 65,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 45.249932589009404
+    },
+    {
+      "generation": 66,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 45.52697659697151
+    },
+    {
+      "generation": 67,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 45.76596459199209
+    },
+    {
+      "generation": 68,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 46.0327931639622
+    },
+    {
+      "generation": 69,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 46.318464324984234
+    },
+    {
+      "generation": 70,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 46.55943457299145
+    },
+    {
+      "generation": 71,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 46.83456299296813
+    },
+    {
+      "generation": 72,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 47.12081432400737
+    },
+    {
+      "generation": 73,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 47.413581811997574
+    },
+    {
+      "generation": 74,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 47.677390012016986
+    },
+    {
+      "generation": 75,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 47.945994600013364
+    },
+    {
+      "generation": 76,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 48.2246376919793
+    },
+    {
+      "generation": 77,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 48.46808970096754
+    },
+    {
+      "generation": 78,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 48.737444508005865
+    },
+    {
+      "generation": 79,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 48.95276791800279
+    },
+    {
+      "generation": 80,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 49.14842229796341
+    },
+    {
+      "generation": 81,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 49.361258175980765
+    },
+    {
+      "generation": 82,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 49.58932427898981
+    },
+    {
+      "generation": 83,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 49.80463481496554
+    },
+    {
+      "generation": 84,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 50.01321012200788
+    },
+    {
+      "generation": 85,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 50.22317476797616
+    },
+    {
+      "generation": 86,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 50.45098549098475
+    },
+    {
+      "generation": 87,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 50.65988944499986
+    },
+    {
+      "generation": 88,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 50.88346498296596
+    },
+    {
+      "generation": 89,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 51.08418913499918
+    },
+    {
+      "generation": 90,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 51.282139496004675
+    },
+    {
+      "generation": 91,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 51.48298686899943
+    },
+    {
+      "generation": 92,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 51.70042112399824
+    },
+    {
+      "generation": 93,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 51.918903546989895
+    },
+    {
+      "generation": 94,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 52.127595102007035
+    },
+    {
+      "generation": 95,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 52.35629803000484
+    },
+    {
+      "generation": 96,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 52.61776520399144
+    },
+    {
+      "generation": 97,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 52.84650994098047
+    },
+    {
+      "generation": 98,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 53.04443752998486
+    },
+    {
+      "generation": 99,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 53.27089631400304
+    },
+    {
+      "generation": 100,
+      "payoff_days": 723.7578738969547,
+      "elapsed_s": 53.519805461983196
+    }
+  ]
+}
