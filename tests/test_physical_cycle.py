@@ -3,7 +3,7 @@ from dataclasses import replace
 
 import pytest
 
-from atmo_scoops.physical_cycle import Hardware, rear_geometry, reference, evaluate, minimum_suction
+from atmo_scoops.physical_cycle import Hardware, rear_geometry, reference, evaluate
 from atmo_scoops.two_volume import calculate
 
 
@@ -40,15 +40,3 @@ def test_suction_is_bounded_by_access_and_mass_target(raw):
     assert heavier['compressor_mass_kg'] > base['compressor_mass_kg']
     assert heavier['total_dry_kg'] > base['total_dry_kg']
     assert heavier['captured_kg'] == base['captured_kg']
-
-
-def test_minimum_constant_suction_meets_pressure_constraint(raw):
-    S=minimum_suction(raw,250)
-    factor=S/raw['open_suction_m3_s']
-    enough=calculate(reference(capacity_factor=factor),n=801)
-    less=calculate(reference(capacity_factor=.98*factor),n=801)
-    assert enough['max_front_over_ram'] == pytest.approx(.7,abs=2e-6)
-    assert less['max_front_over_ram'] > .7
-    assert enough['captured_kg'] == pytest.approx(less['captured_kg'])
-    # Captured mass is prescribed: exceeding the target must not be confused
-    # with a computed leak or reduction in intake.

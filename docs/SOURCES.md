@@ -101,7 +101,7 @@ configuration identifies capability targets separately from these measurements.
   Support the ideal reservoir/port pressure-ratio relation and its sonic limit
   in `open_mouth.py`. These equations do **not** establish the scoop's recovered
   pressure, effective throat area, discharge coefficient, or shock stability.
-  The outbound boundary's support/ram ratio and discharge factor are explicit
+  The inlet boundary's support/ram ratio and discharge factor are explicit
   sensitivity inputs pending offline fluid analysis.
 
 ## Atmospheric-column dimensional analysis
@@ -115,3 +115,35 @@ configuration identifies capability targets separately from these measurements.
   The pressure-recovery factor is an assumption, not a NASA-validated inlet
   coefficient. Density-amplitude cancellation is conditional on fixed trajectory,
   cooled gas state and pressure factor; it is not universal altitude invariance.
+
+## Declining-pressure compressor envelope
+
+- [Pfeiffer vacuum generation](https://www.pfeiffervacuum.com/no/en/knowledge/vacuum-technology/knowledge-book/4-vacuum-generation/).
+  Throughput depends on inlet pressure and effective pumping speed; useful
+  pumping vanishes at ultimate pressure. This supports treating a practical
+  cutoff separately from a hardware ultimate pressure.
+- [Leybold, Fundamentals of Vacuum Technology](https://www.leybold.com/content/dam/brands/leybold/downloads/brochures/general-brochures/Fundamentals_of_Vacuum_Technology_EN.pdf),
+  [Roots pump operation](https://www.leybold.com/en-us/knowledge/vacuum-fundamentals/vacuum-generation/how-does-a-roots-pump-work).
+  Net throughput differs from displacement throughput because of internal
+  backflow; backing pressure and attainable compression affect useful speed.
+  The active model uses the declared envelope `S_eff/S = max(1-p_ultimate/p,0)`
+  and an independent idle-power allowance. Neither that curve's coefficients
+  nor the scoop's temperature, specific mass, scale or efficiency are qualified
+  by these sources. A real multistage compressor map remains necessary.
+
+## Incremental LN2 mixing
+
+- [NIST nitrogen phase data](https://webbook.nist.gov/cgi/cbook.cgi?ID=C7727379&Mask=4&Units=SI)
+  gives the 5.6 kJ/mol vaporization anchor at 77 K. Together with the listed NIST
+  gas heat capacities and Cantera gas enthalpies, this anchors the liquid/gas
+  mixing balance without extrapolating gas polynomials into the liquid phase.
+- [Leybold Roots-pump operation](https://www.leybold.com/en-us/knowledge/vacuum-fundamentals/vacuum-generation/how-does-a-roots-pump-work)
+  describes internal backflow, backing-pressure effects and gas cooling. This
+  supports treating thermal behavior as part of a pump map, not assuming that
+  cooler inlet gas guarantees a selected efficiency or specific mass. Its
+  industrial machines do not qualify the scoop's high-temperature compressor.
+
+The mixing study's tank/injector allowances, 1 MPa injection pressure, 806 kg/m³
+LN2 density proxy, efficiency and pump specific power are declared inputs.
+They do not select an off-the-shelf cryogenic injection system. Product duty
+uses the entire retained mixture; restored coolant is subtracted from new yield.

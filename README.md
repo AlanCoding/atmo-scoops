@@ -23,11 +23,11 @@ and its thermal inventory reused each orbit. This package asks what that takes:
 physical dimensions, compressor duty, heat storage, deployed areas, power,
 hardware mass and net production—all connected by explicit balances.
 
-Start with the [illustrated design description](docs/DESIGN.md). The open-mouth
-layout above is the concept being developed; the drawings specify component
-roles, not a qualified layout or scale. A pressure-retaining closure and cold
-nitrogen injection are the next [planned architecture comparisons](docs/DESIGN_STUDIES_PLAN.md).
-Neither comparison has selected a winner.
+Start with the [illustrated design description](docs/DESIGN.md). Completed
+engineering decisions and their numerical evidence live in
+[conclusions/](conclusions/README.md). The active program follows one open-inlet
+architecture, with an optional incremental LN2-mixing parameter for analysis.
+The drawings specify component roles, not a qualified layout or scale.
 
 The [atmospheric-column derivation](analysis/primary/ATMOSPHERIC_COLUMN.md)
 explains a central result: hundreds of kilometres of swept atmosphere still
@@ -44,10 +44,22 @@ Dry mass has no imposed ceiling. The numerical results are conditional on the
 stated component capabilities and flow assumptions; this is a living engineering
 model and design specification.
 
+## The orbit is part of the machine
+
+![Scoop orbit, atmospheric pass and coast timing](docs/images/orbital_cycle.svg)
+
+The illustrated **100 × 2,000 km** comparison orbit takes **106.2 minutes**.
+The Earth and orbit use the same distance scale; the low-altitude pass is enlarged
+at right. The dashed circle is the circular delivery destination at apogee
+altitude. Reaching apogee on the diving ellipse does not itself circularize the
+product's orbit. The diagram's cutoff and deployment timings come from the
+open-mouth control/capacity search at this geometry, not a final operating policy.
+
 ## Analysis areas
 
 | Area | Purpose | Entry point |
 |---|---|---|
+| Subsystem modeling research | Comparable hardware, real-gas physics, heat transfer and validated replacements for numerical approximations | [Research index](modeling/README.md), [compressor](modeling/compressor/README.md), [metal coolers](modeling/metal_coolers/README.md) |
 | Primary numerical model | Fast cycle inventory, heat, power, hardware mass and constraints | [Model](analysis/primary/MODEL.md), [inputs](analysis/primary/PARAMETERS.md), `atmo_scoops/system.py` |
 | Design optimization | Search independent coordinates using the primary model | [Search definition and results](analysis/optimization/RESULTS.md), `atmo_scoops/optimization/` |
 | Detailed fluid analysis | Evaluate selected geometries; resolve shocks, cooling, capture and leakage | [Fluid study specification](analysis/fluid/README.md); solver integration pending |
@@ -66,62 +78,55 @@ Use the project-local virtual environment:
 ```sh
 .venv/bin/python -m atmo_scoops --config configs/reference.json
 .venv/bin/python -m atmo_scoops --config configs/reference.json --front-depth 100 --rear-depth 25 --output results/short_front.json
-.venv/bin/python -m atmo_scoops --config configs/reference.json --no-mouth-closure --output results/open_mouth.json
+.venv/bin/python -m atmo_scoops --mixing-ratio 0.1 --mixing-path fixed_rack
 .venv/bin/python -m atmo_scoops --write-config configs/my_design.json
 ```
 
 Lengths are physical metres, including rear tank heads; temperatures are kelvin.
-Configurations separate `design`, `hardware`, `performance`, `process` and
-`scenario`. All resolved inputs, component masses, three deployed areas,
-production and constraint margins are saved. Unknown input names are rejected.
-The 250 m front in `configs/reference.json` is a comparison coordinate, not a
-recommended dimension. Search candidates have separate input files.
+Configurations separate geometry, hardware/performance/process capabilities,
+atmosphere, inlet capabilities, operating controls and mixing. Unknown input
+names are rejected. The 250 m reference front is a comparison coordinate,
+not a selected dimension.
 
 ```python
 from dataclasses import replace
 from atmo_scoops.system import Design, simulate
+from atmo_scoops.mixing import Mixing
 
-result = simulate(replace(Design(), front_depth_m=100, mouth_closure=False))
-print(result["outputs"]["total_dry_kg"])
+result = simulate(replace(Design(), front_depth_m=100),
+                  mixing=Mixing(ratio=0.1, thermal_path="fixed_rack"))
 print(result["outputs"]["operating_mass_payoff_days"])
+print(result["outputs"]["mixing"])
 print(result["constraints"])
 ```
 
-`simulate` writes no files. Passing its implemented screens does not validate
-omitted shock, heat-transfer, aerodynamic or structural constraints.
+The continuous inlet computes admission, reverse leakage and pump cutoff on
+both legs. Useful pump speed declines toward its ultimate pressure. Mixing
+balances enthalpy and reserves coolant for the next pass before counting new
+product. `simulate` writes no files; its output records exact inputs, component
+masses, deployed areas, production and constraint margins.
 
-## Run analysis
-
-```sh
-.venv/bin/python -m atmo_scoops.optimization.search --mode free_orbit --iterations 120 --seeds 11 29
-.venv/bin/python -m atmo_scoops --config results/optimization/free_orbit_config.json --samples 3201 --output results/optimization/replayed_system.json
-MPLCONFIGDIR=/tmp/atmo-scoops-mpl .venv/bin/python -m atmo_scoops.studies.mouth_closure
-```
-
-The [closure comparison](analysis/primary/MOUTH_CLOSURE.md) holds design and
-capability inputs fixed, recalculates dependent hardware, and includes leakage,
-pump-floor and door-mass sensitivities. It is not an optimization of the open
-variant. Continuous searches retain the configured mouth choice; compare
-architecture options in separate runs.
-
-Reproduce the column derivation (no optimization):
+## Reproduce analyses
 
 ```sh
+.venv/bin/python -m atmo_scoops.studies.incremental_mixing --workers 4
+.venv/bin/python -m atmo_scoops.studies.incremental_mixing --sensitivity --workers 4
+MPLCONFIGDIR=/tmp/atmo-scoops-mpl .venv/bin/python -m atmo_scoops.studies.mixing_report
 .venv/bin/python -m atmo_scoops.studies.column_physics
+MPLCONFIGDIR=/tmp/atmo-scoops-mpl .venv/bin/python -m atmo_scoops.studies.orbital_diagram
+.venv/bin/python -m atmo_scoops.studies.current_cycle
 ```
 
-Other reproducible primary-model studies:
+The [incremental mixing conclusion](conclusions/incremental_mixing/ANALYSIS.md)
+compares ratios with equal control freedom, counts coolant restoration and
+reports sensitivity thresholds. Broader geometry searches use the same active
+model; [their definition](analysis/optimization/RESULTS.md) states current
+coordinates and limits. No revised whole-vehicle optimum is claimed here.
 
-```sh
-.venv/bin/python -m atmo_scoops.physical_cycle
-MPLCONFIGDIR=/tmp/atmo-scoops-mpl .venv/bin/python -m atmo_scoops.studies.physical
-.venv/bin/python -m atmo_scoops --config configs/reference.json --sweep-precooling 650 700 750 800 900 1000 1100 --output results/precooling_trade.json
-MPLCONFIGDIR=/tmp/atmo-scoops-mpl .venv/bin/python -m atmo_scoops.studies.precooling
-```
-
-Reports: [physical depth and mass](analysis/primary/PHYSICAL_CYCLE.md),
-[precooling trade](analysis/primary/PRECOOLING_TRADE.md).
-Numerical output belongs in `results/`; generated figures belong in `figures/`.
+Passing the numerical screens does not establish omitted shock, heat-transfer,
+aerodynamic or structural performance. The original decision experiments are
+preserved separately with frozen inputs/source so later model changes do not
+silently rewrite their evidence.
 
 ```sh
 .venv/bin/python -m pytest -q

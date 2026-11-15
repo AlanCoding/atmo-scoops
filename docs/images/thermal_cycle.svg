@@ -21,7 +21,7 @@
 <text x="1002" y="218" fill="#76b7ff" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="bold" text-anchor="start">SOLAR + BATTERIES</text>
 <rect x="84" y="250" width="352" height="115" rx="10" fill="#563d30" stroke="#ffc36b" stroke-width="2"/>
 <text x="105" y="284" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">Incoming gas loses heat</text>
-<text x="105" y="313" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">Hot compressor stage rejects heat</text>
+<text x="105" y="313" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">Rack stores entry heat</text>
 <text x="105" y="342" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">Energy stored in the metal</text>
 <path d="M260 376 V439" fill="none" stroke="#ffc36b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#heat)"/>
 <text x="280" y="409" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="start">During coast</text>

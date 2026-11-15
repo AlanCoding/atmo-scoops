@@ -13,7 +13,7 @@ wall thermal/cooling conditions and compressor flow/pressure boundary. Supply
 the atmospheric trajectory and gas composition from the primary encounter code.
 
 Run selected times and transient sequences for inlet startup, sustained pumping,
-outbound pressure decay, reverse flow, optional closure and reopening. Map
+outbound pressure decay, reverse flow and compressor cutoff. Map
 pressure, temperature, species, velocity, wall heat/shear and net mass flux on
 signed control surfaces. Resolve the location and direction of leakage directly.
 Check continuum/rarefied and chemical-relaxation validity rather than choosing a

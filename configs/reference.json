@@ -9,7 +9,6 @@
     "radial_clearance_m": 0.85,
     "perigee_km": 100.0,
     "apogee_km": 2000.0,
-    "opening_ram_fraction": 0.5,
     "compressor_inlet_K": 1000.0,
     "metal_cold_K": 500.0,
     "gas_metal_approach_K": 100.0,
@@ -17,9 +16,6 @@
     "inlet_pressure_fraction": 0.7,
     "pump_suction_m3_s": null,
     "intermediate_Pa": 300.0,
-    "recovery_s": 450.0,
-    "front_residual_fraction": 0.1,
-    "mouth_closure": true,
     "warm_radiator_K": 320.0,
     "thrust_burst_s": 180.0,
     "isp_s": 4000.0
@@ -37,7 +33,6 @@
     "rear_support_fraction": 0.5,
     "rear_insulation_kg_m2": 1.0,
     "sheet_deployment_kg_m2": 1.0,
-    "mouth_closure_kg_m2": 10.0,
     "compressor_bulkhead_kg_m2": 10.0,
     "warm_aftercooler_W_kg": 20000.0,
     "separator_kg_kW": 5.0,
@@ -65,8 +60,7 @@
     "battery_discharge_efficiency": 0.95,
     "thruster_efficiency": 0.6,
     "thruster_loss_retained": 0.2,
-    "auxiliary_W": 10000.0,
-    "compressor_min_inlet_Pa": 0.1
+    "auxiliary_W": 10000.0
   },
   "process": {
     "carnot_fraction": 0.15,
@@ -83,8 +77,32 @@
   },
   "scenario": {
     "atmosphere_name": "reference",
-    "total_impulse_over_capture": 1.0,
-    "open_mouth_support_over_ram": 1.0,
-    "open_mouth_discharge_coefficient": 0.8
+    "total_impulse_over_capture": 1.0
+  },
+  "flow": {
+    "support_over_ram": 1.0,
+    "port_discharge_coefficient": 0.8,
+    "effective_mouth_area_fraction": 1.0,
+    "ultimate_inlet_Pa": 0.03,
+    "hot_train_max_compression": 1000000.0,
+    "pump_idle_fraction": 0.05,
+    "inlet_lag_s": 0.0,
+    "rejected_air_impulse_fraction": 1.0
+  },
+  "controls": {
+    "cutoff_Pa": 0.1,
+    "suction_scale": 1.0,
+    "max_after_perigee_s": 1200.0
+  },
+  "mixing": {
+    "ratio": 0.0,
+    "thermal_path": "fixed_rack",
+    "storage_kg_per_kg_inventory": 0.15,
+    "injector_fixed_kg": 25.0,
+    "injector_kg_per_kg_s": 10.0,
+    "injection_pressure_Pa": 1000000.0,
+    "liquid_density_kg_m3": 806.0,
+    "pump_efficiency": 0.6,
+    "pump_W_kg": 500.0
   }
 }

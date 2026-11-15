@@ -1,0 +1,34 @@
+{
+  "source_sha256": {
+    "atmo_scoops/__init__.py": "e35ff96ed742e7472b5d004d8aea4ee9ff05dfd74a8f097422583a907f4efa21",
+    "atmo_scoops/__main__.py": "efbb157cd351a963610c2ab36e6363429b871dcafe553192ad0887599c883f73",
+    "atmo_scoops/atmosphere.py": "de7051c7a046bd4b88d9db1a70e18974d2de299837b1e1300eb98321221e5e17",
+    "atmo_scoops/audit.py": "29b9b8ff126dba75eecfc825008cf2a0174defa78b5a9290c4ecd2a4e0c793ba",
+    "atmo_scoops/encounter.py": "4a33505961f59afe94bb9cd1c73a6949fccc8f88e50812edb2ff59f15425e26e",
+    "atmo_scoops/inlet.py": "fd9b49c32c7c6ffef2e6542c9a716651f9986593a086034fbf578b30a2dc3d94",
+    "atmo_scoops/mixing.py": "2e8640b0bea93a44347a78d48117fa0079a3ace4db28c10f5c94cf9c2469524e",
+    "atmo_scoops/nitrogen.py": "0e730bdab6194893c13486cde9d481dea26180bccd1082ae59d06663e3be7697",
+    "atmo_scoops/open_mouth.py": "196f05c285dac0eea07740a20ed406e7273e2429d5389292c436d18abd966270",
+    "atmo_scoops/optimization/__init__.py": "2a7f816cc17363a9ec9665fb45c4e9f1ba44b0c1def08937e2f2aa868a438ccc",
+    "atmo_scoops/optimization/search.py": "94dd10fd4c20017b0f05f99c9aee6762356a261297f901126e80b2417f9fde80",
+    "atmo_scoops/orbit.py": "a576438fcdf930d9bd44877cc2aadf0dba397059d7d0d96bd8625bdcc4a8cdfd",
+    "atmo_scoops/physical_cycle.py": "051b7c7132f6cff758e9ad601f2e52bfd710c44f1547ecfa001926062c765d18",
+    "atmo_scoops/process.py": "63a0cec279d1413353cbb3ba52d2622140371817bf07a6b26ed15126a3d2dce7",
+    "atmo_scoops/studies/__init__.py": "90f568bf0b79e06b2a9d55c6c7dbac416cad932ba2cab1adb845ff5aec175b9d",
+    "atmo_scoops/studies/column_physics.py": "f5da91800a1e16e4c05d4ae5e86077dabf1ac2fdfedbc32ef7e9183301fd4f14",
+    "atmo_scoops/studies/current_cycle.py": "6cf247daed2c239bd58c73f24e811b869860e94075c56ed3d57c7932a4b112e7",
+    "atmo_scoops/studies/incremental_mixing.py": "8ee80f9066cd35c4cce817cb3bb52d72eec0acc4e0155ab57162dae18581d9bf",
+    "atmo_scoops/studies/mixing_report.py": "ece4f0d74d6a8afa0b7345e38d31e7586cfac0bab54cd292355f0c55e5606f79",
+    "atmo_scoops/studies/orbital_diagram.py": "a86acfb1784b9f1adc0136a902d09a39de78d38c3fa50b6092809f9b758fada5",
+    "atmo_scoops/system.py": "3d7f3975cc4931be63ec585070e4dd8f6a789be1580f4e818d559343bd477fa1",
+    "atmo_scoops/thermochemistry.py": "31b3e40438b9019db8eaca0837c64618855e1c021e057aec8743a10c9a356aa4",
+    "atmo_scoops/two_volume.py": "58be0a69d3049c87ff0ae29f91140fc5bdb3b1616e7c8e9403b6ada822b1b6f2"
+  },
+  "experiment": "30 paired thermal/control searches at fixed reference geometry; conditional capability assumptions",
+  "samples": [
+    201,
+    1601,
+    3201
+  ],
+  "additional_heavy_case_samples": 6401
+}

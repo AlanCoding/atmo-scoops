@@ -1,162 +1,123 @@
-# Two-compartment scoop model
+# Continuous two-compartment model
 
-The program follows gas from a cooled front compartment through compressor
-banks into rear storage, then through a coast liquefaction plant. Its public
-interface is `atmo_scoops.system.simulate`; inputs are described in PARAMETERS.md.
+`atmo_scoops.system.simulate` is the single active cycle API. The CLI and optimizer
+call it. [Inputs](PARAMETERS.md) separate geometry, capability assumptions,
+controls and optional mixing. No detailed CFD runs inside this model.
 
-## Orbit and collection
+## Orbit and intake
 
-Kepler motion and a reproducible NRLMSIS 2.1 atmosphere give encounter velocity,
-density, composition and enthalpy. The opening time is the inbound crossing of
-a selected fraction of peak ram pressure. An installed door closes at perigee; the no-door variant
-continues collecting/pumping outbound. Atmospheric rotation is included for an equatorial prograde
-trajectory. Illumination uses the fixed perigee-noon orientation.
+Kepler motion, equatorial prograde atmosphere-relative velocity and a fixed
+NRLMSIS 2.1 scenario supply density, composition and incoming enthalpy. The
+encounter begins with an empty front at inbound 200 km. Both legs use the same
+boundary:
 
-    mdot_in = rho_infinity * encounter_speed * mouth_area
+```text
+p_front = M_front R T / V_front
+p_support = κ ρ∞ u²
+admission = min(A ρ∞ u, compressible_port(p_support, p_front))
+reverse_leakage = compressible_port(p_front, p_support)
+dM_front/dt = (1+r) admission − leakage − pump_flow
+dM_rear/dt = pump_flow
+```
 
-Full geometric inbound intake is prescribed, not a simulated inlet result.
-Captured-air impulse is integrated once. Any additional impulse is an explicit
-scenario allowance, not an inferred aerodynamic coefficient.
+The effective port includes discharge coefficient and choking. Its support,
+area and lag are scenarios, not a resolved shock position or start/unstart law.
+Mixture thermodynamic properties use a fixed molecular endpoint representative
+of the inbound half-peak window; atmospheric oxygen is transported through the
+front/rear mass balance. The actual intake window begins at 200 km. Full
+geometric intake is not prescribed: inadequate pumping can reject incoming gas.
 
-## Physical geometry and inventory
+## Geometry, pumping and cutoff
 
-The front is cylindrical. Rear storage is a cylinder with two 2:1 ellipsoidal
-heads, each D/4 deep; rear length includes both heads.
+```text
+V_front = π D_front² L_front / 4
+V_rear = π D_rear² (L_rear − D_rear/6) / 4
+p_ultimate = max(capability floor, intermediate pressure / compression ceiling)
+pump_flow = S_rated max(p_front − p_ultimate, 0) / (R T)
+```
 
-    V_front = pi * D_front² / 4 * L_front
-    V_rear = pi * D_rear² / 4 * (L_rear - D_rear/6)
-    L_total = L_front + L_rear + machinery_allowance
+Rear depth includes two 2:1 ellipsoidal heads and must be at least D_rear/2.
+Nominal automatic suction is `(1+r) A R T / (C u_perigee)`, multiplied by the
+installed-capacity control. An explicit suction input can replace that nominal
+size. This sizes paid-for machinery, not free pumping. C is a sizing coordinate;
+it does not constrain or establish actual shock location.
 
-Rear length must be at least D_rear/2. Hull diameter is the largest mouth/chamber
-diameter plus twice the specified radial clearance. This is an envelope, not a
-qualified equipment arrangement.
+Useful speed declines to zero at the ultimate pressure. Internal backflow work
+and idle power remain charged while pumping. Stop on the outbound downward
+crossing of the commanded cutoff, strictly above ultimate pressure. Failure to
+reach it within the encounter timeout fails a screen. Rear storage is isolated;
+remaining front gas is lost. No recovery fraction is prescribed independently.
 
-At prescribed uniform front temperature:
+## Cooling, optional mixing and plant restoration
 
-    dM_front/dt = mdot_in - S * M_front / V_front
-    p_front = M_front * R * T_front / V_front
-    dM_rear/dt = S * M_front / V_front
+The metal rack endpoint is the dry stream temperature minus positive gas/metal
+approach. Integrate NIST iron heat capacity between cold/hot endpoints for stored
+heat per kilogram; iron is a proxy, not a selected alloy. Its range is 298–1042 K.
+The attached sheet area is metal mass divided by density and sheet thickness;
+both faces radiate. Ideal cooldown must fit the deployed coast.
 
-Automatic sizing uses S = A_mouth R T_front / (C u_perigee), where C is the
-pressure-control target. Alternatively specify S directly. After closure,
-constant suction V_front ln(1/f_residual) / recovery_time gives exponential
-pumpdown. The same hardware serves both phases; its maximum capacity governs.
-Recovery stops earlier if the compressor inlet reaches its configured pressure
-floor. Actual shock position and cooler pressure loss remain unresolved.
+For LN2 mixing, `r` is injected coolant / newly admitted air. `fixed_rack` holds
+the dry stream's rack outlet temperature and solves mixed temperature from
+enthalpy. `fixed_inlet` holds mixed temperature and lets the heat removed by the
+rack fall. It is invalid to independently fix r, mixed temperature and rack heat.
+Pure-N2 liquid enthalpy uses NIST sensible/latent heat tied to the gas reference
+at 298.15 K. Injection-pump work is charged. No gas-polynomial extrapolation to
+liquid temperature is used.
 
-## Open-mouth outbound boundary
+```text
+Q_metal = incoming air energy + injected coolant enthalpy + injection work
+          − (stored + leaked) h_mixed − final_front u_mixed
+Q_warm = stored (h_mixed − u_receiver) + compressor electric work
+new liquid = 0.999 stored_mass − total_injected_mass − propellant
+```
 
-With `mouth_closure=false`, collection suction capacity continues after perigee.
-The compressor stops at `performance.compressor_min_inlet_Pa`; `recovery_s` is
-the maximum permitted outbound pumping time. Reaching that timeout above the
-floor fails a completion screen. `front_residual_fraction` is inactive in this
-variant. Rear storage is then isolated and remaining front gas is lost.
+All compressor heat enters the warm loop in both mixed and unmixed cases. This
+avoids assigning compressor rejection to a metal rack hotter than the mixed
+compressor gas. Isothermal compression and the uniform endpoint remain duty
+approximations. The rack has not yet acquired a conductance/pressure-drop model.
 
-The reduced outbound boundary uses an explicitly assumed support pressure
-`p_support = scenario.open_mouth_support_over_ram * rho*u²`. It is **not** a
-computed shock/stagnation pressure. If support exceeds plenum pressure, admission
-is the smaller of geometric interception and an ideal compressible-port capacity.
-If plenum pressure exceeds support, flow reverses through the same effective
-mouth area. The port uses the cooled gas state and a scenario discharge factor;
-it does not model inlet cooling/pressure recovery. At pressure ratio r=p_down/p_up:
+Coast processing sizes a feed compressor, nitrogen-equivalent staged
+refrigerator, separate product heat exchangers and separation allowance.
+Refrigeration processes the entire retained mixture, including recovered
+coolant. Replacement for lost coolant is reserved from new nitrogen; recycled
+coolant is excluded from useful new product. Startup LN2 is working inventory,
+not dry mass; its tank, injector and pump hardware have explicit mass allowances.
+The process remains a nitrogen-equivalent duty, not mixed-air phase equilibrium.
 
-    mdot_port = Cd * A * p_up / sqrt(R*T) * F(r, gamma)
-    F = sqrt[2*gamma/(gamma-1) * (r^(2/gamma)-r^((gamma+1)/gamma))]
+## Propulsion, energy and installed mass
 
-Below the critical ratio `(2/(gamma+1))^(gamma/(gamma-1))`, F takes its sonic
-maximum. Net front inventory is `dM/dt = admission - leakage - S*M/V`.
-This is an exposed approximation for coefficient sensitivity, not a substitute
-for [offline fluid studies](../fluid/README.md). Zero leakage with strong support
-is not evidence that a real inlet will retain gas. Early-entry heating/drag
-without a protective door is unresolved. An open-case input whose prescribed
-inbound plenum pressure exceeds its assumed support fails a compatibility screen;
-such weak-support transients are sensitivity diagnostics, not viable passes.
+Admitted atmosphere incurs arrival momentum once. Injected onboard coolant has
+no atmosphere-relative arrival momentum. Escaping gas adds a conditional nozzle
+recoil estimate. Intercepted but rejected air has a separate projected-momentum
+allowance. Hull/fins and surface shear require offline aerodynamic analysis.
 
-Admitted mass, transferred mass, leaked mass, final residual, incoming energy
-and capture impulse have separate accounts. All admitted mass incurs encounter
-impulse even if later lost; exterior/expelled-gas momentum corrections remain
-unresolved. Open-phase oxygen is transported as a well-mixed front/rear tracer
-using altitude-dependent incoming composition. Thermal properties remain at the
-inbound-mean mixture. The [closure study](MOUTH_CLOSURE.md) compares options with
-identical independent inputs and includes support/floor/door-mass sensitivities.
+```text
+J = capture_multiplier J_capture + J_escape + J_uncollected
+propellant = J / (Isp g0)
+reboost electric energy = J (Isp g0) / (2 η_propulsion)
+```
 
-## Compression and thermal accounting
+Retained atmospheric oxygen must cover propellant. An impulse-equivalent burn
+sizes power and hardware; it is not a powered-orbit replay. Solar area follows
+cycle energy, losses and deployed sunlight. Batteries cover stowed loads and
+coast eclipse. Warm radiator area follows rejected heat and view assumptions;
+peak aftercooler duty sizes the exchanger allowance.
 
-Hot compression targets an intermediate pressure at the front gas temperature;
-aftercooling reaches the warm receiver temperature, followed by warm compression
-as rear pressure rises. Ideal cooled work is RT ln(p_out/p_in), divided by the
-specified efficiency and motor efficiency. This is a work/flow requirement, not
-a stage map. Hot and warm duties include retained gas, vented gas and work.
-Isothermal residual depletion needs a heat return. The general hot-side balance
-accounts for this without assigning leaked gas to useful storage:
+Hot/warm/coast compressor banks use the greater of volume-rate and power mass
+requirements. The ledger includes structure/TPS, aft tank, permanent compressor
+bulkhead, metal/deployment, refrigeration, heat exchange, radiators, buffers,
+solar, batteries, thrusters, power distribution, liquid systems and margin.
+Coefficients are development targets; they are not independent free efficiency
+or mass improvements for an optimizer.
 
-    Q_hot = incoming_energy + hot_compressor_work
-            - (stored_mass + leaked_mass)*h_hot - final_front_mass*u_hot
+## Constraints and scope
 
-Leaked gas carries enthalpy; the final vent allowance carries the remaining
-internal energy. The audit checks the total energy residual for both mouth
-options. Thermal transients during the final vent are not spatially resolved.
+Implemented screens cover hydraulic compressor access, oxygen supply, coolant
+replacement, ideal metal cooldown, positive new production and completed cutoff.
+Input validation covers temperatures, geometry, efficiencies and model domains.
+Mass/species/energy checks and resolution studies establish numerical consistency.
+Actual inlet stability, coupled heat transfer, measured pump maps, structural
+loads, reusable mechanisms and finite-thrust export remain unresolved.
 
-The gas entering the compressor has been precooled by the metal rack:
-
-    T_metal_hot = T_compressor_inlet - gas_metal_approach
-    metal_capacity = integral(Cp_metal(T), T_metal_cold, T_metal_hot)
-    M_metal = net_absorbed_heat / metal_capacity
-    A_sheet = M_metal / (material_density * sheet_thickness)
-
-NIST alpha/delta iron is the implemented heat-capacity proxy, 298–1042 K.
-A uniform rack endpoint with positive approach is a conservative temperature
-compatibility screen; it is not a distributed exchanger solution. Conductance,
-flow channel spacing and pressure loss must eventually connect endpoint to
-physical rack geometry. Metal hot temperature, mass and cooling heat are not
-extra independent knobs when these input coordinates are used.
-
-Sheet radiation uses two emitting faces and an explicit emissivity/background.
-Its ideal cooldown duration is checked against coast time. The warm radiator
-uses its own emissivity, view factor and background. Warm panel area assumes
-both faces emit, while specific mass is per emitting area.
-
-The product process uses nitrogen-equivalent sensible/latent duty, staged
-refrigeration with finite temperature approaches, and a coast feed compressor.
-Warm receiver temperature follows warm radiator temperature plus process reject
-approach. Species separation has an energy/mass allowance; a detailed mixed-air
-phase/separation process is not solved.
-
-## Propulsion, electrical system and hardware
-
-    J_total = scenario_multiplier * J_capture
-    propellant = J_total / exhaust_velocity
-    electric_reboost_energy = J_total * exhaust_velocity / (2 * efficiency)
-
-The default multiplier is one, the capture-only floor. Oxygen supply is checked
-against retained composition. A finite-duration, impulse-equivalent power burst
-sizes hardware; it is not yet a finite-thrust orbit-restoration solution.
-Batteries cover stowed demand and deployed eclipse demand; solar production
-covers the full energy cycle with electrical losses and available sunlight.
-
-Compressor-bank installed mass is max(alpha * required suction volume rate,
-peak power / electrical_specific_power). Alpha is a development target. Each
-hot/warm/coast bank includes stages, motors and immediate manifolds. The mass
-ledger also includes hull/TPS, tank skin/supports, metal deployment, refrigeration,
-radiators/buffers, solar, batteries, propulsion, distribution, other allowances
-and margin. Mouth closure has a separate area-based mass allowance, set to zero
-when absent; the compressor bulkhead remains in both cases. Circulating warm fluid is kept outside the dry total.
-
-## Constraints and objective
-
-The API returns signed margins for front pressure target, compressor access
-area, oxygen availability, ideal metal radiation time and positive production.
-Temperature ordering, material-property domain and tank geometry are validated
-before evaluation. Invalid/unimplemented input domains raise descriptive errors.
-Finite port area is screened with the sonic mass-flow bound of a cooled plenum.
-
-Passing these screens is not proof of capture or vehicle feasibility. Shock
-stability, gas/metal conductance and pressure loss, actual pump maps, structural
-loads, deployment and finite-thrust trajectory are listed as unresolved.
-
-The current outputs include dry mass and net operating-orbit product per cycle.
-The implemented optimizer minimizes operating-orbit dry mass divided by net
-daily production, subject to the implemented margins and explicit search bounds.
-See [optimization results](../optimization/RESULTS.md) for seeds, replay checks and unresolved boundary effects.
-The mission objective remains delivered-liquid mass payoff at circular apogee;
-it requires an additional delivery/return calculation.
+Payoff is dry mass / net daily production in the diving orbit. Circular-apogee
+delivery and return are still outside the calculation.

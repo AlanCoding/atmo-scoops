@@ -16,16 +16,20 @@ liquid delivered to circular apogee; the present numerical package resolves the
 operating cycle and has yet to add delivery and return.
 
 The vehicle has a mouth and shock/diffuser region, a solid metal precooling rack
-in a low-pressure front compartment, a compressor wall, and separate rear gas
-tanks. The compressor moves gas out of the front while the inlet admits it.
+in a low-pressure front compartment, successive compressor/cooling chambers,
+and separate rear gas tanks. Compressors move gas out of the front while the
+inlet admits it. The staged arrangement is detailed below; the existing
+two-compartment diagram and numerical model lump the compressor train.
 Physical front and rear depths and all three diameters are independent inputs;
 rear depth includes rounded ends. Required hardware mass is an output.
 
 ![Gas path and the two pressure compartments](images/gas_capture.svg)
 
-The metal rack absorbs entry heat before compression. Its attached sheets later
-extend through the mouth to radiate directly to space. Separate solar panels
-supply electricity and a warm ammonia-loop radiator rejects compressor,
+Metal racks absorb entry heat and, between compressor blocks, compression heat.
+Their attached sheets deploy during coast to radiate directly to space; the
+staged layout provides dedicated pressure-retaining deployment hatches.
+Separate solar panels
+supply electricity and a warm ammonia-loop radiator rejects remaining compressor,
 refrigeration and electrical losses. Gas storage, refrigeration/heat exchange,
 liquid storage, batteries, oxygen thrusters and power distribution have separate
 entries in the mass and energy ledgers.
@@ -43,6 +47,62 @@ an engineering result to be determined from cooled leading-edge temperature,
 heat flux, coolant/absorber capacity, oxidation/erosion, thermal stress and
 repeat-use life. A numerical atmosphere-table boundary is not that result.
 Bulk rack temperature limits do not qualify the leading edge.
+
+## Staged compression and cooling with deployable metal racks
+
+The collection train alternates **metal cooling chamber → compressor block**,
+starting with three or four blocks and ending in a large intermediate-pressure
+aft receiver. Each block may contain multiple blade rows or parallel machines.
+Each chamber has its own metal rack; its volume, rack geometry and mass, and
+compressor capacity are design variables. Intermediate storage can shift some
+compression into coast. Gas states follow compression and finite heat transfer,
+rather than prescribed isothermal endpoints.
+
+![Staged cooling during capture and coast](images/staged_cooling_deployment.svg)
+
+The attached racks deploy through local pressure-retaining hatches during coast.
+Recover chamber gas, isolate aft storage and depressurize the deployment chamber
+before opening its hatch. The same metal unfurls to radiate, then retracts;
+hatches close, latch and are checked before the next dive. Delaying chamber
+emptying also delays its rack's cooldown. Frames, seals, actuators, isolation,
+residual losses and repeated deployment all belong in the hardware budget.
+
+A smaller coast compressor feeds a process buffer and the liquefaction train,
+with product accumulating in liquid tanks. The final process pressure is to be
+selected from the liquefaction requirements. The metal racks are gas coolers;
+cryogenic condensation and refrigeration remain distinct operations.
+
+This is the design direction. The numerical model still lumps the compressor
+train and does not yet resolve these stages or deployment costs. Detailed
+[compressor research](../modeling/compressor/README.md),
+[metal-cooler research](../modeling/metal_coolers/README.md), and
+[deployment interfaces](../modeling/compressor/DEPLOYMENT.md) support the planned
+model replacement.
+
+## Orbit and phase timing
+
+![Orbit geometry and numerical cycle timeline](images/orbital_cycle.svg)
+
+This illustration uses the 100 × 2,000 km comparison orbit and the open-mouth
+variant from the continuous-inlet control/capacity search. The Kepler period is
+106.2 minutes. The encounter starts at inbound 200 km, about 6.86 minutes before
+perigee; substantial collection occupies a shorter interval near perigee.
+The searched 0.0323 Pa cutoff ends pumping about 6.11 minutes afterward. The model waits for 200 km altitude before starting
+its five-minute deployment; the fully deployed coast lasts about 82.5 minutes.
+Only 43.4 of those minutes are sunlit under the current orientation assumption.
+Reboost is near perigee; its finite-duration trajectory is not integrated here.
+
+The outer dashed circle has the apogee radius. The ideal tangential velocity
+increment to circularize there is about 456 m/s for this orbit. This is a
+kinematic comparison, not a complete delivery budget: export hardware, propulsion,
+changed mass and any return trajectory still have to be included. A spacecraft
+that circularizes no longer returns to atmospheric perigee on that orbit.
+
+Regenerate the SVG and its machine-readable timing record with:
+
+```sh
+MPLCONFIGDIR=/tmp/atmo-scoops-mpl .venv/bin/python -m atmo_scoops.studies.orbital_diagram
+```
 
 ## Why the front chamber needs active transfer
 
@@ -62,39 +122,29 @@ assume a nitrogen-equivalent ideal gas, no added coolant mass and supported
 pressure at perigee. Physical front/rear depths in the cycle model remain
 independent design variables.
 
-## Mouth option and operating cycle
+## Operating cycle
 
-The illustrations show the open-mouth arrangement. The numerical model retains
-`design.mouth_closure` as the switch for a pressure-retaining closure so it can
-be tested against removing that hardware.
-The compressor bulkhead and rear isolation valves are required in both variants.
-Door skin, supports, seals and actuators have an explicit area-based mass target;
-this is not yet a pressure/thermal/mechanism design. A separate entry shield,
-if required by the permanently open variant, is not included for free.
+The design omits a mouth closure following the [payoff comparison](../conclusions/mouth_closure/ANALYSIS.md).
 
-1. **Prepare for entry.** Retract arrays, warm radiators and absorber sheets.
-   Charge batteries and reserve oxygen for the next reboost. Startup requires
-   carried oxygen. A closure-equipped vehicle can protect its mouth until the
-   selected inbound opening time. With no door, that time represents inlet
-   start/collection onset; earlier open-mouth heating and drag remain unresolved.
-2. **Collect inbound.** Gas crosses the shock/diffuser and metal rack before
-   compression into rear storage. Suction controls front pressure. A lumped
-   pressure target is currently a requirement, not a predicted shock location.
-3. **Continue past perigee.** With closure, seal the mouth and evacuate residuals
-   toward a specified remaining fraction, subject to the pump pressure floor.
-   Without closure, continue at collection suction capacity: outbound air may
-   still enter, or gas may reverse through the mouth as pressure support falls.
-   Stop pumping at the low-pressure capability floor; exceeding the configured
-   maximum recovery time fails the open-cycle completion screen. Propulsion
-   overlaps the atmospheric pass in either case.
-4. **Isolate and deploy.** Seal rear storage; reopen the door if fitted and vent
-   remaining front gas. Deploy attached absorber sheets through the mouth and
-   deploy the solar/warm-radiator systems after atmospheric clearance.
-5. **Process in coast.** Radiate stored heat, recharge batteries, separate useful
-   species, liquefy and store products. Restore all thermal systems before the
-   next pass. Metal is retained, not jettisoned.
-6. **Repeat and deliver.** Reserve the next reboost's oxygen. Export and return from
-   circular apogee still require a trajectory and hardware budget.
+1. **Prepare for entry.** Retract arrays, warm radiators and every attached metal
+   rack. Close, latch and verify deployment hatches. Charge batteries and reserve
+   reboost oxygen and any mixing coolant.
+2. **Collect.** The open inlet admits air through its shock/diffuser and metal
+   rack. Successive compressor blocks and metal coolers transfer gas into rear
+   tanks, with all deployment hatches closed. The continuous model
+   computes admission and reverse leakage on both legs of the atmospheric pass.
+3. **Finish recovery.** Continue pumping as external pressure falls. Useful
+   pumping declines toward the hardware ultimate pressure. Stop at a commanded
+   pressure above that limit; the remaining front gas is counted as lost.
+4. **Isolate and deploy.** After atmospheric clearance, recover gas from the
+   cooling chambers, isolate rear storage and depressurize each deployment
+   chamber. Open its hatch and unfurl the attached metal rack. Account for
+   residual gas losses. Unfold solar arrays and warm radiators.
+5. **Process in coast.** Radiate stored heat, recharge batteries, separate and
+   liquefy the retained gas. Restore any injected LN2 inventory before counting
+   net new product. All metal stays attached and is reused next orbit.
+6. **Repeat and deliver.** Reserve the next reboost's oxygen. Circular-apogee
+   export and return still need trajectory and hardware budgets.
 
 ## Oxygen accounting
 
@@ -115,17 +165,20 @@ That oxygen is included in net available product; a permanent onboard reserve
 inventory is a separate mission choice. Exterior drag is not calculated by this
 reserve rule.
 
-## Planned qualitative design decisions
+## Incremental coolant mixing
 
-The [architecture-study plan](DESIGN_STUDIES_PLAN.md) defines two controlled
-comparisons: removing the mouth closure, and injecting cold nitrogen upstream
-of the compressors. It requires a continuous inlet model, declining-pressure
-compressor performance and a closed coolant-recovery budget before treating
-those comparisons as design conclusions. Film cooling, if required by local
-thermal limits, supplies a minimum injection requirement rather than an
-assumption that bulk mixing is automatically beneficial. Cold gaseous feed and
-LN₂ vaporization are separate thermodynamic paths. These are planned extensions;
-no coolant-injection loop is included in the present cycle outputs or drawings.
+Mixing remains a supported design variable pending better compressor physics.
+Zero injection is the current reference setting, not a final selection.
+
+Optional LN2 injection upstream of the compressors can supplement the solid
+rack. The model balances mixing enthalpy, compression, coolant losses and coast
+reliquefaction; circulating nitrogen is not counted as new product. In the
+current numerical model, compressor heat goes to the warm loop because mixed
+gas can be cooler than the rack. The staged refinement must resolve each rack's
+gas/metal temperature difference before crediting heat absorption.
+The [incremental mixing study](../conclusions/incremental_mixing/ANALYSIS.md)
+contains the quantitative trade. Film-cooling requirements and a calibrated
+compressor-temperature map remain separate engineering work.
 
 ## Numerical status
 

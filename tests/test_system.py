@@ -24,10 +24,11 @@ def test_complete_config_round_trip_and_typo_rejection():
         inputs_from_dict({'dry_mass':200000})
 
 
-def test_precooling_trade_preserves_intake_and_counts_deployment(baseline):
+def test_precooling_trade_counts_hardware_and_preserves_balances(baseline):
     cooler=simulate(replace(Design(),compressor_inlet_K=750),n=401)
     a=baseline['outputs'];b=cooler['outputs']
-    assert b['captured_kg']==pytest.approx(a['captured_kg'])
+    assert b['captured_kg']>0
+    assert b['captured_kg']==pytest.approx(b['retained_kg']+b['vent_kg'],abs=1e-6)
     assert b['compressor_mass_kg']<a['compressor_mass_kg']
     assert b['masses_kg']['hot_metal']>a['masses_kg']['hot_metal']
     assert b['masses_kg']['hot_sheet_deployment']>a['masses_kg']['hot_sheet_deployment']
@@ -40,20 +41,19 @@ def test_precooling_trade_preserves_intake_and_counts_deployment(baseline):
 
 @pytest.mark.parametrize('change',[{'compressor_inlet_K':600},{'metal_cold_K':250},
     {'front_depth_m':-1},{'front_depth_m':float('nan')},{'rear_depth_m':5},
-    {'opening_ram_fraction':1},{'pump_suction_m3_s':0}])
+    {'pump_suction_m3_s':0}])
 def test_invalid_domains_rejected(change):
     with pytest.raises(ValueError):simulate(replace(Design(),**change),n=101)
 
 
 def test_explicit_pump_and_capability_constraints_are_not_capture_claims(baseline):
     weak=simulate(replace(Design(),pump_suction_m3_s=1000),n=401)
-    assert weak['constraints']['margins']['front_pressure_ratio']<0
     assert not weak['constraints']['all_implemented_screens_pass']
-    assert weak['outputs']['captured_kg']==pytest.approx(baseline['outputs']['captured_kg'])
+    assert weak['outputs']['captured_kg']<baseline['outputs']['captured_kg']
     narrow=simulate(hardware=replace(Hardware(),compressor_open_fraction=.1),n=401)
     assert narrow['constraints']['margins']['compressor_access_m2']<0
     drag=simulate(scenario=Scenario(total_impulse_over_capture=2),n=401)
-    assert drag['outputs']['propellant_kg']==pytest.approx(2*baseline['outputs']['propellant_kg'])
+    assert drag['outputs']['propellant_kg']>baseline['outputs']['propellant_kg']
     assert drag['constraints']['margins']['oxygen_kg']<0
 
 
@@ -70,10 +70,12 @@ def test_cli_outputs_resolved_inputs_and_constraints(tmp_path):
     config=tmp_path/'design.json';out=tmp_path/'result.json'
     config.write_text(json.dumps({'design':{'front_depth_m':100,'compressor_inlet_K':750}}))
     p=subprocess.run([sys.executable,'-m','atmo_scoops','--config',str(config),'--rear-depth','50',
-        '--samples','101','--output',str(out)],capture_output=True,text=True)
+        '--samples','101','--mixing-ratio','0.1','--output',str(out)],capture_output=True,text=True)
     assert p.returncode==0,p.stderr
     result=json.loads(out.read_text())
     assert result['inputs']['design']['front_depth_m']==100
     assert result['inputs']['design']['rear_depth_m']==50
     assert result['outputs']['metal_hot_K']==650
+    assert result['inputs']['mixing']['ratio']==.1
+    assert result['outputs']['compressor_inlet_K']<750
     assert result['constraints']['unresolved']

@@ -1,0 +1,1152 @@
+{
+  "thermal_path": "fixed_inlet",
+  "ratio": 0.01,
+  "thermal_free": true,
+  "search": {
+    "method": "paired coarse grid + two bounded coordinate passes",
+    "global_optimum_claim": false,
+    "dry_stream_K": [
+      601,
+      1142
+    ],
+    "suction_scale": [
+      0.5,
+      1.5
+    ],
+    "cutoff_Pa": [
+      0.0315,
+      10.0
+    ],
+    "evaluations": 113,
+    "samples": 201,
+    "verification_samples": [
+      1601,
+      3201
+    ]
+  },
+  "best": {
+    "status": "Conditional continuous-inlet cycle; no shock validation or circular-delivery payoff",
+    "inputs": {
+      "design": {
+        "front_depth_m": 250.0,
+        "rear_depth_m": 25.0,
+        "mouth_diameter_m": 18.3,
+        "front_diameter_m": 18.3,
+        "rear_diameter_m": 18.3,
+        "machinery_depth_m": 20.0,
+        "radial_clearance_m": 0.85,
+        "perigee_km": 100.0,
+        "apogee_km": 2000.0,
+        "compressor_inlet_K": 838.019842409956,
+        "metal_cold_K": 500.0,
+        "gas_metal_approach_K": 100.0,
+        "foil_thickness_m": 0.00025,
+        "inlet_pressure_fraction": 0.7,
+        "pump_suction_m3_s": null,
+        "intermediate_Pa": 300.0,
+        "warm_radiator_K": 320.0,
+        "thrust_burst_s": 180.0,
+        "isp_s": 4000.0
+      },
+      "hardware": {
+        "shell_TPS_kg_m2": 4.0,
+        "compressor_kg_per_m3_s": 30.0,
+        "compressor_electric_W_kg": 1000.0,
+        "thruster_kg_kW": 2.0,
+        "distribution_kg_kW": 1.0,
+        "rear_min_gauge_m": 0.001,
+        "rear_allowable_Pa": 150000000.0,
+        "rear_material_density": 2700.0,
+        "rear_pressure_factor": 1.5,
+        "rear_support_fraction": 0.5,
+        "rear_insulation_kg_m2": 1.0,
+        "sheet_deployment_kg_m2": 1.0,
+        "compressor_bulkhead_kg_m2": 10.0,
+        "warm_aftercooler_W_kg": 20000.0,
+        "separator_kg_kW": 5.0,
+        "liquid_system_fixed_kg": 500.0,
+        "avionics_attitude_fixed_kg": 1000.0,
+        "warm_loop_fluid_kg_m2": 0.25,
+        "design_margin": 0.25,
+        "compressor_open_fraction": 0.3,
+        "access_discharge_coefficient": 0.8
+      },
+      "performance": {
+        "isothermal_efficiency": 0.5,
+        "motor_efficiency": 0.95,
+        "deploy_s": 300.0,
+        "retract_s": 300.0,
+        "metal_density_kg_m3": 7870.0,
+        "hot_emissivity": 0.8,
+        "solar_W_m2": 250.0,
+        "solar_W_kg": 150.0,
+        "warm_buffer_J_kg": 200000.0,
+        "battery_Wh_kg": 150.0,
+        "battery_usable": 0.8,
+        "battery_W_kg": 1500.0,
+        "battery_charge_efficiency": 0.95,
+        "battery_discharge_efficiency": 0.95,
+        "thruster_efficiency": 0.6,
+        "thruster_loss_retained": 0.2,
+        "auxiliary_W": 10000.0
+      },
+      "process": {
+        "carnot_fraction": 0.15,
+        "heat_pump_kg_W_equivalent_cold": 0.25,
+        "exchanger_conductance_W_K_kg": 200.0,
+        "condenser_approach_K": 5.0,
+        "precooler_effective_approach_K": 20.0,
+        "radiator_kg_m2": 5.0,
+        "emissivity": 0.85,
+        "view_factor": 0.8,
+        "environment_W_m2": 80.0,
+        "solar_W_kg": 150.0,
+        "reject_approach_K": 20.0
+      },
+      "scenario": {
+        "atmosphere_name": "reference",
+        "total_impulse_over_capture": 1.0
+      },
+      "flow": {
+        "support_over_ram": 1.0,
+        "port_discharge_coefficient": 0.8,
+        "effective_mouth_area_fraction": 1.0,
+        "ultimate_inlet_Pa": 0.03,
+        "hot_train_max_compression": 1000000.0,
+        "pump_idle_fraction": 0.05,
+        "inlet_lag_s": 0.0,
+        "rejected_air_impulse_fraction": 1.0
+      },
+      "controls": {
+        "cutoff_Pa": 0.031950120643579306,
+        "suction_scale": 0.8085239481186507,
+        "max_after_perigee_s": 1200.0
+      },
+      "mixing": {
+        "ratio": 0.01,
+        "thermal_path": "fixed_inlet",
+        "storage_kg_per_kg_inventory": 0.15,
+        "injector_fixed_kg": 25.0,
+        "injector_kg_per_kg_s": 10.0,
+        "injection_pressure_Pa": 1000000.0,
+        "liquid_density_kg_m3": 806.0,
+        "pump_efficiency": 0.6,
+        "pump_W_kg": 500.0
+      }
+    },
+    "outputs": {
+      "front_depth_m": 250.0,
+      "rear_depth_m": 25.0,
+      "diameter_m": 18.3,
+      "rear_diameter_m": 18.3,
+      "overall_length_allowance_m": 295.0,
+      "rear_geometry": {
+        "volume_m3": 5773.332701136764,
+        "surface_m2": 1637.2663567677937,
+        "barrel_m": 15.85,
+        "head_depth_m": 4.575
+      },
+      "rear_pressure_Pa": 3768.5121820624154,
+      "front_pressure_Pa": 32.89502953509583,
+      "captured_kg": 220.63290412316945,
+      "retained_kg": 222.83042456619773,
+      "net_liquid_equivalent_kg": 175.89831384849532,
+      "net_liquid_equivalent_kg_day": 2385.3086376124293,
+      "propellant_kg": 44.502951251904506,
+      "vent_kg": 0.008808598202318729,
+      "mouth_leakage_kg": 7.874047583872803e-05,
+      "final_front_vent_kg": 0.00872985772648,
+      "outbound_admitted_kg": 109.5784686330583,
+      "inbound_admitted_kg": 111.05443549011115,
+      "pump_stop_reason": "cutoff_pressure",
+      "front_pressure_at_pump_stop_Pa": 0.031950120643579306,
+      "transferred_inbound_kg": 103.17694092793676,
+      "transferred_outbound_kg": 119.65348363826098,
+      "solar_area_m2": 101072.0087327083,
+      "warm_radiator_panel_m2": 4196.609409338429,
+      "warm_radiator_emitting_m2": 8393.218818676858,
+      "metal_panel_m2": 25432.817155360695,
+      "metal_emitting_m2": 50865.63431072139,
+      "solar_MW": 25.268002183177078,
+      "ideal_metal_cooldown_s": 22.828137843361592,
+      "peak_intake_kg_s": 1.2828260126279385,
+      "hot_absorbed_GJ": 6.789764721230276,
+      "hot_suction_m3_s": 9396.818479520225,
+      "recovery_suction_m3_s": 9396.818479520225,
+      "warm_suction_m3_s": 419.6564429132168,
+      "coast_feed_suction_m3_s": 8.059529980559716,
+      "compressor_peak_MW": 1.9669760853281124,
+      "compressor_kWh": 120.23157841229244,
+      "compressor_mass_kg": 294736.03357242007,
+      "masses_kg": {
+        "hot_metal": 50039.06775317217,
+        "shell_TPS_allowance": 74141.58662471912,
+        "solar": 168453.34788784717,
+        "battery": 212698.62638673413,
+        "warm_radiator": 41966.094093384294,
+        "warm_buffer": 40888.71589953889,
+        "refrigerator": 3342.145455823384,
+        "coolant_storage": 0.3309493561847542,
+        "coolant_injection": 25.181335786235,
+        "compressor_hot": 281904.5543856068,
+        "compressor_warm": 12589.693287396503,
+        "compressor_coast": 241.7858994167915,
+        "rear_tank_and_supports": 8268.19510167736,
+        "propulsion_hardware": 634054.2105082731,
+        "power_distribution": 319047.9130535087,
+        "hot_sheet_deployment": 25432.817155360695,
+        "compressor_bulkhead": 2630.2199094017146,
+        "warm_aftercooler": 65.86632549812332,
+        "product_heat_exchangers": 12.075215552000754,
+        "separator": 72.92275325312484,
+        "liquid_storage_valves_plumbing": 500.0,
+        "avionics_attitude": 1000.0,
+        "design_margin": 469343.8374953265
+      },
+      "total_dry_kg": 2346719.187476632,
+      "circulating_warm_fluid_kg": 2098.3047046692145,
+      "oxygen_available_kg": 52.4124222684583,
+      "oxygen_mass_margin_kg": 7.909471016553795,
+      "oxygen_propellant_fraction": 0.8490916718933309,
+      "total_with_loop_fluid_kg": 2348817.4921813016,
+      "hot_sound_speed_m_s": 569.910979384231,
+      "acoustic_transit_s": 0.4386650004007929,
+      "front_turnover_s": 6.997634133122061,
+      "pressure_rise_pump_off_Pa_s": 4.694972948283171,
+      "required_compressor_open_area_m2": 35.41548771742962,
+      "available_compressor_open_area_m2": 78.90659728205144,
+      "suction_choking_bound_m3_s": 20936.347888585722,
+      "access_bound_pass": true,
+      "estimated_access_dynamic_pressure_fraction": 0.029465081209855366,
+      "rear_wall_gauge_mm": 1.0,
+      "cold_duty_kW": 21.294621560489492,
+      "cryoplant_electric_kW": 302.68008807053525,
+      "reboost_peak_MW": 317.0271052541366,
+      "reboost_MWh": 15.851355262706829,
+      "cycle": {
+        "orbit_s": 6371.3408306448855,
+        "collection_s": 411.5329941704933,
+        "recovery_s": 367.4868959144868,
+        "deploy_s": 300.0,
+        "retract_s": 300.0,
+        "deploy_complete_s": 711.5329941704933,
+        "retract_start_s": 5659.807836474392,
+        "deployed_s": 4948.274842303899,
+        "sunlit_s": 2601.1253319102107
+      },
+      "mixing": {
+        "inputs": {
+          "ratio": 0.01,
+          "thermal_path": "fixed_inlet",
+          "storage_kg_per_kg_inventory": 0.15,
+          "injector_fixed_kg": 25.0,
+          "injector_kg_per_kg_s": 10.0,
+          "injection_pressure_Pa": 1000000.0,
+          "liquid_density_kg_m3": 806.0,
+          "pump_efficiency": 0.6,
+          "pump_W_kg": 500.0
+        },
+        "dry_stream_K": 838.019842409956,
+        "mixed_K": 838.019842409956,
+        "nitrogen_available_kg": 165.7133832902551,
+        "injected_kg": 2.2063290412316947,
+        "recovered_coolant_kg": 2.204035585560708,
+        "coolant_replacement_kg": 0.0022934556709865994,
+        "injection_electric_J": 4562.301574093662,
+        "coolant_inlet_enthalpy_J_kg": -429347.7315720951,
+        "cycle_mass_residual_kg": 1.0971119845937238e-12
+      },
+      "compressor_inlet_K": 838.019842409956,
+      "metal_hot_K": 738.019842409956,
+      "metal_capacity_kJ_kg": 135.6892729241513,
+      "intake_and_front_storage_heat_GJ": 3.420424707793935,
+      "hot_compression_heat_GJ": 0.29370787689149525,
+      "thermal_energy_balance_residual_J": 0.0,
+      "front_pressure_target_ratio_actual": 0.9999735751239303,
+      "operating_mass_payoff_days": 983.822030605472,
+      "delivered_mass_payoff_days": null,
+      "total_with_working_fluids_kg": 2348819.6985103427,
+      "capture_impulse_Ns": 1732996.259901122,
+      "escape_impulse_Ns": 9.446250824746468e-05,
+      "uncollected_mouth_impulse_Ns": 12703.20758237294,
+      "geometric_intercept_impulse_Ns": 1745699.467483495,
+      "effective_ultimate_Pa": 0.03,
+      "final_front_pressure_Pa": 0.031950120643579306
+    },
+    "constraints": {
+      "margins": {
+        "compressor_access_m2": 43.491109564621816,
+        "oxygen_kg": 7.909471016553795,
+        "metal_radiation_time_s": 4925.446704460538,
+        "positive_production_kg": 175.89831384849532,
+        "cutoff_Pa": 0.0,
+        "coolant_replacement_kg": 165.71108983458413
+      },
+      "all_implemented_screens_pass": true,
+      "unresolved": [
+        "Shock position/start margin and calibrated capture/leakage coefficients",
+        "Gas-to-metal conductance, rack pressure loss and temperature distribution",
+        "Compressor performance map, spin-up and installed mass capability",
+        "Hull drag, structural/dynamic loads and deployable mechanisms",
+        "Finite-thrust orbit restoration and circular-apogee export"
+      ]
+    },
+    "resolved_cycle_inputs": {
+      "atmosphere_name": "reference",
+      "perigee_km": 100.0,
+      "apogee_km": 2000.0,
+      "total_length_m": 295.0,
+      "outside_diameter_m": 20.0,
+      "mouth_m": 18.3,
+      "front_bore_m": 18.3,
+      "front_length_m": 250.0,
+      "gas_K": 838.019842409956,
+      "inlet_pressure_fraction": 0.7,
+      "suction_capacity_factor": 1.0,
+      "open_suction_override_m3_s": null,
+      "intermediate_Pa": 300.0,
+      "receiver_m3": 5773.332701136764,
+      "receiver_K": 340.0,
+      "isothermal_efficiency": 0.5,
+      "motor_efficiency": 0.95,
+      "deploy_s": 300.0,
+      "retract_s": 300.0,
+      "metal_cold_K": 500.0,
+      "metal_hot_K": 738.019842409956,
+      "foil_thickness_m": 0.00025,
+      "metal_density_kg_m3": 7870.0,
+      "hot_emissivity": 0.8,
+      "warm_radiator_K": 320.0,
+      "solar_W_m2": 250.0,
+      "solar_W_kg": 150.0,
+      "warm_buffer_J_kg": 200000.0,
+      "battery_Wh_kg": 150.0,
+      "battery_usable": 0.8,
+      "battery_W_kg": 1500.0,
+      "battery_charge_efficiency": 0.95,
+      "battery_discharge_efficiency": 0.95,
+      "exhaust_m_s": 39226.6,
+      "thruster_efficiency": 0.6,
+      "total_impulse_over_capture": 1.0,
+      "thrust_burst_s": 180.0,
+      "thruster_loss_retained": 0.2,
+      "auxiliary_W": 10000.0
+    },
+    "numerics": {
+      "samples": 3201
+    }
+  },
+  "verification": {
+    "captured_kg": 6.317583725046205e-07,
+    "retained_kg": 6.313946041558438e-07,
+    "total_dry_kg": 4.1498006031481793e-08,
+    "compressor_kWh": 4.048745457341241e-06
+  },
+  "trace": [
+    {
+      "dry_K": 650.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1216.3841752702008,
+      "failure": null
+    },
+    {
+      "dry_K": 650.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 1216.801194707572,
+      "failure": null
+    },
+    {
+      "dry_K": 650.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1224.4504430324387,
+      "failure": null
+    },
+    {
+      "dry_K": 650.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1116.8196892287785,
+      "failure": null
+    },
+    {
+      "dry_K": 650.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 1117.265836627041,
+      "failure": null
+    },
+    {
+      "dry_K": 650.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1125.524919666622,
+      "failure": null
+    },
+    {
+      "dry_K": 650.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1157.2162268844434,
+      "failure": null
+    },
+    {
+      "dry_K": 650.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 1157.8912197781526,
+      "failure": null
+    },
+    {
+      "dry_K": 650.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1169.301623897356,
+      "failure": null
+    },
+    {
+      "dry_K": 800.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1071.1846623328101,
+      "failure": null
+    },
+    {
+      "dry_K": 800.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 1071.5697883151022,
+      "failure": null
+    },
+    {
+      "dry_K": 800.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1078.7214589726077,
+      "failure": null
+    },
+    {
+      "dry_K": 800.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 992.7024770922307,
+      "failure": null
+    },
+    {
+      "dry_K": 800.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 993.1325850803096,
+      "failure": null
+    },
+    {
+      "dry_K": 800.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1001.1858584892293,
+      "failure": null
+    },
+    {
+      "dry_K": 800.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1044.632500009976,
+      "failure": null
+    },
+    {
+      "dry_K": 800.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 1045.3239233200386,
+      "failure": null
+    },
+    {
+      "dry_K": 800.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1056.6697498941421,
+      "failure": null
+    },
+    {
+      "dry_K": 1000.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1067.8701229587236,
+      "failure": null
+    },
+    {
+      "dry_K": 1000.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 1068.250508420732,
+      "failure": null
+    },
+    {
+      "dry_K": 1000.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1075.3960657647015,
+      "failure": null
+    },
+    {
+      "dry_K": 1000.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1007.4474203289599,
+      "failure": null
+    },
+    {
+      "dry_K": 1000.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 1007.8862237933685,
+      "failure": null
+    },
+    {
+      "dry_K": 1000.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1016.3060101716035,
+      "failure": null
+    },
+    {
+      "dry_K": 1000.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1072.526648396424,
+      "failure": null
+    },
+    {
+      "dry_K": 1000.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 1073.2608071217944,
+      "failure": null
+    },
+    {
+      "dry_K": 1000.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1085.105561159772,
+      "failure": null
+    },
+    {
+      "dry_K": 1100.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1075.3938059775226,
+      "failure": null
+    },
+    {
+      "dry_K": 1100.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 1075.7744553139942,
+      "failure": null
+    },
+    {
+      "dry_K": 1100.0,
+      "suction_scale": 0.65,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1082.9634339373288,
+      "failure": null
+    },
+    {
+      "dry_K": 1100.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1022.115414518559,
+      "failure": null
+    },
+    {
+      "dry_K": 1100.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 1022.5597249911721,
+      "failure": null
+    },
+    {
+      "dry_K": 1100.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1031.1581761944774,
+      "failure": null
+    },
+    {
+      "dry_K": 1100.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1093.7479243727664,
+      "failure": null
+    },
+    {
+      "dry_K": 1100.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 0.1,
+      "payoff_days": 1094.5023142494615,
+      "failure": null
+    },
+    {
+      "dry_K": 1100.0,
+      "suction_scale": 1.2,
+      "cutoff_Pa": 1.0,
+      "payoff_days": 1106.6201626810387,
+      "failure": null
+    },
+    {
+      "dry_K": 807.6436120863068,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 992.4381350405451,
+      "failure": null
+    },
+    {
+      "dry_K": 935.3563879136931,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1000.024596430628,
+      "failure": null
+    },
+    {
+      "dry_K": 728.7127758273862,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1006.988888517529,
+      "failure": null
+    },
+    {
+      "dry_K": 846.3202697763512,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 993.4885015200749,
+      "failure": null
+    },
+    {
+      "dry_K": 789.4874717279573,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 993.422175704378,
+      "failure": null
+    },
+    {
+      "dry_K": 817.4962457546262,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 992.4250040711048,
+      "failure": null
+    },
+    {
+      "dry_K": 812.9229752909948,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 992.3937608448931,
+      "failure": null
+    },
+    {
+      "dry_K": 813.0008220714554,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 992.393799161798,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 992.3936786026094,
+      "failure": null
+    },
+    {
+      "dry_K": 810.8226370051452,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 992.4000195972702,
+      "failure": null
+    },
+    {
+      "dry_K": 812.0369164730587,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 992.3946356672534,
+      "failure": null
+    },
+    {
+      "dry_K": 601.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 11079.31905306338,
+      "failure": null
+    },
+    {
+      "dry_K": 1142.0,
+      "suction_scale": 0.9,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1028.3417257222927,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8819660112501051,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 989.6133045269652,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 1.118033988749895,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1030.6991898522754,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.7360679774997897,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 997.5019642693729,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8542858838974119,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 986.4198321943986,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8278791120568016,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 984.6411536387587,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.7928103792017132,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 985.0320821073192,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8147094548270244,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 984.3536071251958,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8140456041068959,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 984.3515602627641,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 984.350802450495,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8135735014131975,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 984.3509590609925,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8129068106219293,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 984.3510259398959,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.5,
+      "cutoff_Pa": 0.04,
+      "payoff_days": null,
+      "failure": {
+        "compressor_access_m2": 57.351186871915345,
+        "oxygen_kg": -7.007806364012836,
+        "metal_radiation_time_s": 4926.500483155486,
+        "positive_production_kg": 113.1927049179804,
+        "cutoff_Pa": -6.938893903907228e-18,
+        "coolant_replacement_kg": 118.56527984628899
+      }
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 1.5,
+      "cutoff_Pa": 0.04,
+      "payoff_days": 1098.1690233564234,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.2843615631784278,
+      "payoff_days": 986.3444260916668,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 1.107744649027504,
+      "payoff_days": 992.7935324595803,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.12270982074490684,
+      "payoff_days": 984.9292005958522,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.10193671874945698,
+      "payoff_days": 984.755698749188,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.06509090474469549,
+      "payoff_days": 984.4778305665748,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.04375652916953755,
+      "payoff_days": 984.3632252877976,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.036907960229993465,
+      "payoff_days": 984.3434326726205,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.03318433469608587,
+      "payoff_days": 984.3386354300908,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.03206007783577871,
+      "payoff_days": 984.3382650855435,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.03190710729675563,
+      "payoff_days": 984.3382584672007,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 984.3382584146522,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.0315,
+      "payoff_days": 984.338294733085,
+      "failure": null
+    },
+    {
+      "dry_K": 812.7873824560703,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 10.000000000000002,
+      "payoff_days": 1063.059607602634,
+      "failure": null
+    },
+    {
+      "dry_K": 807.6436120863068,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 984.6324911722779,
+      "failure": null
+    },
+    {
+      "dry_K": 935.3563879136931,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 986.7861448468349,
+      "failure": null
+    },
+    {
+      "dry_K": 728.7127758273862,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 1003.1000725225724,
+      "failure": null
+    },
+    {
+      "dry_K": 864.5538291848869,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 984.1297537579949,
+      "failure": null
+    },
+    {
+      "dry_K": 848.268573373977,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 983.8940065551255,
+      "failure": null
+    },
+    {
+      "dry_K": 843.7966157214213,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 983.859999450103,
+      "failure": null
+    },
+    {
+      "dry_K": 829.9873971282061,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 983.8781066260249,
+      "failure": null
+    },
+    {
+      "dry_K": 838.2363099057729,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 983.841794170031,
+      "failure": null
+    },
+    {
+      "dry_K": 838.0714363294106,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 983.8417584154593,
+      "failure": null
+    },
+    {
+      "dry_K": 837.9508231411654,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 983.8417601157473,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 983.8417275422839,
+      "failure": null
+    },
+    {
+      "dry_K": 601.0,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 11113.175789585617,
+      "failure": null
+    },
+    {
+      "dry_K": 1142.0,
+      "suction_scale": 0.8132401560175634,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 1008.5808155675161,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8819660112501051,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 990.0155495879874,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 1.118033988749895,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 1032.579705552059,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.7360679774997897,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 995.8374317243332,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8436248547149067,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 985.4419334066338,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.822497408159617,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 984.0910318075022,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.7894843032758653,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 984.422379364187,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8096636003289936,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 983.809586534565,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8091587723668854,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 983.8082866698259,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 983.807578642576,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8081906027929692,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 983.8077650953193,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.5,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": null,
+      "failure": {
+        "compressor_access_m2": 57.00527461838652,
+        "oxygen_kg": -7.008754882199355,
+        "metal_radiation_time_s": 4925.446704460538,
+        "positive_production_kg": 113.18769671207278,
+        "cutoff_Pa": 6.938893903907228e-18,
+        "coolant_replacement_kg": 118.56142406486983
+      }
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 1.5,
+      "cutoff_Pa": 0.031890855065313924,
+      "payoff_days": 1102.1404280490253,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.2843615631784278,
+      "payoff_days": 985.8056679214478,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 1.107744649027504,
+      "payoff_days": 992.2313142866524,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.12270982074490684,
+      "payoff_days": 984.3955456702203,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.10193366762455938,
+      "payoff_days": 984.222694345779,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.06508970063934438,
+      "payoff_days": 983.9460526472147,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.04379331616820862,
+      "payoff_days": 983.8322893836328,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.03695779088129664,
+      "payoff_days": 983.8126841005101,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.033249894062242935,
+      "payoff_days": 983.8079541538496,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.0321328000906181,
+      "payoff_days": 983.8075854538431,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.03196799054862926,
+      "payoff_days": 983.8075778332616,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.031950120643579306,
+      "payoff_days": 983.8075777726486,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 0.0315,
+      "payoff_days": 983.8076257740215,
+      "failure": null
+    },
+    {
+      "dry_K": 838.019842409956,
+      "suction_scale": 0.8085239481186507,
+      "cutoff_Pa": 10.000000000000002,
+      "payoff_days": 1062.2036573644532,
+      "failure": null
+    }
+  ]
+}
