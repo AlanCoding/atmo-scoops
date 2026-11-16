@@ -1,6 +1,6 @@
 # Incremental mixing: remaining engineering work
 
-The [numerical study](../conclusions/incremental_mixing/ANALYSIS.md) compares
+The [numerical study](../investigations/incremental_mixing/ANALYSIS.md) compares
 incremental LN2 injection against the unmixed cycle using the same continuous
 inlet, compressor envelope and downstream plant. This document tracks what
 would turn that conditional trade into a physical design selection.

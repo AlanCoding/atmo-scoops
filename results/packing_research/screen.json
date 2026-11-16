@@ -1,0 +1,57 @@
+{
+  "status": "Reference packaging comparison, not integrated vehicle model",
+  "solar_cases": [
+    {
+      "case": "apogee_937",
+      "solar_kW": 26134230.104848303,
+      "source_stowed_kW_m3": 40,
+      "array_reference_envelope_m3": 653355.7526212076,
+      "entire_inner_cylinder_upper_m3": 224074.096017292,
+      "rear_gas_m3": 132182.51089979053,
+      "upper_non_tank_space_m3": 91891.58511750147,
+      "array_equivalent_full_bore_length_m": 924.3093122416956,
+      "array_alone_required_kW_m3": 284.402865305137,
+      "front_metal_material_m3": 2550.515804102467,
+      "compressor_row_lengths_sum_m": 21.932606692228386,
+      "note": "Mission bus power equated to reference rated power; external packaging overhead omitted. No feasibility certification."
+    },
+    {
+      "case": "joint_boundary",
+      "solar_kW": 5305810.110902436,
+      "source_stowed_kW_m3": 40,
+      "array_reference_envelope_m3": 132645.2527725609,
+      "entire_inner_cylinder_upper_m3": 224074.096017292,
+      "rear_gas_m3": 132182.51089979053,
+      "upper_non_tank_space_m3": 91891.58511750147,
+      "array_equivalent_full_bore_length_m": 187.6546458349067,
+      "array_alone_required_kW_m3": 57.73989102612512,
+      "front_metal_material_m3": 3625.2014560096904,
+      "compressor_row_lengths_sum_m": 21.935645194177937,
+      "note": "Mission bus power equated to reference rated power; external packaging overhead omitted. No feasibility certification."
+    }
+  ],
+  "battery_envelopes": [
+    {
+      "name": "MP Space Pack2 8S3P",
+      "dimensions_mm": [
+        212.9,
+        74.9,
+        83.8
+      ],
+      "energy_Wh": 432,
+      "box_L": 1.336292398,
+      "Wh_L": 323.28253954491174
+    },
+    {
+      "name": "MP Space Pack2 8S6P",
+      "dimensions_mm": [
+        218.9,
+        172.2,
+        84.2
+      ],
+      "energy_Wh": 864,
+      "box_L": 3.1738836360000002,
+      "Wh_L": 272.2217003169299
+    }
+  ]
+}

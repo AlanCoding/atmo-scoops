@@ -1,0 +1,69 @@
+{
+  "boundary_perigee_km": 63.088142775225734,
+  "boundary_apogee_km": 11709.340954506544,
+  "trials": [
+    {
+      "perigee_km": 63.0,
+      "apogee_km": 14000.0,
+      "pressure_Pa": 108083.98156752823,
+      "oxygen_margin_kg": -481.85664472200733,
+      "samples": 401
+    },
+    {
+      "perigee_km": 63.199223492590605,
+      "apogee_km": 14000.0,
+      "pressure_Pa": 105232.15116390765,
+      "oxygen_margin_kg": -468.4017096648822,
+      "samples": 401
+    },
+    {
+      "perigee_km": 63.0,
+      "apogee_km": 14044.271887242357,
+      "pressure_Pa": 108031.29301844911,
+      "oxygen_margin_kg": -490.05132587425396,
+      "samples": 401
+    },
+    {
+      "perigee_km": 63.07651640543955,
+      "apogee_km": 11472.070947239457,
+      "pressure_Pa": 110569.16027957294,
+      "oxygen_margin_kg": 56.764681288383144,
+      "samples": 401
+    },
+    {
+      "perigee_km": 63.08954203555178,
+      "apogee_km": 11733.548533710218,
+      "pressure_Pa": 109939.69938172984,
+      "oxygen_margin_kg": -5.691141420335043,
+      "samples": 401
+    },
+    {
+      "perigee_km": 63.08816008711432,
+      "apogee_km": 11709.595261554323,
+      "pressure_Pa": 109999.3254495265,
+      "oxygen_margin_kg": -0.06033086549723521,
+      "samples": 401
+    },
+    {
+      "perigee_km": 63.088142863744494,
+      "apogee_km": 11709.338718999476,
+      "pressure_Pa": 110000.00237522853,
+      "oxygen_margin_kg": 0.0005312009016051888,
+      "samples": 401
+    },
+    {
+      "perigee_km": 63.088142775225734,
+      "apogee_km": 11709.340954506544,
+      "pressure_Pa": 110000.00003852852,
+      "oxygen_margin_kg": 1.1061074474127963e-05,
+      "samples": 401
+    },
+    {
+      "perigee_km": 63.10814277522574,
+      "apogee_km": 11699.340954506544,
+      "pressure_Pa": 109721.19214171165,
+      "oxygen_margin_kg": 2.328228745267552,
+      "samples": 1601
+    }
+  ]
+}

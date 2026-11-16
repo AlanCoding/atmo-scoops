@@ -82,6 +82,9 @@ class Problem:
             (o['overall_length_allowance_m']-520)/520,
             (d['mouth_diameter_m']-d['front_diameter_m'])/d['mouth_diameter_m']]
         values.append(0. if o['pump_stop_reason']=='cutoff_pressure' else 1.)
+        if 'compressor_bay_depth_m' in m:
+            values.extend([-m['compressor_bay_depth_m']/max(d['machinery_depth_m'],1),
+                           -m['compressor_face_m2']/(math.pi*d['front_diameter_m']**2/4)])
         return np.maximum(values,0.)
 
     def __call__(self,x):
@@ -156,6 +159,8 @@ def main():
     bounds=dict(BOUNDS)
     if a.mode=='lower_perigee':bounds['perigee_km']=(75.,100.,False)
     keys=[k for k in bounds if a.mode!='fixed_orbit' or k not in ('perigee_km','apogee_km')]
+    if inputs['compressor'].mode=='real_gas':
+        keys.remove('intermediate_Pa')  # Not a state/control in the staged train.
     initial=inputs_from_dict(json.loads(a.seed_config.read_text())) if a.seed_config else None
     if not 0<=a.oxygen_reserve<1:p.error('Oxygen reserve must be in [0,1)')
     label=a.mode+(f'_reserve{100*a.oxygen_reserve:g}' if a.oxygen_reserve else '')

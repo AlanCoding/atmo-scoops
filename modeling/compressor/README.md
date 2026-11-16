@@ -1,16 +1,19 @@
 # Compressor train modeling
 
-**Status: research stub with established calculations; hardware and maps remain
-unselected.** The active cycle uses approximate isothermal work and provisional
-volume-flow/power mass coefficients. It does not resolve the proposed three/four
-cooled blocks, blade rows, interstage gas states or stall/surge limits.
+**Status: first compressor refinement implemented; hardware and maps remain
+unvalidated.** The main cycle now uses real-fluid, isentropic-efficiency block
+states and a geometry-based axial-bank mass screen. See the
+[implemented model](IMPLEMENTED_MODEL.md) and [payoff results](RESULTS.md).
+Independent intermediate inventories, finite metal intercooling and calibrated
+stall/surge limits remain open. Explicit legacy mode preserves old comparisons.
 
 Start with the [research requirements](RESEARCH_REQUIREMENTS.md) and
 [comparable-hardware evidence table](COMPARABLE_SYSTEMS.md). The replacement
 must use real-gas enthalpy/entropy states, an isentropic endpoint and realistic
 efficiency, plus mass estimates supported by multiple comparable systems.
 The constant-property calculations below are retained screening examples only.
-No evidence-backed spacecraft compressor mass estimate has yet been established.
+The resulting spacecraft mass estimates are conditional engineering scenarios,
+not empirically validated mass bounds for the scoop operating regime.
 
 ## Calculation inventory
 
@@ -20,7 +23,7 @@ No evidence-backed spacecraft compressor mass estimate has yet been established.
 - [State-resolved model plan](MODEL_PLAN.md):
   independent rack mass and lattice geometry in each volume, finite heat transfer,
   pressure losses, compressor maps, matched flow and periodic thermal restoration.
-- [Rear-depth investigation](../../conclusions/rear_storage_depth/INVESTIGATION.md):
+- [Rear-depth investigation](../../investigations/rear_storage_depth/INVESTIGATION.md):
   block power fractions, storage-pressure sensitivity, hardware scaling and
   separation of dive work from downstream coast compression.
 
@@ -116,3 +119,5 @@ candidate controls; variable rotor pitch is a distinct mechanical option.
 
 The reference list is a starting point for the requested component-by-component
 review, not a completed literature survey or authorization to replace the model.
+
+[Compressor and chamber volume allocation](VOLUME_ALLOCATION.md) distinguishes implemented bank states from the still-missing independent interstage inventory and packing model.

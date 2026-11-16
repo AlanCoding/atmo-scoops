@@ -29,15 +29,15 @@ def main():
     for r in depths:
         z=r['outputs'];lines.append(f"| {z['front_depth_m']:.0f} m | {z['rear_depth_m']:.0f} m | {z['retained_kg']:.2f} kg | {z['total_dry_kg']/1000:,.1f} t | {z['operating_mass_payoff_days']:.1f} d | {'pass' if r['constraints']['all_implemented_screens_pass'] else 'FAIL'} |")
     lines += ['','Full inputs/results: [current_cycle.json](../../results/current_cycle.json). [Model equations](MODEL.md) and [inputs](PARAMETERS.md) define the scope.','']
-    Path('analysis/primary/PHYSICAL_CYCLE.md').write_text('\n'.join(lines))
+    Path('modeling/primary/PHYSICAL_CYCLE.md').write_text('\n'.join(lines))
     lines=['# Solid-rack precooling trade','',
         'Active-model comparison with no nitrogen injection. The gas endpoint changes; metal hot endpoint follows gas minus the fixed 100 K approach. Automatic nominal suction changes with gas state. Actual admission is solved, so it need not remain constant. These rows are not optimized.','',
         '| Dry gas | Metal hot | Metal mass | Compressor mass | Dry mass | Net / pass | Payoff | Screens |','|---:|---:|---:|---:|---:|---:|---:|---|']
     for r in thermal:
         z=r['outputs'];lines.append(f"| {z['compressor_inlet_K']:.0f} K | {z['metal_hot_K']:.0f} K | {z['masses_kg']['hot_metal']/1000:.2f} t | {z['compressor_mass_kg']/1000:.2f} t | {z['total_dry_kg']/1000:.2f} t | {z['net_liquid_equivalent_kg']:.2f} kg | {z['operating_mass_payoff_days']:.1f} d | {'pass' if r['constraints']['all_implemented_screens_pass'] else 'FAIL'} |")
-    lines+=['','Cooler gas changes volume flow and compression work but reduces useful metal heat capacity at fixed cold temperature. The [incremental mixing analysis](../../conclusions/incremental_mixing/ANALYSIS.md) adds a distinct liquid-coolant route with full restoration costs.','',
+    lines+=['','Cooler gas changes volume flow and compression work but reduces useful metal heat capacity at fixed cold temperature. The [incremental mixing analysis](../../investigations/incremental_mixing/ANALYSIS.md) adds a distinct liquid-coolant route with full restoration costs.','',
             'Reproduce with `.venv/bin/python -m atmo_scoops.studies.current_cycle`; resolved inputs are in [results](../../results/current_cycle.json).','']
-    Path('analysis/primary/PRECOOLING_TRADE.md').write_text('\n'.join(lines))
+    Path('modeling/primary/PRECOOLING_TRADE.md').write_text('\n'.join(lines))
     print('Wrote current cycle, depth and precooling results.')
 
 if __name__=='__main__':main()

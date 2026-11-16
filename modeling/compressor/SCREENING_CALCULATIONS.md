@@ -11,7 +11,7 @@ including independent rack masses and lattice heat-transfer inputs.
 
 General equations and annotated sources are indexed in the
 [compressor calculation dossier](README.md).
-The [rear-storage investigation](../../conclusions/rear_storage_depth/INVESTIGATION.md) extends
+The [rear-storage investigation](../../investigations/rear_storage_depth/INVESTIGATION.md) extends
 this example to block power fractions and tank-depth sensitivity.
 
 ## 1. The first compressor does not see orbital-speed axial flow

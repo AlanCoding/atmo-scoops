@@ -246,7 +246,7 @@ uses the repository's reference NRLMSIS profile and atmosphere-relative Kepler
 trajectory. It checks 4,001→8,001-point quadrature and an exact 10× density
 rescaling. It does not alter the cycle kernel or run an optimization.
 ''')
-    Path('analysis/primary/ATMOSPHERIC_COLUMN.md').write_text('\n'.join(lines)+'\n')
+    Path('modeling/primary/ATMOSPHERIC_COLUMN.md').write_text('\n'.join(lines)+'\n')
     print(json.dumps(report['checks'],indent=2))
     print('Reference effective column km:',b['effective_column_m']/1000,'depth km:',b['equal_area_required_depth_m']/1000)
 

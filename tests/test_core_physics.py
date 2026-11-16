@@ -41,3 +41,18 @@ def test_coast_evacuator_matches_integrated_pressure_work():
         return remaining*S/V*R*T*math.log(1e5/p)/.5
     assert quad(power,0,time)[0]==pytest.approx(d['electricity_J'],rel=1e-8)
     assert m*math.exp(-S*time/V)==pytest.approx(d['residual_kg'])
+
+
+@pytest.mark.parametrize("initial_pressure", [2e5, 2e9])
+def test_coast_feed_regulates_above_delivery_pressure(initial_pressure):
+    R,T,V,duration=296.8,340.,100.,4900.
+    m=initial_pressure*V/(R*T)
+    d=coast_compressor(m,V,T,duration)
+    S=d['pumping_speed_m3_s']
+    def power(t):
+        remaining=m*math.exp(-S*t/V)
+        return remaining*S/V*R*T*max(0.,math.log(1e5/(remaining*R*T/V)))/.5
+    transition=V/S*math.log(initial_pressure/1e5)
+    points=[transition] if 0<transition<duration else None
+    assert quad(power,0,duration,points=points)[0]==pytest.approx(d['electricity_J'],rel=1e-8,abs=1e-6)
+    assert d['peak_power_W']>=0

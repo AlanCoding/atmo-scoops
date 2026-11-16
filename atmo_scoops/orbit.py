@@ -12,8 +12,8 @@ class Orbit:
     apogee_km: float
 
     def __post_init__(self):
-        if not 75 <= self.perigee_km < self.apogee_km:
-            raise ValueError("Require 75 km <= perigee < apogee")
+        if not 50 <= self.perigee_km < self.apogee_km:
+            raise ValueError("Require 50 km <= perigee < apogee")
 
     @property
     def rp(self): return R_EARTH + self.perigee_km*1000

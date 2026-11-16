@@ -16,6 +16,7 @@ from .thermochemistry import gas, composition, enthalpy
 from .process import liquefaction_train, coast_compressor, ProcessTargets
 from .inlet import ContinuousEncounter
 from .mixing import Mixing, endpoint
+from .compressor import RealAir, evaluate_train_history
 
 
 @dataclass(frozen=True)
@@ -70,7 +71,7 @@ def iron_cp(T):
     return (a+b*t+c*t*t+d*t**3+e/t**2)/.055845
 
 
-def calculate(c=Reference(), n=1601, process_targets=None, flow_solver=None, mixing=Mixing()):
+def calculate(c=Reference(), n=1601, process_targets=None, flow_solver=None, mixing=Mixing(), compressor=None):
     process_targets=process_targets or ProcessTargets()
     atm=make_profile(c.atmosphere_name);o=Orbit(c.perigee_km,c.apogee_km)
     edge,_=pressure_window(o,atm,.5)
@@ -97,6 +98,11 @@ def calculate(c=Reference(), n=1601, process_targets=None, flow_solver=None, mix
     if c.open_suction_override_m3_s is not None:
         pumping=c.open_suction_override_m3_s
     flow_solver=flow_solver or ContinuousEncounter()
+    real_compressor=compressor is not None and compressor.mode=='real_gas'
+    if real_compressor:
+        compressor.validate()
+        flow_solver.compressor_spec=compressor
+        thermo=RealAir(g,Y)
     flow_solver.injection_ratio=mixing.ratio
     flow_solver.injection_h=coolant_enthalpy+injection_work
     solved=flow_solver(c,o,atm,R,gamma_hot,pumping,n)
@@ -129,6 +135,22 @@ def calculate(c=Reference(), n=1601, process_targets=None, flow_solver=None, mix
     ep=(hp+wp)/c.motor_efficiency+solved['post']['idle_electric']
     int2=lambda a,b:float(np.trapezoid(a,t)+np.trapezoid(b,tp))
     Ehot=int2(ho,hp);Ewarm=int2(wo,wp);Ecomp=int2(eo,ep)
+    compressor_analysis=None
+    spin_peak=0.
+    if real_compressor:
+        dive=evaluate_train_history(thermo,compressor,pfront,c.gas_K,prear,
+            np.r_[flow_open,flow_post],time,compressor.blocks,compressor.interstage_K,
+            c.motor_efficiency,ultimate=np.r_[a['pump_floor'],b['pump_floor']],
+            rated_suction=solved['rated_suction'],idle_fraction=flow_solver.capabilities.pump_idle_fraction)
+        split=len(t)
+        eo=dive['electric_W'][:split];ep=dive['electric_W'][split:]
+        ho=dive['bank_power_W'][:split,0]*c.motor_efficiency
+        hp=dive['bank_power_W'][split:,0]*c.motor_efficiency
+        wo=dive['bank_power_W'][:split,1:].sum(axis=1)*c.motor_efficiency
+        wp=dive['bank_power_W'][split:,1:].sum(axis=1)*c.motor_efficiency
+        Ehot=int2(ho,hp);Ewarm=int2(wo,wp);Ecomp=int2(eo,ep)
+        compressor_analysis=dict(dive={k:v for k,v in dive.items() if k not in ('electric_W','bank_power_W')})
+        spin_peak=dive['spinup_peak_electric_W']
     injected=mixing.ratio*float(solved['pre']['admitted'][-1]+solved['post']['admitted'][-1]-solved['post']['admitted'][0])
     Einject=injected*injection_work
     injection_peak_W=mixing.ratio*max(float(mdot.max()),float(post_admission.max()))*injection_work
@@ -162,6 +184,21 @@ def calculate(c=Reference(), n=1601, process_targets=None, flow_solver=None, mix
                          output_Pa=1e5,residual_fraction=.001,efficiency=.5)
     # The installed compressor mass is assigned by the system hardware model.
     feed={k:v for k,v in feed.items() if k!='hardware_mass_kg'}
+    if real_compressor:
+        ct=np.linspace(0.,coast,401)
+        remaining=stored*np.exp(-math.log(1000.)*ct/coast)
+        rate=remaining*math.log(1000.)/coast
+        cp=remaining*R*c.receiver_K/c.receiver_m3
+        coast_train=evaluate_train_history(thermo,compressor,cp,c.receiver_K,np.full_like(ct,1e5),
+            rate,ct,compressor.coast_blocks,c.receiver_K,c.motor_efficiency)
+        # Same exponential evacuation schedule; evaluate real-gas stage work
+        # instead of the former constant-temperature logarithmic work formula.
+        feed['electricity_J']=coast_train['electricity_J']
+        feed['rejected_heat_J']=coast_train['electricity_J']
+        feed['peak_power_W']=max(float(coast_train['electric_W'].max()),coast_train['spinup_peak_electric_W'])
+        feed['mean_power_W']=feed['electricity_J']/coast
+        feed['compression_method']='HEOS isentropic endpoints with efficiency and interstage cooling'
+        compressor_analysis['coast']={k:v for k,v in coast_train.items() if k not in ('electric_W','bank_power_W')}
     Ef=feed['electricity_J']
     # Explicit cleanup/separation work allowance, separate from N2-equivalent cold duty.
     g.TPY=c.receiver_K,1e5,Y
@@ -188,7 +225,7 @@ def calculate(c=Reference(), n=1601, process_targets=None, flow_solver=None, mix
         stowedE=Ecomp+Einject+Eprop+c.auxiliary_W*(o.period-coast)
         Ecapacity=(stowedE+Pdcoast*night)/c.battery_discharge_efficiency
         battery_energy_mass=Ecapacity/(3600*c.battery_Wh_kg*c.battery_usable)
-        battery_power_mass=(Pprop+max(eo.max(),ep.max())+injection_peak_W+c.auxiliary_W)/c.battery_W_kg
+        battery_power_mass=(Pprop+max(eo.max(),ep.max(),spin_peak)+injection_peak_W+c.auxiliary_W)/c.battery_W_kg
         battery_mass=max(battery_energy_mass,battery_power_mass)
         discharge_heat=Eload*(1/c.battery_discharge_efficiency-1)
         charge_heat=Eload/c.battery_discharge_efficiency*(1/c.battery_charge_efficiency-1)
@@ -235,8 +272,9 @@ def calculate(c=Reference(), n=1601, process_targets=None, flow_solver=None, mix
     return dict(status='Two-compartment requirement reference; conditional continuous intake and pump capability, no selected pump or mass-closed spacecraft',
         inputs=asdict(c),orbit_period_s=o.period,collection_s=edge,front_volume_m3=V,
         mouth_area_m2=A,gas_R_J_kg_K=R,gamma_hot=gamma_hot,capture_impulse_Ns=Jcap,escape_impulse_Ns=Jescape,
-        warm_aftercooler_peak_W=(float(max(np.max(flow_open*(hhot-hwarm)+wo+eo-(ho+wo)),
-            np.max(flow_post*(hhot-hwarm)+wp+ep-(hp+wp))))),
+        compressor_analysis=compressor_analysis,
+        warm_aftercooler_peak_W=(float(max(np.max(flow_open*(hhot-hwarm)+(eo if real_compressor else wo+eo-(ho+wo))),
+            np.max(flow_post*(hhot-hwarm)+(ep if real_compressor else wp+ep-(hp+wp)))))),
         collection_time_s=t.tolist(),intake_mass_flow_kg_s=mdot.tolist(),ram_pressure_Pa=s['ram_Pa'].tolist(),
         coast_start_s=start,coast_end_s=end,deployed_coast_s=coast,sunlight_deployed_s=sunlight,
         captured_kg=float(collected[-1])+extra_intake,front_at_perigee_kg=float(front[-1]),
@@ -252,7 +290,7 @@ def calculate(c=Reference(), n=1601, process_targets=None, flow_solver=None, mix
         final_receiver_Pa=float(prear[-1]),receiver_equivalent_sphere_diameter_m=(6*c.receiver_m3/math.pi)**(1/3),
         tank_wall_only_kg_at_1bar_150MPa_allowable=4*math.pi*tank_radius**2*tank_gauge*2700,
         tank_wall_gauge_m=tank_gauge,
-        compression_electric_J=Ecomp,compression_peak_inbound_W=float(eo.max()),
+        compression_electric_J=Ecomp,compression_peak_inbound_W=float(max(eo.max(),spin_peak)),
         compression_peak_outbound_W=float(ep.max()),compression_end_W=float(ep[-1]),
         hot_compression_J=Ehot,warm_compression_J=Ewarm,
         intake_and_front_storage_heat_J=first_hot,

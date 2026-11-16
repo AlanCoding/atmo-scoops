@@ -1,6 +1,6 @@
 # Batteries, motors and power distribution
 
-**Status: research stub; not implemented or validated.**
+**Status: first reference research and sizing formulation; not integrated or validated.**
 
 ## Scope and interfaces
 
@@ -13,8 +13,7 @@ Resolve energy and peak power limits, voltage/current, conversion losses, therma
 ## Evidence to collect
 
 Battery pulse/cycle tests, motor/inverter and space power hardware data with complete package boundaries. Record multiple primary sources, exact page/table, operating range,
-measurement uncertainty and what each source establishes. No references or
-coefficients have yet been qualified for this subsystem in this dossier.
+measurement uncertainty and what each source establishes. The linked packaging dossier records reviewed sources and their limits; no complete vehicle packaging coefficient is qualified.
 
 ## Deliverable and validation
 
@@ -28,3 +27,7 @@ equations; identify double-counting at interfaces. Keep detailed simulation offl
 and supply validated reduced relations to the primary model.
 
 [Research index](../README.md) · [Review workflow](../WORKFLOW.md)
+
+## Close-pass volume research
+
+[Battery module envelopes and power-system allocation](PACKAGING.md).

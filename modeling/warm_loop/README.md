@@ -1,6 +1,6 @@
 # Warm heat exchangers, fluid loops and radiators
 
-**Status: research stub; not implemented or validated.**
+**Status: first reference research and sizing formulation; not integrated or validated.**
 
 ## Scope and interfaces
 
@@ -13,8 +13,7 @@ Confirm ammonia or alternative fluid pressure/phase limits. Resolve exchanger co
 ## Evidence to collect
 
 Space radiator and fluid-loop test data, distinguishing panels, plumbing, coolant and deployment mass. Record multiple primary sources, exact page/table, operating range,
-measurement uncertainty and what each source establishes. No references or
-coefficients have yet been qualified for this subsystem in this dossier.
+measurement uncertainty and what each source establishes. The linked packaging dossier records reviewed sources and their limits; no complete vehicle packaging coefficient is qualified.
 
 ## Deliverable and validation
 
@@ -28,3 +27,7 @@ equations; identify double-counting at interfaces. Keep detailed simulation offl
 and supply validated reduced relations to the primary model.
 
 [Research index](../README.md) · [Review workflow](../WORKFLOW.md)
+
+## Close-pass volume research
+
+[Radiator and fluid-loop package boundaries](PACKAGING.md).

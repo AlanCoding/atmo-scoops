@@ -1,0 +1,32 @@
+[
+  {
+    "label": "reference_real_standard",
+    "relative_changes": {
+      "total_dry_kg": -1.452498683551795e-07,
+      "compressor_mass_kg": -7.004662405662998e-10,
+      "compressor_kWh": 1.9586569632856765e-07,
+      "net_liquid_equivalent_kg": -3.583888467439955e-06,
+      "operating_mass_payoff_days": 3.4386509226713713e-06
+    }
+  },
+  {
+    "label": "candidate_real_compact",
+    "relative_changes": {
+      "total_dry_kg": 2.552196742833246e-08,
+      "compressor_mass_kg": 1.5054678803583244e-06,
+      "compressor_kWh": 9.618109997111546e-06,
+      "net_liquid_equivalent_kg": -9.854355402794113e-07,
+      "operating_mass_payoff_days": 1.0109585037998414e-06
+    }
+  },
+  {
+    "label": "candidate_cutoff_3Pa",
+    "relative_changes": {
+      "total_dry_kg": -2.1430739949312994e-07,
+      "compressor_mass_kg": 2.2298791251262884e-06,
+      "compressor_kWh": -1.6416254125073415e-05,
+      "net_liquid_equivalent_kg": -2.128553774460862e-06,
+      "operating_mass_payoff_days": 1.914250449708277e-06
+    }
+  }
+]

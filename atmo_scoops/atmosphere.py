@@ -30,7 +30,7 @@ class Atmosphere:
     def save(self, folder):
         path = Path(folder) / f"atmosphere_{self.name}.csv"
         with path.open("w", newline="") as f:
-            writer = csv.writer(f)
+            writer = csv.writer(f, lineterminator="\n")
             writer.writerow(["altitude_km", "density_kg_m3", "temperature_K"] + [s+"_mass_fraction" for s in SPECIES])
             writer.writerows(np.column_stack([self.alt_km, self.density, self.temperature, self.fractions]))
 
@@ -43,7 +43,7 @@ def make_profile(name="reference"):
         "winter_midnight": ("2020-12-21T00:00", 0., 45., 150., 4.),
     }
     date, lon, lat, flux, ap = cases[name]
-    h = np.arange(75., 1001., .5)
+    h = np.arange(50., 1001., .5)
     output = pymsis.calculate([date], [lon], [lat], h, f107s=[flux],
                              f107as=[flux], aps=[[ap]*7], version=2.1).reshape(-1, 11)
     species_rho = np.nan_to_num(output[:, 1:10]) * MASSES * AMU

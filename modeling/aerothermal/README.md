@@ -23,7 +23,7 @@ applicability bounds and uncertainty propagation before proposing code changes.
 
 ## Numerical handoff
 
-Current integration areas: `inlet.py; analysis/fluid/`. Define inputs, outputs, units and replacement
+Current integration areas: `inlet.py; modeling/fluid/`. Define inputs, outputs, units and replacement
 equations; identify double-counting at interfaces. Keep detailed simulation offline
 and supply validated reduced relations to the primary model.
 

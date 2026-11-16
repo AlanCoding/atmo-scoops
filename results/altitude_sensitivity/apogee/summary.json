@@ -1,0 +1,134 @@
+[
+  {
+    "perigee_km": 60,
+    "apogee_km": 2000,
+    "payoff_days": 524.5003023305737,
+    "dry_t": 1892743.862759721,
+    "net_kg_pass": 265037.20908447204,
+    "period_h": 1.7626739553566861,
+    "sunlight_h": 0.674677398593374,
+    "solar_t": 271251.59494838497,
+    "battery_t": 213924.23145599032,
+    "propulsion_t": 571935.9049034439,
+    "screens_pass": true,
+    "failed_margins": {}
+  },
+  {
+    "perigee_km": 60,
+    "apogee_km": 10000,
+    "payoff_days": 1021.4711537737408,
+    "dry_t": 1158433.9029517293,
+    "net_kg_pass": 159171.19706101116,
+    "period_h": 3.3684536178406397,
+    "sunlight_h": 2.047998831685692,
+    "solar_t": 62671.495292134874,
+    "battery_t": 149629.7814488615,
+    "propulsion_t": 403172.5359844885,
+    "screens_pass": true,
+    "failed_margins": {}
+  },
+  {
+    "perigee_km": 60,
+    "apogee_km": 35786,
+    "payoff_days": 3422.07134374342,
+    "dry_t": 1028596.3494956216,
+    "net_kg_pass": 131157.47521195278,
+    "period_h": 10.472451806634892,
+    "sunlight_h": 7.920319063401418,
+    "solar_t": 15171.746711345466,
+    "battery_t": 139946.75168593525,
+    "propulsion_t": 378685.6325100388,
+    "screens_pass": false,
+    "failed_margins": {
+      "oxygen_kg": -3644.6897386909623
+    }
+  },
+  {
+    "perigee_km": 80,
+    "apogee_km": 2000,
+    "payoff_days": 526.4888107762703,
+    "dry_t": 96261.76948643917,
+    "net_kg_pass": 13455.635297714492,
+    "period_h": 1.7662442227507726,
+    "sunlight_h": 0.6977016580674791,
+    "solar_t": 13288.48949650927,
+    "battery_t": 10832.941029808075,
+    "propulsion_t": 28952.087135863654,
+    "screens_pass": true,
+    "failed_margins": {}
+  },
+  {
+    "perigee_km": 80,
+    "apogee_km": 10000,
+    "payoff_days": 1036.2166218209024,
+    "dry_t": 59345.014761306054,
+    "net_kg_pass": 8048.664044616689,
+    "period_h": 3.3728836027879425,
+    "sunlight_h": 2.0640323344181644,
+    "solar_t": 3139.6191393247445,
+    "battery_t": 7552.012054152405,
+    "propulsion_t": 20332.472633234796,
+    "screens_pass": true,
+    "failed_margins": {}
+  },
+  {
+    "perigee_km": 80,
+    "apogee_km": 35786,
+    "payoff_days": 3473.7443158056517,
+    "dry_t": 52729.88569338877,
+    "net_kg_pass": 6627.719576213125,
+    "period_h": 10.478916645561,
+    "sunlight_h": 7.938713864514932,
+    "solar_t": 763.9691720271669,
+    "battery_t": 7060.3126321696245,
+    "propulsion_t": 19089.432158771895,
+    "screens_pass": false,
+    "failed_margins": {
+      "oxygen_kg": -177.44901941352873
+    }
+  },
+  {
+    "perigee_km": 90,
+    "apogee_km": 2000,
+    "payoff_days": 553.6005651198205,
+    "dry_t": 18198.67858617566,
+    "net_kg_pass": 2421.708030299374,
+    "period_h": 1.768030259270386,
+    "sunlight_h": 0.7097829846955711,
+    "solar_t": 2356.661317126118,
+    "battery_t": 1953.247902667889,
+    "propulsion_t": 5205.043266521095,
+    "screens_pass": true,
+    "failed_margins": {}
+  },
+  {
+    "perigee_km": 90,
+    "apogee_km": 10000,
+    "payoff_days": 1115.6133273421096,
+    "dry_t": 11470.167479044363,
+    "net_kg_pass": 1445.8771072245913,
+    "period_h": 3.375099322932644,
+    "sunlight_h": 2.0724157185771923,
+    "solar_t": 563.5105237391346,
+    "battery_t": 1359.9632676911517,
+    "propulsion_t": 3648.229340529596,
+    "screens_pass": true,
+    "failed_margins": {}
+  },
+  {
+    "perigee_km": 90,
+    "apogee_km": 35786,
+    "payoff_days": 3749.3169555943787,
+    "dry_t": 10218.195796443182,
+    "net_kg_pass": 1190.3129943176507,
+    "period_h": 10.482149563694078,
+    "sunlight_h": 7.947704155629366,
+    "solar_t": 137.53572233999685,
+    "battery_t": 1271.0856922631606,
+    "propulsion_t": 3424.4703729065454,
+    "screens_pass": false,
+    "failed_margins": {
+      "oxygen_kg": -28.218243269113884
+    }
+  }
+]

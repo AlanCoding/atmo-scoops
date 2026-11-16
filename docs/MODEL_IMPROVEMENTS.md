@@ -4,18 +4,20 @@ This is a maintained list of missing capabilities, not a work diary. Remove or
 rewrite an item when the model resolves it, and link its validation. Priorities
 reflect how strongly a missing relationship can distort design selection.
 
-Completed numerical decisions are indexed in [conclusions](../conclusions/README.md).
+Completed numerical decisions are indexed in [investigations](../investigations/README.md).
 The [mixing development plan](DESIGN_STUDIES_PLAN.md) describes the remaining
 physical calibration needed beyond the current conditional trade.
 
 The [staged-compressor model plan](../modeling/compressor/MODEL_PLAN.md)
 sets the next core refinement: three/four cooled blocks, independently allocated
-rack masses, lattice-based heat transfer and solved gas states. Planning only;
-the current prescribed thermal path has not been replaced.
+rack masses, lattice-based heat transfer and solved gas states. Real-fluid compression
+states and a conditional geometry mass model are implemented; independent rack
+inventories and finite heat transfer remain planned. See the
+[compressor results](../modeling/compressor/RESULTS.md).
 
 Component equations and annotated evidence belong in the
 [model calculation library](../modeling/README.md). The
-[rear-depth investigation](../conclusions/rear_storage_depth/INVESTIGATION.md)
+[rear-depth investigation](../investigations/rear_storage_depth/INVESTIGATION.md)
 identifies shared structure, head-limited recovery and coast pressure management
 as necessary to resolve the elongated-storage trade.
 
@@ -27,12 +29,12 @@ as necessary to resolve the elongated-storage trade.
 | P2 | High | Finite-thrust reboost and real drag | Integrate thrust around perigee with mass/inertia, atmospheric force and expelled-gas momentum. Bound burn duration physically. Couple density/altitude to the actual powered trajectory. |
 | P3 | High | Gas-to-metal exchange | Spatial/temporal gas and solid temperatures, conductance, passage spacing, pressure drop and storage utilization. Connect sheet thickness, gas endpoint and front depth so optimization cannot reduce area or approach without cost. |
 | P4 | High | Actively cooled leading edge and reusable perigee envelope | Resolve local heat flux, cooling flow, temperature, stress, oxidation/erosion and fatigue over repeated dives. Output allowable operating envelopes versus geometry/material/cooling, including life and replacement mass. Extend the atmosphere domain when justified; do not mistake 75 km for a materials limit. |
-| P5 | High | Compressor maps and transients | Suction capacity, pressure ratio, efficiency, module sizing/mass, low-pressure limit, spin-up and thermal limits. Replace constant efficiency and kg/(m³/s) targets with a bounded map. |
+| P5 | High | Compressor maps and transients | Real-fluid block work, geometry mass, spin-up and receiver-dependent head limits are implemented. Calibrate low-Re efficiency, surge/stall, variable-speed/pitch operation and module mass against relevant hardware. Validate hot material allowables and replace prescribed efficiency/head envelopes with bounded maps. |
 | P6 | High | Inlet admission, pressure support and reverse flow | Use reviewed fluid-study coefficients with a domain of validity. Calibrate the continuous bidirectional port shared by the API and optimizer; include time-varying composition and non-equilibrium energy consistently. |
 | P7 | High | Oxygen propulsion hardware | Efficiency, Isp, specific mass, power, lifetime and throttling must be coupled operating points. Add initial inventory and control reserve explicitly. The present independent Isp/constant-efficiency choice is a screening target. |
 | P9 | High | Deployment and packaging at scale | Stowed volumes, deployed support/tether/cable mass, mutual shading, two-face radiator view factors, cycling times, failure modes and life. Five-minute timing cannot be assumed scale-independent indefinitely. |
 | P10 | Medium | Warm thermal system | Confirm ammonia fluid/phase regime across operating temperatures, heat exchangers, pumping, heat storage, radiator distribution and transient peak duties. Peak aftercooler duty now sizes the shared exchanger allowance; validate transient exchanger behavior and all compression heat routing to the warm loop. |
-| P11 | Medium | Cryogenic process and storage | Species-resolved separation/liquefaction, pressure management, tank heat leaks and boiloff. Remove the current below-1-bar coast-feed-compressor domain restriction with a suitable process model. |
+| P11 | Medium | Cryogenic process and storage | Species-resolved separation/liquefaction, pressure management, tank heat leaks and boiloff. Above-feed-pressure coast gas now bypasses through a regulator without expansion credit. Resolve real-fluid throttling temperature, valve sizing and feed control. |
 | P12 | High | Atmosphere and operating uncertainty | Evaluate density/composition/solar variability and navigation/control error over repeated passes. Optimize robust operating policies, not one deterministic atmospheric profile. |
 | P13 | Medium | Optimization formulation | Keep architecture options discrete; optimize independent continuous coordinates within each. Separate numerical bounds from validated limits, quantify active constraints, scale degeneracy and uncertainty, and re-search after model changes. |
 | P14 | High | Cold-gas / LN₂ mixing and film cooling | Incremental LN2 enthalpy, circulation, leakage, replacement and coast restoration are implemented. Add spatial film protection, exchanger conductance and calibrated temperature-dependent compressor maps before selecting a flight ratio. Preserve r=0 and all mass/energy ledgers. |
@@ -48,7 +50,7 @@ as necessary to resolve the elongated-storage trade.
 | F3 | High | Whole-body pressure and shear for candidate shapes | Integrated drag/lift, local heat/load distributions, centers of pressure, uncertainty and mesh/domain convergence. |
 | F4 | Medium | Resolution and physical verification | Conservation, shock benchmarks, wall/port boundary checks, timestep/mesh studies and geometry provenance before supplying coefficients. |
 
-See the [fluid analysis specification](../analysis/fluid/README.md). The numerical
+See the [fluid analysis specification](../modeling/fluid/README.md). The numerical
 port-flow helper in the primary model is not the detailed fluid solver.
 
 ## Flight stability and control (offline, coupled to fluid studies)
@@ -60,7 +62,7 @@ port-flow helper in the primary model is not the detailed fluid solver.
 | S3 | High | Fins, aft volume and thrust alignment | Trade stabilizing surfaces and bulb shapes against drag, heat, structure and usable volume; calculate control authority and off-axis thrust moments. |
 | S4 | Medium | Flexibility, slosh and deployments | Long-body structural modes, tank slosh, absorber motion and deployment disturbance; check aeroelastic/control coupling and coast attitude constraints. |
 
-See the [stability specification](../analysis/stability/README.md). Positive static
+See the [stability specification](../modeling/stability/FLIGHT_STUDY.md). Positive static
 restoring stiffness alone does not establish dynamic stability.
 
 ## Current simplifications to retain visibly
@@ -79,3 +81,7 @@ restoring stiffness alone does not establish dynamic stability.
   are unresolved. Compressor heat is assigned to the warm loop in every case.
 - Hardware mass, constant efficiencies and deployment timing are development
   targets held fixed within each search. Circular-apogee delivery is not included.
+
+Phase-change rack development: [candidate cores and cycle requirements](PHASE_CHANGE_COOLERS.md). Add independent core enthalpy/melt fraction, containment mass, finite heat transfer and coast refreezing before claiming savings.
+
+**Volume accounting priority:** replace arbitrary front/machinery lengths with per-stage rack/plenum and compressor envelopes plus stowed equipment allocations. [Research and acceptance criteria](../modeling/deployment/CLOSE_PASS_VOLUME.md); [source-based diagnostic](../modeling/deployment/PACKING_SCREEN.md). The existing bank-state model does not implement separate interstage inventories.

@@ -1,0 +1,46 @@
+{
+  "review_date": "2026-11-15",
+  "status": "Research references, not qualified optimizer coefficients",
+  "solar": [
+    {
+      "name": "Redwire ROSA flysheet v1_10-2-2025",
+      "stowed_kW_m3": 40,
+      "qualifier": "approximate manufacturer design figure; rated power/interface and installed boundary need confirmation",
+      "url": "https://rdw.com/wp-content/uploads/2023/06/redwire-roll-out-solar-array-flysheet.pdf",
+      "page": 1
+    },
+    {
+      "name": "Orbital ATK UltraFlex/MegaFlex IEPC-2017-293",
+      "stowed_kW_m3_lower_reported": 40,
+      "qualifier": "manufacturer reports >40; different architecture; not a closed-cycle qualification",
+      "url": "https://electricrocket.org/IEPC/IEPC_2017_293.pdf",
+      "printed_page": 10
+    }
+  ],
+  "radiator": {
+    "qualified_stowed_volume_coefficient": null,
+    "reason": "No complete folded envelope with an applicable duty/interface has been extracted; panel skin thickness is not package pitch"
+  },
+  "battery": [
+    {
+      "name": "MP Space Pack2 8S3P",
+      "dimensions_mm": [
+        212.9,
+        74.9,
+        83.8
+      ],
+      "energy_Wh": 432,
+      "url": "https://mpspace.io/products/"
+    },
+    {
+      "name": "MP Space Pack2 8S6P",
+      "dimensions_mm": [
+        218.9,
+        172.2,
+        84.2
+      ],
+      "energy_Wh": 864,
+      "url": "https://mpspace.io/products/"
+    }
+  ]
+}

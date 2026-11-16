@@ -105,14 +105,16 @@ def coast_compressor(mixture_kg, chamber_volume_m3, temperature_K, duration_s,
            efficiency,volumetric_m3_s_kg,electrical_W_kg)<=0 or not 0<residual_fraction<1:
         raise ValueError("Invalid compressor boundary conditions")
     p0=mixture_kg*gas_R*temperature_K/chamber_volume_m3
-    if p0>=output_Pa:raise ValueError("This helper expects a low-pressure chamber")
     f=residual_fraction
     S=chamber_volume_m3*math.log(1/f)/duration_s
     c=math.log(output_Pa/p0)
-    energy=mixture_kg*gas_R*temperature_K/efficiency*((1-f)*c+1-f+f*math.log(f))
+    # Regulate above-feed-pressure gas through a bypass; no expansion credit.
+    upper=min(1.,output_Pa/p0)
+    integral=(upper*(c-math.log(upper)+1)-f*(c-math.log(f)+1)) if upper>f else 0.
+    energy=mixture_kg*gas_R*temperature_K/efficiency*integral
     # x exp(-x) shape in pressure work, clipped to actual mass remaining range.
     remaining_at_peak=1. if c>=1 else max(f,math.exp(c-1))
-    peak=mixture_kg*S/chamber_volume_m3*remaining_at_peak*gas_R*temperature_K/efficiency*(c-math.log(remaining_at_peak))
+    peak=mixture_kg*S/chamber_volume_m3*remaining_at_peak*gas_R*temperature_K/efficiency*max(0.,c-math.log(remaining_at_peak))
     mass=max(S/volumetric_m3_s_kg,peak/electrical_W_kg)
     return dict(input_pressure_start_Pa=p0,input_pressure_end_Pa=p0*f,
         output_pressure_Pa=output_Pa,temperature_K=temperature_K,

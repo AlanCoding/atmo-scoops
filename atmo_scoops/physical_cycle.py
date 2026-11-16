@@ -79,6 +79,11 @@ def evaluate(r, front, rear, hw=Hardware(), rear_diameter_m=18.3):
     pump_hot=max(hw.compressor_kg_per_m3_s*hotS,float(max(hotpower))/hw.compressor_electric_W_kg)
     pump_warm=max(hw.compressor_kg_per_m3_s*warmS,float(max(totalpower-hotpower))/hw.compressor_electric_W_kg)
     pump_coast=max(hw.compressor_kg_per_m3_s*feed['pumping_speed_m3_s'],feed['peak_power_W']/hw.compressor_electric_W_kg)
+    if r.get('compressor_analysis'):
+        banks=r['compressor_analysis']['dive']['banks']
+        pump_hot=banks[0]['total_kg']
+        pump_warm=sum(b['total_kg'] for b in banks[1:])
+        pump_coast=r['compressor_analysis']['coast']['total_mass_kg']
     pieces=dict(b['assigned_masses_kg'])
     pieces['shell_TPS_allowance']=math.pi*c['outside_diameter_m']*c['total_length_m']*hw.shell_TPS_kg_m2
     pieces.update(compressor_hot=pump_hot,compressor_warm=pump_warm,compressor_coast=pump_coast)

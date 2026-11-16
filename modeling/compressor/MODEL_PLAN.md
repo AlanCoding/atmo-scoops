@@ -6,15 +6,19 @@ efficiency, multiple comparable hardware references for mass, and finite
 [gas-to-metal heat transfer](../metal_coolers/README.md). Existing constant-gamma
 screening arithmetic is not the planned property model.
 
-**Planning only. No implementation, optimization or new cycle runs are authorized
-by this document.** Start with three and four cooled compressor blocks as
+**Partially implemented following the owner's compressor-refinement request.**
+Real-fluid compressor states, geometry mass screening, spin-up accounting and
+receiver-dependent head limits are now in the primary cycle; see
+[IMPLEMENTED_MODEL.md](IMPLEMENTED_MODEL.md). Independent chamber inventories,
+finite rack heat transfer and calibrated hardware maps below remain planned.
+Start with three and four cooled compressor blocks as
 separate configurations. A block may contain multiple aerodynamic rotor/stator
 stages; this does not select a three- or four-rotor machine.
 
-The current model assigns representative temperatures and cooled compression
-work. It tracks inventories and aggregate energy, but does not predict the
-spatial gas states or demonstrate that real hardware can maintain those
-conditions. The replacement must solve those states from finite machinery and
+The current model solves real-fluid compressor outlet states but prescribes
+intercooler outlet temperatures. It tracks front/rear inventories and aggregate
+energy, but does not predict spatial gas states or demonstrate that finite
+intercoolers and low-Re machinery can maintain those conditions. The replacement must solve those states from finite machinery and
 heat transfer. Prescribed isothermal compression becomes a limiting benchmark,
 not an assumed operating path.
 
@@ -127,7 +131,7 @@ material life and periodic thermal restoration constrain the search.
 - Keep detailed CFD offline; use it to validate reduced correlations and maps.
 
 Related: [theoretical investigation](SCREENING_CALCULATIONS.md),
-[current input definitions](../../analysis/primary/PARAMETERS.md), and
+[current input definitions](../../modeling/primary/PARAMETERS.md), and
 [model improvement list](../../docs/MODEL_IMPROVEMENTS.md).
 
 ## Off-design control addition

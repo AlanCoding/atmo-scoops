@@ -111,7 +111,7 @@ configuration identifies capability targets separately from these measurements.
   [normal-shock relations](https://www.grc.nasa.gov/WWW/BGH/normal.html).
   Support q=ρu²/2, p=ρRT and the distinction between shock compression and
   cooled-plenum density. The column derivation and numerical examples in
-  `analysis/primary/ATMOSPHERIC_COLUMN.md` are this project's calculations.
+  `modeling/primary/ATMOSPHERIC_COLUMN.md` are this project's calculations.
   The pressure-recovery factor is an assumption, not a NASA-validated inlet
   coefficient. Density-amplitude cancellation is conditional on fixed trajectory,
   cooled gas state and pressure factor; it is not universal altitude invariance.

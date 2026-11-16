@@ -8,7 +8,7 @@ from scipy.optimize import brentq
 from ..system import inputs_from_dict,simulate
 
 ROOT=Path('results/incremental_mixing')
-DEST=Path('conclusions/incremental_mixing')
+DEST=Path('investigations/incremental_mixing')
 
 
 def main():

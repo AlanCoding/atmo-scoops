@@ -72,8 +72,10 @@ with product accumulating in liquid tanks. The final process pressure is to be
 selected from the liquefaction requirements. The metal racks are gas coolers;
 cryogenic condensation and refrigeration remain distinct operations.
 
-This is the design direction. The numerical model still lumps the compressor
-train and does not yet resolve these stages or deployment costs. Detailed
+The numerical model now resolves real-fluid compression-block inlet/outlet states
+and a conditional geometry-based compressor mass budget. It still lumps chamber
+inventories and prescribes interstage cooling targets; finite metal intercooling,
+calibrated compressor maps and deployment costs remain to be resolved. Detailed
 [compressor research](../modeling/compressor/README.md),
 [metal-cooler research](../modeling/metal_coolers/README.md), and
 [deployment interfaces](../modeling/compressor/DEPLOYMENT.md) support the planned
@@ -106,7 +108,7 @@ MPLCONFIGDIR=/tmp/atmo-scoops-mpl .venv/bin/python -m atmo_scoops.studies.orbita
 
 ## Why the front chamber needs active transfer
 
-The [column analysis](../analysis/primary/ATMOSPHERIC_COLUMN.md) gives a simple
+The [column analysis](../modeling/primary/ATMOSPHERIC_COLUMN.md) gives a simple
 volume argument. In the comparison orbit, the selected inbound window crosses
 639 km of atmosphere, equivalent to 520 km at perigee density. At 1,000 K and
 the stated pressure allowance, a density ratio of about 146 leaves 3.57 km of
@@ -124,7 +126,7 @@ independent design variables.
 
 ## Operating cycle
 
-The design omits a mouth closure following the [payoff comparison](../conclusions/mouth_closure/ANALYSIS.md).
+The design omits a mouth closure following the [payoff comparison](../investigations/mouth_closure/ANALYSIS.md).
 
 1. **Prepare for entry.** Retract arrays, warm radiators and every attached metal
    rack. Close, latch and verify deployment hatches. Charge batteries and reserve
@@ -145,6 +147,22 @@ The design omits a mouth closure following the [payoff comparison](../conclusion
    net new product. All metal stays attached and is reused next orbit.
 6. **Repeat and deliver.** Reserve the next reboost's oxygen. Circular-apogee
    export and return still need trajectory and hardware budgets.
+
+## Optional phase-change cooler cores
+
+Deployable metal coolers may contain sealed phase-change cores: the core melts
+while collecting heat and freezes while the attached panel radiates during
+coast. Solid metal skins and internal heat spreaders retain the liquid and
+provide gas-contact and radiating surfaces. Thin cells need expansion space,
+compatible liners and cyclic pressure/thermal qualification.
+
+Different temperature sections may use different cores. Hot upstream cells can
+radiate efficiently at high temperature; colder terminal cells must preserve
+the compressor-inlet temperature approach. This is a design option, not yet a
+credited mass improvement. The [material and cycle investigation](PHASE_CHANGE_COOLERS.md)
+compares candidate salts/metals, complete-cell capacity and radiative/freezing
+limits. Sensible-metal racks remain the baseline until finite heat transfer and
+repeatable recovery establish a benefit.
 
 ## Oxygen accounting
 
@@ -176,15 +194,30 @@ reliquefaction; circulating nitrogen is not counted as new product. In the
 current numerical model, compressor heat goes to the warm loop because mixed
 gas can be cooler than the rack. The staged refinement must resolve each rack's
 gas/metal temperature difference before crediting heat absorption.
-The [incremental mixing study](../conclusions/incremental_mixing/ANALYSIS.md)
+The [incremental mixing study](../investigations/incremental_mixing/ANALYSIS.md)
 contains the quantitative trade. Film-cooling requirements and a calibrated
 compressor-temperature map remain separate engineering work.
+
+## Close-pass volume allocation
+
+Each compressor block needs a physical envelope and an independently sized
+cooling chamber. During the atmospheric pass, solar wings and warm radiators
+occupy their protected stowed packages; metal coolers occupy their working gas-
+contact geometry. Accessible pore gas and solid material must be accounted for
+without overlap. Batteries, drives, liquid tanks, piping, hatches and deployment
+paths also consume space. Rear storage uses the remaining connected volume.
+
+The numerical package does not yet solve this allocation or independent
+interstage inventories. The former 25 m front / 100 m machinery split is a
+placeholder and must not establish a geometry-limited reference. The
+[close-pass volume research](../modeling/deployment/CLOSE_PASS_VOLUME.md) defines
+the replacement and records reference packaging evidence.
 
 ## Numerical status
 
 The single current specification is this document plus the
-[input definitions](../analysis/primary/PARAMETERS.md). The
-[primary equations](../analysis/primary/MODEL.md) state which behavior is solved
+[input definitions](../modeling/primary/PARAMETERS.md). The
+[primary equations](../modeling/primary/MODEL.md) state which behavior is solved
 and which is prescribed. Studies explore those inputs under fixed capability
 assumptions; no saved winner is an approved final vehicle. No pump mechanism,
 rotor speed, module count, detailed throat geometry or stability arrangement is

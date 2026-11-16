@@ -11,6 +11,7 @@ from .physical_cycle import Hardware, rear_geometry, evaluate
 from .process import ProcessTargets
 from .mixing import Mixing, validate as validate_mixing
 from .inlet import FlowCapabilities, EncounterControls, ContinuousEncounter
+from .compressor import Compressor
 
 
 @dataclass(frozen=True)
@@ -21,7 +22,7 @@ class Design:
     mouth_diameter_m: float = 18.3
     front_diameter_m: float = 18.3
     rear_diameter_m: float = 18.3
-    machinery_depth_m: float = 20.
+    machinery_depth_m: float = 100.  # Explicit allowance for resolved compressor banks; not optimized.
     radial_clearance_m: float = .85
     perigee_km: float = 100.
     apogee_km: float = 2000.
@@ -67,12 +68,12 @@ class Scenario:
 
 def defaults():
     return dict(design=asdict(Design()),hardware=asdict(Hardware()),
-                performance=asdict(Performance()),process=asdict(ProcessTargets()),scenario=asdict(Scenario()),flow=asdict(FlowCapabilities()),controls=asdict(EncounterControls()),mixing=asdict(Mixing()))
+                performance=asdict(Performance()),process=asdict(ProcessTargets()),scenario=asdict(Scenario()),flow=asdict(FlowCapabilities()),controls=asdict(EncounterControls()),mixing=asdict(Mixing()),compressor=asdict(Compressor()))
 
 
 def inputs_from_dict(config):
     if not isinstance(config,dict):raise ValueError('Configuration must be a JSON object')
-    names={'design':Design,'hardware':Hardware,'performance':Performance,'process':ProcessTargets,'scenario':Scenario,'flow':FlowCapabilities,'controls':EncounterControls,'mixing':Mixing}
+    names={'design':Design,'hardware':Hardware,'performance':Performance,'process':ProcessTargets,'scenario':Scenario,'flow':FlowCapabilities,'controls':EncounterControls,'mixing':Mixing,'compressor':Compressor}
     unknown=set(config)-set(names)
     if unknown:raise ValueError(f'Unknown configuration sections: {sorted(unknown)}')
     out={}
@@ -94,8 +95,8 @@ def validate(design,hardware,performance,scenario,process):
             if v==0 and k not in ('design_margin','rear_support_fraction','machinery_depth_m','radial_clearance_m','auxiliary_W','thruster_loss_retained'):
                 raise ValueError(f'{label}.{k} must be positive')
     d=design
-    if not 75<=d.perigee_km<d.apogee_km or d.apogee_km<=200:
-        raise ValueError('Require 75 km <= perigee < apogee and apogee > 200 km')
+    if not 50<=d.perigee_km<d.apogee_km or d.apogee_km<=200:
+        raise ValueError('Require 50 km <= perigee < apogee and apogee > 200 km')
     if not 0<d.inlet_pressure_fraction<=1:raise ValueError('Pressure target must be in (0,1]')
     hot=d.compressor_inlet_K-d.gas_metal_approach_K
     if not 298<=d.metal_cold_K<hot<=1042:
@@ -117,7 +118,7 @@ def validate(design,hardware,performance,scenario,process):
     rear_geometry(d.rear_depth_m,d.rear_diameter_m)
 
 
-def simulate(design=Design(),hardware=Hardware(),performance=Performance(),scenario=Scenario(),process=ProcessTargets(),flow=FlowCapabilities(),controls=EncounterControls(),mixing=Mixing(),n=801,history=False):
+def simulate(design=Design(),hardware=Hardware(),performance=Performance(),scenario=Scenario(),process=ProcessTargets(),flow=FlowCapabilities(),controls=EncounterControls(),mixing=Mixing(),compressor=Compressor(),n=801,history=False):
     """Return serialized inputs, outputs and named constraint residuals.
 
     No file writes. Positive constraint margins pass their local screen;
@@ -125,6 +126,7 @@ def simulate(design=Design(),hardware=Hardware(),performance=Performance(),scena
     """
     validate(design,hardware,performance,scenario,process)
     validate_mixing(mixing)
+    compressor.validate()
     if isinstance(n,bool) or not isinstance(n,int) or n<101:raise ValueError('n must be an integer >= 101')
     d=design
     geom=rear_geometry(d.rear_depth_m,d.rear_diameter_m)
@@ -140,8 +142,9 @@ def simulate(design=Design(),hardware=Hardware(),performance=Performance(),scena
         intermediate_Pa=d.intermediate_Pa,
         warm_radiator_K=d.warm_radiator_K,thrust_burst_s=d.thrust_burst_s,exhaust_m_s=d.isp_s*9.80665)
     solver=ContinuousEncounter(flow,controls)
-    r=calculate(base,n=n,process_targets=process,flow_solver=solver,mixing=mixing)
+    r=calculate(base,n=n,process_targets=process,flow_solver=solver,mixing=mixing,compressor=compressor)
     out=evaluate(r,d.front_depth_m,d.rear_depth_m,hardware,rear_diameter_m=d.rear_diameter_m)
+    out['compressor_analysis']=r.get('compressor_analysis')
     out['mixing']=r['mixing']
     out['compressor_inlet_K']=r['inputs']['gas_K']
     out['metal_hot_K']=base.metal_hot_K
@@ -160,6 +163,10 @@ def simulate(design=Design(),hardware=Hardware(),performance=Performance(),scena
         positive_production_kg=out['net_liquid_equivalent_kg'])
     margins['cutoff_Pa']=controls.cutoff_Pa-r['final_front_Pa']
     margins['coolant_replacement_kg']=r['mixing']['nitrogen_available_kg']-r['mixing']['coolant_replacement_kg']
+    if r.get('compressor_analysis'):
+        banks=r['compressor_analysis']['dive']['banks']
+        margins['compressor_bay_depth_m']=d.machinery_depth_m-sum(b.get('bank_length_m',0.) for b in banks)
+        margins['compressor_face_m2']=math.pi*d.front_diameter_m**2/4*.9-banks[0]['annulus_m2']/(1-compressor.hub_tip_ratio**2)
     out['total_with_working_fluids_kg']=out['total_with_loop_fluid_kg']+r['mixing']['injected_kg']
     for key in ('capture_impulse','escape_impulse','uncollected_mouth_impulse','geometric_intercept_impulse'):
         out[key+'_Ns']=solver.last[key]
@@ -167,7 +174,7 @@ def simulate(design=Design(),hardware=Hardware(),performance=Performance(),scena
     out['final_front_pressure_Pa']=r['final_front_Pa']
     result=dict(status='Conditional continuous-inlet cycle; no shock validation or circular-delivery payoff',
         inputs=dict(design=asdict(d),hardware=asdict(hardware),performance=asdict(performance),
-            process=asdict(process),scenario=asdict(scenario),flow=asdict(flow),controls=asdict(controls),mixing=asdict(mixing)),
+            process=asdict(process),scenario=asdict(scenario),flow=asdict(flow),controls=asdict(controls),mixing=asdict(mixing),compressor=asdict(compressor)),
         outputs=out,constraints=dict(margins=margins,
             all_implemented_screens_pass=bool(all(v>=-1e-8 for v in margins.values()) and solver.last['stop_reason']=='cutoff_pressure'),
             unresolved=['Shock position/start margin and calibrated capture/leakage coefficients',

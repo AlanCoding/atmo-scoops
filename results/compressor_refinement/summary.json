@@ -1,0 +1,192 @@
+[
+  {
+    "label": "reference_legacy",
+    "dry_t": 2469.0708735993016,
+    "compressor_t": 424.5332652366719,
+    "net_kg_pass": 177.26444931023912,
+    "payoff_days": 1027.1384951459747,
+    "screens_pass": true,
+    "compressor_kWh": 148.77064526656352,
+    "input_file": "reference_legacy.json"
+  },
+  {
+    "label": "reference_real_standard",
+    "dry_t": 3501.4140072627174,
+    "compressor_t": 1136.9130672675974,
+    "net_kg_pass": 177.25456660975334,
+    "payoff_days": 1456.6765456256837,
+    "screens_pass": true,
+    "compressor_kWh": 812.8270027269621,
+    "input_file": "reference_real_standard.json"
+  },
+  {
+    "label": "reference_real_compact",
+    "dry_t": 2553.6862657883094,
+    "compressor_t": 424.8689236129572,
+    "net_kg_pass": 177.25456660975334,
+    "payoff_days": 1062.3978999753729,
+    "screens_pass": true,
+    "compressor_kWh": 487.5836235479119,
+    "input_file": "reference_real_compact.json"
+  },
+  {
+    "label": "reference_real_compact_light",
+    "dry_t": 2255.5218848419004,
+    "compressor_t": 212.75248845611304,
+    "net_kg_pass": 177.25456660975334,
+    "payoff_days": 938.3539966938015,
+    "screens_pass": true,
+    "compressor_kWh": 301.3823735347291,
+    "input_file": "reference_real_compact_light.json"
+  },
+  {
+    "label": "reference_real_compact_heavy",
+    "dry_t": 3150.404778717737,
+    "compressor_t": 849.4135947559322,
+    "net_kg_pass": 177.25456660975334,
+    "payoff_days": 1310.6478528007067,
+    "screens_pass": true,
+    "compressor_kWh": 859.9861235742776,
+    "input_file": "reference_real_compact_heavy.json"
+  },
+  {
+    "label": "reference_real_compact_low_eff",
+    "dry_t": 2706.8846352096316,
+    "compressor_t": 532.5597890015949,
+    "net_kg_pass": 177.25456660975334,
+    "payoff_days": 1126.1322858838241,
+    "screens_pass": true,
+    "compressor_kWh": 610.7696821686316,
+    "input_file": "reference_real_compact_low_eff.json"
+  },
+  {
+    "label": "candidate_legacy",
+    "dry_t": 26749.717474522695,
+    "compressor_t": 720.1236637177069,
+    "net_kg_pass": 3425.7591971533,
+    "payoff_days": 514.5792086541327,
+    "screens_pass": true,
+    "compressor_kWh": 2925.445040674483,
+    "input_file": "candidate_legacy.json"
+  },
+  {
+    "label": "candidate_real_standard",
+    "dry_t": 28844.96540694226,
+    "compressor_t": 2269.8702037144926,
+    "net_kg_pass": 3420.415346561972,
+    "payoff_days": 555.7520121510346,
+    "screens_pass": true,
+    "compressor_kWh": 3825.263494606787,
+    "input_file": "candidate_real_standard.json"
+  },
+  {
+    "label": "candidate_real_compact",
+    "dry_t": 26992.483289853466,
+    "compressor_t": 861.1554620702992,
+    "net_kg_pass": 3420.415346561972,
+    "payoff_days": 520.0604920011049,
+    "screens_pass": true,
+    "compressor_kWh": 3182.0167291477806,
+    "input_file": "candidate_real_compact.json"
+  },
+  {
+    "label": "candidate_real_compact_light",
+    "dry_t": 26421.95931677028,
+    "compressor_t": 439.73047949417605,
+    "net_kg_pass": 3420.415346561972,
+    "payoff_days": 509.06828446858793,
+    "screens_pass": true,
+    "compressor_kWh": 2808.9347434133074,
+    "input_file": "candidate_real_compact_light.json"
+  },
+  {
+    "label": "candidate_real_compact_heavy",
+    "dry_t": 28157.01343969668,
+    "compressor_t": 1707.7777736165606,
+    "net_kg_pass": 3420.415346561972,
+    "payoff_days": 542.4973354798684,
+    "screens_pass": true,
+    "compressor_kWh": 3928.1807006167273,
+    "input_file": "candidate_real_compact_heavy.json"
+  },
+  {
+    "label": "candidate_real_compact_low_eff",
+    "dry_t": 27314.8309714563,
+    "compressor_t": 1063.6095182381864,
+    "net_kg_pass": 3420.415346561972,
+    "payoff_days": 526.271120793188,
+    "screens_pass": true,
+    "compressor_kWh": 3966.2948442099864,
+    "input_file": "candidate_real_compact_low_eff.json"
+  },
+  {
+    "label": "candidate_rear_100m",
+    "dry_t": 27011.113751701927,
+    "compressor_t": 861.772378061254,
+    "net_kg_pass": 3424.6065447907026,
+    "payoff_days": 519.782528218757,
+    "screens_pass": true,
+    "compressor_kWh": 2781.0076660886234,
+    "input_file": "candidate_rear_100m.json"
+  },
+  {
+    "label": "candidate_rear_200m",
+    "dry_t": 27039.05901484871,
+    "compressor_t": 825.1561784469611,
+    "net_kg_pass": 3425.451817493945,
+    "payoff_days": 520.1918913674289,
+    "screens_pass": true,
+    "compressor_kWh": 2697.1342462364114,
+    "input_file": "candidate_rear_200m.json"
+  },
+  {
+    "label": "candidate_cutoff_0.3Pa",
+    "dry_t": 26968.241084947786,
+    "compressor_t": 844.8873974249445,
+    "net_kg_pass": 3420.4153467732303,
+    "payoff_days": 519.5934207153213,
+    "screens_pass": true,
+    "compressor_kWh": 3139.6765304852893,
+    "input_file": "candidate_cutoff_0.3Pa.json"
+  },
+  {
+    "label": "candidate_cutoff_1Pa",
+    "dry_t": 26925.136936042913,
+    "compressor_t": 814.9073360079193,
+    "net_kg_pass": 3419.9154456550486,
+    "payoff_days": 518.8387683714625,
+    "screens_pass": true,
+    "compressor_kWh": 3087.898867298942,
+    "input_file": "candidate_cutoff_1Pa.json"
+  },
+  {
+    "label": "candidate_cutoff_3Pa",
+    "dry_t": 26762.381500161424,
+    "compressor_t": 699.2854720166753,
+    "net_kg_pass": 3413.995145661287,
+    "payoff_days": 516.5968167233542,
+    "screens_pass": true,
+    "compressor_kWh": 2960.5926719247254,
+    "input_file": "candidate_cutoff_3Pa.json"
+  },
+  {
+    "label": "candidate_cutoff_10Pa",
+    "dry_t": 26612.660582497414,
+    "compressor_t": 599.9755572069605,
+    "net_kg_pass": 3384.552868938322,
+    "payoff_days": 518.175482206389,
+    "screens_pass": true,
+    "compressor_kWh": 2825.662716228735,
+    "input_file": "candidate_cutoff_10Pa.json"
+  },
+  {
+    "label": "candidate_eta40_cutoff3",
+    "dry_t": 27743.352609837017,
+    "compressor_t": 1304.211278440118,
+    "net_kg_pass": 3413.995145661287,
+    "payoff_days": 535.5325961327065,
+    "screens_pass": true,
+    "compressor_kWh": 5544.992859917716,
+    "input_file": "candidate_eta40_cutoff3.json"
+  }
+]

@@ -25,11 +25,11 @@ hardware mass and net production—all connected by explicit balances.
 
 Start with the [illustrated design description](docs/DESIGN.md). Completed
 engineering decisions and their numerical evidence live in
-[conclusions/](conclusions/README.md). The active program follows one open-inlet
+[investigations/](investigations/README.md). The active program follows one open-inlet
 architecture, with an optional incremental LN2-mixing parameter for analysis.
 The drawings specify component roles, not a qualified layout or scale.
 
-The [atmospheric-column derivation](analysis/primary/ATMOSPHERIC_COLUMN.md)
+The [atmospheric-column derivation](modeling/primary/ATMOSPHERIC_COLUMN.md)
 explains a central result: hundreds of kilometres of swept atmosphere still
 require kilometres of unpumped chamber at the assumed cooled-gas pressure.
 Precooling increases density; compressors move that gas into storage whose
@@ -55,21 +55,27 @@ altitude. Reaching apogee on the diving ellipse does not itself circularize the
 product's orbit. The diagram's cutoff and deployment timings come from the
 open-mouth control/capacity search at this geometry, not a final operating policy.
 
-## Analysis areas
+## Modeling and analysis
 
 | Area | Purpose | Entry point |
 |---|---|---|
 | Subsystem modeling research | Comparable hardware, real-gas physics, heat transfer and validated replacements for numerical approximations | [Research index](modeling/README.md), [compressor](modeling/compressor/README.md), [metal coolers](modeling/metal_coolers/README.md) |
-| Primary numerical model | Fast cycle inventory, heat, power, hardware mass and constraints | [Model](analysis/primary/MODEL.md), [inputs](analysis/primary/PARAMETERS.md), `atmo_scoops/system.py` |
-| Design optimization | Search independent coordinates using the primary model | [Search definition and results](analysis/optimization/RESULTS.md), `atmo_scoops/optimization/` |
-| Detailed fluid analysis | Evaluate selected geometries; resolve shocks, cooling, capture and leakage | [Fluid study specification](analysis/fluid/README.md); solver integration pending |
-| Flight stability | Fluid forces/moments coupled to attitude, mass distribution and flexibility | [Stability study specification](analysis/stability/README.md); solver integration pending |
+| Primary numerical model | Fast cycle inventory, heat, power, hardware mass and constraints | [Model](modeling/primary/MODEL.md), [inputs](modeling/primary/PARAMETERS.md), `atmo_scoops/system.py` |
+| Design optimization | Search independent coordinates using the primary model | [Search definition and results](modeling/optimization/RESULTS.md), `atmo_scoops/optimization/` |
+| Detailed fluid analysis | Evaluate selected geometries; resolve shocks, cooling, capture and leakage | [Fluid study specification](modeling/fluid/README.md); solver integration pending |
+| Flight stability | Fluid forces/moments coupled to attitude, mass distribution and flexibility | [Stability study specification](modeling/stability/FLIGHT_STUDY.md); solver integration pending |
 
 Detailed fluid and stability simulations are **outside the optimization loop**.
 They can supply reviewed coefficient tables or reduced constraints back to the
 primary model. The [improvement list](docs/MODEL_IMPROVEMENTS.md) tracks these
 interfaces and missing physics. [Sources](docs/SOURCES.md) separate evidence from
 hardware-development targets.
+
+The [compressor refinement](modeling/compressor/RESULTS.md) replaces isothermal
+work and fixed volume-flow mass coefficients with real-fluid compression states
+and an explicit hardware buildup. Paired candidate cases give **520–556 days**
+of operating-orbit mass payoff under the two tested hardware assumptions;
+low-density compressor efficiency and mass remain unvalidated.
 
 ## Calculate a cycle
 
@@ -106,6 +112,9 @@ balances enthalpy and reserves coolant for the next pass before counting new
 product. `simulate` writes no files; its output records exact inputs, component
 masses, deployed areas, production and constraint margins.
 
+The updated [altitude sensitivity](investigations/altitude_sensitivity/ANALYSIS.md)
+compares 50–150 km perigees with fixed geometry and resized equipment.
+
 ## Reproduce analyses
 
 ```sh
@@ -115,12 +124,14 @@ MPLCONFIGDIR=/tmp/atmo-scoops-mpl .venv/bin/python -m atmo_scoops.studies.mixing
 .venv/bin/python -m atmo_scoops.studies.column_physics
 MPLCONFIGDIR=/tmp/atmo-scoops-mpl .venv/bin/python -m atmo_scoops.studies.orbital_diagram
 .venv/bin/python -m atmo_scoops.studies.current_cycle
+.venv/bin/python -m atmo_scoops.studies.compressor_refinement
+.venv/bin/python -m atmo_scoops.studies.altitude_sensitivity
 ```
 
-The [incremental mixing conclusion](conclusions/incremental_mixing/ANALYSIS.md)
+The [incremental mixing conclusion](investigations/incremental_mixing/ANALYSIS.md)
 compares ratios with equal control freedom, counts coolant restoration and
 reports sensitivity thresholds. Broader geometry searches use the same active
-model; [their definition](analysis/optimization/RESULTS.md) states current
+model; [their definition](modeling/optimization/RESULTS.md) states current
 coordinates and limits. No revised whole-vehicle optimum is claimed here.
 
 Passing the numerical screens does not establish omitted shock, heat-transfer,

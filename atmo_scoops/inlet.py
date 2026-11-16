@@ -36,7 +36,7 @@ def net_pump_rate(pressure,suction,ultimate,RT):
     return suction*max(pressure-ultimate,0.)/RT
 
 
-def validate(cap,control,c):
+def validate(cap,control,c,compressor_spec=None):
     for name,v in {**asdict(cap),**asdict(control)}.items():
         if isinstance(v,bool) or not isinstance(v,(float,int)) or not math.isfinite(v) or v<0:
             raise ValueError(f'{name} must be finite and nonnegative')
@@ -45,7 +45,7 @@ def validate(cap,control,c):
     if cap.hot_train_max_compression<=1:raise ValueError('Compression ceiling must exceed one')
     if control.suction_scale<=0:raise ValueError('Pump capacity must be positive')
     if control.max_after_perigee_s<=0:raise ValueError('Positive time budget required')
-    ultimate=max(cap.ultimate_inlet_Pa,c.intermediate_Pa/cap.hot_train_max_compression)
+    ultimate=cap.ultimate_inlet_Pa if compressor_spec else max(cap.ultimate_inlet_Pa,c.intermediate_Pa/cap.hot_train_max_compression)
     if control.cutoff_Pa<=ultimate:raise ValueError('Cutoff must exceed the effective ultimate pressure')
     return ultimate
 
@@ -56,7 +56,7 @@ class ContinuousEncounter:
         self.injection_ratio=0.;self.injection_h=0.
 
     def __call__(self,c,o,atm,R,gamma,pumping,n):
-        cap=self.capabilities;ctl=self.controls;ultimate=validate(cap,ctl,c)
+        cap=self.capabilities;ctl=self.controls;ultimate=validate(cap,ctl,c,getattr(self,'compressor_spec',None))
         A=math.pi*c.mouth_m**2/4;V=math.pi*c.front_bore_m**2/4*c.front_length_m;RT=R*c.gas_K
         start=-float(o.time_at_altitude(200.));end=ctl.max_after_perigee_s
         if end>=o.period/2:raise ValueError('Encounter budget must end before apogee')
@@ -79,8 +79,10 @@ class ContinuousEncounter:
                 port_flow(pext,pressure,c.gas_K,area,R,gamma,cap.port_discharge_coefficient))
             leakage=port_flow(pressure,pext,c.gas_K,area,R,gamma,cap.port_discharge_coefficient)
             suction=rated
-            pumped=net_pump_rate(pressure,suction,ultimate,RT)
-            gross=suction*pressure/RT if pressure>ultimate else 0.
+            spec=getattr(self,'compressor_spec',None)
+            floor=max(ultimate,max(y[1],0.)*R*c.receiver_K/c.receiver_m3/spec.head_limit_ratio) if spec else ultimate
+            pumped=net_pump_rate(pressure,suction,floor,RT)
+            gross=suction*pressure/RT if pressure>floor else 0.
             extra_work=(gross-pumped)*RT/c.isothermal_efficiency*max(0.,math.log(c.intermediate_Pa/max(pressure,1e-30)))
             # Equivalent upstream-facing nozzle momentum; this does not supply
             # the exterior body's missing pressure/shear forces.
@@ -90,9 +92,9 @@ class ContinuousEncounter:
                 exit_T=c.gas_K*r**((gamma-1)/gamma)
                 exhaust=math.sqrt(max(0.,2*gamma/(gamma-1)*R*(c.gas_K-exit_T)))
                 recoil=leakage*exhaust+cap.port_discharge_coefficient*area*max(0.,pressure*r-pext)
-            return admission,leakage,pumped,pressure,pext,extra_work,idle,recoil
+            return admission,leakage,pumped,pressure,pext,extra_work,idle,recoil,floor
         def rhs(t,y):
-            admission,leakage,pump,_,_,_,_,recoil=rates(t,y)
+            admission,leakage,pump,_,_,_,_,recoil,_=rates(t,y)
             fraction=max(y[6],0.)/max(y[0],1e-30)
             lag=(np.interp(t,grid,support)-y[9])/cap.inlet_lag_s if cap.inlet_lag_s>0 else 0.
             return [(1+self.injection_ratio)*admission-leakage-pump,pump,admission,leakage,
@@ -131,6 +133,7 @@ class ContinuousEncounter:
                 leakage=ys[3,mask],energy=ys[4,mask],impulse=ys[5,mask],
                 admission_rate=flows[0,mask],leakage_rate=flows[1,mask],pump_rate=flows[2,mask],
                 extra_hot_work=flows[5,mask],idle_electric=flows[6,mask],
+                pump_floor=flows[8,mask],
                 incoming_h=np.interp(tt[mask],grid,incoming_h))
         out=dict(pre=pack(pre),post=pack(post),retained_oxygen=float(ys[7,-1]),
             rated_suction=rated,stop_reason=reason,ultimate_Pa=ultimate,

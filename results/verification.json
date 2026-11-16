@@ -8,7 +8,7 @@
         "mouth_diameter_m": 18.3,
         "front_diameter_m": 18.3,
         "rear_diameter_m": 18.3,
-        "machinery_depth_m": 20.0,
+        "machinery_depth_m": 100.0,
         "radial_clearance_m": 0.85,
         "perigee_km": 100.0,
         "apogee_km": 2000.0,
@@ -28,13 +28,13 @@
         "total_impulse_over_capture": 1.0
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.8535448441946443e-06,
-        "retained_kg": 2.8538393099797332e-06,
-        "total_dry_kg": 1.1340813239613112e-06,
-        "compressor_kWh": 7.374855307507033e-05,
-        "hot_absorbed_GJ": 9.79123320021813e-06
+        "captured_kg": 2.86437579632981e-06,
+        "retained_kg": 2.8646713898794474e-06,
+        "total_dry_kg": 1.4612783449940991e-07,
+        "compressor_kWh": 1.2313468389368865e-07,
+        "hot_absorbed_GJ": 9.799587376457808e-06
       },
-      "thermal_residual_J": 0.0
+      "thermal_residual_J": 1.9073486328125e-06
     },
     {
       "design": {
@@ -43,7 +43,7 @@
         "mouth_diameter_m": 18.3,
         "front_diameter_m": 18.3,
         "rear_diameter_m": 18.3,
-        "machinery_depth_m": 20.0,
+        "machinery_depth_m": 100.0,
         "radial_clearance_m": 0.85,
         "perigee_km": 100.0,
         "apogee_km": 2000.0,
@@ -63,11 +63,11 @@
         "total_impulse_over_capture": 1.0
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.890604487770787e-06,
-        "retained_kg": 2.891063420884521e-06,
-        "total_dry_kg": 3.144901223883778e-07,
-        "compressor_kWh": 6.838704724487776e-05,
-        "hot_absorbed_GJ": 9.736179627406472e-06
+        "captured_kg": 2.878584024035291e-06,
+        "retained_kg": 2.879041077763489e-06,
+        "total_dry_kg": 1.3541509329417778e-06,
+        "compressor_kWh": 1.288038522173629e-06,
+        "hot_absorbed_GJ": 9.720841726901241e-06
       },
       "thermal_residual_J": 0.0
     },
@@ -78,7 +78,7 @@
         "mouth_diameter_m": 18.3,
         "front_diameter_m": 18.3,
         "rear_diameter_m": 18.3,
-        "machinery_depth_m": 20.0,
+        "machinery_depth_m": 100.0,
         "radial_clearance_m": 0.85,
         "perigee_km": 100.0,
         "apogee_km": 2000.0,
@@ -98,11 +98,11 @@
         "total_impulse_over_capture": 1.0
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.8424067390897534e-06,
-        "retained_kg": 2.8427978324696568e-06,
-        "total_dry_kg": 1.0522935586232407e-06,
-        "compressor_kWh": 7.041529785678513e-05,
-        "hot_absorbed_GJ": 9.71850875997049e-06
+        "captured_kg": 2.849456159692565e-06,
+        "retained_kg": 2.8498482540495473e-06,
+        "total_dry_kg": 4.351789968382036e-07,
+        "compressor_kWh": 2.5323741790206356e-06,
+        "hot_absorbed_GJ": 9.72235905249974e-06
       },
       "thermal_residual_J": 0.0
     },
@@ -113,7 +113,7 @@
         "mouth_diameter_m": 18.3,
         "front_diameter_m": 18.3,
         "rear_diameter_m": 18.3,
-        "machinery_depth_m": 20.0,
+        "machinery_depth_m": 100.0,
         "radial_clearance_m": 0.85,
         "perigee_km": 100.0,
         "apogee_km": 2000.0,
@@ -133,13 +133,13 @@
         "total_impulse_over_capture": 1.0
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.840709552920373e-06,
-        "retained_kg": 2.840976041751375e-06,
-        "total_dry_kg": 1.0538400875281795e-06,
-        "compressor_kWh": 7.478230745738834e-05,
-        "hot_absorbed_GJ": 9.798722550025118e-06
+        "captured_kg": 2.8302173229466376e-06,
+        "retained_kg": 2.830482838334092e-06,
+        "total_dry_kg": 1.0594197186186705e-07,
+        "compressor_kWh": 1.0794078186826539e-07,
+        "hot_absorbed_GJ": 9.786163646330337e-06
       },
-      "thermal_residual_J": 0.0
+      "thermal_residual_J": -1.9073486328125e-06
     },
     {
       "design": {
@@ -148,7 +148,7 @@
         "mouth_diameter_m": 18.3,
         "front_diameter_m": 18.3,
         "rear_diameter_m": 18.3,
-        "machinery_depth_m": 20.0,
+        "machinery_depth_m": 100.0,
         "radial_clearance_m": 0.85,
         "perigee_km": 100.0,
         "apogee_km": 2000.0,
@@ -168,11 +168,11 @@
         "total_impulse_over_capture": 1.0
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.8161210294808114e-06,
-        "retained_kg": 2.816150086681901e-06,
-        "total_dry_kg": 1.6637293098753503e-08,
-        "compressor_kWh": 6.836901957041341e-05,
-        "hot_absorbed_GJ": 9.752139108920588e-06
+        "captured_kg": 2.7588582225401836e-06,
+        "retained_kg": 2.759076350722367e-06,
+        "total_dry_kg": 1.6540532365993954e-07,
+        "compressor_kWh": 2.070043392699006e-06,
+        "hot_absorbed_GJ": 9.672225332657547e-06
       },
       "thermal_residual_J": 0.0
     },
@@ -183,7 +183,7 @@
         "mouth_diameter_m": 18.3,
         "front_diameter_m": 18.3,
         "rear_diameter_m": 18.3,
-        "machinery_depth_m": 20.0,
+        "machinery_depth_m": 100.0,
         "radial_clearance_m": 0.85,
         "perigee_km": 100.0,
         "apogee_km": 2000.0,
@@ -205,8 +205,8 @@
       "relative_resolution_errors": {
         "captured_kg": 2.8354533045948926e-06,
         "retained_kg": 2.8359214876427785e-06,
-        "total_dry_kg": 1.1796187645574108e-06,
-        "compressor_kWh": 8.083219702470501e-05,
+        "total_dry_kg": 1.1121898157995247e-07,
+        "compressor_kWh": 4.008475777861342e-06,
         "hot_absorbed_GJ": 9.766279492229302e-06
       },
       "thermal_residual_J": 0.0
@@ -218,7 +218,7 @@
         "mouth_diameter_m": 18.3,
         "front_diameter_m": 18.3,
         "rear_diameter_m": 18.3,
-        "machinery_depth_m": 20.0,
+        "machinery_depth_m": 100.0,
         "radial_clearance_m": 0.85,
         "perigee_km": 100.0,
         "apogee_km": 2000.0,
@@ -238,11 +238,11 @@
         "total_impulse_over_capture": 1.0
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.803185944033615e-06,
-        "retained_kg": 2.8035278267779518e-06,
-        "total_dry_kg": 3.0238074466559794e-07,
-        "compressor_kWh": 7.515154451076533e-05,
-        "hot_absorbed_GJ": 9.708937268149143e-06
+        "captured_kg": 2.7081854214738854e-06,
+        "retained_kg": 2.7085157294770568e-06,
+        "total_dry_kg": 1.7665516849341145e-07,
+        "compressor_kWh": 3.952710939447712e-06,
+        "hot_absorbed_GJ": 9.61278944466848e-06
       },
       "thermal_residual_J": 0.0
     },
@@ -253,7 +253,7 @@
         "mouth_diameter_m": 18.3,
         "front_diameter_m": 18.3,
         "rear_diameter_m": 18.3,
-        "machinery_depth_m": 20.0,
+        "machinery_depth_m": 100.0,
         "radial_clearance_m": 0.85,
         "perigee_km": 100.0,
         "apogee_km": 2000.0,
@@ -273,13 +273,13 @@
         "total_impulse_over_capture": 1.0
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.8743959790134e-06,
-        "retained_kg": 2.874695151700024e-06,
-        "total_dry_kg": 1.5657869885110642e-06,
-        "compressor_kWh": 6.992507379677271e-05,
-        "hot_absorbed_GJ": 9.813407303882471e-06
+        "captured_kg": 2.8040891482117303e-06,
+        "retained_kg": 2.8043810464950525e-06,
+        "total_dry_kg": 1.4262215164428937e-07,
+        "compressor_kWh": 1.6542946867925679e-07,
+        "hot_absorbed_GJ": 9.735488289086547e-06
       },
-      "thermal_residual_J": 0.0
+      "thermal_residual_J": -1.9073486328125e-06
     }
   ],
   "orbit_energy_angular_invariants": "passed",

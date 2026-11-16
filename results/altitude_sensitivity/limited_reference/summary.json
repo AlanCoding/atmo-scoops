@@ -1,0 +1,254 @@
+[
+  {
+    "apogee_km": 937.1912423634607,
+    "perigee_km": 69.14430871659562,
+    "storage_Pa": 109840.49133338305,
+    "dry_t": 823683.8928788531,
+    "compressor_t": 2429.7060063384574,
+    "net_kg_pass": 107050.55313250037,
+    "payoff_days": 505.91212234492707,
+    "period_h": 1.5780278721490706,
+    "passes": true,
+    "failed_margins": {},
+    "file": "apogee_937.json",
+    "evaluations": [
+      {
+        "perigee_km": 60.0,
+        "rear_pressure_Pa": 381007.49330934987,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 90.0,
+        "rear_pressure_Pa": 3512.5328741082512,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 81.53730685545196,
+        "rear_pressure_Pa": 14948.600842673834,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 70.76865342772598,
+        "rear_pressure_Pa": 86422.96585287574,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 67.91501181585166,
+        "rear_pressure_Pa": 130975.11218099852,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 69.25850383288264,
+        "rear_pressure_Pa": 108034.7641597238,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 69.14341060672297,
+        "rear_pressure_Pa": 109855.05183679951,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 69.13430871659561,
+        "rear_pressure_Pa": 110000.1277534886,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 69.13580871659565,
+        "rear_pressure_Pa": 109976.21164773619,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 69.14430871659562,
+        "rear_pressure_Pa": 109840.49133338305,
+        "screens_pass": true
+      }
+    ]
+  },
+  {
+    "apogee_km": 2000.0,
+    "perigee_km": 66.8118305466491,
+    "storage_Pa": 109846.95886239488,
+    "dry_t": 753499.933840788,
+    "compressor_t": 2438.0037298675907,
+    "net_kg_pass": 106193.76197513963,
+    "payoff_days": 521.4880870858857,
+    "period_h": 1.7638896877590156,
+    "passes": true,
+    "failed_margins": {},
+    "file": "apogee_2000.json",
+    "evaluations": [
+      {
+        "perigee_km": 60.0,
+        "rear_pressure_Pa": 274396.1103898962,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 90.0,
+        "rear_pressure_Pa": 2505.816123680118,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 78.1392400379983,
+        "rear_pressure_Pa": 19076.618643252485,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 69.06962001899916,
+        "rear_pressure_Pa": 79747.16494446012,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 65.65567425019893,
+        "rear_pressure_Pa": 128821.06993630933,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 66.96500783765296,
+        "rear_pressure_Pa": 107532.12630608455,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 66.81322623809768,
+        "rear_pressure_Pa": 109826.1732972471,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 66.8018305466491,
+        "rear_pressure_Pa": 110000.10733694506,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 66.80333054664914,
+        "rear_pressure_Pa": 109977.2022616155,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 66.8118305466491,
+        "rear_pressure_Pa": 109846.95886239488,
+        "screens_pass": true
+      }
+    ]
+  },
+  {
+    "apogee_km": 10000.0,
+    "perigee_km": 63.3145468353751,
+    "storage_Pa": 109849.09483263234,
+    "dry_t": 742493.4391345299,
+    "compressor_t": 2317.2745015636274,
+    "net_kg_pass": 102586.46392970091,
+    "payoff_days": 1016.0533660908585,
+    "period_h": 3.369187653298427,
+    "passes": true,
+    "failed_margins": {},
+    "file": "apogee_10000.json",
+    "evaluations": [
+      {
+        "perigee_km": 60.0,
+        "rear_pressure_Pa": 170519.52902894,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 90.0,
+        "rear_pressure_Pa": 1547.7529876377246,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 70.74490612221777,
+        "rear_pressure_Pa": 38608.42394448434,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 64.9296581782137,
+        "rear_pressure_Pa": 88297.3543821696,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 63.628468749468595,
+        "rear_pressure_Pa": 105305.56037253974,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 63.2951799747876,
+        "rear_pressure_Pa": 110135.74926429389,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 63.3045468353751,
+        "rear_pressure_Pa": 109997.19927950298,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 63.30304683537507,
+        "rear_pressure_Pa": 110019.37490903678,
+        "screens_pass": true
+      },
+      {
+        "perigee_km": 63.3145468353751,
+        "rear_pressure_Pa": 109849.09483263234,
+        "screens_pass": true
+      }
+    ]
+  },
+  {
+    "apogee_km": 15000.0,
+    "perigee_km": 62.801248679358245,
+    "storage_Pa": 109851.88490614608,
+    "dry_t": 751341.111493784,
+    "compressor_t": 2268.935728324053,
+    "net_kg_pass": 101476.06456162578,
+    "payoff_days": 1399.0711954345527,
+    "period_h": 4.535002388099261,
+    "passes": false,
+    "failed_margins": {
+      "oxygen_kg": -677.0119569468225
+    },
+    "file": "apogee_15000.json",
+    "evaluations": [
+      {
+        "perigee_km": 60.0,
+        "rear_pressure_Pa": 159182.84089115655,
+        "screens_pass": false
+      },
+      {
+        "perigee_km": 90.0,
+        "rear_pressure_Pa": 1444.1779300528053,
+        "screens_pass": false
+      },
+      {
+        "perigee_km": 69.35398588422504,
+        "rear_pressure_Pa": 44299.219014588816,
+        "screens_pass": false
+      },
+      {
+        "perigee_km": 64.00453599849293,
+        "rear_pressure_Pa": 93435.31246212806,
+        "screens_pass": false
+      },
+      {
+        "perigee_km": 62.99561765381629,
+        "rear_pressure_Pa": 107027.53377549344,
+        "screens_pass": false
+      },
+      {
+        "perigee_km": 62.78755333275542,
+        "rear_pressure_Pa": 110053.74736059555,
+        "screens_pass": false
+      },
+      {
+        "perigee_km": 62.79124867935825,
+        "rear_pressure_Pa": 109999.29594552463,
+        "screens_pass": false
+      },
+      {
+        "perigee_km": 62.78974867935822,
+        "rear_pressure_Pa": 110021.39457990727,
+        "screens_pass": false
+      },
+      {
+        "perigee_km": 62.801248679358245,
+        "rear_pressure_Pa": 109851.88490614608,
+        "screens_pass": false
+      }
+    ]
+  }
+]

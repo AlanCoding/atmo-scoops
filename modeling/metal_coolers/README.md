@@ -78,3 +78,23 @@ Hand these reduced relations to the primary model only after benchmarking.
 Related: [compressor plan](../compressor/MODEL_PLAN.md),
 [screening arithmetic](../compressor/SCREENING_CALCULATIONS.md),
 [properties](../gas_properties/README.md), [deployment](../deployment/README.md).
+
+Design option: [encapsulated phase-change cores](../../docs/PHASE_CHANGE_COOLERS.md), including stage-specific temperature matching and finite solidification. No numerical mass credit yet.
+
+## Working volume during the pass
+
+A deployed radiator's smallest folded package is not necessarily its working
+in-chamber cooling geometry. For each stage, retain solid material/core volume,
+rack envelope, gas-accessible pore volume and connected plenum separately.
+`V_rack = V_solid/(1-epsilon)` only when epsilon describes the full selected
+lattice consistently; add frames or closed cells that it excludes. PCM cores,
+liners and expansion cavities need explicit geometry. Gas-accessible pore
+volume counts inside chamber inventory, not as a second hull allocation.
+
+For planar sheets, material volume is physical sheet area times actual thickness;
+stack pitch also includes gas passages and supports. Pitch must follow heat
+transfer and pressure-loss calculations. It cannot be set to material thickness
+merely to obtain compact storage. A rolled coast package, a folded transit
+package and the collection configuration may be different states; check each
+required state and transition. [Close-pass allocation](../deployment/CLOSE_PASS_VOLUME.md)
+connects these quantities to the per-stage dynamics and remaining rear tank.
