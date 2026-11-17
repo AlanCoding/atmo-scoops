@@ -1,0 +1,8 @@
+{
+  "max_abs_Z_minus_one": 2.0195297898872866e-05,
+  "max_compressor_work_relative_error": 3.616311086199521e-10,
+  "max_audited_compressor_outlet_K": 1342.5085103781455,
+  "domain_failures": [],
+  "low_density_chamber_EOS_screen_passed": true,
+  "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+}

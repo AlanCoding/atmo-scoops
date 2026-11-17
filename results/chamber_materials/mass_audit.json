@@ -1,0 +1,126 @@
+{
+  "parts_kg": {
+    "solar": 2244005.6321257125,
+    "battery": 2066834.996408549,
+    "warm_radiator": 387216.0615361143,
+    "warm_buffer": 576445.1065325557,
+    "refrigerator": 151460.9645243793,
+    "compressor_hot": 661040.4688541484,
+    "compressor_warm": 267710.3257272375,
+    "compressor_coast": 1340.7513470878398,
+    "propulsion_hardware": 5386010.265826158,
+    "power_distribution": 2747865.8042657417,
+    "compressor_bulkhead": 7068.583470577034,
+    "warm_aftercooler": 3419.404395012849,
+    "product_heat_exchangers": 557.1296657618157,
+    "separator": 3577.9903041081516,
+    "liquid_storage_valves_plumbing": 500.0,
+    "avionics_attitude": 1000.0,
+    "compressor_motor_uprating": 7193.688379197243,
+    "rack_material": 443008.346459331,
+    "rack_deployment": 449919.9652623619,
+    "shell": 47228.28407997023,
+    "pressure_vessels": 86961.78097012592,
+    "compression_energy_adjustment": 3645.429003810821,
+    "warm_feed_surcharge": 9671.508659255876,
+    "design_margin": 3888420.6219492992
+  },
+  "groups_kg": {
+    "Thruster hardware": 5386010.265826158,
+    "Electrical distribution": 2747865.8042657417,
+    "Solar arrays": 2244005.6321257125,
+    "Battery": 2066834.996408549,
+    "Dive compressors incl. motor uprating": 935944.4829605832,
+    "Warm heat buffer": 576445.1065325557,
+    "Rack deployment hardware": 449919.9652623619,
+    "Rack material": 443008.346459331,
+    "Warm radiators": 387216.0615361143,
+    "Refrigeration machinery": 151460.9645243793,
+    "Pressure vessels": 86961.78097012592,
+    "Hull/TPS allowance": 47228.28407997023,
+    "Other equipment and proxy adjustments": 30780.796845614386,
+    "Design margin": 3888420.6219492992
+  },
+  "total_kg": 19442103.109746497,
+  "proxy_days": 372.9596995698493,
+  "plant_throughput_factor": 1.4788099351684971,
+  "plant_additions_kg": {
+    "refrigerator": 49040.118597940695,
+    "product_heat_exchangers": 180.38776505343574,
+    "separator": 1158.4837677928733,
+    "compressor_coast": 434.10924575852107
+  },
+  "propulsion": {
+    "impulse_Ns": 55980931.1368548,
+    "exhaust_m_s": 17318.072921385854,
+    "propellant_kg": 3232.515037381827,
+    "electric_GJ": 807.9015396959428,
+    "power_GW": 2.6930051323198088,
+    "thrust_kN": 186.60310378951598,
+    "orbit_minutes": 106.0282299477897,
+    "net_kg": 3838.312716953279,
+    "net_t_day": 52.129233083815556,
+    "propulsion_only_battery_t": 1968.5710031577553,
+    "propulsion_only_solar_t": 2057.04550073238
+  },
+  "banks": [
+    {
+      "stage": 1,
+      "anchor_structure_t": 626.2241269129795,
+      "anchor_motor_t": 34.81634194116893,
+      "actual_peak_electric_MW": 13.269101451758894,
+      "actual_flow_work_MWh": 0.6169444949563215,
+      "flow_weighted_inlet_K": 751.2332907547656,
+      "active_max_inlet_K": 915.1137057081621,
+      "actual_head_kJ_kg": 921.8639951361916,
+      "fixed_head_cap_kJ_kg": 941.4843648398695
+    },
+    {
+      "stage": 2,
+      "anchor_structure_t": 181.9681118159218,
+      "anchor_motor_t": 13.873344791136601,
+      "actual_peak_electric_MW": 11.972997927964835,
+      "actual_flow_work_MWh": 0.5752971922766489,
+      "flow_weighted_inlet_K": 446.8981954636621,
+      "active_max_inlet_K": 532.516547251834,
+      "actual_head_kJ_kg": 1205.0107931128127,
+      "fixed_head_cap_kJ_kg": 1212.9996460694304
+    },
+    {
+      "stage": 3,
+      "anchor_structure_t": 38.14948015673831,
+      "anchor_motor_t": 10.526966236896476,
+      "actual_peak_electric_MW": 9.449033990259833,
+      "actual_flow_work_MWh": 0.48674814102143144,
+      "flow_weighted_inlet_K": 451.21535727172636,
+      "active_max_inlet_K": 542.6994170443994,
+      "actual_head_kJ_kg": 933.8943923692057,
+      "fixed_head_cap_kJ_kg": 933.9240144561095
+    },
+    {
+      "stage": 4,
+      "anchor_structure_t": 13.422565930405392,
+      "anchor_motor_t": 9.769856796138939,
+      "actual_peak_electric_MW": 16.963545175336183,
+      "actual_flow_work_MWh": 0.7492150137323514,
+      "flow_weighted_inlet_K": 417.3106476687563,
+      "active_max_inlet_K": 515.5494091663063,
+      "actual_head_kJ_kg": 823.7422771305279,
+      "fixed_head_cap_kJ_kg": 823.7428878946281
+    }
+  ],
+  "sensitivity": {
+    "propulsion_hardware_minus_10_percent_days": 360.044656639028,
+    "power_distribution_minus_10_percent_days": 366.37062842466383,
+    "solar_minus_10_percent_days": 367.5788280813946,
+    "battery_minus_10_percent_days": 368.0036632104485
+  },
+  "energy": {
+    "anchor_total_compressor_GJ": 13.505566797968786,
+    "anchor_spin_GJ": 2.8676255053610302,
+    "anchor_idle_estimate_GJ": 1.8819443427327083,
+    "transient_flow_compressor_GJ": 8.740345344355925
+  },
+  "anchor_cryoplant_MW": 10.688283157691888,
+  "scaled_capacity_cryoplant_MW": 15.80593932348888
+}

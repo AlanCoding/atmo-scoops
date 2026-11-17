@@ -1,0 +1,484 @@
+[
+  {
+    "name": "solid_0.001",
+    "payoff_days": 544.5435951770924,
+    "dry_t": 41918.28103791494,
+    "rack_t": 1807.679749502475,
+    "net_kg_pass": 5667.9998476760875,
+    "length_m": 236.8702481872543,
+    "max_inlet_K": 601.6923030690652,
+    "max_shell_K": 552.0561078689167,
+    "max_cooldown_s": 713.4593707259925,
+    "coast_s": 5135.196826127941,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "screens": true,
+    "failed": {},
+    "file": "solid_0.001.json"
+  },
+  {
+    "name": "solid_0.003",
+    "payoff_days": 552.5358204277827,
+    "dry_t": 41476.90223824483,
+    "rack_t": 1807.679749502475,
+    "net_kg_pass": 5527.196364283053,
+    "length_m": 233.88559799991006,
+    "max_inlet_K": 933.3333792921777,
+    "max_shell_K": 563.7038285296254,
+    "max_cooldown_s": 2165.690099820346,
+    "coast_s": 5134.964656905673,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "screens": true,
+    "failed": {},
+    "file": "solid_0.003.json"
+  },
+  {
+    "name": "solid_0.01",
+    "error": "Compression endpoint outside 200\u20132000 K property domain",
+    "screens": false
+  },
+  {
+    "name": "nitrate_eutectic_10mm_f1.5",
+    "error": "Compression endpoint outside 200\u20132000 K property domain",
+    "screens": false
+  },
+  {
+    "name": "nitrate_eutectic_10mm_f3",
+    "payoff_days": 703.976803398399,
+    "dry_t": 41145.40927263185,
+    "rack_t": 1600.9213216578362,
+    "net_kg_pass": 4303.502471990496,
+    "length_m": 255.08966274824917,
+    "max_inlet_K": 1209.1722099674876,
+    "max_shell_K": 462.7334729060814,
+    "max_cooldown_s": 3711.3886153888925,
+    "coast_s": 5135.798901091463,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      406.72217064390725,
+      417.8464560878038,
+      411.39781917767345,
+      407.58682479338995
+    ],
+    "screens": false,
+    "failed": {
+      "oxygen_kg": -93.96055083784427
+    },
+    "file": "nitrate_eutectic_10mm_f3.json"
+  },
+  {
+    "name": "nitrate_eutectic_10mm_f6",
+    "payoff_days": 575.6532084444361,
+    "dry_t": 43429.08335693225,
+    "rack_t": 3201.8426433156724,
+    "net_kg_pass": 5554.932071855542,
+    "length_m": 288.473529375895,
+    "max_inlet_K": 906.4235998655444,
+    "max_shell_K": 403.67537321257277,
+    "max_cooldown_s": 2851.928099868605,
+    "coast_s": 5134.990464536851,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      365.48296976257853,
+      371.2736872086582,
+      350.7870699557202,
+      342.52401477098226
+    ],
+    "screens": false,
+    "failed": {
+      "interstage_small_holdup_fraction": -0.006597755076868843
+    },
+    "file": "nitrate_eutectic_10mm_f6.json"
+  },
+  {
+    "name": "nitrate_eutectic_10mm_f12",
+    "payoff_days": 640.6603153143723,
+    "dry_t": 47893.279331161786,
+    "rack_t": 6403.685286631345,
+    "net_kg_pass": 5504.346575119087,
+    "length_m": 355.1536920559673,
+    "max_inlet_K": 652.8653454651077,
+    "max_shell_K": 349.7700611217753,
+    "max_cooldown_s": 1732.1721700424273,
+    "coast_s": 5135.355201020154,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      332.3201578881771,
+      333.35729272957076,
+      315.4384199032426,
+      312.12410210677086
+    ],
+    "screens": false,
+    "failed": {
+      "interstage_small_holdup_fraction": -0.03880658787410106,
+      "length_m": -38.153692055967326
+    },
+    "file": "nitrate_eutectic_10mm_f12.json"
+  },
+  {
+    "name": "sodium_nitrate_10mm_f1.5",
+    "error": "Compression endpoint outside 200\u20132000 K property domain",
+    "screens": false
+  },
+  {
+    "name": "sodium_nitrate_10mm_f3",
+    "payoff_days": 762.8276131360768,
+    "dry_t": 40899.25559932918,
+    "rack_t": 1409.1391157825062,
+    "net_kg_pass": 3947.7352297775037,
+    "length_m": 249.58283389103104,
+    "max_inlet_K": 1301.586739018764,
+    "max_shell_K": 463.37338550934646,
+    "max_cooldown_s": 4087.5065574539726,
+    "coast_s": 5136.032003665234,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      409.3481880445354,
+      421.0575517814125,
+      420.65128705333944,
+      420.6977920830272
+    ],
+    "screens": false,
+    "failed": {
+      "oxygen_kg": -176.54581052925073
+    },
+    "file": "sodium_nitrate_10mm_f3.json"
+  },
+  {
+    "name": "sodium_nitrate_10mm_f6",
+    "payoff_days": 592.7710400909205,
+    "dry_t": 42846.78890196019,
+    "rack_t": 2818.2782315650124,
+    "net_kg_pass": 5322.189343409693,
+    "length_m": 276.80338867211117,
+    "max_inlet_K": 972.3280384018437,
+    "max_shell_K": 401.21828024109703,
+    "max_cooldown_s": 3222.8759610807388,
+    "coast_s": 5135.131705438093,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      369.17602569457955,
+      375.9820340450799,
+      358.411337576411,
+      350.520085862622
+    ],
+    "screens": false,
+    "failed": {
+      "interstage_small_holdup_fraction": -0.0025618267170838434
+    },
+    "file": "sodium_nitrate_10mm_f6.json"
+  },
+  {
+    "name": "sodium_nitrate_10mm_f12",
+    "payoff_days": 621.7393658225943,
+    "dry_t": 46758.32838248227,
+    "rack_t": 5636.556463130025,
+    "net_kg_pass": 5537.447605147201,
+    "length_m": 331.9075358614175,
+    "max_inlet_K": 706.4920237010983,
+    "max_shell_K": 351.50864021701574,
+    "max_cooldown_s": 2050.1212033111237,
+    "coast_s": 5135.262891844033,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      335.5366031687369,
+      337.50280427692087,
+      319.11988499162214,
+      314.96755858157854
+    ],
+    "screens": false,
+    "failed": {
+      "interstage_small_holdup_fraction": -0.027665730250691106,
+      "length_m": -14.9075358614175
+    },
+    "file": "sodium_nitrate_10mm_f12.json"
+  },
+  {
+    "name": "tin_10mm_f1.5",
+    "error": "Compression endpoint outside 200\u20132000 K property domain",
+    "screens": false
+  },
+  {
+    "name": "tin_10mm_f3",
+    "payoff_days": 735.9967911036287,
+    "dry_t": 44813.327454585415,
+    "rack_t": 4505.822931673892,
+    "net_kg_pass": 4483.22247150804,
+    "length_m": 257.04509196506973,
+    "max_inlet_K": 1161.5524496859887,
+    "max_shell_K": 473.87576871413637,
+    "max_cooldown_s": 2690.3976646726046,
+    "coast_s": 5135.680440101708,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      457.4109864872383,
+      473.86108117871083,
+      460.49555183457994,
+      452.0124711489118
+    ],
+    "screens": false,
+    "failed": {
+      "oxygen_kg": -52.27112457493104
+    },
+    "file": "tin_10mm_f3.json"
+  },
+  {
+    "name": "tin_10mm_f6",
+    "payoff_days": 665.9569378328144,
+    "dry_t": 50724.680373305724,
+    "rack_t": 9011.645863347783,
+    "net_kg_pass": 5608.312315865764,
+    "length_m": 292.2019833740837,
+    "max_inlet_K": 868.2368749524803,
+    "max_shell_K": 403.27426935104296,
+    "max_cooldown_s": 2171.029494635344,
+    "coast_s": 5134.991070505314,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      394.97878725202014,
+      403.2636694051262,
+      370.4381264706357,
+      357.94656686486553
+    ],
+    "screens": false,
+    "failed": {
+      "interstage_small_holdup_fraction": -0.00817655724465633
+    },
+    "file": "tin_10mm_f6.json"
+  },
+  {
+    "name": "tin_10mm_f12",
+    "payoff_days": 835.6945615713266,
+    "dry_t": 62478.056524869746,
+    "rack_t": 18023.291726695566,
+    "net_kg_pass": 5504.767172561858,
+    "length_m": 362.56086972455375,
+    "max_inlet_K": 626.529326275987,
+    "max_shell_K": 348.3707915159617,
+    "max_cooldown_s": 1400.146722878169,
+    "coast_s": 5135.376553079116,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      347.0804806583485,
+      348.3643816123458,
+      321.5380267156442,
+      317.2912026685175
+    ],
+    "screens": false,
+    "failed": {
+      "interstage_small_holdup_fraction": -0.043285972304781865,
+      "length_m": -45.560869724553754
+    },
+    "file": "tin_10mm_f12.json"
+  },
+  {
+    "name": "eutectic_5mm_f1.5",
+    "payoff_days": 611.3114395768598,
+    "dry_t": 40382.98591399279,
+    "rack_t": 967.9549718020468,
+    "net_kg_pass": 4864.015203925681,
+    "length_m": 238.71895875805342,
+    "max_inlet_K": 1080.4581846526157,
+    "max_shell_K": 533.8165266954904,
+    "max_cooldown_s": 2513.271599251616,
+    "coast_s": 5135.410391363704,
+    "melt_max": [
+      0.6152696490795503,
+      1.0,
+      0.46030441138041056,
+      0.11980492287323674
+    ],
+    "core_max_K": [
+      495.15,
+      496.2443182648203,
+      495.15,
+      495.15
+    ],
+    "screens": true,
+    "failed": {},
+    "file": "eutectic_5mm_f1.5.json"
+  },
+  {
+    "name": "eutectic_5mm_f3",
+    "payoff_days": 544.7905831576825,
+    "dry_t": 41788.496079089324,
+    "rack_t": 1935.9099436040935,
+    "net_kg_pass": 5647.889207879817,
+    "length_m": 255.24531774548504,
+    "max_inlet_K": 796.2871835758667,
+    "max_shell_K": 440.1510230714857,
+    "max_cooldown_s": 2028.7865266770427,
+    "coast_s": 5135.064949366026,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      430.97067157186757,
+      439.38454194569795,
+      389.48058954259704,
+      371.24474755578393
+    ],
+    "screens": true,
+    "failed": {},
+    "file": "eutectic_5mm_f3.json"
+  },
+  {
+    "name": "eutectic_5mm_f6",
+    "payoff_days": 586.8232582974354,
+    "dry_t": 44655.14043326611,
+    "rack_t": 3871.819887208187,
+    "net_kg_pass": 5603.032740814426,
+    "length_m": 288.8762939803427,
+    "max_inlet_K": 580.9472066079229,
+    "max_shell_K": 365.85212031423146,
+    "max_cooldown_s": 1382.795345660489,
+    "coast_s": 5135.3062336723615,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      365.44716040500975,
+      364.62134698894147,
+      328.67513028509904,
+      323.2064464701193
+    ],
+    "screens": false,
+    "failed": {
+      "interstage_small_holdup_fraction": -0.015185285863356978
+    },
+    "file": "eutectic_5mm_f6.json"
+  },
+  {
+    "name": "hybrid_interstage_f1.5",
+    "error": "Compression endpoint outside 200\u20132000 K property domain",
+    "screens": false
+  },
+  {
+    "name": "hybrid_interstage_f3",
+    "payoff_days": 548.1521099446945,
+    "dry_t": 42084.61444770735,
+    "rack_t": 1796.8843088349831,
+    "net_kg_pass": 5653.0298912120725,
+    "length_m": 238.82202768723766,
+    "max_inlet_K": 601.6923030690652,
+    "max_shell_K": 552.0561078689167,
+    "max_cooldown_s": 3200.8949781944443,
+    "coast_s": 5134.6628913628965,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      null,
+      362.8997318225765,
+      375.3864928300949,
+      387.5832803204904
+    ],
+    "screens": true,
+    "failed": {},
+    "file": "hybrid_interstage_f3.json"
+  },
+  {
+    "name": "hybrid_interstage_f6",
+    "payoff_days": 550.3346010913489,
+    "dry_t": 42041.03417475448,
+    "rack_t": 1880.4729263411405,
+    "net_kg_pass": 5624.7806509744905,
+    "length_m": 239.7562474801086,
+    "max_inlet_K": 601.6923030690652,
+    "max_shell_K": 552.0561078689167,
+    "max_cooldown_s": 2196.070931888053,
+    "coast_s": 5135.0512539506935,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "core_max_K": [
+      null,
+      346.98307790080975,
+      338.32543432241994,
+      335.4836798692554
+    ],
+    "screens": false,
+    "failed": {
+      "interstage_small_holdup_fraction": -0.007539158768164475
+    },
+    "file": "hybrid_interstage_f6.json"
+  }
+]

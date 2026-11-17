@@ -1,0 +1,98 @@
+[
+  {
+    "name": "solid",
+    "n": 801,
+    "payoff_days": 521.9046478468568,
+    "inventory_payoff_days": null,
+    "dry_t": 40172.34136629475,
+    "net_kg": 5667.545288071001,
+    "compressor_t": 925.5783266915123,
+    "length_m": 228.23890798323652,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "solid",
+    "n": 1601,
+    "payoff_days": 521.9735887291043,
+    "inventory_payoff_days": null,
+    "dry_t": 40177.718288730815,
+    "net_kg": 5667.555213999323,
+    "compressor_t": 929.6783478127021,
+    "length_m": 228.27183443804861,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold200",
+    "n": 801,
+    "payoff_days": 558.2082148897435,
+    "inventory_payoff_days": 566.1815241030478,
+    "dry_t": 42818.26313537068,
+    "net_kg": 5647.962992948254,
+    "compressor_t": 571.5256348421572,
+    "length_m": 251.44767294986215,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold200",
+    "n": 1601,
+    "payoff_days": 558.1865622814031,
+    "inventory_payoff_days": 566.1595537591011,
+    "dry_t": 42818.308542540995,
+    "net_kg": 5648.188072700304,
+    "compressor_t": 571.5453787897437,
+    "length_m": 251.44795945726577,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold200_small",
+    "n": 801,
+    "payoff_days": 556.6915575982484,
+    "inventory_payoff_days": 564.2959882433681,
+    "dry_t": 42813.48937708765,
+    "net_kg": 5662.718972101272,
+    "compressor_t": 751.7521719355951,
+    "length_m": 249.97706637528358,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold200_small",
+    "n": 1601,
+    "payoff_days": 556.7384047620598,
+    "inventory_payoff_days": 564.3434691986113,
+    "dry_t": 42813.523958851416,
+    "net_kg": 5662.247052001892,
+    "compressor_t": 751.810526989413,
+    "length_m": 249.977308645726,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "warm280",
+    "n": 801,
+    "payoff_days": 538.207446276578,
+    "inventory_payoff_days": 550.064231425743,
+    "dry_t": 41384.31629160908,
+    "net_kg": 5661.677164471254,
+    "compressor_t": 584.0676156535246,
+    "length_m": 243.97404442626782,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "warm280",
+    "n": 1601,
+    "payoff_days": 538.4424098531135,
+    "inventory_payoff_days": 550.2993471293731,
+    "dry_t": 41401.85211421171,
+    "net_kg": 5661.604523916836,
+    "compressor_t": 597.4757734340975,
+    "length_m": 244.08459627957404,
+    "screens": true,
+    "failed": {}
+  }
+]

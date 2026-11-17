@@ -1,0 +1,68 @@
+[
+  {
+    "architecture": "solid",
+    "isp_s": 1765.951973547119,
+    "n": 801,
+    "payoff_days": 370.77651461730346,
+    "dry_t": 19448.314946170187,
+    "net_kg": 3862.1468277377194,
+    "propellant_kg": 3232.5150380939854,
+    "nitrogen_kg": 1583.0205392852133,
+    "screens": true
+  },
+  {
+    "architecture": "solid",
+    "isp_s": 1765.951973547119,
+    "n": 1601,
+    "payoff_days": 370.8780212978933,
+    "dry_t": 19453.68926600124,
+    "net_kg": 3862.1567536660605,
+    "propellant_kg": 3232.5150380939513,
+    "nitrogen_kg": 1583.0197758345641,
+    "screens": true
+  },
+  {
+    "architecture": "ammonia",
+    "isp_s": 1869.412902425857,
+    "n": 801,
+    "payoff_days": 419.01643236802687,
+    "dry_t": 22885.285692568763,
+    "net_kg": 4021.4650879619194,
+    "propellant_kg": 3053.614483704033,
+    "nitrogen_kg": 1408.6438263513785,
+    "screens": true
+  },
+  {
+    "architecture": "ammonia",
+    "isp_s": 1869.412902425857,
+    "n": 1601,
+    "payoff_days": 418.9938089569555,
+    "dry_t": 22885.330887904303,
+    "net_kg": 4021.6901677140772,
+    "propellant_kg": 3053.6144837038287,
+    "nitrogen_kg": 1408.593094852648,
+    "screens": true
+  },
+  {
+    "architecture": "warm_ammonia",
+    "isp_s": 1815.6545249025598,
+    "n": 801,
+    "payoff_days": 392.6601884734755,
+    "dry_t": 21036.777430702066,
+    "net_kg": 3944.7670379343913,
+    "propellant_kg": 3144.0267047688953,
+    "nitrogen_kg": 1495.875029939801,
+    "screens": true
+  },
+  {
+    "architecture": "warm_ammonia",
+    "isp_s": 1815.6545249025598,
+    "n": 1601,
+    "payoff_days": 392.9945985114003,
+    "dry_t": 21054.3057454145,
+    "net_kg": 3944.6943973800085,
+    "propellant_kg": 3144.02670476883,
+    "nitrogen_kg": 1495.893412200113,
+    "screens": true
+  }
+]

@@ -11,7 +11,7 @@ atmospheric passes, transfers it into rear tanks, and makes useful cryogenic
 liquids during the coast. A solid metal rack absorbs entry heat. Once clear of
 the atmosphere, the craft extends that same metal through its mouth to radiate
 the heat to space, unfolds solar arrays, and runs its separation and
-liquefaction plant. Recovered oxygen supplies electric propulsion for reboost.
+liquefaction plant. Recovered nitrogen and oxygen supply electric propulsion for reboost.
 
 ![Atmospheric scoop diver during collection and coast](docs/images/spacecraft_overview.svg)
 
@@ -60,7 +60,8 @@ open-mouth control/capacity search at this geometry, not a final operating polic
 | Area | Purpose | Entry point |
 |---|---|---|
 | Subsystem modeling research | Comparable hardware, real-gas physics, heat transfer and validated replacements for numerical approximations | [Research index](modeling/README.md), [compressor](modeling/compressor/README.md), [metal coolers](modeling/metal_coolers/README.md) |
-| Primary numerical model | Fast cycle inventory, heat, power, hardware mass and constraints | [Model](modeling/primary/MODEL.md), [inputs](modeling/primary/PARAMETERS.md), `atmo_scoops/system.py` |
+| Coupled primary model | One forward cycle with finite hardware, evolving gas/rack states and periodic constraints | [Implementation and inputs](modeling/primary/TRANSIENT_IMPLEMENTATION.md), `atmo_scoops/transient/` |
+| Legacy scalar model | Reproduce earlier reduced-cycle studies | [Scalar equations](modeling/primary/MODEL.md), `atmo_scoops/scalar/` compatibility gateway |
 | Design optimization | Search independent coordinates using the primary model | [Search definition and results](modeling/optimization/RESULTS.md), `atmo_scoops/optimization/` |
 | Detailed fluid analysis | Evaluate selected geometries; resolve shocks, cooling, capture and leakage | [Fluid study specification](modeling/fluid/README.md); solver integration pending |
 | Flight stability | Fluid forces/moments coupled to attitude, mass distribution and flexibility | [Stability study specification](modeling/stability/FLIGHT_STUDY.md); solver integration pending |
@@ -71,24 +72,40 @@ primary model. The [improvement list](docs/MODEL_IMPROVEMENTS.md) tracks these
 interfaces and missing physics. [Sources](docs/SOURCES.md) separate evidence from
 hardware-development targets.
 
-The [compressor refinement](modeling/compressor/RESULTS.md) replaces isothermal
-work and fixed volume-flow mass coefficients with real-fluid compression states
-and an explicit hardware buildup. Paired candidate cases give **520–556 days**
-of operating-orbit mass payoff under the two tested hardware assumptions;
-low-density compressor efficiency and mass remain unvalidated.
+The new [coupled forward-cycle model](modeling/primary/TRANSIENT_IMPLEMENTATION.md)
+tracks gas and rack states, finite compressors, liquefaction, power storage,
+radiation and propellant through a complete orbit. Each candidate compiles its
+hardware first and integrates once. The [current results](investigations/transient/RESULTS.md)
+replace the isolated chamber study's anchored payoff proxy.
 
-## Calculate a cycle
+```bash
+.venv/bin/python -m atmo_scoops.transient --config configs/transient_reference.json
+.venv/bin/python -m atmo_scoops.transient.search --workers 2
+.venv/bin/python -m atmo_scoops.transient.report
+```
+
+The [skin-friction sensitivity](investigations/skin_friction/ANALYSIS.md) adds explicit external drag: a Cf=0.002 capacity proposal gives about 308 days, versus the 285-day zero-skin comparison. Cf is an illustrative scenario, not a calibrated prediction. [Planned refinements](docs/NEXT_REFINEMENTS.md) cover gaseous propellant bypass, rack pitch and omitted penalties.
+
+The geometry is fixed at 30 m bore and 317 m overall length. A limited initial
+search is implemented; this is not yet a global optimization of all stage and
+hardware allocations. Read the [implementation assumptions](modeling/primary/TRANSIENT_IMPLEMENTATION.md)
+and [study scope](investigations/transient/README.md) alongside the numbers.
+
+## Reproduce the legacy scalar cycle
 
 Use the project-local virtual environment:
 
 ```sh
-.venv/bin/python -m atmo_scoops --config configs/reference.json
+.venv/bin/python -m atmo_scoops --config configs/finite_rack_reference.json
 .venv/bin/python -m atmo_scoops --config configs/reference.json --front-depth 100 --rear-depth 25 --output results/short_front.json
 .venv/bin/python -m atmo_scoops --mixing-ratio 0.1 --mixing-path fixed_rack
 .venv/bin/python -m atmo_scoops --write-config configs/my_design.json
 ```
 
 Lengths are physical metres, including rear tank heads; temperatures are kelvin.
+Front depth is a minimum and expands if needed to fit its rack. Independent rack
+masses and wire geometry are in `racks`; equipment envelopes and deployment
+speed are in `packaging`. The current path does not use a fixed machinery bay.
 Configurations separate geometry, hardware/performance/process capabilities,
 atmosphere, inlet capabilities, operating controls and mixing. Unknown input
 names are rejected. The 250 m reference front is a comparison coordinate,
@@ -112,8 +129,22 @@ balances enthalpy and reserves coolant for the next pass before counting new
 product. `simulate` writes no files; its output records exact inputs, component
 masses, deployed areas, production and constraint margins.
 
-The updated [altitude sensitivity](investigations/altitude_sensitivity/ANALYSIS.md)
-compares 50–150 km perigees with fixed geometry and resized equipment.
+The earlier [altitude sensitivity](investigations/altitude_sensitivity/ANALYSIS.md)
+compares 50–150 km perigees before finite racks and package constraints. Use the
+[finite-rack investigation](investigations/altitude_sensitivity/FINITE_RACK_LIMITS.md)
+for the current constrained reference.
+
+## Transient chamber laboratory
+
+The [standalone chamber experiment](investigations/chamber_transient/README.md)
+plots gas pressure, temperature, density, inventory and metal temperature through
+an atmospheric pass and 40 minutes into coast. Edit each chamber's empty/rack
+volume, rod geometry, initial temperatures, compressor controls and liquefaction
+feed withdrawal independently. It is separate from the primary payoff model. A [constrained allocation search](investigations/chamber_transient/OPTIMIZATION.md) compares rack and empty volumes using an explicit mass/product proxy.
+
+```sh
+.venv/bin/python -m atmo_scoops.chambers --config configs/chamber_transient_reference.json
+```
 
 ## Reproduce analyses
 
@@ -143,3 +174,7 @@ silently rewrite their evidence.
 .venv/bin/python -m pytest -q
 .venv/bin/python -m atmo_scoops.audit
 ```
+
+The [rack-material comparison](investigations/chamber_transient/MATERIALS.md)
+reoptimizes these allocations for FeCrAl or SiC up front and aluminum downstream,
+including density, heat transfer and radiative reset time.

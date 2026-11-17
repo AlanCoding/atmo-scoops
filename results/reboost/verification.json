@@ -1,0 +1,79 @@
+[
+  {
+    "name": "solid_direct_closed_orbit_best",
+    "solar_energy_margin_J": 22244754.696289062,
+    "arc_multiplier_relative_resolution_change": -5.388763573144217e-07,
+    "trajectory": {
+      "drag_dv_m_s": 3.2627443571649932,
+      "energy_residual_fraction_of_drag": 2.155893931434341e-07,
+      "angular_residual_fraction_of_drag": 2.1302652292271995e-07,
+      "perigee_error_m": -5.66728413105011e-05,
+      "apogee_error_m": 0.003300180658698082,
+      "apsidal_rotation_deg": -6.520144939189817e-05
+    }
+  },
+  {
+    "name": "solid_direct_energy_only_best",
+    "solar_energy_margin_J": 1671743617.2143555
+  },
+  {
+    "name": "ammonia_direct_closed_orbit_best",
+    "solar_energy_margin_J": 995834943847.6831,
+    "arc_multiplier_relative_resolution_change": -2.849604102683756e-07,
+    "trajectory": {
+      "drag_dv_m_s": 2.0134503777424286,
+      "energy_residual_fraction_of_drag": -4.107938660570582e-09,
+      "angular_residual_fraction_of_drag": -2.167891060169227e-08,
+      "perigee_error_m": -0.0002397717908024788,
+      "apogee_error_m": 0.00020163226872682571,
+      "apsidal_rotation_deg": -1.5427543189055374e-05
+    }
+  },
+  {
+    "name": "ammonia_direct_energy_only_best",
+    "solar_energy_margin_J": 425423315726.51685
+  },
+  {
+    "name": "ammonia_direct_closed_orbit_buffered_best",
+    "solar_energy_margin_J": 206234647892.8506,
+    "arc_multiplier_relative_resolution_change": -4.2673213673793953e-07,
+    "trajectory": {
+      "drag_dv_m_s": 2.4413926494472107,
+      "energy_residual_fraction_of_drag": 4.1952255511112296e-08,
+      "angular_residual_fraction_of_drag": 2.077611429850903e-08,
+      "perigee_error_m": -0.0003503924235701561,
+      "apogee_error_m": 0.0008226698264479637,
+      "apsidal_rotation_deg": -2.9280437376961415e-05
+    }
+  },
+  {
+    "name": "warm_ammonia_direct_closed_orbit_best",
+    "solar_energy_margin_J": 944235314740.9595,
+    "arc_multiplier_relative_resolution_change": -3.2575432329373655e-07,
+    "trajectory": {
+      "drag_dv_m_s": 2.2382895621276924,
+      "energy_residual_fraction_of_drag": 9.408461086992486e-09,
+      "angular_residual_fraction_of_drag": -9.251444527648453e-09,
+      "perigee_error_m": -0.0002830633893609047,
+      "apogee_error_m": 0.00038016680628061295,
+      "apsidal_rotation_deg": -2.0391907751162996e-05
+    }
+  },
+  {
+    "name": "warm_ammonia_direct_energy_only_best",
+    "solar_energy_margin_J": 451260598841.2883
+  },
+  {
+    "name": "warm_ammonia_direct_closed_orbit_buffered_best",
+    "solar_energy_margin_J": 210090907417.6421,
+    "arc_multiplier_relative_resolution_change": -4.7033661976225716e-07,
+    "trajectory": {
+      "drag_dv_m_s": 2.6710810859768452,
+      "energy_residual_fraction_of_drag": 8.03115206306642e-08,
+      "angular_residual_fraction_of_drag": 6.159044740915617e-08,
+      "perigee_error_m": -0.00033889617770910263,
+      "apogee_error_m": 0.001328062266111374,
+      "apsidal_rotation_deg": -3.799859503477807e-05
+    }
+  }
+]

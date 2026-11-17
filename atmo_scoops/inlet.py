@@ -15,6 +15,7 @@ from .thermochemistry import enthalpy,composition
 @dataclass(frozen=True)
 class FlowCapabilities:
     support_over_ram: float = 1.
+    port_linearization_fraction: float = 1e-3  # Numerical regularization near equal pressures.
     port_discharge_coefficient: float = .8
     effective_mouth_area_fraction: float = 1.
     ultimate_inlet_Pa: float = .03
@@ -42,6 +43,7 @@ def validate(cap,control,c,compressor_spec=None):
             raise ValueError(f'{name} must be finite and nonnegative')
     for k in ('support_over_ram','port_discharge_coefficient','effective_mouth_area_fraction'):
         if not 0<getattr(cap,k)<=1:raise ValueError(f'{k} must be in (0,1]')
+    if cap.port_linearization_fraction>=.1:raise ValueError('Port numerical smoothing must remain below 0.1')
     if cap.hot_train_max_compression<=1:raise ValueError('Compression ceiling must exceed one')
     if control.suction_scale<=0:raise ValueError('Pump capacity must be positive')
     if control.max_after_perigee_s<=0:raise ValueError('Positive time budget required')
@@ -58,6 +60,16 @@ class ContinuousEncounter:
     def __call__(self,c,o,atm,R,gamma,pumping,n):
         cap=self.capabilities;ctl=self.controls;ultimate=validate(cap,ctl,c,getattr(self,'compressor_spec',None))
         A=math.pi*c.mouth_m**2/4;V=math.pi*c.front_bore_m**2/4*c.front_length_m;RT=R*c.gas_K
+        thermal=getattr(self,'rack_context',None)
+        if thermal:
+            from .racks import conductance
+            geom=thermal['geometry'];metal=thermal['metal'];rack_spec=thermal['spec']
+            V-=geom['solid_m3']
+            if V<=0:raise ValueError('Metal solid exceeds front chamber')
+            def temperatures(y):
+                Tg=float(np.interp(y[10]*1e6/max(y[0],1e-30),thermal['u'],thermal['T']))
+                Ts=metal.surface_temperature(y[11],y[14]) if hasattr(metal,'pcm') else metal.temperature(y[11])
+                return Tg,Ts
         start=-float(o.time_at_altitude(200.));end=ctl.max_after_perigee_s
         if end>=o.period/2:raise ValueError('Encounter budget must end before apogee')
         # Common physical start; no perigee boundary-law switch.
@@ -71,48 +83,87 @@ class ContinuousEncounter:
         p_ref=c.inlet_pressure_fraction*float(orbit_state(o,0,atm)['ram_Pa'])
         idle=cap.pump_idle_fraction*rated*p_ref*max(0.,math.log(c.intermediate_Pa/p_ref))/c.isothermal_efficiency/c.motor_efficiency
         if ctl.cutoff_Pa>=float(support.max()):raise ValueError('Cutoff is above the supported pressure pulse')
+        def port(up,down,T,area):
+            eps=cap.port_linearization_fraction
+            if thermal and eps>0 and up>down and (up-down)<up*eps:
+                edge=port_flow(up,up*(1-eps),T,area,R,gamma,cap.port_discharge_coefficient)
+                return edge*(up-down)/(up*eps)
+            return port_flow(up,down,T,area,R,gamma,cap.port_discharge_coefficient)
         def rates(t,y):
-            pressure=max(y[0],0.)*RT/V
+            Tg,Ts=temperatures(y) if thermal else (c.gas_K,0.)
+            localRT=R*Tg
+            pressure=max(y[0],0.)*localRT/V
             pext=max(0.,y[9]) if cap.inlet_lag_s>0 else float(np.interp(t,grid,support))
             area=A*cap.effective_mouth_area_fraction
             admission=min(float(np.interp(t,grid,supply)),
-                port_flow(pext,pressure,c.gas_K,area,R,gamma,cap.port_discharge_coefficient))
-            leakage=port_flow(pressure,pext,c.gas_K,area,R,gamma,cap.port_discharge_coefficient)
+                port(pext,pressure,Tg,area))
+            leakage=port(pressure,pext,Tg,area)
             suction=rated
             spec=getattr(self,'compressor_spec',None)
             floor=max(ultimate,max(y[1],0.)*R*c.receiver_K/c.receiver_m3/spec.head_limit_ratio) if spec else ultimate
-            pumped=net_pump_rate(pressure,suction,floor,RT)
-            gross=suction*pressure/RT if pressure>floor else 0.
+            pumped=net_pump_rate(pressure,suction,floor,localRT)
+            gross=suction*pressure/localRT if pressure>floor else 0.
             extra_work=(gross-pumped)*RT/c.isothermal_efficiency*max(0.,math.log(c.intermediate_Pa/max(pressure,1e-30)))
             # Equivalent upstream-facing nozzle momentum; this does not supply
             # the exterior body's missing pressure/shear forces.
             recoil=0.
             if leakage>0:
                 r=max(pext/pressure,(2/(gamma+1))**(gamma/(gamma-1)))
-                exit_T=c.gas_K*r**((gamma-1)/gamma)
-                exhaust=math.sqrt(max(0.,2*gamma/(gamma-1)*R*(c.gas_K-exit_T)))
+                exit_T=Tg*r**((gamma-1)/gamma)
+                exhaust=math.sqrt(max(0.,2*gamma/(gamma-1)*R*(Tg-exit_T)))
                 recoil=leakage*exhaust+cap.port_discharge_coefficient*area*max(0.,pressure*r-pext)
             return admission,leakage,pumped,pressure,pext,extra_work,idle,recoil,floor
+        calls=[0]
         def rhs(t,y):
+            calls[0]+=1
+            if calls[0]>200000:raise ValueError(f'Encounter integration stalled at {t:g} seconds, {temperatures(y) if thermal else None}, {rates(t,y)}, mass {y[0]}')
             admission,leakage,pump,_,_,_,_,recoil,_=rates(t,y)
             fraction=max(y[6],0.)/max(y[0],1e-30)
             lag=(np.interp(t,grid,support)-y[9])/cap.inlet_lag_s if cap.inlet_lag_s>0 else 0.
-            return [(1+self.injection_ratio)*admission-leakage-pump,pump,admission,leakage,
+            result=[(1+self.injection_ratio)*admission-leakage-pump,pump,admission,leakage,
                 admission*(np.interp(t,grid,incoming_h)+self.injection_ratio*self.injection_h),admission*np.interp(t,grid,state['speed_m_s']),
                 admission*np.interp(t,grid,ox)-(leakage+pump)*fraction,pump*fraction,recoil,lag]
+            if thermal:
+                Tg,Ts=temperatures(y);p=max(y[0],0.)*R*Tg/V
+                cp=float(np.interp(Tg,thermal['T'],thermal['cp']))
+                UA,exchange_detail=conductance(p,(Tg+Ts)/2,max((1+self.injection_ratio)*admission,pump+leakage),A,geom,rack_spec,R,cp)
+                heat=UA*(Tg-Ts)
+                h=float(np.interp(Tg,thermal['T'],thermal['h']))
+                incoming=admission*(np.interp(t,grid,incoming_h)+self.injection_ratio*self.injection_h)
+                result.extend([(incoming-(pump+leakage)*h-heat)/1e6,heat/geom['mass_kg'],pump*h/1e6,leakage*h/1e6])
+                if hasattr(metal,'pcm'):result.append(metal.core_rate(y[11],y[14],geom))
+                if hasattr(metal,'liquid'):result.extend([exchange_detail['liquid_flow_kg_s'],exchange_detail['liquid_pump_W']/1e6])
+            return result
+        def thermal_jac(t,y):
+            # Only six states feed back into rates. Explicit differencing avoids
+            # SciPy's step-growth overflow on the identically zero ledger columns.
+            J=np.zeros((len(y),len(y)))
+            for k in ((0,1,6,9,10,11,14) if hasattr(metal,'pcm') else (0,1,6,9,10,11)):
+                step=1e-8*max(abs(y[k]),1e-9 if k in (0,6,10) else 1e-3)
+                yy=y.copy();yy[k]+=step
+                zz=y.copy();zz[k]-=step
+                J[:,k]=(np.asarray(rhs(t,yy))-np.asarray(rhs(t,zz)))/(2*step)
+            return J
         def stop(t,y):
             # Pump starts from an empty front chamber; do not falsely terminate
             # at startup. Cutoff is a downward crossing on the outbound leg.
-            return 1. if t<0 else y[0]*RT/V-ctl.cutoff_Pa
+            return 1. if t<0 else rates(t,y)[3]-ctl.cutoff_Pa
         stop.terminal=True;stop.direction=-1
-        y0=np.zeros(10);y0[9]=support[0]
+        y0=np.zeros((16 if hasattr(metal,'liquid') else 15 if hasattr(metal,'pcm') else 14) if thermal else 10);y0[9]=support[0]
+        if thermal:
+            # Tiny seed avoids U/m at exactly zero; explicitly reported in balances.
+            y0[0]=1e-9
+            y0[10]=y0[0]*float(np.interp(metal.cold,thermal['T'],thermal['u']))/1e6
+            y0[11]=metal.hcold
+            if hasattr(metal,'pcm'):y0[14]=metal.hcore_cold
         breaks=[start,0.,end]
         breaks=sorted(set(breaks));segments=[];reason='time_limit'
         for a,b in zip(breaks[:-1],breaks[1:]):
-            if a>=0 and y0[0]*RT/V<=ctl.cutoff_Pa:
+            if a>=0 and rates(a,y0)[3]<=ctl.cutoff_Pa:
                 reason='cutoff_pressure';break
-            sol=solve_ivp(rhs,(a,b),y0,method='LSODA',rtol=2e-8,atol=1e-10,
-                          events=stop if a>=0 else None,dense_output=True,max_step=4.)
+            sol=solve_ivp(rhs,(a,b),y0,method='Radau' if thermal else 'LSODA',rtol=2e-6 if thermal else 2e-8,atol=1e-9 if thermal else 1e-10,
+                          events=stop if a>=0 else None,dense_output=True,max_step=4.,
+                          jac=thermal_jac if thermal else None)
             if not sol.success:raise ValueError(sol.message)
             segments.append(sol);y0=sol.y[:,-1]
             if a>=0 and len(sol.t_events[0]):reason='cutoff_pressure';break
@@ -129,12 +180,17 @@ class ContinuousEncounter:
         if not np.any(np.isclose(tt,0,atol=1e-12)):raise ValueError('Perigee sample missing')
         k=int(np.flatnonzero(np.isclose(tt,0,atol=1e-12))[0]);pre=slice(0,k+1);post=slice(k,None)
         def pack(mask):
+            extra={}
+            if thermal:
+                temps=np.array([temperatures(y) for y in ys[:,mask].T])
+                extra=dict(gas_temperature=temps[:,0],metal_temperature=temps[:,1],
+                    gas_energy=ys[10,mask]*1e6,metal_energy=ys[11,mask]*geom['mass_kg'],pressure=flows[3,mask])
             return dict(time=tt[mask],front=ys[0,mask],rear=ys[1,mask],admitted=ys[2,mask],
                 leakage=ys[3,mask],energy=ys[4,mask],impulse=ys[5,mask],
                 admission_rate=flows[0,mask],leakage_rate=flows[1,mask],pump_rate=flows[2,mask],
                 extra_hot_work=flows[5,mask],idle_electric=flows[6,mask],
                 pump_floor=flows[8,mask],
-                incoming_h=np.interp(tt[mask],grid,incoming_h))
+                incoming_h=np.interp(tt[mask],grid,incoming_h),**extra)
         out=dict(pre=pack(pre),post=pack(post),retained_oxygen=float(ys[7,-1]),
             rated_suction=rated,stop_reason=reason,ultimate_Pa=ultimate,
             total_energy=float(ys[4,-1]),capture_impulse=float(ys[5,-1]),escape_impulse=float(ys[8,-1]),
@@ -151,6 +207,29 @@ class ContinuousEncounter:
         impulse=float(np.trapezoid(geometric,drag_t))
         out['uncollected_mouth_impulse']=cap.rejected_air_impulse_fraction*max(0.,impulse-out['capture_impulse'])
         out['geometric_intercept_impulse']=impulse
+        if thermal:
+            out['thermal']=dict(initial_mass_kg=1e-9,
+                initial_energy_J=1e-9*float(np.interp(metal.cold,thermal['T'],thermal['u'])),
+                pumped_enthalpy_J=float(ys[12,-1]*1e6),leaked_enthalpy_J=float(ys[13,-1]*1e6),front_gas_m3=V,geometry=geom,
+                absorbed_J=float((ys[11,-1]-metal.hcold)*geom['mass_kg']),
+                final_gas_energy_J=float(ys[10,-1]*1e6),
+                max_metal_K=max(temperatures(y)[1] for y in ys.T))
+        if thermal and hasattr(metal,'liquid'):
+            details=[]
+            for sample_time,yy in zip(tt,ys.T):
+                Tg,Ts=temperatures(yy);ad,le,pu,pr,*_=rates(sample_time,yy)
+                cp=float(np.interp(Tg,thermal['T'],thermal['cp']))
+                _,dd=conductance(pr,(Tg+Ts)/2,max((1+self.injection_ratio)*ad,pu+le),A,geom,rack_spec,R,cp)
+                details.append(dd)
+            out['thermal'].update(liquid_used_kg=float(ys[14,-1]),liquid_pump_J=float(ys[15,-1])*1e6,
+                liquid_peak_flow_kg_s=max(d['liquid_flow_kg_s'] for d in details),
+                liquid_peak_pump_W=max(d['liquid_pump_W'] for d in details),
+                liquid_max_wall_K=max(d['liquid_wall_K'] for d in details),
+                liquid_max_dp_Pa=max(d['liquid_dp_Pa'] for d in details))
+        if thermal and hasattr(metal,'pcm'):
+            out['thermal'].update(final_core_h_J_kg=float(ys[14,-1]),
+                max_core_K=max(metal.pcm.temperature(h) for h in ys[14]),
+                max_melt_fraction=max(metal.pcm.melt_fraction(h) for h in ys[14]))
         self.last=out
         return out
 

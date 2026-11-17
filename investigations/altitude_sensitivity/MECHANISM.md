@@ -166,3 +166,17 @@ The saved reference moves 20 m upward in perigee and 10 km downward in apogee, a
 The approximately 69.14 km perigee / 937 km apogee case gives a much shorter payoff (~506 days) while staying within the same two new limits. Choosing the deepest permissible pass does not minimize payoff under the retained fixed-burst propulsion and electrical capabilities. Both results are retained rather than calling the deeper one an economic optimum.
 
 Runnable reference: [configs/limit_case_reference.json](../../configs/limit_case_reference.json). Use `.venv/bin/python -m atmo_scoops --config configs/limit_case_reference.json`. The ordinary CLI reports its existing constraints; the additional investigation pressure/length limits are checked and stored in [joint_boundary.json](../../results/altitude_sensitivity/limited_reference/joint_boundary.json). Reproduce the coupled solve with `.venv/bin/python -m atmo_scoops.studies.limited_reference_boundary`, after the fixed-apogee cases, then regenerate this section.
+
+<!-- finite-rack-update -->
+
+## Current finite-rack and package-constrained cases
+
+The fixed 100 m bay is replaced by finite convection, working lattice volumes, equipment envelopes and area-dependent deployment. Detailed equations, the radius trade, mass drivers and packaging uncertainty are in the [finite-rack investigation](FINITE_RACK_LIMITS.md). These are conditional operating-orbit payoffs, not circular-delivery or survivability results.
+
+| Apogee km | Perigee km | Rear depth m | Total length m | Storage bar | Dry tonnes | Net tonnes/pass | Operating payoff days |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 2,000 | 83.30 | 18.60 | 314.52 | 1.082 | 56,172 | 7.612 | 543.3 |
+| 6,000 | 81.12 | 18.78 | 314.59 | 1.083 | 56,619 | 7.553 | 789.2 |
+| 10,000 | 80.51 | 18.62 | 314.70 | 1.083 | 56,834 | 7.364 | 1084.6 |
+
+A longer-tank alternative at 85 × 2,000 km fits a **95 m rear tank**, **316.3 m total length**, and yields **544.1 days**.

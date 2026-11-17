@@ -32,8 +32,10 @@ def test_precooling_trade_counts_hardware_and_preserves_balances(baseline):
     assert b['compressor_mass_kg']<a['compressor_mass_kg']
     assert b['masses_kg']['hot_metal']>a['masses_kg']['hot_metal']
     assert b['masses_kg']['hot_sheet_deployment']>a['masses_kg']['hot_sheet_deployment']
-    assert b['total_dry_kg']<a['total_dry_kg']
-    assert b['metal_hot_K']==650
+    # More metal can now outweigh the compressor saving once its deployed
+    # footprint/mechanisms are charged; total mass is not monotone in cooling.
+    assert b['total_dry_kg']==pytest.approx(sum(b['masses_kg'].values()))
+    assert 500 < b['metal_hot_K'] < 650  # Finite rack state, not the old prescribed endpoint.
     assert abs(b['thermal_energy_balance_residual_J'])<.01
     # Same material, density and gauge: area ratio must equal metal mass ratio.
     assert b['metal_panel_m2']/a['metal_panel_m2']==pytest.approx(b['masses_kg']['hot_metal']/a['masses_kg']['hot_metal'])
@@ -62,7 +64,9 @@ def test_dimensions_and_refrigerator_parameters_reach_system(baseline):
     assert wider['outputs']['rear_pressure_Pa']<baseline['outputs']['rear_pressure_Pa']
     assert wider['resolved_cycle_inputs']['outside_diameter_m']==pytest.approx(21.7)
     efficient=simulate(process=replace(ProcessTargets(),carnot_fraction=.3),n=401)
-    assert efficient['outputs']['cryoplant_electric_kW']==pytest.approx(baseline['outputs']['cryoplant_electric_kW']/2)
+    # Deployment duration changes with array size; compare energy, not power.
+    ea=efficient['outputs'];ba=baseline['outputs']
+    assert ea['cryoplant_electric_kW']*ea['cycle']['deployed_s']==pytest.approx(ba['cryoplant_electric_kW']*ba['cycle']['deployed_s']/2,rel=1e-6)
     assert efficient['outputs']['total_dry_kg']<baseline['outputs']['total_dry_kg']
 
 
@@ -75,7 +79,7 @@ def test_cli_outputs_resolved_inputs_and_constraints(tmp_path):
     result=json.loads(out.read_text())
     assert result['inputs']['design']['front_depth_m']==100
     assert result['inputs']['design']['rear_depth_m']==50
-    assert result['outputs']['metal_hot_K']==650
+    assert 500 < result['outputs']['metal_hot_K'] < 650
     assert result['inputs']['mixing']['ratio']==.1
     assert result['outputs']['compressor_inlet_K']<750
     assert result['constraints']['unresolved']

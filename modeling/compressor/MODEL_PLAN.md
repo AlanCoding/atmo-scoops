@@ -1,5 +1,12 @@
 # Plan: resolve the compressor path and allocate cooling hardware
 
+**Implemented refinement:** independent ordinary-metal rack masses, finite convection,
+metal-displaced gas volume, small interstage hold-up/vent losses, folded package
+allocation and deployment timing now run in the primary model. See
+[finite racks](../metal_coolers/FINITE_RACK_MODEL.md). The full independent
+interstage storage/controller model described below remains future work.
+
+
 The [research requirements](RESEARCH_REQUIREMENTS.md) govern the replacement:
 real-gas property states, isentropic compression corrected by realistic
 efficiency, multiple comparable hardware references for mass, and finite

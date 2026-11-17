@@ -1,0 +1,34 @@
+{
+  "0": {
+    "max_abs_Z_minus_one": 1.4887361558413303e-05,
+    "max_compressor_work_relative_error": 3.2928604554290766e-10,
+    "max_audited_compressor_outlet_K": 1298.3009816196907,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  },
+  "1": {
+    "max_abs_Z_minus_one": 1.4907126853147545e-05,
+    "max_compressor_work_relative_error": 4.1047374641625585e-10,
+    "max_audited_compressor_outlet_K": 1307.0602591654704,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  },
+  "2": {
+    "max_abs_Z_minus_one": 1.4110670180089713e-05,
+    "max_compressor_work_relative_error": 4.0925218514894516e-10,
+    "max_audited_compressor_outlet_K": 1306.3719980087467,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  },
+  "3": {
+    "max_abs_Z_minus_one": 1.3837705546082546e-05,
+    "max_compressor_work_relative_error": 2.6757697187596096e-10,
+    "max_audited_compressor_outlet_K": 1303.7390399802166,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  }
+}

@@ -1,5 +1,14 @@
 # Independent inputs
 
+**Legacy scalar model.** The new coupled evaluator and editable input registry are documented in [TRANSIENT_IMPLEMENTATION.md](TRANSIENT_IMPLEMENTATION.md).
+
+**Current finite-rack path (default):** [thermal equations and geometry](../metal_coolers/FINITE_RACK_MODEL.md)
+and [packaging/timing](../deployment/IMPLEMENTED_VOLUME.md) supersede the prescribed
+temperatures, foil-area rule and fixed machinery bay described in the historical
+baseline below. Set `racks.enabled=false` only to reproduce that baseline.
+Complete editable inputs are produced by `python -m atmo_scoops --write-config`.
+
+
 `configs/reference.json` is a complete editable input file. It is a comparison
 coordinate, not an optimum; notably the 250 m front has no selection claim.
 `system.inputs_from_dict` rejects unknown fields rather than silently ignoring
@@ -55,3 +64,9 @@ The reference machinery allowance is now 100 m to accommodate resolved banks;
 this is a comparison allowance, not a selected optimum. Actual bank lengths and
 module-face packing are reported and screened. Material life, low-Re efficiency,
 interstage heat transfer and maps still require validation.
+
+## Fixed ammonia tubes
+
+The optional `ammonia` section enables fixed tubes in place of passive racks. Independent `areas_m2`, `maximum_flows_kg_s` and `inventories_kg` arrays select each stage. Cold/target temperatures, pressure, tube geometry, radiator temperature and refrigeration capability are explicit. See [equations and limits](../liquid_cooling/INTEGRATED_MODEL.md). Default `enabled: false` preserves the ordinary-metal architecture.
+
+`scenario.allow_nitrogen_propellant=true` permits retained N2 to cover propulsion demand beyond available O2. Both species are deducted from useful liquid; this does not qualify an engine efficiency map. It defaults to false. See the [Isp investigation](../../investigations/reboost/ISP.md).

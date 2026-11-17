@@ -1,0 +1,10 @@
+{
+  "max_mass_residual_kg": 5.016869515303557e-11,
+  "max_energy_residual_MJ": 1.8308128346689045e-09,
+  "min_gas_mass_kg": -1.1863154378544286e-11,
+  "caloric_table_boundary_reached": false,
+  "metal_outside_reference_range": false,
+  "significant_hot_molecular_gas": false,
+  "relative_final_receiver_mass_change": 9.542181673394268e-05,
+  "final_receiver_temperature_change_K": 0.009762714763041913
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "apogee_km": 2000.0,
+    "perigee_km": 83.29952869867479,
+    "rear_depth_m": 18.59904402029617,
+    "pressure_Pa": 108249.93745422424,
+    "length_m": 314.51791147000773,
+    "dry_t": 56171.9688364741,
+    "compressor_t": 746.997187698231,
+    "net_kg_pass": 7611.604255608691,
+    "payoff_days": 543.2851327635353,
+    "period_h": 1.7668334641103225,
+    "screens": true,
+    "file": "apogee_2000.json"
+  },
+  {
+    "apogee_km": 6000.0,
+    "perigee_km": 81.11706985674948,
+    "rear_depth_m": 18.78254824007057,
+    "pressure_Pa": 108267.50056974652,
+    "length_m": 314.58573155814685,
+    "dry_t": 56619.37011145004,
+    "compressor_t": 732.1027048163143,
+    "net_kg_pass": 7553.373361646907,
+    "payoff_days": 789.2370355971417,
+    "period_h": 2.5269381792005734,
+    "screens": true,
+    "file": "apogee_6000.json"
+  },
+  {
+    "apogee_km": 10000.0,
+    "perigee_km": 80.51441164051299,
+    "rear_depth_m": 18.617043989329193,
+    "pressure_Pa": 108262.90131425974,
+    "length_m": 314.70272730143915,
+    "dry_t": 56834.39373593839,
+    "compressor_t": 725.8404390353768,
+    "net_kg_pass": 7364.243242111058,
+    "payoff_days": 1084.6456863213034,
+    "period_h": 3.372997570177608,
+    "screens": true,
+    "file": "apogee_10000.json"
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "propellant_kg": 3487.6219416043887,
+  "pre_perigee_burn_propellant_kg": 1743.8109708021943,
+  "mean_burn_flow_kg_s": 2.906351618003657,
+  "gross_liquid_kg": 7104.978323415945,
+  "coast_train_and_plant_electric_GJ": 71.58988774001102,
+  "thruster_electric_GJ": 871.6583855462395,
+  "tanks": [
+    {
+      "pressure_Pa": 5000.0,
+      "gas_K": 300.0,
+      "volume_m3": 60288.95877999072,
+      "equivalent_bore_depth_m": 85.29142936621375,
+      "Z": 0.9999859510363257
+    },
+    {
+      "pressure_Pa": 100000.0,
+      "gas_K": 300.0,
+      "volume_m3": 3013.6489772893106,
+      "equivalent_bore_depth_m": 4.263441168706034,
+      "Z": 0.9997209106369531
+    },
+    {
+      "pressure_Pa": 1000000.0,
+      "gas_K": 300.0,
+      "volume_m3": 300.6622958340247,
+      "equivalent_bore_depth_m": 0.4253501385186027,
+      "Z": 0.9973901620611091
+    }
+  ],
+  "duties": [
+    {
+      "warm_store_K": 340.0,
+      "avoided_latent_heat_GJ": 0.7065130051386297,
+      "avoided_latent_refrigerator_electric_GJ": 17.886064168253487,
+      "avoided_full_refrigerator_electric_GJ": 24.480838674602676
+    },
+    {
+      "warm_store_K": 400.0,
+      "avoided_latent_heat_GJ": 0.7065130051386297,
+      "avoided_latent_refrigerator_electric_GJ": 21.65208931311644,
+      "avoided_full_refrigerator_electric_GJ": 30.58070311162766
+    },
+    {
+      "warm_store_K": 445.0,
+      "avoided_latent_heat_GJ": 0.7065130051386297,
+      "avoided_latent_refrigerator_electric_GJ": 24.476608171763655,
+      "avoided_full_refrigerator_electric_GJ": 35.29343117619352
+    }
+  ],
+  "note": "Avoided duties for the old propellant blend at assumed temperatures, before gas-buffer compression, hardware, changed chemistry/efficiency or process scheduling. No net payoff credit."
+}

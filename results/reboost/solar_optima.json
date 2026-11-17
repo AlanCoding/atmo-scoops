@@ -1,0 +1,98 @@
+[
+  {
+    "name": "solid_direct_closed_orbit_best",
+    "architecture": "solid",
+    "isp_s": 3087.000764500775,
+    "window_s": 1326.3267986906678,
+    "payoff_days": 346.353406850616,
+    "dry_t": 17121.339947579927,
+    "net_kg": 3639.798198310366,
+    "impulse_multiplier": 1.868312230134613,
+    "solar_MW": 994.6941574081868,
+    "screens": true
+  },
+  {
+    "name": "solid_direct_energy_only_best",
+    "architecture": "solid",
+    "isp_s": 2240.3214891420835,
+    "window_s": 1339.011739342158,
+    "payoff_days": 157.6345490753268,
+    "dry_t": 9151.964374211007,
+    "net_kg": 4274.860344327567,
+    "impulse_multiplier": 1.1066517409047796,
+    "solar_MW": 423.5422480901691,
+    "screens": true
+  },
+  {
+    "name": "ammonia_direct_closed_orbit_best",
+    "architecture": "ammonia",
+    "isp_s": 2905.53263856932,
+    "window_s": 815.2303662906322,
+    "payoff_days": 525.601347834673,
+    "dry_t": 27060.61053689983,
+    "net_kg": 3790.8808965438548,
+    "impulse_multiplier": 1.6717275520781618,
+    "solar_MW": 1362.898925092865,
+    "screens": true
+  },
+  {
+    "name": "ammonia_direct_energy_only_best",
+    "architecture": "ammonia",
+    "isp_s": 2321.3508101926586,
+    "window_s": 805.5020922406419,
+    "payoff_days": 290.67905738382984,
+    "dry_t": 17482.15024441012,
+    "net_kg": 4428.331500868726,
+    "impulse_multiplier": 1.0763930149818257,
+    "solar_MW": 709.5788268217541,
+    "screens": true
+  },
+  {
+    "name": "ammonia_direct_closed_orbit_buffered_best",
+    "architecture": "ammonia",
+    "isp_s": 3076.1547393801993,
+    "window_s": 1081.7301321340337,
+    "payoff_days": 431.40693452909255,
+    "dry_t": 22187.04576252175,
+    "net_kg": 3786.7913513584435,
+    "impulse_multiplier": 1.7721004584262632,
+    "solar_MW": 1152.7387915305997,
+    "screens": true
+  },
+  {
+    "name": "warm_ammonia_direct_closed_orbit_best",
+    "architecture": "warm_ammonia",
+    "isp_s": 2903.2827681622493,
+    "window_s": 891.9840305326031,
+    "payoff_days": 471.04461967161046,
+    "dry_t": 24005.971769537424,
+    "net_kg": 3752.4616514908125,
+    "impulse_multiplier": 1.6967963095932963,
+    "solar_MW": 1263.3246144041627,
+    "screens": true
+  },
+  {
+    "name": "warm_ammonia_direct_energy_only_best",
+    "architecture": "warm_ammonia",
+    "isp_s": 2280.5214746652673,
+    "window_s": 896.5794100531326,
+    "payoff_days": 251.43973758032584,
+    "dry_t": 14965.7391488909,
+    "net_kg": 4382.51363231253,
+    "impulse_multiplier": 1.0811247560285093,
+    "solar_MW": 629.0391463715976,
+    "screens": true
+  },
+  {
+    "name": "warm_ammonia_direct_closed_orbit_buffered_best",
+    "architecture": "warm_ammonia",
+    "isp_s": 3071.698096302822,
+    "window_s": 1172.245387660244,
+    "payoff_days": 393.6556571607599,
+    "dry_t": 19953.541756675106,
+    "net_kg": 3732.1794426684714,
+    "impulse_multiplier": 1.8061388226531485,
+    "solar_MW": 1082.5916855897804,
+    "screens": true
+  }
+]

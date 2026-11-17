@@ -1,0 +1,176 @@
+[
+  {
+    "name": "solid_reference",
+    "payoff_days": 521.9015633264369,
+    "dry_t": 40172.178655495125,
+    "net_kg": 5667.555828653754,
+    "compressor_t": 925.482552381588,
+    "compressor_peak_MW": 52.13028783859291,
+    "inlet_peak_K": 1052.852762811134,
+    "length_m": 228.2365092942705,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold200_area0.5_s0.6",
+    "payoff_days": 713.5764583934236,
+    "dry_t": 41477.49072004295,
+    "net_kg": 4279.873967558068,
+    "compressor_t": 409.8816747945713,
+    "compressor_peak_MW": 26.857353001487017,
+    "inlet_peak_K": 728.3889363258154,
+    "length_m": 242.67399999290558,
+    "screens": false,
+    "failed": {
+      "oxygen_kg": -99.43845167389827
+    }
+  },
+  {
+    "name": "cold200_area0.5_s0.85",
+    "payoff_days": 566.1893463598693,
+    "dry_t": 42506.510883757655,
+    "net_kg": 5527.805881397262,
+    "compressor_t": 583.4192846104055,
+    "compressor_peak_MW": 38.013773478086804,
+    "inlet_peak_K": 794.4163743797784,
+    "length_m": 248.7807132257562,
+    "screens": false,
+    "failed": {
+      "ammonia_boiling_K": -0.41857960026851515
+    }
+  },
+  {
+    "name": "cold200_area0.5_s1.1",
+    "payoff_days": 556.859629734585,
+    "dry_t": 42826.19613482275,
+    "net_kg": 5662.689992419827,
+    "compressor_t": 751.6259125274596,
+    "compressor_peak_MW": 43.43434780552768,
+    "inlet_peak_K": 816.4181875614912,
+    "length_m": 250.74187494691373,
+    "screens": false,
+    "failed": {
+      "ammonia_boiling_K": -2.3836346127420143
+    }
+  },
+  {
+    "name": "cold200_area1_s0.6",
+    "payoff_days": 571.6698578213527,
+    "dry_t": 42536.570905263245,
+    "net_kg": 5478.683363877724,
+    "compressor_t": 406.51584398286,
+    "compressor_peak_MW": 30.162710766136712,
+    "inlet_peak_K": 565.4548508881005,
+    "length_m": 250.42734102492662,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold200_area1_s0.85",
+    "payoff_days": 558.8353531696866,
+    "dry_t": 42870.80784490467,
+    "net_kg": 5648.547871386442,
+    "compressor_t": 571.4913550146107,
+    "compressor_peak_MW": 35.12925436274588,
+    "inlet_peak_K": 581.0865131216291,
+    "length_m": 252.47129446811434,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold200_area1_s1.1",
+    "payoff_days": 561.7508061448845,
+    "dry_t": 43097.31329454668,
+    "net_kg": 5648.921137546043,
+    "compressor_t": 737.3898994639089,
+    "compressor_peak_MW": 37.915777195100425,
+    "inlet_peak_K": 587.7316667032024,
+    "length_m": 253.88800034909153,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold200_area1.5_s0.6",
+    "payoff_days": 561.4516896338752,
+    "dry_t": 42961.35225141888,
+    "net_kg": 5634.100230560654,
+    "compressor_t": 405.8440458172987,
+    "compressor_peak_MW": 30.98212456144673,
+    "inlet_peak_K": 484.91301237116676,
+    "length_m": 254.4630032360738,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold200_area1.5_s0.85",
+    "payoff_days": 564.292495337444,
+    "dry_t": 43182.99798397019,
+    "net_kg": 5634.657653796169,
+    "compressor_t": 569.5526943891427,
+    "compressor_peak_MW": 34.21392468121548,
+    "inlet_peak_K": 490.26983042394835,
+    "length_m": 255.84602230921612,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold200_area1.5_s1.1",
+    "payoff_days": 567.1605775012121,
+    "dry_t": 43405.26584677386,
+    "net_kg": 5635.019245567145,
+    "compressor_t": 732.9368493851572,
+    "compressor_peak_MW": 37.7450076127087,
+    "inlet_peak_K": 495.5454364585187,
+    "length_m": 257.2363658991409,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold240_hot340_s0.6",
+    "payoff_days": 581.5133926618093,
+    "dry_t": 41884.6784090411,
+    "net_kg": 5303.401207669749,
+    "compressor_t": 414.0175042286738,
+    "compressor_peak_MW": 31.400750860003644,
+    "inlet_peak_K": 589.2838332375812,
+    "length_m": 248.71797627650494,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold240_hot340_s0.85",
+    "payoff_days": 550.3307122510511,
+    "dry_t": 42280.388764045405,
+    "net_kg": 5656.8445047385585,
+    "compressor_t": 585.3437937029223,
+    "compressor_peak_MW": 37.98460743087889,
+    "inlet_peak_K": 610.5716136619357,
+    "length_m": 251.09490712466572,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold280_hot340_s0.6",
+    "payoff_days": 580.5665654299636,
+    "dry_t": 41251.20327145941,
+    "net_kg": 5231.709475383701,
+    "compressor_t": 414.98538980158224,
+    "compressor_peak_MW": 32.86999634083215,
+    "inlet_peak_K": 598.2545536762912,
+    "length_m": 244.72046003750202,
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "cold280_hot340_s0.85",
+    "payoff_days": 541.6793361788393,
+    "dry_t": 41651.38879118099,
+    "net_kg": 5661.69196914829,
+    "compressor_t": 584.0195259654635,
+    "compressor_peak_MW": 40.29365524647394,
+    "inlet_peak_K": 621.6336471368961,
+    "length_m": 247.10076714917562,
+    "screens": true,
+    "failed": {}
+  }
+]

@@ -1,5 +1,8 @@
 # Rack deployment, hatches and mechanisms
 
+**Current implementation:** [Folded package allocation and area-dependent deployment timing are now implemented](IMPLEMENTED_VOLUME.md). See that specification for scope and unresolved physics.
+
+
 **Status: first reference research and sizing formulation; not integrated or validated.**
 
 ## Scope and interfaces

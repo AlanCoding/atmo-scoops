@@ -1,0 +1,34 @@
+{
+  "empty_receiver": {
+    "max_mass_residual_kg": 7.02584657119587e-11,
+    "max_energy_residual_MJ": 8.840288501232862e-10,
+    "min_gas_mass_kg": -1.622091514241392e-13,
+    "caloric_table_boundary_reached": false,
+    "metal_outside_reference_range": false,
+    "significant_hot_molecular_gas": false
+  },
+  "no_withdrawal": {
+    "max_mass_residual_kg": 5.016869515303557e-11,
+    "max_energy_residual_MJ": 1.8308128346689045e-09,
+    "min_gas_mass_kg": -1.1863154378544286e-11,
+    "caloric_table_boundary_reached": false,
+    "metal_outside_reference_range": false,
+    "significant_hot_molecular_gas": false
+  },
+  "contact_ends_180s": {
+    "max_mass_residual_kg": 3.867739635510237e-11,
+    "max_energy_residual_MJ": 1.7114984984800685e-09,
+    "min_gas_mass_kg": -8.534328897890797e-12,
+    "caloric_table_boundary_reached": false,
+    "metal_outside_reference_range": false,
+    "significant_hot_molecular_gas": false
+  },
+  "refined": {
+    "max_mass_residual_kg": 8.36735125631094e-11,
+    "max_energy_residual_MJ": 7.767084753140807e-10,
+    "min_gas_mass_kg": -4.963504493526216e-12,
+    "caloric_table_boundary_reached": false,
+    "metal_outside_reference_range": false,
+    "significant_hot_molecular_gas": false
+  }
+}

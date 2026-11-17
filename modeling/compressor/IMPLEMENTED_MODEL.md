@@ -1,5 +1,12 @@
 # Compressor refinement implemented in the primary cycle
 
+The active cycle now feeds this mass/real-fluid framework with
+[finite front and interstage rack states](../metal_coolers/FINITE_RACK_MODEL.md),
+rather than prescribed dive cooler temperatures. No new empirical compressor
+mass calibration is claimed; measured maps and complete hardware validation
+remain open.
+
+
 **Status: real-fluid work calculation and conditional geometry-based mass model;
 not a validated flight compressor or calibrated low-Reynolds-number map.**
 `atmo_scoops/compressor.py` supplies the public `Compressor` configuration, and

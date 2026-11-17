@@ -1,0 +1,129 @@
+{
+  "orbit": {
+    "perigee_km": 85.0,
+    "apogee_km": 2000.0
+  },
+  "atmosphere": "reference",
+  "mouth_diameter_m": 30.0,
+  "chambers": [
+    {
+      "name": "Front",
+      "diameter_m": 30.0,
+      "depth_m": 5.419047785956731,
+      "rack_depth_m": 5.419047785956731,
+      "rod_radius_m": 0.001,
+      "rod_pitch_m": 0.01,
+      "initial_metal_K": 298.0,
+      "initial_gas_K": 298.0,
+      "initial_pressure_Pa": 0.03,
+      "coast_mixing_m_s": 0.0,
+      "external_emitting_m2": 0.0,
+      "material": "sic"
+    },
+    {
+      "name": "Interstage 1",
+      "diameter_m": 30.0,
+      "depth_m": 0.3572326803687297,
+      "rack_depth_m": 0.3572326803687297,
+      "rod_radius_m": 0.001,
+      "rod_pitch_m": 0.01,
+      "initial_metal_K": 298.0,
+      "initial_gas_K": 298.0,
+      "initial_pressure_Pa": 0.03,
+      "coast_mixing_m_s": 0.0,
+      "external_emitting_m2": 0.0,
+      "material": "aluminum"
+    },
+    {
+      "name": "Interstage 2",
+      "diameter_m": 30.0,
+      "depth_m": 0.14803737078217233,
+      "rack_depth_m": 0.14803737078217233,
+      "rod_radius_m": 0.001,
+      "rod_pitch_m": 0.01,
+      "initial_metal_K": 298.0,
+      "initial_gas_K": 298.0,
+      "initial_pressure_Pa": 0.03,
+      "coast_mixing_m_s": 0.0,
+      "external_emitting_m2": 0.0,
+      "material": "aluminum"
+    },
+    {
+      "name": "Interstage 3",
+      "diameter_m": 30.0,
+      "depth_m": 0.17158877067933612,
+      "rack_depth_m": 0.17158877067933612,
+      "rod_radius_m": 0.001,
+      "rod_pitch_m": 0.01,
+      "initial_metal_K": 298.0,
+      "initial_gas_K": 298.0,
+      "initial_pressure_Pa": 0.03,
+      "coast_mixing_m_s": 0.0,
+      "external_emitting_m2": 0.0,
+      "material": "aluminum"
+    },
+    {
+      "name": "Receiver",
+      "diameter_m": 30.0,
+      "depth_m": 13.716141852432056,
+      "rack_depth_m": 0.26915885596758604,
+      "rod_radius_m": 0.001,
+      "rod_pitch_m": 0.01,
+      "initial_metal_K": 298.0,
+      "initial_gas_K": 298.0,
+      "initial_pressure_Pa": 0.03,
+      "coast_mixing_m_s": 0.0,
+      "external_emitting_m2": 0.0,
+      "material": "aluminum"
+    }
+  ],
+  "pumps": [
+    {
+      "suction_m3_s": 27463.879702240145,
+      "max_shaft_J_kg": 941484.3648398696,
+      "efficiency": 0.75,
+      "ultimate_Pa": 0.03,
+      "stop_s": 600.0,
+      "cutoff_Pa": 0.1
+    },
+    {
+      "suction_m3_s": 6207.443818947078,
+      "max_shaft_J_kg": 1212999.6460694303,
+      "efficiency": 0.75,
+      "ultimate_Pa": 0.03,
+      "stop_s": 600.0,
+      "cutoff_Pa": 0.1
+    },
+    {
+      "suction_m3_s": 1723.1944334116204,
+      "max_shaft_J_kg": 933924.0144561095,
+      "efficiency": 0.75,
+      "ultimate_Pa": 0.03,
+      "stop_s": 600.0,
+      "cutoff_Pa": 0.1
+    },
+    {
+      "suction_m3_s": 687.0849835946846,
+      "max_shaft_J_kg": 823742.8878946281,
+      "efficiency": 0.75,
+      "ultimate_Pa": 0.03,
+      "stop_s": 600.0,
+      "cutoff_Pa": 0.1
+    }
+  ],
+  "schedule": {
+    "start_s": -600.0,
+    "end_s": 2400.0,
+    "withdrawal_start_s": 600.0,
+    "withdrawal_kg_s": 2.0,
+    "withdrawal_floor_Pa": 100.0,
+    "contact_stop_s": 1e+30,
+    "radiation_start_s": 600.0,
+    "radiation_ramp_s": 120.0,
+    "radiation_sink_K": 200.0,
+    "emissivity": 0.8,
+    "max_step_s": 2.0,
+    "rtol": 2e-06
+  },
+  "samples": 1801
+}

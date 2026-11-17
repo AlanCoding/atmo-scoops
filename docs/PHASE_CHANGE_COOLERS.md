@@ -1,7 +1,9 @@
 # Phase-change cores in deployable metal coolers
 
-**Design investigation: a promising option, not yet credited in the numerical
-model.** Each rack can be made from sealed, thin metal cells containing a
+**Optional finite-rate PCM cells are now implemented.** See the
+[model specification](../modeling/metal_coolers/PCM_MODEL.md) and
+[paired numerical investigation](../investigations/pcm_racks/ANALYSIS.md).
+The material survey below remains a design resource, not a selected flight material. Each rack can be made from sealed, thin metal cells containing a
 phase-change material (PCM). The external metal remains solid and provides the
 gas-contact surface, heat spreading, structural support and radiating coating.
 The core melts while absorbing heat during collection and freezes while
@@ -24,11 +26,11 @@ below its actual freezing/nucleation temperature, allowing for supercooling,
 with time left for the required solid fraction to recover. Solidification alone
 need not return the cell all the way to 298 K; its next-cycle enthalpy is what matters.
 
-The current candidate's first gas endpoint is 710 K, with the lumped metal
-endpoint 660 K and cold start 298 K. Later compressor blocks prescribe 600 K
-inlets; receiver gas is 380 K. The existing code does **not** resolve independent
-rack temperatures in these later blocks. A 50 K terminal approach is a useful
-screening example, not a validated heat-transfer result.
+The table below is a temperature-matching illustration using 710 K front gas,
+660 K front material and 600 K interstage gas targets from the earlier capacity
+screen. Those are **not prescribed endpoints in the active finite-rack model**:
+each gas, casing and core state evolves. The current comparison starts at 298 K.
+A 50 K approach is an illustration, not an enforced heat-transfer result.
 
 | Location | Candidate transition range or strategy | Implication |
 |---|---|---|
@@ -65,7 +67,7 @@ are kelvin; latent heats in kJ/kg have the same numerical value as J/g.
 
 [3] [Bauer et al., DLR sodium-nitrate investigation](https://elib.dlr.de/59385/1/NaNO3-Paper_Effstock_Bauer_mit_Header.pdf): transition, heat capacity/conductivity measurements and thermal/chemical stability. It finds molten nitrate attacks graphite; conductive filler cannot simply be assumed compatible.
 
-[4] [Thermal energy storage for direct steam generation: materials selection](https://idus.us.es/server/api/core/bitstreams/09bf8c96-7974-456f-ac2a-c4a47d0389c3/content): uses ~178 kJ/kg fusion heat and reports substantial melt volume expansion (~18%) for sodium nitrate. Expansion space is an explicit design requirement.
+[4] [Thermal energy storage for direct steam generation: materials selection](https://idus.us.es/server/api/core/bitstreams/09bf8c96-7974-456f-ac2a-c4a47d0389c3/content): uses ~178 kJ/kg fusion heat and reports substantial volume expansion (~18%); distinguish room-solid-to-liquid expansion from the approximately 9.7% fusion-only jump in Bauer et al. for sodium nitrate. Expansion space is an explicit design requirement.
 
 [5] [Zhou and Eames, binary sodium/lithium nitrates](https://doi.org/10.1016/j.solmat.2016.08.017): DSC cycling and TGA testing of two mixtures, sub-200°C transitions and >220 kJ/kg latent heat. Their terrestrial tests establish a candidate family, not vacuum containment or mission lifetime.
 

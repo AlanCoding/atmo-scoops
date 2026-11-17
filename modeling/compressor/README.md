@@ -1,11 +1,14 @@
 # Compressor train modeling
 
+**Current implementation:** [Finite metal intercooling now replaces prescribed dive-intercooler endpoints](../metal_coolers/FINITE_RACK_MODEL.md). See that specification for scope and unresolved physics.
+
+
 **Status: first compressor refinement implemented; hardware and maps remain
 unvalidated.** The main cycle now uses real-fluid, isentropic-efficiency block
 states and a geometry-based axial-bank mass screen. See the
 [implemented model](IMPLEMENTED_MODEL.md) and [payoff results](RESULTS.md).
-Independent intermediate inventories, finite metal intercooling and calibrated
-stall/surge limits remain open. Explicit legacy mode preserves old comparisons.
+Independent dynamic intermediate inventories, distributed thermal gradients and
+calibrated stall/surge limits remain open. Explicit legacy mode preserves old comparisons.
 
 Start with the [research requirements](RESEARCH_REQUIREMENTS.md) and
 [comparable-hardware evidence table](COMPARABLE_SYSTEMS.md). The replacement

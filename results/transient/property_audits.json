@@ -1,0 +1,74 @@
+{
+  "results/transient/search/cycle_0.json.gz": {
+    "max_abs_Z_minus_one": 2.0238450577858558e-05,
+    "max_compressor_work_relative_error": 2.4628976738207055e-10,
+    "max_audited_compressor_outlet_K": 1335.4900131437928,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  },
+  "results/transient/search/cycle_1.json.gz": {
+    "max_abs_Z_minus_one": 2.019186576562859e-05,
+    "max_compressor_work_relative_error": 2.985568059577847e-10,
+    "max_audited_compressor_outlet_K": 1338.8990914544063,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  },
+  "results/transient/search/cycle_2.json.gz": {
+    "max_abs_Z_minus_one": 2.01278754674572e-05,
+    "max_compressor_work_relative_error": 3.1024023539374905e-10,
+    "max_audited_compressor_outlet_K": 1341.3010470453062,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  },
+  "results/transient/search/cycle_3.json.gz": {
+    "max_abs_Z_minus_one": 2.0483609640020717e-05,
+    "max_compressor_work_relative_error": 2.5721670861463434e-10,
+    "max_audited_compressor_outlet_K": 1339.7318694153862,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  },
+  "results/transient/search/cycle_4.json.gz": {
+    "max_abs_Z_minus_one": 2.0180633783173363e-05,
+    "max_compressor_work_relative_error": 3.015828571043131e-10,
+    "max_audited_compressor_outlet_K": 1335.6929985784127,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  },
+  "results/transient/search/cycle_5.json.gz": {
+    "max_abs_Z_minus_one": 2.016786609915222e-05,
+    "max_compressor_work_relative_error": 2.60555337863315e-10,
+    "max_audited_compressor_outlet_K": 1339.909558715272,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  },
+  "results/transient/sizing/cycle_0.json.gz": {
+    "max_abs_Z_minus_one": 2.0509166598792206e-05,
+    "max_compressor_work_relative_error": 2.5121267247249063e-10,
+    "max_audited_compressor_outlet_K": 1342.3087080453788,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  },
+  "results/transient/sizing/cycle_1.json.gz": {
+    "max_abs_Z_minus_one": 2.019836194988578e-05,
+    "max_compressor_work_relative_error": 3.1405900903964717e-10,
+    "max_audited_compressor_outlet_K": 1330.2012220093793,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  },
+  "results/transient/sizing/cycle_2.json.gz": {
+    "max_abs_Z_minus_one": 1.423127153099557e-05,
+    "max_compressor_work_relative_error": 2.683883404085686e-10,
+    "max_audited_compressor_outlet_K": 1302.188905412868,
+    "domain_failures": [],
+    "low_density_chamber_EOS_screen_passed": true,
+    "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+  }
+}

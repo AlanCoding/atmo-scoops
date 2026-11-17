@@ -1,0 +1,20 @@
+[
+  {
+    "density_kg_m3": 100.0,
+    "length_m": 627.8905955850399,
+    "payoff_days": 544.7918912636003,
+    "file": "package_density_100.json"
+  },
+  {
+    "density_kg_m3": 250.0,
+    "length_m": 314.5178732222561,
+    "payoff_days": 543.282691995232,
+    "file": "package_density_250.json"
+  },
+  {
+    "density_kg_m3": 1000.0,
+    "length_m": 157.8315120408643,
+    "payoff_days": 542.5280923610478,
+    "file": "package_density_1000.json"
+  }
+]

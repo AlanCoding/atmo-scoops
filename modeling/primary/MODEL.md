@@ -1,5 +1,14 @@
 # Continuous two-compartment model
 
+**Legacy scalar model.** The new coupled evaluator and editable input registry are documented in [TRANSIENT_IMPLEMENTATION.md](TRANSIENT_IMPLEMENTATION.md).
+
+**Current finite-rack path (default):** [thermal equations and geometry](../metal_coolers/FINITE_RACK_MODEL.md)
+and [packaging/timing](../deployment/IMPLEMENTED_VOLUME.md) supersede the prescribed
+temperatures, foil-area rule and fixed machinery bay described in the historical
+baseline below. Set `racks.enabled=false` only to reproduce that baseline.
+Complete editable inputs are produced by `python -m atmo_scoops --write-config`.
+
+
 `atmo_scoops.system.simulate` is the single active cycle API. The CLI and optimizer
 call it. [Inputs](PARAMETERS.md) separate geometry, capability assumptions,
 controls and optional mixing. No detailed CFD runs inside this model.

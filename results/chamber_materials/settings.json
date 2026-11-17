@@ -1,0 +1,47 @@
+{
+  "bounds_m": [
+    [
+      2.0,
+      12.0
+    ],
+    [
+      0.015,
+      0.8
+    ],
+    [
+      0.015,
+      0.8
+    ],
+    [
+      0.015,
+      0.8
+    ],
+    [
+      0.015,
+      1.0
+    ],
+    [
+      0.0,
+      12.0
+    ],
+    [
+      0.0,
+      12.0
+    ],
+    [
+      0.0,
+      12.0
+    ],
+    [
+      0.0,
+      12.0
+    ],
+    [
+      2.0,
+      100.0
+    ]
+  ],
+  "reference_shaft_MJ": 7608.306502908259,
+  "anchor": "results/reboost/solid_isp_optimum_1601.json",
+  "method": "two seeds; coordinate pattern search; steps .5,.25,.1; at most two sweeps each"
+}

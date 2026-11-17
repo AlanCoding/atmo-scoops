@@ -104,7 +104,11 @@ def evaluate(r, front, rear, hw=Hardware(), rear_diameter_m=18.3):
     pieces['avionics_attitude']=hw.avionics_attitude_fixed_kg
     before=sum(pieces.values());pieces['design_margin']=before*hw.design_margin
     total=sum(pieces.values())
-    gamma=r['gamma_hot'];RT=r['gas_R_J_kg_K']*c['gas_K']
+    gamma=r['gamma_hot'];access_T=c['gas_K']
+    if r.get('racks'):
+        temps=np.array(r['gas_temperature_K']);active=flow>max(flow)*1e-6
+        access_T=float(temps[active].min())
+    RT=r['gas_R_J_kg_K']*access_T
     sound=math.sqrt(gamma*RT)
     choked_speed=sound*(2/(gamma+1))**((gamma+1)/(2*(gamma-1)))
     required_access=hotS/(hw.access_discharge_coefficient*choked_speed)

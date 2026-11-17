@@ -1,9 +1,14 @@
 # Metal coolers: finite gas-to-surface heat transfer
 
+**Current implementation:** [Finite convection, rack geometry and cyclic restoration are now implemented](FINITE_RACK_MODEL.md). See that specification for scope and unresolved physics.
+
+
 **Status: research specification, not a validated correlation or implemented
 replacement.** Metal thermal capacity alone cannot determine gas outlet
 temperature. Model how heat crosses from flowing gas to the actual lattice,
 how it diffuses into metal, and how that same metal cools during coast.
+
+The next [stage-specific pitch investigation](../../investigations/rack_pitch/PLAN.md) pairs heat transfer with pressure loss and defines geometry/correlation acceptance criteria.
 
 ## Geometry and independent inputs
 
@@ -79,7 +84,7 @@ Related: [compressor plan](../compressor/MODEL_PLAN.md),
 [screening arithmetic](../compressor/SCREENING_CALCULATIONS.md),
 [properties](../gas_properties/README.md), [deployment](../deployment/README.md).
 
-Design option: [encapsulated phase-change cores](../../docs/PHASE_CHANGE_COOLERS.md), including stage-specific temperature matching and finite solidification. No numerical mass credit yet.
+Design option: [encapsulated phase-change cores](../../docs/PHASE_CHANGE_COOLERS.md), including stage-specific temperature matching and finite solidification. Optional finite-rate implementation: [PCM model](PCM_MODEL.md).
 
 ## Working volume during the pass
 

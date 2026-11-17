@@ -1,0 +1,119 @@
+{
+  "proxy": {
+    "proxy_days": 381.0696995837363,
+    "proxy_dry_kg": 19931827.282188937,
+    "batch_kg": 7083.765085499432,
+    "receiver_vent_reserve_kg": 22.510094249268352,
+    "net_product_kg": 3851.250048117605,
+    "propellant_kg": 3232.515037381827,
+    "motor_uprating_kg": 7211.744708152746,
+    "compressor_electric_peaks_W": [
+      12788438.48286963,
+      10790288.953493107,
+      8877554.806749435,
+      16981601.504291683
+    ],
+    "metal_kg": 916323.3790666945,
+    "vessel_kg": 87425.36475810522,
+    "structural_shell_kg": 46781.42031431612,
+    "deployment_kg": 370615.9980918246,
+    "fixed_hardware_kg": 14513265.229691297,
+    "compression_adjustment_kg": 1869.8905087788814,
+    "processing_surcharge_kg": 9180.543320135188,
+    "processing_kg_MJ": 10.0,
+    "excess_feed_heat_MJ": 918.0543320135188,
+    "length_m": 117.43681842086781,
+    "estimated_reset_s": 2821.2117044448455,
+    "margins": {
+      "length_m": 199.5631815791322,
+      "pressure_Pa": 2339.264696248749,
+      "metal_K": 229.16465250542672,
+      "gas_K": 1102.6751761390778,
+      "net_product_kg": 3851.250048117605,
+      "reset_time_s": 540.4820924225364,
+      "mass_audit_kg": 9.999874034983805e-06,
+      "energy_audit_MJ": 9.999734939137853e-05
+    },
+    "feasible": true
+  },
+  "relative_final_receiver_mass_change": 2.3850249495360742e-06,
+  "final_receiver_temperature_change_K": 0.0005010820278812389,
+  "retried": [
+    {
+      "id": 3,
+      "proxy_days": 386.4363323095835,
+      "proxy_dry_kg": 20194964.331098467,
+      "batch_kg": 7080.418414087436,
+      "receiver_vent_reserve_kg": 26.431614208143,
+      "net_product_kg": 3847.903376705609,
+      "propellant_kg": 3232.515037381827,
+      "metal_kg": 1068158.8113035383,
+      "vessel_kg": 85850.22016675904,
+      "structural_shell_kg": 48068.12227688814,
+      "deployment_kg": 432027.3311972585,
+      "fixed_hardware_kg": 14511812.65820937,
+      "compression_adjustment_kg": 1838.700337406418,
+      "processing_surcharge_kg": 8215.621387551784,
+      "processing_kg_MJ": 10.0,
+      "excess_feed_heat_MJ": 821.5621387551785,
+      "length_m": 120.6668653866309,
+      "estimated_reset_s": 2806.9052161049053,
+      "margins": {
+        "length_m": 196.3331346133691,
+        "pressure_Pa": 20847.486427782467,
+        "metal_K": 313.20770408031626,
+        "gas_K": 1199.7628810767387,
+        "net_product_kg": 3847.903376705609,
+        "reset_time_s": 554.7885807624765,
+        "mass_audit_kg": 9.99986630427884e-06,
+        "energy_audit_MJ": 9.999923238647171e-05
+      },
+      "feasible": true,
+      "motor_uprating_kg": 5759.17322622565,
+      "compressor_electric_peaks_W": [
+        14844008.397121858,
+        11180052.622884572,
+        8113757.416740879,
+        15529030.022364588
+      ]
+    },
+    {
+      "id": 67,
+      "proxy_days": 385.2128542542137,
+      "proxy_dry_kg": 20136136.82530932,
+      "batch_kg": 7081.395312987089,
+      "receiver_vent_reserve_kg": 26.431614208143,
+      "net_product_kg": 3848.880275605262,
+      "propellant_kg": 3232.515037381827,
+      "metal_kg": 1036690.1264874217,
+      "vessel_kg": 85577.68399135023,
+      "structural_shell_kg": 47996.0381424422,
+      "deployment_kg": 419299.5122872563,
+      "fixed_hardware_kg": 14511702.171003696,
+      "compression_adjustment_kg": -400.8886084235525,
+      "processing_surcharge_kg": 8044.81694371521,
+      "processing_kg_MJ": 10.0,
+      "excess_feed_heat_MJ": 804.481694371521,
+      "length_m": 120.4859103974263,
+      "estimated_reset_s": 2813.2802483894043,
+      "margins": {
+        "length_m": 196.5140896025737,
+        "pressure_Pa": 21340.129158345255,
+        "metal_K": 286.29222084622927,
+        "gas_K": 1173.1277679030718,
+        "net_product_kg": 3848.880275605262,
+        "reset_time_s": 548.4135484779775,
+        "mass_audit_kg": 9.999839815245651e-06,
+        "energy_audit_MJ": 9.999894134816714e-05
+      },
+      "feasible": true,
+      "motor_uprating_kg": 5648.686020552073,
+      "compressor_electric_peaks_W": [
+        12677027.969784481,
+        10627607.267538885,
+        7976888.693691653,
+        15418542.816691011
+      ]
+    }
+  ]
+}

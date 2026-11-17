@@ -1,5 +1,11 @@
 # Close-pass volume allocation
 
+**Implementation status:** a reduced [volume and timing screen](IMPLEMENTED_VOLUME.md)
+now implements working lattice envelopes, metal-displaced gas volume and equipment
+packages. The specification below remains the roadmap for complete geometric and
+independent-storage validation. The old fixed-bay case remains historical only.
+
+
 **Status: researched requirements and explicit equations; no integrated packing
 solver yet.** The former 25 m front / 100 m machinery / residual rear allocation
 is an unsupported layout assumption. The primary model solves front/rear gas

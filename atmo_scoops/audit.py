@@ -23,7 +23,7 @@ def main():
         errors={k:abs(a[k]/b[k]-1) for k in ('captured_kg','retained_kg','total_dry_kg','compressor_kWh','hot_absorbed_GJ')}
         assert max(errors.values())<2e-4,errors
         assert abs(b['thermal_energy_balance_residual_J'])<.01
-        assert abs(b['captured_kg']+b['mixing']['injected_kg']-b['retained_kg']-b['vent_kg'])<1e-9
+        assert abs(b['captured_kg']+b['initial_gas_seed_kg']+b['mixing']['injected_kg']-b['retained_kg']-b['vent_kg'])<1e-9
         assert abs(sum(b['masses_kg'].values())-b['total_dry_kg'])<1e-7
         rows.append(dict(design=fine['inputs']['design'],scenario=fine['inputs']['scenario'],relative_resolution_errors=errors,
             thermal_residual_J=b['thermal_energy_balance_residual_J']))

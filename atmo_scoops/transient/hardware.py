@@ -1,0 +1,74 @@
+"""Direct installed mass/packing compilation; never observes a simulated cycle."""
+from dataclasses import asdict,replace
+import math
+import numpy as np
+from ..compressor import Compressor,bank_mass
+from ..chambers.materials import material
+from ..chambers.model import Chamber
+from ..orbit import Orbit
+from ..atmosphere import make_profile
+from ..encounter import orbit_state
+from ..reboost import arc_restore
+from .thermo import properties,Y
+from .drag import skin_impulse
+
+def compile_hardware(d,c):
+ o=Orbit(d.perigee_km,d.apogee_km);start=-max(1200.,d.burn_s/2+c.spin_s+10);end=start+o.period
+ if end<d.plant_stop_s+300:raise ValueError('Orbit leaves insufficient post-processing recovery window')
+ times=np.linspace(start,end,2401);phase=np.where(times>o.period/2,times-o.period,times)
+ atm=make_profile('reference')
+ # Truncate the negligible exosphere above the profile; never extrapolate dense air.
+ atm=replace(atm,alt_km=np.r_[atm.alt_km,1000.01,max(1001.,d.apogee_km+1)],density=np.r_[atm.density,1e-100,1e-100],fractions=np.vstack([atm.fractions,atm.fractions[-1],atm.fractions[-1]]),temperature=np.r_[atm.temperature,atm.temperature[-1],atm.temperature[-1]])
+ state=orbit_state(o,phase,atm);A=math.pi*d.bore_m**2/4
+ supply=A*state['density_kg_m3']*state['speed_m_s'];inlet_window=np.clip((250.-state['altitude_km'])/50.,0.,1.);J=float(np.trapezoid(supply*state['speed_m_s'],times))
+ inlet_impulse=J
+ outside=d.bore_m+2*d.clearance_m;length=outside*d.length_diameter
+ skin=skin_impulse(times,state['density_kg_m3'],state['speed_m_s'],outside,length,c.skin_friction_coefficient,c.skin_area_multiplier)
+ J=inlet_impulse+skin['impulse_Ns']
+ penalty=arc_restore(o,0,d.burn_s/2,samples=1001);power=J*penalty['impulse_multiplier']*d.isp_s*9.80665/(2*c.eta_thruster*d.burn_s)
+ mats=[material(n) for n in d.materials]
+ if any(not 298<=T<m.limit_K for T,m in zip(d.rack_initial_K,mats)):raise ValueError('Initial rack temperature outside material range')
+ geom=[Chamber(str(i),d.bore_m,max(z,1),z,rod_radius_m=d.rod_radius_m,rod_pitch_m=d.rod_pitch_m,material=n).geometry() for i,(z,n) in enumerate(zip(d.rack_depth_m,d.materials))]
+ spec=Compressor(module_diameter_m=.5,tip_speed_m_s=350.,axial_velocity_m_s=100.)
+ dummy=dict(rho_kg_m3=.001,mu_Pa_s=2e-5,sound_m_s=400.)
+ banks=[]
+ for S,H,P in zip(d.suction_m3_s,d.head_J_kg,d.motor_MW):
+  b=bank_mass(S,H,P*1e6,spec,dummy);banks.append(b)
+ coast=[]
+ for i in range(3):coast.append(bank_mass(d.coast_suction_m3_s*d.coast_suction_fractions[i],d.coast_head_J_kg/3,d.coast_motor_MW*1e6/3,spec,dummy))
+ footprint=np.array([g['solid_m3']/(math.pi*d.rod_radius_m*(d.rod_radius_m/d.rod_pitch_m)) for g in geom])
+ reference_sink=380.;equiv=c.carnot_fraction*77.34/(reference_sink-77.34)
+ masses=dict(racks=sum(g['mass_kg'] for g in geom),rack_mechanisms=float(sum(footprint))*c.rack_mechanism_kg_m2,
+  dive_compressors=sum(b['total_kg'] for b in banks),coast_compressors=sum(b['total_kg'] for b in coast),
+  refrigerator=d.plant_electric_MW*1e6*equiv*c.heat_pump_kg_W_equivalent,
+  external_exchangers=(d.precool_UA_W_K+d.condenser_UA_W_K)/c.exchanger_UA_per_kg,
+  separator=d.plant_flow_kg_s*c.separation_J_kg/1000*5,
+  solar=d.solar_area_m2*c.solar_W_m2/c.solar_W_kg,
+  battery=max(d.battery_MWh*1e6/c.battery_Wh_kg,d.battery_MW*1e6/c.battery_W_kg),
+  bus=d.bus_MW*1000*c.bus_kg_kW,thrusters=power/1000*c.thruster_kg_kW,
+  warm_store=d.warm_store_kg,warm_radiator=d.warm_radiator_m2*2*c.radiator_kg_m2,
+  liquid_tanks=300*d.liquid_tank_m3,auxiliary=5000.)
+ packages=dict(solar=d.solar_area_m2*c.solar_W_m2/40000,warm_radiator=d.warm_radiator_m2*.02,
+  battery=max(d.battery_MWh*1e6/280000,masses['battery']/1800),warm_store=d.warm_store_kg/800,
+  machines=sum(masses[k] for k in ['dive_compressors','coast_compressors','refrigerator','external_exchangers','separator','bus','thrusters','rack_mechanisms','auxiliary'])/c.machinery_kg_m3,
+  liquid_tanks=d.liquid_tank_m3*1.2)
+ bay=sum(packages.values())/c.fill_fraction/A;outside=d.bore_m+2*d.clearance_m;length=outside*d.length_diameter
+ hd=c.head_depth_m;rad=d.bore_m/2;headV=math.pi*hd*(3*rad**2+hd**2)/6
+ depths=[d.rack_depth_m[i]+d.clear_depth_m[i]+(2*hd if i else 0) for i in range(4)]
+ depths.append(length-bay-sum(depths))
+ if depths[-1]<d.rack_depth_m[-1]+2*hd:raise ValueError('Installed hardware/racks exceed fixed hull length')
+ vessel=0
+ for i,(g,L) in enumerate(zip(geom,depths)):
+  gross=A*L if i==0 else A*(L-2*hd)+2*headV
+  g.update(gross_m3=gross,gas_m3=gross-g['solid_m3'],depth_m=L,deployed_physical_m2=float(footprint[i]))
+  if i:
+   rating=d.rated_pressure_Pa[i-1];barrel=A*0+2*math.pi*rad*(L-2*hd);heads=2*math.pi*(rad**2+hd**2);R=(rad**2+hd**2)/(2*hd)
+   vessel+=(barrel*max(.001,1.5*rating*rad/150e6)+heads*max(.001,1.5*rating*R/(2*150e6)))*2700*1.5+(barrel+heads)
+ masses['pressure_vessels']=vessel;masses['hull']=math.pi*outside*length*4
+ masses['margin']=sum(masses.values())*c.margin
+ prop=J*penalty['impulse_multiplier']/(d.isp_s*9.80665)
+ return dict(orbit=o,geometry=geom,banks=banks,coast_banks=coast,masses_kg=masses,dry_kg=sum(masses.values()),packages_m3=packages,bay_m=bay,length_m=length,outside_m=outside,
+  thrust_W=power,required_impulse_Ns=J*penalty['impulse_multiplier'],geometric_impulse_Ns=inlet_impulse,total_drag_impulse_Ns=J,skin_friction=skin,skin_impulse_fraction=skin['impulse_Ns']/inlet_impulse,unresolved_exospheric_incident_kg=float(np.trapezoid(supply*(1-inlet_window),times)),propellant_reference_kg=prop,arc=penalty,
+  start_s=start,end_s=end,forcing=dict(time=times,phase=phase,supply=supply*inlet_window,pressure=state['ram_Pa']*inlet_window,temperature=state['temperature_K'],speed=state['speed_m_s']),
+  array_motion_s=math.sqrt(d.solar_area_m2)/c.deployment_m_s,radiator_motion_s=math.sqrt(d.warm_radiator_m2)/c.deployment_m_s,
+  rack_motion_s=np.sqrt(footprint)/c.deployment_m_s,safe_s=o.time_at_altitude(200.))

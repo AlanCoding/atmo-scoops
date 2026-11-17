@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "samples": [
+    801,
+    1601
+  ],
+  "relative_resolution_errors": {
+    "captured_kg": 1.1927606642370137e-06,
+    "retained_kg": 6.714555547460144e-06,
+    "total_dry_kg": 4.294886891687e-07,
+    "compressor_kWh": 1.7588724163686287e-05,
+    "hot_absorbed_GJ": 5.333786892158798e-07,
+    "operating_mass_payoff_days": 7.975989039454845e-06
+  },
+  "relative_port_smoothing_errors": {
+    "captured_kg": 3.328750007858261e-07,
+    "retained_kg": 3.215631726449786e-07,
+    "total_dry_kg": 3.769402678877043e-09,
+    "compressor_kWh": 2.9546852819972713e-07,
+    "hot_absorbed_GJ": 3.5607738524401356e-07,
+    "operating_mass_payoff_days": 3.990155803546003e-07
+  },
+  "thermal_residual_J": 0.001220703125,
+  "scope": "Numerical convergence/conservation of reduced model; not heat-transfer, machinery or packaging validation"
+}

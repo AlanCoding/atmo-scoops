@@ -72,14 +72,12 @@ with product accumulating in liquid tanks. The final process pressure is to be
 selected from the liquefaction requirements. The metal racks are gas coolers;
 cryogenic condensation and refrigeration remain distinct operations.
 
-The numerical model now resolves real-fluid compression-block inlet/outlet states
-and a conditional geometry-based compressor mass budget. It still lumps chamber
-inventories and prescribes interstage cooling targets; finite metal intercooling,
-calibrated compressor maps and deployment costs remain to be resolved. Detailed
-[compressor research](../modeling/compressor/README.md),
-[metal-cooler research](../modeling/metal_coolers/README.md), and
-[deployment interfaces](../modeling/compressor/DEPLOYMENT.md) support the planned
-model replacement.
+The numerical model resolves real-fluid compression-block states, finite front
+and interstage metal cooling, and a conditional geometry-based compressor mass
+budget. Front gas and metal energies evolve during the pass; intermediate racks
+use quasi-steady series flow with explicit pore inventory and residual loss.
+Large independent intermediate storage and calibrated compressor maps remain
+unresolved. See the [finite-rack model](../modeling/metal_coolers/FINITE_RACK_MODEL.md).
 
 ## Orbit and phase timing
 
@@ -156,32 +154,57 @@ coast. Solid metal skins and internal heat spreaders retain the liquid and
 provide gas-contact and radiating surfaces. Thin cells need expansion space,
 compatible liners and cyclic pressure/thermal qualification.
 
-Different temperature sections may use different cores. Hot upstream cells can
-radiate efficiently at high temperature; colder terminal cells must preserve
-the compressor-inlet temperature approach. This is a design option, not yet a
-credited mass improvement. The [material and cycle investigation](PHASE_CHANGE_COOLERS.md)
-compares candidate salts/metals, complete-cell capacity and radiative/freezing
-limits. Sensible-metal racks remain the baseline until finite heat transfer and
-repeatable recovery establish a benefit.
+Different stages may use different cores and radii. The optional model now tracks
+separate casing/core temperatures, melting, finite conduction, displacement and
+coast refreezing. Solid-metal racks remain the reference: the tested PCM cases
+do not beat a similarly retuned solid-metal design. See the
+[comparison](../investigations/pcm_racks/ANALYSIS.md),
+[model equations](../modeling/metal_coolers/PCM_MODEL.md) and
+[material survey](PHASE_CHANGE_COOLERS.md).
 
-## Oxygen accounting
+## Optional fixed-tube liquid cooling
 
-Available oxygen means oxygen recoverable from the retained gas, including
-recombined atomic oxygen. Reboost consumes part of it as propellant. Net product
-subtracts propellant from the liquefied batch; nitrogen remains useful product.
+A third thermal architecture uses fixed heat-exchanger tubes in the compressor
+chambers. Cold liquid flows once through during collection into a separate warm
+inventory, without mixing into the air. A shared tank may use an insulated
+moving separator between cold and warm sections. During coast, a radiator and,
+when required, a solar-powered heat pump restore the cold inventory. The tubes
+stay installed; only radiator and solar panels deploy.
 
-For capture-only momentum, roughly `m_propellant / m_admitted = u / v_exhaust`.
-At about 7.6 km/s encounter speed and 32.6 km/s exhaust, propellant is about 23%
-of admitted air. Since retained air in the candidate is also about 23% oxygen,
-almost all its oxygen is used for reboost. This is not a 23% capture efficiency.
+Solid-metal storage, PCM cores and pumped liquid remain available concepts and
+can serve different temperature bands. A hot first cooler plus a refrigerated
+terminal cooler deserves separate treatment from refrigerating the entire ram
+heat load. Coolant flow, cold/warm endpoints, fluid, pressure and per-stage
+exchanger allocation become design variables. Coolant tank volume and line fill
+must be charged explicitly.
 
-Lower exhaust velocity saves electricity but consumes more oxygen. The current
-optimizer often chooses the lowest exhaust velocity the oxygen balance allows.
-A **10% oxygen reserve** requires `m_propellant <= 0.9 * m_oxygen_recovered`.
-It leaves one-tenth of recovered oxygen unused as propellant, not 10% of the entire batch.
-That oxygen is included in net available product; a permanent onboard reserve
-inventory is a separate mission choice. Exterior drag is not calculated by this
-reserve rule.
+The optional [integrated ammonia model](../modeling/liquid_cooling/INTEGRATED_MODEL.md)
+now couples tube heat transfer and controlled coolant flow to the inlet and each
+compressor block. Available inventory, wall boiling, pumping, coast regeneration
+and added packing/deployment are included. Its initial
+[payoff comparison](../investigations/liquid_cooling/INTEGRATED.md) remains
+conditional on the exchanger and machinery approximations.
+
+## Propellant accounting and reboost
+
+The coupled reference uses nitrogen/oxygen electric propulsion with a symmetric
+finite-duration burn around perigee. Its current reserve accounting stores those
+species as liquids; the thruster itself would require a gas-feed system. An
+[independent gas-reserve/bypass investigation](../investigations/propellant_feed/PLAN.md)
+will compare avoiding propellant liquefaction, including a pressure buffer and
+feed hardware. All expelled propellant is deducted from useful product; recycling
+is not new product. No bypass payoff credit is claimed yet.
+
+For capture-only momentum, propellant/admitted mass is approximately encounter
+speed/exhaust speed. Lower exhaust velocity saves electrical hardware but consumes
+more product. A requested oxygen reserve is a constraint on oxygen consumption,
+not a capture-efficiency statement. Nitrogen-capable configurations need their own
+qualified propulsion performance map.
+
+The [reboost investigations](../investigations/reboost/README.md) compare Isp and
+direct-solar burns before stowing and after deployment. The latter must restore
+both orbital energy and angular momentum, and leave enough processing time.
+It remains an investigated operating option rather than the primary thrust model.
 
 ## Incremental coolant mixing
 
@@ -207,18 +230,36 @@ contact geometry. Accessible pore gas and solid material must be accounted for
 without overlap. Batteries, drives, liquid tanks, piping, hatches and deployment
 paths also consume space. Rear storage uses the remaining connected volume.
 
-The numerical package does not yet solve this allocation or independent
-interstage inventories. The former 25 m front / 100 m machinery split is a
-placeholder and must not establish a geometry-limited reference. The
-[close-pass volume research](../modeling/deployment/CLOSE_PASS_VOLUME.md) defines
-the replacement and records reference packaging evidence.
+The numerical package derives rack envelopes, metal-displaced front gas volume,
+compressor package volumes and folded equipment allocations. The previous fixed
+100 m machinery bay is not used in this path. Solar, warm radiator and metal-rack
+travel times scale with the square root of deployed footprint at a reference
+10 m/s; no full-power/full-radiation credit is taken before deployment finishes.
+The [implementation and capability assumptions](../modeling/deployment/IMPLEMENTED_VOLUME.md)
+distinguish a volume screen from a complete installed layout. The updated
+[constraint-driven investigation](../investigations/altitude_sensitivity/FINITE_RACK_LIMITS.md)
+reports numerical limits without claiming a survivable perigee.
+
+The [external skin-friction screen](../investigations/skin_friction/ANALYSIS.md) now adds a configurable hull shear impulse. Calibrated aerothermal loads and fin/base/shape pressure drag remain pending.
 
 ## Numerical status
 
-The single current specification is this document plus the
-[input definitions](../modeling/primary/PARAMETERS.md). The
-[primary equations](../modeling/primary/MODEL.md) state which behavior is solved
-and which is prescribed. Studies explore those inputs under fixed capability
-assumptions; no saved winner is an approved final vehicle. No pump mechanism,
-rotor speed, module count, detailed throat geometry or stability arrangement is
-selected. The [improvement list](MODEL_IMPROVEMENTS.md) is the development agenda.
+The [coupled cycle model](../modeling/primary/TRANSIENT_IMPLEMENTATION.md) now
+follows five gas/rack volumes, four finite dive compressor blocks, a finite coast
+train and liquefaction plant, battery/solar power and thermal recovery. SiC is
+used in front and aluminum downstream. Installed hardware occupies a fixed
+317 m hull; the aft receiver receives the remaining length. A variable-duration
+steered burn replaces the arbitrary 300 s rating assumption.
+
+Each design candidate is integrated once. Periodic state residuals, species and
+energy conservation, capacity and material limits determine acceptance. The
+[current numerical investigation](../investigations/transient/README.md) contains
+results and assumptions; the older scalar program remains available for
+reproduction. Payoff still ends in the operating orbit. Circular-apogee delivery
+is not included, and no saved candidate is an approved final vehicle.
+
+The pump map, vent/hatch hardware, external drag, structural qualification and
+refrigeration package still need refinement. Lattice pressure loss must precede
+optimization of rack pitch. The [improvement list](MODEL_IMPROVEMENTS.md) records
+the remaining work; detailed CFD and stability studies remain outside the cycle
+optimizer.

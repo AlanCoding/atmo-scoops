@@ -1,0 +1,65 @@
+{
+  "duties": [
+    {
+      "heat_J": 215265835465.28903,
+      "gas_K": 933.4611440571515,
+      "h_gas_W_m2_K": 31.425152555909026,
+      "frontal_m2": 706.8583470577034
+    },
+    {
+      "heat_J": 5752766766.818751,
+      "gas_K": 845.9704603220224,
+      "h_gas_W_m2_K": 36.47108902726042,
+      "frontal_m2": 706.8583470577034
+    },
+    {
+      "heat_J": 2948361057.2163944,
+      "gas_K": 549.2949775192203,
+      "h_gas_W_m2_K": 29.992041435798555,
+      "frontal_m2": 706.8583470577034
+    },
+    {
+      "heat_J": 1954736326.6814387,
+      "gas_K": 463.44104751675195,
+      "h_gas_W_m2_K": 27.307222609424638,
+      "frontal_m2": 706.8583470577034
+    }
+  ],
+  "cooling": {
+    "fluid": "Ammonia",
+    "cold_K": 200.0,
+    "hot_K": 300.0,
+    "pressure_Pa": 2000000.0,
+    "pass_s": 60.0,
+    "coast_s": 5135.062767130755,
+    "sunlight_s": 2784.9666705538916,
+    "radius_m": 0.001,
+    "wall_m": 0.0001,
+    "velocity_m_s": 2.0,
+    "metal_density_kg_m3": 7870.0,
+    "wall_k_W_m_K": 16.0,
+    "allowable_Pa": 150000000.0,
+    "pressure_factor": 1.5,
+    "pump_efficiency": 0.65,
+    "header_drop_Pa": 100000.0,
+    "heat_pump": true,
+    "carnot_fraction": 0.35,
+    "radiator_K": 340.0,
+    "approach_K": 10.0,
+    "radiator_emissivity": 0.85,
+    "environment_W_m2": 80.0,
+    "radiator_kg_m2": 5.0,
+    "refrigerator_input_W_kg": 500.0,
+    "pump_input_W_kg": 1000.0,
+    "solar_W_kg": 150.0,
+    "solar_W_m2": 250.0,
+    "tank_density_kg_m3": 2700.0,
+    "tank_margin_fraction": 0.5,
+    "tank_ullage_fraction": 0.1,
+    "tube_support_fraction": 0.3,
+    "deployment_speed_m_s": 10.0,
+    "battery_Wh_kg": 150.0,
+    "battery_efficiency": 0.9,
+    "battery_usable": 0.8
+  }
+}

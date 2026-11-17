@@ -1,0 +1,102 @@
+[
+  {
+    "radius_m": 0.0001,
+    "payoff_days": 658.0943931598314,
+    "dry_t": 50658.18580278709,
+    "length_m": 292.9037721567569,
+    "net_kg_pass": 5667.877575415165,
+    "gas_peak_K": 553.9101254262533,
+    "metal_peak_K": 552.7876205921173,
+    "screens": true,
+    "margins": {
+      "compressor_access_m2": 67.9080208712567,
+      "oxygen_kg": 222.4713287104164,
+      "metal_radiation_time_s": 4870.92304949538,
+      "positive_production_kg": 5667.877575415165,
+      "cutoff_Pa": 1.1102230246251565e-16,
+      "coolant_replacement_kg": 5360.16080616163,
+      "compressor_face_m2": 331.0144070432479,
+      "interstage_small_holdup_fraction": 0.0060793715544675084,
+      "molecular_compressor_temperature_K": 1446.0898745737468,
+      "metal_temperature_K": 489.21237940788274,
+      "length_m": 24.096227843243128,
+      "storage_pressure_Pa": 10350.759363067336
+    },
+    "file": "radius_0.0001.json"
+  },
+  {
+    "radius_m": 0.0003,
+    "payoff_days": 572.0504802966293,
+    "dry_t": 44034.8620434357,
+    "length_m": 250.52560922447762,
+    "net_kg_pass": 5667.88858587899,
+    "gas_peak_K": 557.3888971741637,
+    "metal_peak_K": 552.6806383645267,
+    "screens": true,
+    "margins": {
+      "compressor_access_m2": 67.93148181857373,
+      "oxygen_kg": 222.47375013969395,
+      "metal_radiation_time_s": 4921.041089043848,
+      "positive_production_kg": 5667.88858587899,
+      "cutoff_Pa": -4.163336342344337e-17,
+      "coolant_replacement_kg": 5360.169124400835,
+      "compressor_face_m2": 331.0147906697925,
+      "interstage_small_holdup_fraction": 0.00611063644632907,
+      "molecular_compressor_temperature_K": 1442.6111028258363,
+      "metal_temperature_K": 489.31936163547334,
+      "length_m": 66.47439077552238,
+      "storage_pressure_Pa": 10350.604721023876
+    },
+    "file": "radius_0.0003.json"
+  },
+  {
+    "radius_m": 0.001,
+    "payoff_days": 544.5494295295194,
+    "dry_t": 41918.27747272356,
+    "length_m": 236.87026835255514,
+    "net_kg_pass": 5667.9386381431195,
+    "gas_peak_K": 601.6945448529084,
+    "metal_peak_K": 552.0552875800377,
+    "screens": true,
+    "margins": {
+      "compressor_access_m2": 67.98327871109981,
+      "oxygen_kg": 222.48490805461392,
+      "metal_radiation_time_s": 4421.738211272316,
+      "positive_production_kg": 5667.9386381431195,
+      "cutoff_Pa": -5.551115123125783e-17,
+      "coolant_replacement_kg": 5360.206938131139,
+      "compressor_face_m2": 331.0172436363912,
+      "interstage_small_holdup_fraction": 0.0062610189126017825,
+      "molecular_compressor_temperature_K": 1398.3054551470916,
+      "metal_temperature_K": 489.94471241996234,
+      "length_m": 80.12973164744486,
+      "storage_pressure_Pa": 10349.901736608546
+    },
+    "file": "radius_0.001.json"
+  },
+  {
+    "radius_m": 0.003,
+    "payoff_days": 552.5470446560006,
+    "dry_t": 41476.953128283545,
+    "length_m": 233.88602345481604,
+    "net_kg_pass": 5527.090868390871,
+    "gas_peak_K": 933.340069568397,
+    "metal_peak_K": 563.6966295199938,
+    "screens": true,
+    "margins": {
+      "compressor_access_m2": 68.10683734896242,
+      "oxygen_kg": 189.83071080779519,
+      "metal_radiation_time_s": 2969.2865601417825,
+      "positive_production_kg": 5527.090868390871,
+      "cutoff_Pa": 1.3877787807814457e-17,
+      "coolant_replacement_kg": 5253.79857771124,
+      "compressor_face_m2": 331.01834750234195,
+      "interstage_small_holdup_fraction": 0.007724962633985016,
+      "molecular_compressor_temperature_K": 1066.659930431603,
+      "metal_temperature_K": 478.30337048000615,
+      "length_m": 83.11397654518396,
+      "storage_pressure_Pa": 12328.109610722124
+    },
+    "file": "radius_0.003.json"
+  }
+]

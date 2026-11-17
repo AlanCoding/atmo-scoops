@@ -1,0 +1,619 @@
+[
+  {
+    "name": "solid_f0.5_s0.85",
+    "file": "solid_f0.5_s0.85.json",
+    "payoff_days": 614.3320396126267,
+    "dry_t": 39663.924080869976,
+    "rack_t": 665.4826219499248,
+    "net_kg_pass": 4753.916304286148,
+    "max_inlet_K": 978.6302822403459,
+    "max_shell_K": 877.1870829784178,
+    "length_m": 225.35095326661923,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "solid_f0.5_s1.2",
+    "file": "solid_f0.5_s1.2.json",
+    "payoff_days": 521.9015633264369,
+    "dry_t": 40172.178655495125,
+    "rack_t": 665.4826219499248,
+    "net_kg_pass": 5667.555828653754,
+    "max_inlet_K": 1052.852762811134,
+    "max_shell_K": 939.4992125039395,
+    "length_m": 228.2365092942705,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "solid_f0.5_s1.6",
+    "file": "solid_f0.5_s1.6.json",
+    "payoff_days": 526.9848487939025,
+    "dry_t": 40581.85118417679,
+    "rack_t": 665.4826219499248,
+    "net_kg_pass": 5670.126447381956,
+    "max_inlet_K": 1063.7925047749463,
+    "max_shell_K": 939.4627934863182,
+    "length_m": 230.79296863875817,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -18.228775809931477
+    }
+  },
+  {
+    "name": "solid_f0.8_s0.85",
+    "file": "solid_f0.8_s0.85.json",
+    "payoff_days": 538.5649344860487,
+    "dry_t": 40357.76073967759,
+    "rack_t": 1008.1417602156899,
+    "net_kg_pass": 5517.57197420286,
+    "max_inlet_K": 801.1162096699161,
+    "max_shell_K": 733.3398531541313,
+    "length_m": 228.76539240868672,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "solid_f0.8_s1.2",
+    "file": "solid_f0.8_s1.2.json",
+    "payoff_days": 528.8460887489182,
+    "dry_t": 40717.65158740962,
+    "rack_t": 1008.1417602156899,
+    "net_kg_pass": 5669.078155477123,
+    "max_inlet_K": 817.1598751602244,
+    "max_shell_K": 742.7976185029572,
+    "length_m": 230.96099344866784,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "solid_f0.8_s1.6",
+    "file": "solid_f0.8_s1.6.json",
+    "payoff_days": 533.8070766833325,
+    "dry_t": 41106.07426739147,
+    "rack_t": 1008.1417602156899,
+    "net_kg_pass": 5669.96913544965,
+    "max_inlet_K": 825.4870596052411,
+    "max_shell_K": 742.7062341411744,
+    "length_m": 233.382204775615,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -18.44140991312591
+    }
+  },
+  {
+    "name": "solid_f1.1_s0.85",
+    "file": "solid_f1.1_s0.85.json",
+    "payoff_days": 532.3732209408225,
+    "dry_t": 40974.43513692867,
+    "rack_t": 1350.8008984814553,
+    "net_kg_pass": 5667.033665625928,
+    "max_inlet_K": 691.1308745152003,
+    "max_shell_K": 632.3690434682014,
+    "length_m": 231.88923817748193,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "solid_f1.1_s1.2",
+    "file": "solid_f1.1_s1.2.json",
+    "payoff_days": 536.5400522465633,
+    "dry_t": 41308.58332343925,
+    "rack_t": 1350.8008984814553,
+    "net_kg_pass": 5668.878815259528,
+    "max_inlet_K": 697.2637957055199,
+    "max_shell_K": 632.3791652621939,
+    "length_m": 233.96959345377797,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "solid_f1.1_s1.6",
+    "file": "solid_f1.1_s1.6.json",
+    "payoff_days": 541.4487518941745,
+    "dry_t": 41691.092545055646,
+    "rack_t": 1350.8008984814553,
+    "net_kg_pass": 5669.50233526968,
+    "max_inlet_K": 704.1231255059939,
+    "max_shell_K": 632.3272489718519,
+    "length_m": 236.35335994614658,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -18.429901531479317
+    }
+  },
+  {
+    "name": "solid_f1.5_s0.85",
+    "file": "solid_f1.5_s0.85.json",
+    "payoff_days": 542.7420553179696,
+    "dry_t": 41774.26806704967,
+    "rack_t": 1807.679749502475,
+    "net_kg_pass": 5667.276390929132,
+    "max_inlet_K": 599.5177202871132,
+    "max_shell_K": 552.0530063765392,
+    "length_m": 235.9743692769826,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "solid_f1.5_s1.2",
+    "file": "solid_f1.5_s1.2.json",
+    "payoff_days": 547.0171680331048,
+    "dry_t": 42112.247515272335,
+    "rack_t": 1807.679749502475,
+    "net_kg_pass": 5668.478223684924,
+    "max_inlet_K": 604.5543930921499,
+    "max_shell_K": 552.0463727392822,
+    "length_m": 238.07863518808713,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "solid_f1.5_s1.6",
+    "file": "solid_f1.5_s1.6.json",
+    "payoff_days": 551.9008309040654,
+    "dry_t": 42491.736249300244,
+    "rack_t": 1807.679749502475,
+    "net_kg_pass": 5668.947674467035,
+    "max_inlet_K": 610.1794975708849,
+    "max_shell_K": 552.0132937779622,
+    "length_m": 240.44350718624491,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -18.480460667373904
+    }
+  },
+  {
+    "name": "nitrate_eutectic_5mm_f1.5_s1.2",
+    "file": "nitrate_eutectic_5mm_f1.5_s1.2.json",
+    "payoff_days": 545.7154012374589,
+    "dry_t": 40566.19421977018,
+    "rack_t": 1018.4946309386737,
+    "net_kg_pass": 5473.398566826248,
+    "max_inlet_K": 1132.3625120208264,
+    "max_shell_K": 537.0119339142786,
+    "length_m": 240.2443092082915,
+    "melt_max": [
+      1.0,
+      0.01798354215349752,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "nitrate_eutectic_5mm_f1.5_s1.6",
+    "file": "nitrate_eutectic_5mm_f1.5_s1.6.json",
+    "payoff_days": 534.0745454018954,
+    "dry_t": 41002.852425674304,
+    "rack_t": 1018.4946309386737,
+    "net_kg_pass": 5652.898789200006,
+    "max_inlet_K": 1163.5478513352546,
+    "max_shell_K": 540.694388242234,
+    "length_m": 242.9010021573121,
+    "melt_max": [
+      1.0,
+      0.19617780788014297,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -18.183103325790512
+    }
+  },
+  {
+    "name": "nitrate_eutectic_5mm_f2_s1.2",
+    "file": "nitrate_eutectic_5mm_f2_s1.2.json",
+    "payoff_days": 534.9065616941323,
+    "dry_t": 41057.69600151809,
+    "rack_t": 1324.2997351604802,
+    "net_kg_pass": 5651.655334318663,
+    "max_inlet_K": 985.5845214254689,
+    "max_shell_K": 495.90588935249406,
+    "length_m": 245.7264527920737,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "nitrate_eutectic_5mm_f2_s1.6",
+    "file": "nitrate_eutectic_5mm_f2_s1.6.json",
+    "payoff_days": 539.9553510029746,
+    "dry_t": 41450.33800408138,
+    "rack_t": 1324.2997351604802,
+    "net_kg_pass": 5652.352603922028,
+    "max_inlet_K": 993.2420930232269,
+    "max_shell_K": 495.8460119980112,
+    "length_m": 248.17234334096815,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -18.217477464748782
+    }
+  },
+  {
+    "name": "nitrate_eutectic_5mm_f3_s1.2",
+    "file": "nitrate_eutectic_5mm_f3_s1.2.json",
+    "payoff_days": 547.2890568099735,
+    "dry_t": 41983.85947585667,
+    "rack_t": 1935.9099436040935,
+    "net_kg_pass": 5648.389207387648,
+    "max_inlet_K": 799.4272199221184,
+    "max_shell_K": 442.66649501708895,
+    "length_m": 256.46081651927915,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "nitrate_eutectic_5mm_f3_s1.6",
+    "file": "nitrate_eutectic_5mm_f3_s1.6.json",
+    "payoff_days": 552.3109385115562,
+    "dry_t": 42374.51539874753,
+    "rack_t": 1935.9099436040935,
+    "net_kg_pass": 5649.111142413718,
+    "max_inlet_K": 805.6049087414866,
+    "max_shell_K": 447.7187697651637,
+    "length_m": 258.8911398196298,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -18.20593671351932
+    }
+  },
+  {
+    "name": "sodium_nitrate_5mm_f1.5_s1.2",
+    "file": "sodium_nitrate_5mm_f1.5_s1.2.json",
+    "payoff_days": 570.1865253238152,
+    "dry_t": 40363.32419972102,
+    "rack_t": 901.9489786741726,
+    "net_kg_pass": 5212.2950970527,
+    "max_inlet_K": 1205.999144499571,
+    "max_shell_K": 562.0207111116447,
+    "length_m": 237.4496694708661,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "sodium_nitrate_5mm_f1.5_s1.6",
+    "file": "sodium_nitrate_5mm_f1.5_s1.6.json",
+    "payoff_days": 531.9636997809147,
+    "dry_t": 40885.76080420302,
+    "rack_t": 901.9489786741726,
+    "net_kg_pass": 5659.122628944471,
+    "max_inlet_K": 1264.65933248457,
+    "max_shell_K": 578.6692388253202,
+    "length_m": 240.54147803621487,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -18.21518796241321
+    }
+  },
+  {
+    "name": "sodium_nitrate_5mm_f2_s1.2",
+    "file": "sodium_nitrate_5mm_f2_s1.2.json",
+    "payoff_days": 532.51833346613,
+    "dry_t": 40867.60978050993,
+    "rack_t": 1172.7610114995236,
+    "net_kg_pass": 5650.718762608949,
+    "max_inlet_K": 1065.5913657337271,
+    "max_shell_K": 511.31718829378383,
+    "length_m": 242.44526225747686,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "sodium_nitrate_5mm_f2_s1.6",
+    "file": "sodium_nitrate_5mm_f2_s1.6.json",
+    "payoff_days": 537.2707536475859,
+    "dry_t": 41280.22793904751,
+    "rack_t": 1172.7610114995236,
+    "net_kg_pass": 5657.2830139173675,
+    "max_inlet_K": 1075.7680937151897,
+    "max_shell_K": 511.4148179397912,
+    "length_m": 245.0117684277481,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -18.1547138533696
+    }
+  },
+  {
+    "name": "sodium_nitrate_5mm_f3_s1.2",
+    "file": "sodium_nitrate_5mm_f3_s1.2.json",
+    "payoff_days": 542.7324308631787,
+    "dry_t": 41674.94102828485,
+    "rack_t": 1714.385077150225,
+    "net_kg_pass": 5653.90151953971,
+    "max_inlet_K": 861.3445822346474,
+    "max_shell_K": 455.73816056810847,
+    "length_m": 251.49014521741861,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "sodium_nitrate_5mm_f3_s1.6",
+    "file": "sodium_nitrate_5mm_f3_s1.6.json",
+    "payoff_days": 547.8245512555682,
+    "dry_t": 42071.00030326021,
+    "rack_t": 1714.385077150225,
+    "net_kg_pass": 5654.580168332304,
+    "max_inlet_K": 868.025041049503,
+    "max_shell_K": 460.839945728227,
+    "length_m": 253.9517382233406,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -18.247509217873755
+    }
+  },
+  {
+    "name": "eutectic_10mm_front_f3_s1.2",
+    "file": "eutectic_10mm_front_f3_s1.2.json",
+    "payoff_days": 609.8538775182411,
+    "dry_t": 41238.85290858119,
+    "rack_t": 1618.4120224249316,
+    "net_kg_pass": 4978.973402211211,
+    "max_inlet_K": 1267.8426736134063,
+    "max_shell_K": 510.0838303331378,
+    "length_m": 255.51953857960743,
+    "melt_max": [
+      0.0,
+      0.2569279028303976,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "eutectic_10mm_front_f3_s1.6",
+    "file": "eutectic_10mm_front_f3_s1.6.json",
+    "payoff_days": 544.7863959021571,
+    "dry_t": 41805.47863439476,
+    "rack_t": 1618.4120224249316,
+    "net_kg_pass": 5650.2278985274625,
+    "max_inlet_K": 1349.9923332188125,
+    "max_shell_K": 530.9160368161911,
+    "length_m": 258.81816516591834,
+    "melt_max": [
+      0.0,
+      0.7848912330612802,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -17.88713118319984
+    }
+  },
+  {
+    "name": "eutectic_10mm_front_f4_s1.2",
+    "file": "eutectic_10mm_front_f4_s1.2.json",
+    "payoff_days": 562.3326076783795,
+    "dry_t": 42074.32302237015,
+    "rack_t": 2124.1895904754906,
+    "net_kg_pass": 5509.128325725227,
+    "max_inlet_K": 1120.5455813941508,
+    "max_shell_K": 494.93488628036755,
+    "length_m": 266.6673231225565,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "eutectic_10mm_front_f4_s1.6",
+    "file": "eutectic_10mm_front_f4_s1.6.json",
+    "payoff_days": 554.1403018910023,
+    "dry_t": 42506.10761452978,
+    "rack_t": 2124.1895904754906,
+    "net_kg_pass": 5647.947090494217,
+    "max_inlet_K": 1145.5886501592615,
+    "max_shell_K": 502.83233626045325,
+    "length_m": 269.3094110421739,
+    "melt_max": [
+      0.0,
+      0.12208159368801097,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -17.966981665739297
+    }
+  },
+  {
+    "name": "eutectic_10mm_front_f6_s1.2",
+    "file": "eutectic_10mm_front_f6_s1.2.json",
+    "payoff_days": 567.743681018225,
+    "dry_t": 43520.78969304262,
+    "rack_t": 3135.7447265766095,
+    "net_kg_pass": 5644.214070736018,
+    "max_inlet_K": 915.5214828598832,
+    "max_shell_K": 460.6112516776591,
+    "length_m": 287.87517539278474,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": true,
+    "failed": {}
+  },
+  {
+    "name": "eutectic_10mm_front_f6_s1.6",
+    "file": "eutectic_10mm_front_f6_s1.6.json",
+    "payoff_days": 572.7716676017501,
+    "dry_t": 43911.619688610015,
+    "rack_t": 3135.7447265766095,
+    "net_kg_pass": 5644.90904137053,
+    "max_inlet_K": 920.6749324095825,
+    "max_shell_K": 464.8844438162169,
+    "length_m": 290.3083252389424,
+    "melt_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -18.020597370897775
+    }
+  },
+  {
+    "name": "eutectic_10mm_front_f3_s1.6_fins",
+    "file": "eutectic_10mm_front_f3_s1.6_fins.json",
+    "payoff_days": 547.2076607538545,
+    "dry_t": 41991.34184581624,
+    "rack_t": 1783.457743709695,
+    "net_kg_pass": 5650.236200639421,
+    "max_inlet_K": 1309.9042603633716,
+    "max_shell_K": 502.08961081136835,
+    "length_m": 258.1387011957253,
+    "melt_max": [
+      0.0,
+      0.7415397191021066,
+      0.0,
+      0.0
+    ],
+    "screens": false,
+    "failed": {
+      "compressor_access_m2": -17.911317433008804
+    }
+  }
+]
