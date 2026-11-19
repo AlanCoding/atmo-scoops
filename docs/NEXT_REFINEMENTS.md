@@ -91,3 +91,5 @@ The [collector-only metrics](../investigations/collector_metrics/README.md)
 formalize captured gas per dry mass when propulsion and coast liquefaction are
 outside the collector boundary. They supplement, not replace, useful-liquid
 payoff. The first values are frozen-trajectory accounting, not new forward solves.
+
+Publication order update: publish the existing verified reference as v1.0 before the plate-scale sensitivity or Blender. Use the [publication kit](publication/V1_0.md) and [provisional axial/CM study](../investigations/v1_layout/README.md); neither blocks publication on completing mechanical packaging. Dawn–dusk SSO is the mission target, with its seasonal illumination and 3D maintenance still pending in the numerical model.

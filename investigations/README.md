@@ -53,3 +53,5 @@ General component calculations and annotated references live in
 
 - [Plate scale sensitivity plan](plate_scale/PLAN.md): planned one-off 1×/2×/4× thickness and clearance comparison, with the other coordinates reoptimized.
 - [Collector-only mass yield](collector_metrics/README.md): frozen-reference one-pass battery and solar-assisted subsystem metrics; not a new optimized spacecraft.
+
+- [v1.0 axial placement and stability screen](v1_layout/README.md): complete mass-location register, CM calculation, and dawn–dusk sun-synchronous target.

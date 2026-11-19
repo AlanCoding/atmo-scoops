@@ -1,0 +1,571 @@
+{
+  "source_sha256": "35a57331e5e9d6e36bc220f5701dd597f488b82c40485da4291bcd5143ef9932",
+  "peak_local_package_area_fraction": 0.886980477070324,
+  "dry_mass_kg": 13249965.403900016,
+  "dry_CM_m": 32.756094760225444,
+  "dry_CM_fraction_length": 0.10333152921206765,
+  "chambers_m": [
+    [
+      0,
+      0.8964235337918296
+    ],
+    [
+      12.896423533791829,
+      15.951993960876322
+    ],
+    [
+      25.951993960876322,
+      28.98440010238012
+    ],
+    [
+      38.98440010238012,
+      42.00768260616955
+    ],
+    [
+      69.62720686895992,
+      317.0
+    ]
+  ],
+  "equipment_bays_m": [
+    [
+      0.8964235337918296,
+      12.896423533791829
+    ],
+    [
+      15.951993960876322,
+      25.951993960876322
+    ],
+    [
+      28.98440010238012,
+      38.98440010238012
+    ],
+    [
+      42.00768260616955,
+      69.62720686895992
+    ]
+  ],
+  "components": [
+    {
+      "name": "Dive compressor 1",
+      "category": "dive_compressors",
+      "mass_kg": 657151.3070406438,
+      "x0_m": 0.8964235337918296,
+      "x1_m": 12.896423533791829,
+      "centroid_m": 6.896423533791829,
+      "package_m3": 2628.6052281625753
+    },
+    {
+      "name": "Rack mechanisms 1",
+      "category": "rack_mechanisms",
+      "mass_kg": 83103.32065700734,
+      "x0_m": 0.8964235337918296,
+      "x1_m": 12.896423533791829,
+      "centroid_m": 6.896423533791829,
+      "package_m3": 332.4132826280294
+    },
+    {
+      "name": "Dive compressor 2",
+      "category": "dive_compressors",
+      "mass_kg": 192068.68079515026,
+      "x0_m": 15.951993960876322,
+      "x1_m": 25.951993960876322,
+      "centroid_m": 20.951993960876322,
+      "package_m3": 768.274723180601
+    },
+    {
+      "name": "Rack mechanisms 2",
+      "category": "rack_mechanisms",
+      "mass_kg": 9891.528494640506,
+      "x0_m": 15.951993960876322,
+      "x1_m": 25.951993960876322,
+      "centroid_m": 20.951993960876322,
+      "package_m3": 39.56611397856202
+    },
+    {
+      "name": "Dive compressor 3",
+      "category": "dive_compressors",
+      "mass_kg": 46094.71408785017,
+      "x0_m": 28.98440010238012,
+      "x1_m": 38.98440010238012,
+      "centroid_m": 33.98440010238012,
+      "package_m3": 184.37885635140066
+    },
+    {
+      "name": "Rack mechanisms 3",
+      "category": "rack_mechanisms",
+      "mass_kg": 5030.260106646794,
+      "x0_m": 28.98440010238012,
+      "x1_m": 38.98440010238012,
+      "centroid_m": 33.98440010238012,
+      "package_m3": 20.121040426587175
+    },
+    {
+      "name": "Dive compressor 4",
+      "category": "dive_compressors",
+      "mass_kg": 26420.148101218947,
+      "x0_m": 42.00768260616955,
+      "x1_m": 69.62720686895992,
+      "centroid_m": 55.817444737564735,
+      "package_m3": 105.68059240487578
+    },
+    {
+      "name": "Rack mechanisms 4 + receiver",
+      "category": "rack_mechanisms",
+      "mass_kg": 9660.517027832739,
+      "x0_m": 42.00768260616955,
+      "x1_m": 69.62720686895992,
+      "centroid_m": 55.817444737564735,
+      "package_m3": 38.64206811133096
+    },
+    {
+      "name": "Battery modules",
+      "category": "battery",
+      "mass_kg": 2227966.9252842115,
+      "x0_m": 0.8964235337918296,
+      "x1_m": 5.886396902258843,
+      "centroid_m": 3.3914102180253365,
+      "package_m3": 1237.759402935673
+    },
+    {
+      "name": "Power bus / electronics",
+      "category": "bus",
+      "mass_kg": 434708.0503896077,
+      "x0_m": 5.886396902258843,
+      "x1_m": 12.896423533791829,
+      "centroid_m": 9.391410218025335,
+      "package_m3": 1738.8322015584308
+    },
+    {
+      "name": "Power bus / electronics",
+      "category": "bus",
+      "mass_kg": 392664.0776103923,
+      "x0_m": 15.951993960876322,
+      "x1_m": 19.745696209509145,
+      "centroid_m": 17.848845085192735,
+      "package_m3": 1570.656310441569
+    },
+    {
+      "name": "Forward external thruster pods",
+      "category": "thrusters",
+      "mass_kg": 387358.48389414116,
+      "x0_m": 28.98440010238012,
+      "x1_m": 38.98440010238012,
+      "centroid_m": 33.98440010238012,
+      "package_m3": 1549.4339355765646
+    },
+    {
+      "name": "Forward external thruster pods",
+      "category": "thrusters",
+      "mass_kg": 1130197.47745461,
+      "x0_m": 42.00768260616955,
+      "x1_m": 69.62720686895992,
+      "centroid_m": 55.817444737564735,
+      "package_m3": 4520.789909818439
+    },
+    {
+      "name": "Gas propellant reserve / booster",
+      "category": "gas_reserve_system",
+      "mass_kg": 51913.004752647474,
+      "x0_m": 49.049710420615845,
+      "x1_m": 55.67817572733378,
+      "centroid_m": 52.36394307397481,
+      "package_m3": 1098.7620929708667
+    },
+    {
+      "name": "Warm-loop inventory",
+      "category": "warm_store",
+      "mass_kg": 521142.96779147274,
+      "x0_m": 51.15140073343383,
+      "x1_m": 57.15140073343383,
+      "centroid_m": 54.15140073343383,
+      "package_m3": 651.4287097393409
+    },
+    {
+      "name": "Coast compressors",
+      "category": "coast_compressors",
+      "mass_kg": 47707.91517146224,
+      "x0_m": 50.55405094109528,
+      "x1_m": 59.46913980909395,
+      "centroid_m": 55.011595375094615,
+      "package_m3": 190.83166068584896
+    },
+    {
+      "name": "Refrigerator",
+      "category": "refrigerator",
+      "mass_kg": 140244.88189433952,
+      "x0_m": 53.77941489788442,
+      "x1_m": 57.77941489788442,
+      "centroid_m": 55.77941489788442,
+      "package_m3": 560.9795275773581
+    },
+    {
+      "name": "Cryogenic exchangers",
+      "category": "external_exchangers",
+      "mass_kg": 2250.0,
+      "x0_m": 55.361531013867506,
+      "x1_m": 57.361531013867506,
+      "centroid_m": 56.361531013867506,
+      "package_m3": 9.0
+    },
+    {
+      "name": "Separator",
+      "category": "separator",
+      "mass_kg": 2495.4524989333327,
+      "x0_m": 55.38091700402053,
+      "x1_m": 57.38091700402053,
+      "centroid_m": 56.38091700402053,
+      "package_m3": 9.98180999573333
+    },
+    {
+      "name": "Folded warm radiators",
+      "category": "warm_radiator",
+      "mass_kg": 336240.81834246754,
+      "x0_m": 66.62720686895992,
+      "x1_m": 69.62720686895992,
+      "centroid_m": 68.12720686895992,
+      "package_m3": 672.4816366849351
+    },
+    {
+      "name": "Liquid product tanks",
+      "category": "liquid_tanks",
+      "mass_kg": 6000.0,
+      "x0_m": 65.62720686895992,
+      "x1_m": 69.62720686895992,
+      "centroid_m": 67.62720686895992,
+      "package_m3": 24.0
+    },
+    {
+      "name": "Auxiliary hardware",
+      "category": "auxiliary",
+      "mass_kg": 5000.0,
+      "x0_m": 67.62720686895992,
+      "x1_m": 69.62720686895992,
+      "centroid_m": 68.62720686895992,
+      "package_m3": 20.0
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 108663.9542824561,
+      "x0_m": 0.8964235337918296,
+      "x1_m": 5.886396902258843,
+      "centroid_m": 3.3914102180253365,
+      "package_m3": 407.48982855921037
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 152653.5628869931,
+      "x0_m": 5.886396902258843,
+      "x1_m": 12.896423533791829,
+      "centroid_m": 9.391410218025335,
+      "package_m3": 572.4508608262241
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 82613.40437440707,
+      "x0_m": 15.951993960876322,
+      "x1_m": 19.745696209509145,
+      "centroid_m": 17.848845085192735,
+      "package_m3": 309.80026640402656
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 530950.8557773556,
+      "x0_m": 19.745696209509145,
+      "x1_m": 25.951993960876322,
+      "centroid_m": 22.848845085192735,
+      "package_m3": 1991.0657091650835
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 709770.0838589984,
+      "x0_m": 28.98440010238012,
+      "x1_m": 38.98440010238012,
+      "centroid_m": 33.98440010238012,
+      "package_m3": 2661.637814471244
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 506858.78073447983,
+      "x0_m": 42.00768260616955,
+      "x1_m": 49.049710420615845,
+      "centroid_m": 45.5286965133927,
+      "package_m3": 1900.7204277542992
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 69865.25450832234,
+      "x0_m": 49.049710420615845,
+      "x1_m": 50.55405094109528,
+      "centroid_m": 49.80188068085556,
+      "package_m3": 261.99470440620877
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 25772.784443972927,
+      "x0_m": 50.55405094109528,
+      "x1_m": 51.15140073343383,
+      "centroid_m": 50.85272583726456,
+      "package_m3": 96.64794166489848
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 69435.28576340673,
+      "x0_m": 51.15140073343383,
+      "x1_m": 53.77941489788442,
+      "centroid_m": 52.46540781565913,
+      "package_m3": 260.3823216127753
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 7623.1201271854,
+      "x0_m": 53.77941489788442,
+      "x1_m": 55.361531013867506,
+      "centroid_m": 54.570472955875964,
+      "package_m3": 28.586700476945246
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 79.96992548514217,
+      "x0_m": 55.361531013867506,
+      "x1_m": 55.38091700402053,
+      "centroid_m": 55.37122400894402,
+      "package_m3": 0.29988722056928313
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 997.7062061195659,
+      "x0_m": 55.38091700402053,
+      "x1_m": 55.67817572733378,
+      "centroid_m": 55.529546365677156,
+      "package_m3": 3.741398272948372
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 42561.71106590426,
+      "x0_m": 55.67817572733378,
+      "x1_m": 57.15140073343383,
+      "centroid_m": 56.414788230383806,
+      "package_m3": 159.60641649714097
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 9584.919979747296,
+      "x0_m": 57.15140073343383,
+      "x1_m": 57.361531013867506,
+      "centroid_m": 57.25646587365067,
+      "package_m3": 35.94344992405236
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 897.7137162633496,
+      "x0_m": 57.361531013867506,
+      "x1_m": 57.38091700402053,
+      "centroid_m": 57.37122400894402,
+      "package_m3": 3.366426435987561
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 18759.73778899592,
+      "x0_m": 57.38091700402053,
+      "x1_m": 57.77941489788442,
+      "centroid_m": 57.58016595095248,
+      "package_m3": 70.34901670873471
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 116048.6521261666,
+      "x0_m": 57.77941489788442,
+      "x1_m": 59.46913980909395,
+      "centroid_m": 58.62427735348919,
+      "package_m3": 435.1824454731248
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 443234.59717692796,
+      "x0_m": 59.46913980909395,
+      "x1_m": 65.62720686895992,
+      "centroid_m": 62.54817333902693,
+      "package_m3": 1662.12973941348
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 71052.03207112053,
+      "x0_m": 65.62720686895992,
+      "x1_m": 66.62720686895992,
+      "centroid_m": 66.12720686895992,
+      "package_m3": 266.44512026670196
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 36523.02692146477,
+      "x0_m": 66.62720686895992,
+      "x1_m": 67.62720686895992,
+      "centroid_m": 67.12720686895992,
+      "package_m3": 136.9613509554929
+    },
+    {
+      "name": "Folded solar cassettes",
+      "category": "solar",
+      "mass_kg": 69965.31498559478,
+      "x0_m": 67.62720686895992,
+      "x1_m": 69.62720686895992,
+      "centroid_m": 68.62720686895992,
+      "package_m3": 262.3699311959804
+    },
+    {
+      "name": "Cooler 1 (SiC)",
+      "category": "racks",
+      "mass_kg": 382828.1386225561,
+      "x0_m": 0,
+      "x1_m": 0.8964235337918296,
+      "centroid_m": 0.4482117668959148,
+      "package_m3": 0
+    },
+    {
+      "name": "Cooler 2 (Al)",
+      "category": "racks",
+      "mass_kg": 26629.0214074074,
+      "x0_m": 14.396423533791829,
+      "x1_m": 14.451993960876322,
+      "centroid_m": 14.424208747334076,
+      "package_m3": 0
+    },
+    {
+      "name": "Cooler 3 (Al)",
+      "category": "racks",
+      "mass_kg": 12907.00842718718,
+      "x0_m": 27.451993960876326,
+      "x1_m": 27.48440010238012,
+      "centroid_m": 27.468197031628222,
+      "package_m3": 0
+    },
+    {
+      "name": "Cooler 4 (Al)",
+      "category": "racks",
+      "mass_kg": 11800.20123531058,
+      "x0_m": 40.48440010238012,
+      "x1_m": 40.50768260616955,
+      "centroid_m": 40.49604135427484,
+      "package_m3": 0
+    },
+    {
+      "name": "Cooler 5 (Al)",
+      "category": "racks",
+      "mass_kg": 20566.64538253613,
+      "x0_m": 71.12720686895992,
+      "x1_m": 71.16730812396027,
+      "centroid_m": 71.1472574964601,
+      "package_m3": 0
+    },
+    {
+      "name": "Pressure vessel 2",
+      "category": "pressure_vessels",
+      "mass_kg": 7237.110814626685,
+      "x0_m": 12.896423533791829,
+      "x1_m": 15.951993960876322,
+      "centroid_m": 14.424208747334076,
+      "package_m3": 0
+    },
+    {
+      "name": "Pressure vessel 3",
+      "category": "pressure_vessels",
+      "mass_kg": 23351.84819469392,
+      "x0_m": 25.951993960876322,
+      "x1_m": 28.98440010238012,
+      "centroid_m": 27.468197031628222,
+      "package_m3": 0
+    },
+    {
+      "name": "Pressure vessel 4",
+      "category": "pressure_vessels",
+      "mass_kg": 67177.1972052857,
+      "x0_m": 38.98440010238012,
+      "x1_m": 42.00768260616955,
+      "centroid_m": 40.49604135427484,
+      "package_m3": 0
+    },
+    {
+      "name": "Pressure vessel 5",
+      "category": "pressure_vessels",
+      "mass_kg": 131973.95004713107,
+      "x0_m": 69.62720686895992,
+      "x1_m": 317.0,
+      "centroid_m": 193.31360343447994,
+      "package_m3": 0
+    },
+    {
+      "name": "Hull / thermal shell",
+      "category": "hull",
+      "mass_kg": 126278.20166663387,
+      "x0_m": 0,
+      "x1_m": 317,
+      "centroid_m": 158.5,
+      "package_m3": 0
+    }
+  ],
+  "margin_rule": "25% proportional to each component; no separate ballast",
+  "loaded": [
+    {
+      "state": "Entry baseline",
+      "time_s": -1200.0,
+      "CM_m": 32.762751810383264,
+      "contents_kg": 4500.002061729363
+    },
+    {
+      "state": "Perigee",
+      "time_s": -0.08716631149440501,
+      "CM_m": 32.80192078380667,
+      "contents_kg": 6256.143168437068
+    },
+    {
+      "state": "Collection cutoff",
+      "time_s": 600.0,
+      "CM_m": 32.84359871759253,
+      "contents_kg": 8052.27850525213
+    },
+    {
+      "state": "Processing stops",
+      "time_s": 4200.0,
+      "CM_m": 32.77207791972203,
+      "contents_kg": 8017.241399001024
+    }
+  ],
+  "stowed_coordinate_wet_CM_range_m": [
+    32.761114614635275,
+    32.84516035324868
+  ],
+  "uniform_hull_margin_CM_m": 57.904875808180364,
+  "all_margin_at_tail_CM_m": 86.20487580818038,
+  "solar_shift_20m_CM_change_m": 4.639879992164488,
+  "orbit": {
+    "perigee_km": 85.0,
+    "apogee_km": 2000.0,
+    "period_min": 106.0282299477897,
+    "perigee_speed_km_s": 8.344500443526382,
+    "J2_inclination_deg": 99.35130280351393,
+    "node_rate_deg_day": 0.9856473320990838,
+    "apsidal_rate_deg_day": -2.632608234456164,
+    "equinox_dawn_dusk_beta_deg": 80.64869719648607,
+    "perigee_no_eclipse_beta_deg": 80.69743886247979
+  }
+}

@@ -196,3 +196,5 @@ The [gas-reserve and rack-spacing study](investigations/feed_pitch/RESULTS.md) a
 
 - [Staged refinement](investigations/staged_refinement/README.md): active gas bypass first, then gated pressure-loss, pitch and radius releases.
 - [Earlier joint radius/pitch experiment](investigations/rack_radius/RESULTS.md): retained research, not the active reference.
+
+Publication assets for the current snapshot: [v1.0 publication kit](docs/publication/V1_0.md), including current-reference figures, numerical tables and the provisional axial mass layout.

@@ -6,15 +6,15 @@ layout follows from the existing aggregate equipment bay.
 
 ## v1.0 scope and sequence
 
-1. Complete the [one-off 1×/2×/4× plate study](../investigations/plate_scale/PLAN.md).
-2. Freeze the chosen numerical input/result pair as a **v1.0 snapshot**, with
-   provenance and uncertainty labels. Do not rename an unverified candidate v1.0.
-3. Replace the aggregate packaging picture with an auditable subsystem inventory,
-   location/dependency map and deployment sequence, before building Blender.
-4. Produce a dimensioned arrangement and mass distribution. Review conflicts and
-   missing mechanical allowances before generating the Blender scene.
-5. Build Blender later from that snapshot. This document does not authorize or
-   initiate Blender work now.
+1. Publish the verified plate reference as **v1.0 now**; the new sensitivity study
+   and Blender are not prerequisites. See the [publication kit](publication/V1_0.md).
+2. Use the [provisional axial register](../investigations/v1_layout/MASS_REGISTER.md)
+   for an explicit mass/CM illustration, clearly distinguished from a resolved fit.
+3. Later run the [one-off 1×/2×/4× plate study](../investigations/plate_scale/PLAN.md).
+4. Resolve actual packaging, access and deployment paths before Blender, using
+   the requirements below and revising the provisional register as necessary.
+5. Build Blender later from the chosen snapshot. This document does not initiate
+   Blender work now.
 
 The intended arrangement puts heavy compressors, batteries, power electronics
 and processing machinery forward, with the comparatively lightweight large gas

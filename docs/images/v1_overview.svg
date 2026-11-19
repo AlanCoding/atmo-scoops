@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1020" viewBox="0 0 1440 1020" role="img" aria-labelledby="title desc"><title id="title">Atmospheric scoop diver: capture and coast</title><desc id="desc">Two operating states of the same open-mouth spacecraft. During the dive, the shock, metal rack and compressors feed rear tanks while batteries power air-propellant propulsion. During coast, attached metal sheets, solar arrays and separate warm radiators deploy. Conceptual layout, not to scale.</desc>
+<rect width="1440" height="1020" rx="22" fill="#0b1424"/>
+<defs>
+<marker id="gas" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#ff9969"/></marker>
+<marker id="heat" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#ffc36b"/></marker>
+<marker id="blue" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#76b7ff"/></marker>
+<marker id="teal" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#75e4d0"/></marker>
+<marker id="muted" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#91afc8"/></marker>
+<marker id="purple" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#c8b5ff"/></marker>
+<linearGradient id="hot"><stop stop-color="#7c342c"/><stop offset="1" stop-color="#a96831"/></linearGradient><linearGradient id="air"><stop stop-color="#462b30"/><stop offset="1" stop-color="#b75b3b"/></linearGradient></defs>
+<text x="55" y="68" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="35" font-weight="bold" text-anchor="start">ATMOSPHERIC SCOOP DIVER</text>
+<text x="55" y="104" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="normal" text-anchor="start">Collect atmospheric gas. Store the entry heat. Make cryogenic liquid during coast.</text>
+<rect x="48" y="137" width="1344" height="328" rx="10" fill="#101e30" stroke="none" stroke-width="2"/>
+<text x="75" y="175" fill="#75e4d0" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" text-anchor="start">01   ATMOSPHERIC PASS</text>
+<text x="1370" y="175" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="end">Arrays and radiators stowed</text>
+<path d="M260 242 L380 258 H1060 Q1120 258 1120 326 Q1120 394 1060 394 H380 L260 410 Z" fill="#1e344b" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M260 242 L380 258 H1060 Q1120 258 1120 326 Q1120 394 1060 394 H380 L260 410" fill="none" stroke="#91afc8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M260 250 L380 269 M260 402 L380 383" fill="none" stroke="#75e4d0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M92 290 H382" fill="none" stroke="#ff9969" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gas)"/>
+<path d="M92 326 H382" fill="none" stroke="#ff9969" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gas)"/>
+<path d="M92 362 H382" fill="none" stroke="#ff9969" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gas)"/>
+<text x="90" y="230" fill="#ff9969" font-family="DejaVu Sans, sans-serif" font-size="19" font-weight="normal" text-anchor="start">Atmospheric inflow</text>
+<path d="M347 269 Q301 326 347 383" fill="none" stroke="#ff9969" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<text x="315" y="438" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="middle">Shock / diffuser</text>
+<rect x="423" y="283" width="10" height="87" rx="2" fill="url(#hot)" stroke="#ffc36b" stroke-width="2"/>
+<rect x="445" y="283" width="10" height="87" rx="2" fill="url(#hot)" stroke="#ffc36b" stroke-width="2"/>
+<rect x="467" y="283" width="10" height="87" rx="2" fill="url(#hot)" stroke="#ffc36b" stroke-width="2"/>
+<rect x="489" y="283" width="10" height="87" rx="2" fill="url(#hot)" stroke="#ffc36b" stroke-width="2"/>
+<rect x="511" y="283" width="10" height="87" rx="2" fill="url(#hot)" stroke="#ffc36b" stroke-width="2"/>
+<rect x="533" y="283" width="10" height="87" rx="2" fill="url(#hot)" stroke="#ffc36b" stroke-width="2"/>
+<rect x="555" y="283" width="10" height="87" rx="2" fill="url(#hot)" stroke="#ffc36b" stroke-width="2"/>
+<path d="M385 326 H572" fill="none" stroke="#ff9969" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gas)"/>
+<text x="478" y="223" fill="#ffc36b" font-family="DejaVu Sans, sans-serif" font-size="19" font-weight="normal" text-anchor="middle">SiC / Al plate coolers</text>
+<path d="M478 230 V278" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="606" y="270" width="67" height="113" rx="4" fill="#314257" stroke="#91afc8" stroke-width="2"/>
+<circle cx="639" cy="292" r="12" fill="#1c2c43" stroke="#75e4d0" stroke-width="2"/>
+<path d="M633 285 L646 292 L633 299" fill="none" stroke="#75e4d0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="639" cy="326" r="12" fill="#1c2c43" stroke="#75e4d0" stroke-width="2"/>
+<path d="M633 319 L646 326 L633 333" fill="none" stroke="#75e4d0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="639" cy="360" r="12" fill="#1c2c43" stroke="#75e4d0" stroke-width="2"/>
+<path d="M633 353 L646 360 L633 367" fill="none" stroke="#75e4d0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="643" y="438" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="middle">Staged compressors</text>
+<path d="M676 326 H724" fill="none" stroke="#75e4d0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="737" y="280" width="150" height="42" rx="21" fill="#1c4c53" stroke="#75e4d0" stroke-width="2"/>
+<rect x="737" y="342" width="150" height="42" rx="21" fill="#1c4c53" stroke="#75e4d0" stroke-width="2"/>
+<text x="812" y="223" fill="#75e4d0" font-family="DejaVu Sans, sans-serif" font-size="19" font-weight="normal" text-anchor="middle">Rear gas storage</text>
+<path d="M812 230 V275" fill="none" stroke="#75e4d0" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="921" y="279" width="128" height="39" rx="5" fill="#253f66" stroke="#76b7ff" stroke-width="2"/>
+<text x="985" y="305" fill="#76b7ff" font-family="DejaVu Sans, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">BATTERY</text>
+<rect x="921" y="339" width="128" height="36" rx="5" fill="#2c344f" stroke="#c8b5ff" stroke-width="2"/>
+<text x="985" y="363" fill="#c8b5ff" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">CRYOPLANT</text>
+<path d="M990 258 L1072 214 L1090 263" fill="#28425a" stroke="#91afc8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M990 394 L1072 438 L1090 389" fill="#28425a" stroke="#91afc8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1116 308 L1150 301 L1150 351 L1116 344 Z" fill="#2b4256" stroke="#91afc8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1158 311 L1317 302.0" fill="none" stroke="#76b7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1158 326 L1317 326.0" fill="none" stroke="#76b7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1158 341 L1317 350.0" fill="none" stroke="#76b7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1255" y="237" fill="#76b7ff" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="middle">Air-fed electric thrust</text>
+<text x="1255" y="261" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="middle">Battery power near perigee</text>
+<path d="M1265 277 L1175 304" fill="none" stroke="#76b7ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="70" y="494" fill="#eef5ff" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="normal" text-anchor="start">Low-pressure capture in front; structural pressure containment and liquid storage aft.</text>
+<rect x="48" y="526" width="1344" height="416" rx="10" fill="#101e30" stroke="none" stroke-width="2"/>
+<text x="75" y="565" fill="#75e4d0" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" text-anchor="start">02   COAST / THERMAL RESET</text>
+<text x="1365" y="565" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="end">Same craft, deployables extended</text>
+<path d="M620 696 L683 708 H1080 Q1123 708 1123 748 Q1123 787 1080 787 H683 L620 800 Z" fill="#1e344b" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M620 696 L683 708 H1080 Q1123 708 1123 748 Q1123 787 1080 787 H683 L620 800" fill="none" stroke="#91afc8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="794" y="719" width="105" height="53" rx="25" fill="#1c4c53" stroke="#75e4d0" stroke-width="2"/>
+<rect x="926" y="719" width="138" height="53" rx="7" fill="#2c344f" stroke="#c8b5ff" stroke-width="2"/>
+<text x="995" y="751" fill="#c8b5ff" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="normal" text-anchor="middle">Liquid product</text>
+<path d="M815 706 V677 H1025 V661" fill="none" stroke="#91afc8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="787" y="601" width="472" height="60" rx="3" fill="#16395a" stroke="#76b7ff" stroke-width="2"/>
+<path d="M846.0 601 V661" fill="none" stroke="#76b7ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M905.0 601 V661" fill="none" stroke="#76b7ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M964.0 601 V661" fill="none" stroke="#76b7ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1023.0 601 V661" fill="none" stroke="#76b7ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1082.0 601 V661" fill="none" stroke="#76b7ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1141.0 601 V661" fill="none" stroke="#76b7ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1200.0 601 V661" fill="none" stroke="#76b7ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M787 621.0 H1259" fill="none" stroke="#76b7ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M787 641.0 H1259" fill="none" stroke="#76b7ff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="785" y="590" fill="#76b7ff" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="normal" text-anchor="start">Solar arrays → electrical power</text>
+<path d="M650 744 H210" fill="none" stroke="#91afc8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M210 650 L500 672 L554 692 L264 670 Z" fill="#70472e" stroke="#ffc36b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M554 692 L606 744" fill="none" stroke="#91afc8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M210 693 L500 715 L554 735 L264 713 Z" fill="#70472e" stroke="#ffc36b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M554 735 L606 744" fill="none" stroke="#91afc8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M210 736 L500 758 L554 778 L264 756 Z" fill="#70472e" stroke="#ffc36b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M554 778 L606 744" fill="none" stroke="#91afc8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M210 779 L500 801 L554 821 L264 799 Z" fill="#70472e" stroke="#ffc36b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M554 821 L606 744" fill="none" stroke="#91afc8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="110" y="609" fill="#ffc36b" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="bold" text-anchor="start">Attached solid-cooler plates</text>
+<text x="110" y="636" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="normal" text-anchor="start">Entry heat radiates directly to space</text>
+<path d="M290 835 V871" fill="none" stroke="#ffc36b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#heat)"/>
+<path d="M390 835 V871" fill="none" stroke="#ffc36b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#heat)"/>
+<path d="M490 835 V871" fill="none" stroke="#ffc36b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#heat)"/>
+<text x="110" y="907" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="normal" text-anchor="start">Sheets retract into their cooling chambers before entry.</text>
+<path d="M1015 789 V817" fill="none" stroke="#91afc8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="814" y="820" width="444" height="66" rx="3" fill="#5a3932" stroke="#ffc36b" stroke-width="2"/>
+<path d="M858.4 826 V880" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M902.8 826 V880" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M947.2 826 V880" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M991.6 826 V880" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1036.0 826 V880" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1080.4 826 V880" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1124.8 826 V880" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1169.2 826 V880" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1213.6 826 V880" fill="none" stroke="#ffc36b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="814" y="915" fill="#ffc36b" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="normal" text-anchor="start">Warm loop radiators → process / electrical heat</text>
+<text x="55" y="980" fill="#a9bfd3" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="normal" text-anchor="start">Conceptual cutaway • layout, proportions, fin geometry and deployment mechanisms remain design variables.</text>
+</svg>

@@ -303,3 +303,5 @@ see the [layout requirements and proposed solar location](PACKAGING_AND_BLENDER_
 A subsequent v1.1 study will consider fixed coolant exchangers in the higher-pressure
 volumes instead of extracting those coolers through side hatches. Neither layout
 nor that conversion is yet a validated change to the numerical reference.
+
+The v1.0 publication snapshot uses a [provisional axial mass register](../investigations/v1_layout/MASS_REGISTER.md): about 33 m dry CM from the mouth, with heavy equipment ahead of the long aft receiver. The intended orbit is [dawn–dusk sun-synchronous](../investigations/v1_layout/SUN_SYNCHRONOUS.md), approximately 99.35° inclination by a first-order J2 screen. Seasonal illumination and 3D orbit maintenance have not been added to the saved payoff calculation. The [publication kit](publication/V1_0.md) selects current figures and tables; publication precedes Blender and further sensitivity studies.
