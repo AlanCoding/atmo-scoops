@@ -1,11 +1,15 @@
 # Coupled forward-cycle model
 
-`atmo_scoops.transient` implements the first coupled version of the
-[periodic optimization specification](TRANSIENT_OPTIMIZATION_SPEC.md).
-[Reference results and comparisons](../../investigations/transient/README.md)
-are calculated from it. The older scalar model remains reproducible through its
-existing imports and the new `atmo_scoops.scalar` gateway; it is not used to
-calculate the new payoff.
+**Active reference:** [parallel plates](../../investigations/plates/README.md)
+with gaseous propellant bypass, independently optimized plate thicknesses, gaps
+and inventories, and full plane-Poiseuille resistance charged as compressor
+electricity. A 33-coordinate constrained COBYLA solve completed all 99 forward
+cycles and terminated successfully. The released feasible history point has a
+battery closure reserve and passes three integration resolutions; the exact
+solver-returned point failed refined battery closure. See the investigation for
+scope, numerical fixes and reproduction. Rod/pressure-coupled models remain
+available for comparison. Each candidate still integrates once, without inner
+hardware resizing or periodic shooting.
 
 ## Evaluation contract and inputs
 
@@ -37,15 +41,19 @@ pressures Pa, specific head J/kg, and areas physical m² unless stated otherwise
 | Dive-pump stop, coast-plant start/stop, low-pressure cutoff | Independent; held in first grid |
 | LN₂ mixing ratio | Supported, zero reference |
 | Apogee | Input; 2,000 km comparison |
-| Perigee, bore, outside diameter, L/D, rod radius/pitch, materials | Scope locks below |
+| Five radii and five common axial/transverse pitches; rack layout; resistance capability | Independent geometry in the inline-bank search, radius ≥0.2 mm; resistance multiplier is an uncertainty assumption, not a free improvement variable |
+| Gas/liquid propellant architecture; gas tank volume/count/rating, initial mass/composition/temperature, booster suction/head/motor/UA, jacket UA, feed pressure/flow limits | Independent installed/control inputs for the gas option |
+| Perigee, bore, outside diameter, L/D, materials | Scope locks below |
 
 Perigee is fixed at **85 km** in this initial molecular-air implementation.
 Atmospheric chemistry, leading-edge life and drag constraints must precede its
 release as an optimizer variable. The geometry is 30 m bore, 31.7 m outside,
-317 m overall. The materials are SiC then four aluminum racks. Rod radius is
-1 mm and pitch 10 mm. **Reminder for the first coupled-reference review: implement
-lattice pressure loss before allowing pitch to float.** The model still does
-not charge lattice head loss.
+317 m overall. The materials are SiC then four aluminum racks. Radius and pitch
+now float per rack in the [low-Re inline-bank search](../metal_coolers/LOW_RE_BANK.md),
+with a 0.2 mm minimum radius and common axial/transverse pitch. Historical
+1 mm radius / 10 mm pitch configurations retain their original geometry options.
+Array resistance is charged against actual compressor suction. Calibrated slip
+and sparse-bank resistance remain pending.
 
 Receiver depth is the remainder after the other chambers, pressure-vessel heads
 and installed equipment packages. Pressure rating affects vessel mass, not an
@@ -60,7 +68,9 @@ attachment and hatch qualification remain outside this release.
 
 Five volumes each carry three species inventories, gas internal energy and rack
 enthalpy. Additional states are battery energy, warm-store energy, three liquid
-inventories and five rotor-energy accounts. The simulation starts 20 minutes
+inventories and five rotor-energy accounts. The gas-feed option adds three
+reserve species, reserve internal energy and a sixth booster rotor account.
+Those slots remain zero for liquid-feed comparisons. The simulation starts 20 minutes
 before perigee and ends at the same phase one orbit later (longer burns can move
 that epoch earlier).
 
@@ -182,7 +192,7 @@ regularization sensitivity belong in the numerical validation report.
 
 - Calibrated off-design/stall maps, low-Re efficiency, module choices and finite
   coast heat-exchanger dynamics; measured hardware mass comparisons remain vital.
-- Lattice pressure losses, deployable structure/actuators, vent and pressure-hatch
+- Validated multirow/slip lattice resistance, deployable structure/actuators, vent and pressure-hatch
   mechanisms, vessel buckling, and full three-dimensional package layouts.
 - Reacting inlet, thermochemical recovery, calibrated skin friction and remaining external pressure drag, wall heating and flight stability.
 - Real warm-loop fluid/store selection, refrigeration package calibration and
@@ -195,3 +205,5 @@ regularization sensitivity belong in the numerical validation report.
 The evaluator also returns the explicit surplus offload and liquid reserve map. It applies the independent property-domain audit before granting an accepted payoff. Optional LN₂ injection is species/enthalpy conservative; a dedicated injection hardware/flow-limit model remains pending. Numerical controls include a Jacobian differencing step and an RHS evaluation budget; an exhausted budget is reported as unresolved, not physical infeasibility.
 
 See [mass allowance definitions](MASS_ALLOWANCES.md) for bus, rack mechanisms and contingency. The [next refinement plan](../../docs/NEXT_REFINEMENTS.md) covers gaseous propellant bypass, pressure-loss-constrained pitch and the geometry handoff.
+
+The [gas-reserve branch](../propellant_feed/GAS_RESERVE.md) conserves mass and enthalpy through coast refill and next-pass drawdown. It shares the coast compressor and warm loop with the product branch; only the product branch pays liquefaction. See the [coupled comparison](../../investigations/feed_pitch/RESULTS.md).

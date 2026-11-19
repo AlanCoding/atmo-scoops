@@ -1,9 +1,23 @@
 # Refinement plan for the coupled design and geometry handoff
 
-The 285-day comparison is a useful **zero-external-skin-friction reduced-model
-result**, not a final vehicle optimum. Keep it reproducible while publishing
-explicit penalty scenarios and improving the component boundaries. The first
-skin-friction scenarios are [implemented and reported](../investigations/skin_friction/ANALYSIS.md).
+The active [staged reference](../investigations/staged_refinement/RESULTS.md)
+now has a [reduced-loss continuation](../investigations/staged_refinement/REDUCED_LOSS.md)
+at approximately **293 operating-orbit days** with gaseous propellant bypass,
+fixed rack geometry and **1% resistance coefficient**. It includes the illustrative
+Cf = 0.002 skin-friction impulse. This reduced-loss point passes numerical checks;
+full resistance and some neighboring cases remain unresolved. Pitch and radius
+optimization remain pending. The older 285-day
+zero-skin-friction comparison remains historical evidence, not the active reference.
+
+## Current scope
+
+The owner selected sequential gas-feed, fixed-geometry head-loss, pitch and radius
+studies. The gas-feed stage is validated; experimental lattice capabilities remain
+available but are not promoted into the active optimization. Other
+component penalties and hardware qualification remain deferred. **Future priority:
+cryogenic processing integrated with the existing coast compressors, rack cooling,
+propellant branch, recuperators and warm rejection loop.** Develop the actual
+heat/flow network before refining stand-alone liquefier coefficients.
 
 ## Immediate investigations and sequence
 
@@ -11,8 +25,8 @@ skin-friction scenarios are [implemented and reported](../investigations/skin_fr
 |---|---|---|
 | Mass allowance definitions | [Documented](../modeling/primary/MASS_ALLOWANCES.md) | Disjoint bus/PPU/motor boundaries, rack mechanisms/pressure hatches, and separate mass versus volume contingency. |
 | External skin friction | Implemented impulse coupling; 0.001/0.002/0.005 coefficient scenarios | Replace illustrative Cf with an offline-calibrated edge-state/transition/temperature model. Include thermal loads separately. |
-| Gaseous propellant routing | [Evidence and duty/volume screen](../investigations/propellant_feed/PLAN.md) | Add a cyclic gas reserve, actual feed/compression hardware and species routing. Compare unseparated gas and selective-condensation alternatives against a properly charged liquid-feed baseline. |
-| Stage-specific rack pitch | [Planned with pressure loss](../investigations/rack_pitch/PLAN.md) | Choose a physical lattice, validate paired heat-transfer/resistance laws, then optimize five pitches with mass, pressure loss and chamber volume coupled. |
+| Gaseous propellant routing | [Mixed-gas reserve implemented](../modeling/propellant_feed/GAS_RESERVE.md) | Add a cyclic gas reserve, actual feed/compression hardware and species routing. Compare unseparated gas and selective-condensation alternatives against a properly charged liquid-feed baseline. |
+| Rack pressure, pitch, then radius | [Staged numerical gates](../investigations/staged_refinement/README.md) | Active continuation fixes 1 mm radius / 10 mm pitch and uses 1% resistance. Continue toward full resistance with numerical checks before releasing geometry. |
 | Joint reoptimization | After the preceding physics is implemented | Run each discrete feed architecture under identical drag, propulsion and uncertainty assumptions. Optimize stages, schedules, capacities and initial states with periodic closure. |
 | Geometry release | Parameter export can begin now; dimensions remain provisional | A versioned geometry/space/load specification tied to one accepted cycle, with assumptions and unresolved structures visibly labeled. |
 

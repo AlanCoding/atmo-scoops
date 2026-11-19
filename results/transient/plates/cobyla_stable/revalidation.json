@@ -1,0 +1,5 @@
+{
+  "source": "results/transient/plates/cobyla_density",
+  "vertices": 11,
+  "note": "All numerical values recomputed after the dilute/pure-species HEOS fix; no old values reused"
+}

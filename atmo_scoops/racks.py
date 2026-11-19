@@ -78,12 +78,22 @@ def geometry(mass, density, area, spec):
 
 
 def conductance(p,T,mdot,area,geom,spec,R=287.,cp=1100.):
+    if geom.get("lattice")=="parallel_plates":
+        from .transient.plates import conductance as plate_conductance
+        return plate_conductance(p,T,mdot,area,geom,spec,R,cp)
     T=max(200.,T);mu=1.716e-5*(T/273.15)**1.5*(273.15+110.4)/(T+110.4)
     k=mu*cp/.71;rho=max(p,1e-12)/(R*T);radius=geom['wire_radius_m'];ratio=radius/geom['pitch_m'];diameter=2*radius
     # Gap velocity through each plane, not bulk pore-volume velocity.
     v=abs(mdot)/(rho*area*(1-2*ratio))
     Re=rho*v*diameter/mu;Pr=.71
     Nu=.3+.62*math.sqrt(Re)*Pr**(1/3)/(1+(.4/Pr)**(2/3))**.25*(1+(Re/282000)**(5/8))**.8
+    if geom.get('lattice')=='inline_square_bank':
+        from .transient.porous import laminar_bank_coefficient
+        a=geom['pitch_m']/diameter
+        zeta=laminar_bank_coefficient(Re,a,a)
+        # Martin/Gnielinski generalized Leveque analogy; same bank drag geometry.
+        # .3 preserves the existing stagnant-gas conduction screen at zero flow.
+        Nu=max(.3,.404*(.5*zeta*Re*Re*(4*a/math.pi-1)/a*Pr)**(1/3))
     continuum=Nu*k/diameter
     gamma=cp/(cp-R)
     molecular=spec.accommodation/(2-spec.accommodation)*(gamma+1)/(gamma-1)*math.sqrt(R/(8*math.pi*T))*max(p,0.)

@@ -75,20 +75,33 @@ hardware-development targets.
 The new [coupled forward-cycle model](modeling/primary/TRANSIENT_IMPLEMENTATION.md)
 tracks gas and rack states, finite compressors, liquefaction, power storage,
 radiation and propellant through a complete orbit. Each candidate compiles its
-hardware first and integrates once. The [current results](investigations/transient/RESULTS.md)
+hardware first and integrates once. The [current plate results](investigations/plates/README.md)
 replace the isolated chamber study's anchored payoff proxy.
 
+The working **parallel-plate cooler** reference gives **278.02 days** in the
+operating orbit: **13,250 tonnes dry** and **3,509 kg of new liquid per orbit**.
+It retains gaseous propellant bypass and uses full plane-Poiseuille friction as
+additional compressor electricity, without suction-pressure feedback.
+
+A real **33-variable constrained COBYLA optimization** terminated successfully
+after **99 completed forward evaluations**, with no missing or failed cycles.
+Its returned 277.66-day point missed battery closure under refined integration.
+The working reference is a nearby actual optimizer-history point with additional
+closure reserve; it passes all constraints and numerical gates at **three
+resolutions**. Tolerances were not relaxed. This is a local, scoped search, not a
+certified global optimum. See the [plate results](investigations/plates/README.md)
+and [model equations](modeling/metal_coolers/PLATES.md).
+
 ```bash
-.venv/bin/python -m atmo_scoops.transient --config configs/transient_reference.json
-.venv/bin/python -m atmo_scoops.transient.search --workers 2
-.venv/bin/python -m atmo_scoops.transient.report
+.venv/bin/python -m atmo_scoops.transient --config configs/transient_active.json
+OPENBLAS_NUM_THREADS=1 .venv/bin/python -m atmo_scoops.transient.plate_optimize --config configs/transient_plates_optimization_seed.json --output results/transient/plates/new_search --maxiter 300 --tol 0.01 --rhobeg 0.03 --seconds 240
 ```
 
 The [skin-friction sensitivity](investigations/skin_friction/ANALYSIS.md) adds explicit external drag: a Cf=0.002 capacity proposal gives about 308 days, versus the 285-day zero-skin comparison. Cf is an illustrative scenario, not a calibrated prediction. [Planned refinements](docs/NEXT_REFINEMENTS.md) cover gaseous propellant bypass, rack pitch and omitted penalties.
 
-The geometry is fixed at 30 m bore and 317 m overall length. A limited initial
-search is implemented; this is not yet a global optimization of all stage and
-hardware allocations. Read the [implementation assumptions](modeling/primary/TRANSIENT_IMPLEMENTATION.md)
+The geometry is fixed at 30 m bore and 317 m overall length. The current search fixes the orbit at 85 × 2,000 km and holds suction/head
+capabilities, peak electrical ratings and processing schedule fixed; it is not a
+global optimization of every stage and hardware allocation. Read the [implementation assumptions](modeling/primary/TRANSIENT_IMPLEMENTATION.md)
 and [study scope](investigations/transient/README.md) alongside the numbers.
 
 ## Reproduce the legacy scalar cycle
@@ -178,3 +191,8 @@ silently rewrite their evidence.
 The [rack-material comparison](investigations/chamber_transient/MATERIALS.md)
 reoptimizes these allocations for FeCrAl or SiC up front and aluminum downstream,
 including density, heat transfer and radiative reset time.
+
+The [gas-reserve and rack-spacing study](investigations/feed_pitch/RESULTS.md) adds an explicit gaseous propellant branch and independently spaced transverse racks with coupled pressure loss. See the [physical flow diagram](docs/images/feed_racks.svg) and [concept geometry export](results/transient/feed_pitch/geometry.json).
+
+- [Staged refinement](investigations/staged_refinement/README.md): active gas bypass first, then gated pressure-loss, pitch and radius releases.
+- [Earlier joint radius/pitch experiment](investigations/rack_radius/RESULTS.md): retained research, not the active reference.

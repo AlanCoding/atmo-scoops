@@ -1,0 +1,22 @@
+{
+  "provider": "CoolProp HEOS",
+  "version": "8.0.0",
+  "mass_fractions": [
+    0.755,
+    0.232,
+    0.013
+  ],
+  "temperature_K": [
+    200,
+    2000
+  ],
+  "pressure_Pa": [
+    0.0001,
+    2000000.0
+  ],
+  "shape": [
+    901,
+    121
+  ],
+  "method": "bicubic h and s; isentropic entropy inversion"
+}

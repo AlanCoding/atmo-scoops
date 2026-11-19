@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "checks": {
+    "two_complete_trajectories": true,
+    "conservation_and_nonnegative_inventory": true,
+    "resolution_within_half_percent": true,
+    "two_feasible_cycles": false
+  },
+  "relative_changes": {
+    "net_liquid_kg": 3.223426705554078e-07,
+    "admitted_kg": 1.0711197823174616e-07,
+    "lost_kg": 5.479445664747314e-05,
+    "propellant_kg": 2.4962901737392726e-16
+  }
+}

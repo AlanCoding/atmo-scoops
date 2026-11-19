@@ -1,0 +1,132 @@
+[
+  {
+    "pitch_m": 0.01,
+    "allocation": "fixed envelope",
+    "geometry": {
+      "frontal_m2": 706.8583470577034,
+      "gas_m3": 3710.812415381468,
+      "solid_m3": 120.35982567128475,
+      "envelope_m3": 3831.1722410527527,
+      "mass_kg": 386355.0404048241,
+      "wetted_m2": 240719.6513425695,
+      "wire_radius_m": 0.001,
+      "pitch_m": 0.01,
+      "row_count": 542.0,
+      "rack_depth_m": 5.42,
+      "plane_open_fraction": 0.8,
+      "lattice": "alternating_transverse_rod_planes",
+      "gross_m3": 3831.1722410527527,
+      "depth_m": 5.42,
+      "deployed_physical_m2": 383117.2241052753
+    },
+    "flows_kg_s": [
+      18.11792231425401,
+      12.297986617031063,
+      7.92498792301154
+    ]
+  },
+  {
+    "pitch_m": 0.02,
+    "allocation": "fixed envelope",
+    "geometry": {
+      "frontal_m2": 706.8583470577034,
+      "gas_m3": 3801.0822846349315,
+      "solid_m3": 30.08995641782119,
+      "envelope_m3": 3831.1722410527527,
+      "mass_kg": 96588.76010120602,
+      "wetted_m2": 60179.912835642375,
+      "wire_radius_m": 0.001,
+      "pitch_m": 0.02,
+      "row_count": 271.0,
+      "rack_depth_m": 5.42,
+      "plane_open_fraction": 0.9,
+      "lattice": "alternating_transverse_rod_planes",
+      "gross_m3": 3831.1722410527527,
+      "depth_m": 5.42,
+      "deployed_physical_m2": 191558.61205263765
+    },
+    "flows_kg_s": [
+      32.118495845051136,
+      26.319202110184314,
+      19.68402749202202
+    ]
+  },
+  {
+    "pitch_m": 0.02,
+    "allocation": "fixed metal",
+    "geometry": {
+      "frontal_m2": 706.8583470577034,
+      "gas_m3": 15204.329138539726,
+      "solid_m3": 120.35982567128475,
+      "envelope_m3": 15324.68896421101,
+      "mass_kg": 386355.0404048241,
+      "wetted_m2": 240719.6513425695,
+      "wire_radius_m": 0.001,
+      "pitch_m": 0.02,
+      "row_count": 1084.0,
+      "rack_depth_m": 21.68,
+      "plane_open_fraction": 0.9,
+      "lattice": "alternating_transverse_rod_planes",
+      "gross_m3": 15324.68896421101,
+      "depth_m": 21.68,
+      "deployed_physical_m2": 766234.4482105506
+    },
+    "flows_kg_s": [
+      19.68402749202202,
+      13.564194653489869,
+      8.820222009451106
+    ]
+  },
+  {
+    "pitch_m": 0.03,
+    "allocation": "fixed envelope",
+    "geometry": {
+      "frontal_m2": 706.8583470577034,
+      "gas_m3": 3824.8428365488508,
+      "solid_m3": 13.397987974478804,
+      "envelope_m3": 3838.2408245233296,
+      "mass_kg": 43007.54139807696,
+      "wetted_m2": 26795.975948957606,
+      "wire_radius_m": 0.001,
+      "pitch_m": 0.03,
+      "row_count": 181.0,
+      "rack_depth_m": 5.43,
+      "plane_open_fraction": 0.9333333333333333,
+      "lattice": "alternating_transverse_rod_planes",
+      "gross_m3": 3838.2408245233296,
+      "depth_m": 5.43,
+      "deployed_physical_m2": 127941.36081744432
+    },
+    "flows_kg_s": [
+      36.996445760184194,
+      33.28648816959546,
+      27.849978526620614
+    ]
+  },
+  {
+    "pitch_m": 0.03,
+    "allocation": "fixed metal",
+    "geometry": {
+      "frontal_m2": 706.8583470577034,
+      "gas_m3": 34360.190343803486,
+      "solid_m3": 120.35982567128471,
+      "envelope_m3": 34480.55016947477,
+      "mass_kg": 386355.0404048239,
+      "wetted_m2": 240719.6513425694,
+      "wire_radius_m": 0.001,
+      "pitch_m": 0.03,
+      "row_count": 1626.0,
+      "rack_depth_m": 48.78,
+      "plane_open_fraction": 0.9333333333333333,
+      "lattice": "alternating_transverse_rod_planes",
+      "gross_m3": 34480.55016947477,
+      "depth_m": 48.78,
+      "deployed_physical_m2": 1149351.6723158257
+    },
+    "flows_kg_s": [
+      20.17558751287053,
+      13.972507951863061,
+      9.11353515312985
+    ]
+  }
+]

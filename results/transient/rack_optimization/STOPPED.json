@@ -1,0 +1,5 @@
+{
+  "reason": "Compact-domain pilot stopped to include sparse spacing and higher Isp in a separate extended-domain search; not convergence",
+  "evaluations": 13,
+  "followup": "../rack_wide_optimization"
+}

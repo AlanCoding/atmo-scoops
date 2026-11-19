@@ -8,7 +8,8 @@ from .io import read_result
 
 
 def check(r):
-    th=properties();real=RealAir();T=np.asarray(r['history']['gas_K']);p=np.asarray(r['history']['pressure_Pa'])
+    th=properties();th.table_enabled=r['inputs']['design'].get('compression_model','HEOS')=='HEOS_table'
+    real=RealAir();T=np.asarray(r['history']['gas_K']);p=np.asarray(r['history']['pressure_Pa'])
     masses=np.asarray(r['gas_species_kg']);flow=np.asarray(r['history']['pump_kg_s'])
     indices=np.unique(np.r_[np.linspace(0,len(T)-1,101,dtype=int),np.argmax(p,axis=0),np.argmax(flow,axis=0)])
     zerr=0.;workerr=0.;outlet=0.;domain_failures=[]
@@ -20,11 +21,17 @@ def check(r):
             try:
                 state=real.state(p[j,k],T[j,k]);zerr=max(zerr,abs(state['Z']-1))
                 if k<4 and flow[j,k]>.001:
-                    expected=real.compress(p[j,k],T[j,k],max(p[j,k],p[j,k+1]),r['inputs']['capabilities']['eta_compressor'])
-                    w=th.compression(T[j,k],p[j,k],p[j,k+1],yy,r['inputs']['capabilities']['eta_compressor'])
+                    ps=r['history'].get('compressor_suction_Pa',p[:,:4])[j][k]
+                    expected=real.compress(ps,T[j,k],max(ps,p[j,k+1]),r['inputs']['capabilities']['eta_compressor'])
+                    w=th.compression(T[j,k],ps,p[j,k+1],yy,r['inputs']['capabilities']['eta_compressor'])
                     workerr=max(workerr,abs(w-expected['shaft_J_kg'])/max(expected['shaft_J_kg'],1.))
                     outlet=max(outlet,expected['outlet']['T_K'])
             except ValueError as exc:domain_failures.append(dict(index=int(j),stage=k,error=str(exc)))
+    if r['inputs']['design'].get('propellant_storage')=='gas':
+        for j in indices:
+            m=np.asarray(r['gas_reserve_species_kg'][j]);real.fluid.set_mass_fractions((m/m.sum()).tolist())
+            try:zerr=max(zerr,abs(real.state(r['history']['buffer_Pa'][j],r['history']['buffer_K'][j])['Z']-1))
+            except ValueError as exc:domain_failures.append(dict(index=int(j),stage='gas_buffer',error=str(exc)))
     return dict(max_abs_Z_minus_one=zerr,max_compressor_work_relative_error=workerr,
                 max_audited_compressor_outlet_K=outlet,domain_failures=domain_failures,
                 low_density_chamber_EOS_screen_passed=zerr<.01 and not domain_failures,

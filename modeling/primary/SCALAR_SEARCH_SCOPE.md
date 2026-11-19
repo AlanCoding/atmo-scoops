@@ -1,5 +1,11 @@
 # Scalar search scope for the first coupled optimization
 
+**Scope update:** the active [staged refinement](../../investigations/staged_refinement/README.md)
+fixes radius and pitch with gas propellant bypass and a verified 1% resistance
+continuation. Continue hydraulic resistance toward its physical value before
+releasing pitch and radius. The earlier joint 55-variable search
+is experimental; its bounds do not define the active reference.
+
 **Scope registry; first implementation available.** See [actual inputs and current search subset](TRANSIENT_IMPLEMENTATION.md). The two geometry locks below are the owner's instructions.
 Other proposed locks are recommendations for the first search, not silently
 accepted permanent design decisions. This narrows the broad variable registry

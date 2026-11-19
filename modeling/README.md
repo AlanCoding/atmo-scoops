@@ -4,6 +4,15 @@ Research dossiers develop evidence-backed replacement models before code updates
 
 ## Numerical model and studies
 
+- [Staged refinement and release gates](../investigations/staged_refinement/README.md): active gas bypass at fixed geometry, followed by separately validated pressure, pitch and radius stages.
+
+- [Mixed-gas propellant reserve](propellant_feed/GAS_RESERVE.md): conservative reserve, booster, warm-loop coupling and hardware.
+- Experimental [low-Re inline rack bank](metal_coolers/LOW_RE_BANK.md): paired array resistance/heat transfer, per-stage radius and common pitch, and constrained search.
+- [Parallel-plate cooler model](metal_coolers/PLATES.md): explicit clear gap, plate thickness, Poiseuille friction, finite thermal inventory and nonlinear constrained optimization.
+- [Power-only rack-loss model](metal_coolers/POWER_ONLY.md): explicit electrical/thermal surcharge, conservative finite-motor derating, and separate pitch/radius experiments without hydraulic pressure feedback.
+- [Transverse rack planes](metal_coolers/TRANSVERSE_PLANES.md): drawable geometry, independent spacing, hydraulic coupling and validity limits.
+
+
 - [Mass allowance boundaries](primary/MASS_ALLOWANCES.md) and [ordered refinement plan](../docs/NEXT_REFINEMENTS.md).
 
 - [Coupled forward-cycle implementation](primary/TRANSIENT_IMPLEMENTATION.md): installed hardware, state-resolved compression/cooling, finite power and plant, closure checks; [initial results](../investigations/transient/RESULTS.md).

@@ -23,10 +23,10 @@ class Chamber:
     external_emitting_m2: float=0.
     material: str="iron"
     rack_emissivity: float | None=None
-    def geometry(self):
+    def geometry(self,max_radius_pitch=.25):
         mat=material(self.material)
         if self.rack_emissivity is not None and not 0<self.rack_emissivity<=1:raise ValueError("Invalid rack emissivity")
-        if not (self.diameter_m>0 and self.depth_m>0 and 0<=self.rack_depth_m<=self.depth_m and 0<self.rod_radius_m/self.rod_pitch_m<.25):raise ValueError('Invalid chamber/rack geometry')
+        if not (self.diameter_m>0 and self.depth_m>0 and 0<=self.rack_depth_m<=self.depth_m and 0<self.rod_radius_m/self.rod_pitch_m<max_radius_pitch):raise ValueError('Invalid chamber/rack geometry')
         if min(self.initial_metal_K,self.initial_gas_K)<200 or self.initial_pressure_Pa<=0 or min(self.coast_mixing_m_s,self.external_emitting_m2)<0:raise ValueError('Invalid chamber state')
         area=math.pi*self.diameter_m**2/4;envelope=area*self.rack_depth_m
         solid=envelope*math.pi*(self.rod_radius_m/self.rod_pitch_m)**2

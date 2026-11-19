@@ -1,5 +1,7 @@
 # Design investigations
 
+- [Current staged refinement](staged_refinement/README.md): bypass-only optimization first; numerical gates before pressure losses, pitch and radius.
+
 These documents record decision evidence separately from the single current
 [design description](../docs/DESIGN.md). Each preserves numerical scope,
 assumptions and reproduction inputs; a conclusion is not a chronological log.
@@ -42,3 +44,9 @@ General component calculations and annotated references live in
 - [Rack materials and allocation](chamber_transient/MATERIALS.md): FeCrAl/SiC fronts with aluminum downstream, finite heat transfer, volume and reset-time constraints.
 
 - [Centered burn duration](reboost/BURN_DURATION.md): finite-arc impulse penalty versus thruster/bus power, energy and product mass; isolated screening optimum.
+
+- [Gas reserve and rack-spacing integration](feed_pitch/RESULTS.md): separate gaseous propulsion reserve, finite booster/heat rejection and stage-specific hydraulic losses.
+
+- [Rod radius/pitch constrained search](rack_radius/RESULTS.md): per-stage geometry, pressure loss, finite heat transfer and full-cycle constraints.
+
+- [Parallel-plate coolers and constrained optimization](plates/README.md): replaces rod-bank resistance with channel wall friction in the power-only approximation; records the actual COBYLA termination and closure checks.

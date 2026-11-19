@@ -1,14 +1,17 @@
 # Stage-specific rack pitch with pressure loss
 
-**Status:** planned. Here 'variable pitch' means independently chosen rod spacing
+Current implementation and results: [feed/rack comparison](../feed_pitch/RESULTS.md).
+
+**Status:** initial implementation completed; see [current results](../feed_pitch/RESULTS.md). Original investigation scope follows. Here 'variable pitch' means independently chosen rod spacing
 in each stage, not variable-pitch compressor blades. Blade pitch remains part of
 the separate compressor off-design-map investigation. No in-flight rack-spacing
 actuator is assumed.
 
-Keep rod radius fixed at **1 mm** initially. Add five independent pitches and
-jointly search them with the five rack depths/masses and chamber allocations.
-The present reference has 10 mm pitch and no lattice pressure loss; its spacing
-is not yet an optimum.
+The current extension releases both radius and common axial/transverse pitch per
+stage, with a 0.2 mm minimum radius. See the [array model](../../modeling/metal_coolers/LOW_RE_BANK.md)
+and [coupled search](../rack_radius/RESULTS.md). It jointly varies solid inventories,
+chamber clear depths and system hardware; the original 1 mm radius / 10 mm pitch
+case is a comparison, not an optimum.
 
 ## Geometry comes before choosing a correlation
 

@@ -1,5 +1,7 @@
 # Gaseous propellant reserve and liquefaction bypass
 
+Current implementation and results: [feed/rack comparison](../feed_pitch/RESULTS.md).
+
 **Status:** research-backed architecture investigation and numerical duty/volume
 screen. No gas-bypass payoff benefit has yet been credited to the primary cycle.
 The existing liquid-fed inventory accounting remains the comparison baseline.

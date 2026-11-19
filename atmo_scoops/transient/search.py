@@ -18,6 +18,7 @@ from .hardware import compile_hardware
 def summary(r):
     keys=['inputs','dry_kg','net_liquid_kg','diagnostic_payoff_days','operating_payoff_days','feasible','margins','closure','audits']
     s={k:r[k] for k in keys}
+    if 'loss_power_audit' in r:s['loss_power_audit']=r['loss_power_audit']
     s['masses_kg']=r['hardware']['masses_kg']
     s['receiver_depth_m']=r['hardware']['geometry'][-1]['depth_m']
     s['gross_liquid_kg']=sum(r['ledger'][f'made_{k}'][-1] for k in ('N2','O2','Ar'))

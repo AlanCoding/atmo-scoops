@@ -6,6 +6,15 @@ reflect how strongly a missing relationship can distort design selection.
 
 The current ordered [refinement and geometry-handoff plan](NEXT_REFINEMENTS.md) identifies gaseous propellant routing, pressure-loss-constrained rack pitch, skin friction, and the main potentially optimistic omissions. The [mass allowance definitions](../modeling/primary/MASS_ALLOWANCES.md) separate bus, rack mechanisms and contingency.
 
+Gas reserve/bypass and independent stage pitch with a provisional hydraulic law
+are now implemented; see [comparison](../investigations/feed_pitch/RESULTS.md).
+Next requested research priority is **cryogenic processing integrated with the
+existing hardware**, including recuperation, branch routing, exchanger pinch
+points and shared heat rejection. Other penalty refinements remain deferred.
+Validate multirow/slip rack resistance before trusting an optimized pitch. Improve
+trace-inventory numerical regularization/Jacobian treatment before broad coupled
+pitch optimization: some low-inventory tails stall even when conservation is good.
+
 Completed numerical decisions are indexed in [investigations](../investigations/README.md).
 The [mixing development plan](DESIGN_STUDIES_PLAN.md) describes the remaining
 physical calibration needed beyond the current conditional trade.
@@ -229,4 +238,27 @@ Fixed outer length prevents receiver volume or L/D diverging as hardware shrinks
 
 ### Gaseous propellant and thermal/hydraulic pitch trades
 
-The [gas-feed plan](../investigations/propellant_feed/PLAN.md) has primary-source evidence and a duty/storage screen; the cyclic gas buffer, feed hardware and selective-condensation comparisons remain to implement. The [rack-pitch plan](../investigations/rack_pitch/PLAN.md) requires a physical unit cell and paired heat-transfer/pressure-drop treatment before stage-specific pitch optimization. The [skin-friction investigation](../investigations/skin_friction/ANALYSIS.md) is implemented as an explicit coefficient scenario, not a validated coefficient prediction.
+The cyclic mixed-gas buffer and feed hardware are implemented; selective-condensation comparisons remain open. The [rack-pitch plan](../investigations/rack_pitch/PLAN.md) still requires evidence for the physical unit cell and paired heat-transfer/pressure-drop treatment. The [power-only searches](../investigations/staged_refinement/POWER_OPTIMIZATION.md) isolate an energy penalty and do not resolve hydraulic feasibility. The [skin-friction investigation](../investigations/skin_friction/ANALYSIS.md) remains an explicit coefficient scenario, not a validated coefficient prediction.
+
+- **Rack optimization numerical robustness:** resolve near-empty gas energy and
+  pressure dynamics without weakening conservation/closure tolerances. Current
+  bounded searches record timeouts as unresolved, not physical failures.
+- **Power-only loss approximation:** replace explicit proportional motor
+  derating with a validated flow/power map if needed; quantify its conservative
+  bias. The added dissipation is sent to the warm loop without new gas heating
+  or suction-pressure reduction. Large loss/base-power ratios must not be
+  mistaken for demonstrated hydraulic feasibility. Report train and stage
+  energy ratios separately from near-zero-head instantaneous ratios.
+- **Sparse low-Re banks:** the radius/pitch search now includes a separately
+  labeled pitch/diameter >2 extrapolation. Add sparse-array evidence and hydraulic/
+  thermal uncertainty runs before recommending a resulting geometry. Radius is
+  constrained to at least 0.2 mm; full manufacturing/support/lifetime limits are
+  still absent. See `modeling/metal_coolers/LOW_RE_BANK.md`.
+
+## Parallel-plate cooler follow-up
+
+The working-reference [parallel-plate model](../modeling/metal_coolers/PLATES.md) uses a laminar skin-friction energy charge and finite metal storage. Investigate developing flow, axial temperature profiles, rarefaction/slip, entrance/manifold losses, support/warping limits and pressure-drop feasibility before treating its optimizer results as qualified hardware. Thin-plate manufacturing/structural bounds remain assumptions; do not add an artificial thick-plate preference. Numerical failures in the new COBYLA driver stop optimization rather than being hidden as physical rejections.
+
+The plate optimization exposed two concrete HEOS edge cases: a near-vacuum pressure flash and a nominal three-species mixture with exactly zero constituents during an implicit-solver trial. The common gas-update helper now uses density-based dilute updates and the actual nonzero-species backend. These fixes preserve real-gas properties; they do not establish that every integration/optimizer stability issue is resolved.
+
+The nominal COBYLA return missed battery closure under tighter integration. Keep integration-resolution checks and explicit closure reserve when selecting a working reference; the released plate point passes three resolutions without loosening the 100 MJ battery criterion. A future optimizer should encode a justified numerical reserve in its constraints instead of relying on post-search selection.

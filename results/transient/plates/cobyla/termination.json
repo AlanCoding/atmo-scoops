@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "termination": "unresolved forward evaluation; optimizer stopped",
+  "error": "solver_rho_Tp was unable to find a solution for T=   872.028, p=0.00798698, with guess value 1.10159e-06 with error: p is not a valid number",
+  "evaluations": 14,
+  "best_feasible_days": 399.30750629364826
+}

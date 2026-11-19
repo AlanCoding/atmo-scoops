@@ -1,0 +1,217 @@
+{
+  "gas_reference": {
+    "audits": {
+      "species_kg": 2.546585164964199e-11,
+      "energy_MJ": 5.9371814131736755e-09,
+      "min_gas_kg": -3.015687161667145e-05,
+      "forward_integrations": 1,
+      "rhs_evaluations": 62991
+    },
+    "closure": {
+      "rack_enthalpy_J_kg": [
+        -0.2210438387701288,
+        -0.073909414204536,
+        -0.00023219885770231485,
+        -0.5007374123088084,
+        -0.19962630621739663
+      ],
+      "battery_MJ": -0.04060646193102002,
+      "warm_MJ": 0.5143597637070343,
+      "gas_kg": -0.002000816136820318,
+      "gas_MJ": 0.0001685936798628052,
+      "rotor_MJ": 1.3233346436140595e-12,
+      "thrust_relative": -1.0547118733938987e-14,
+      "reserve_deficit_kg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gas_reserve_species_kg": [
+        4.547473508864641e-12,
+        4.547473508864641e-12,
+        2.3447910280083306e-13
+      ],
+      "gas_reserve_MJ": 0.047552125393366396
+    },
+    "thermodynamic_audit": {
+      "max_abs_Z_minus_one": 0.0020391266926389484,
+      "max_compressor_work_relative_error": 3.882999613608209e-10,
+      "max_audited_compressor_outlet_K": 1305.6159619169061,
+      "domain_failures": [],
+      "low_density_chamber_EOS_screen_passed": true,
+      "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+    }
+  },
+  "dense_rack": {
+    "audits": {
+      "species_kg": 1.546140993013978e-11,
+      "energy_MJ": 6.05359673500061e-09,
+      "min_gas_kg": -7.180255679741831e-05,
+      "forward_integrations": 1,
+      "rhs_evaluations": 87232
+    },
+    "closure": {
+      "rack_enthalpy_J_kg": [
+        -0.08822878033970483,
+        -0.8430772650899598,
+        -0.2725537881196942,
+        -0.40470272314269096,
+        -0.5115952726482647
+      ],
+      "battery_MJ": -0.042291872901842,
+      "warm_MJ": 0.5031318301917054,
+      "gas_kg": -0.002019042309957974,
+      "gas_MJ": 0.00017012946195819423,
+      "rotor_MJ": 1.7861165364703674e-12,
+      "thrust_relative": -4.063416270128073e-14,
+      "reserve_deficit_kg": [
+        -154.07885380765765,
+        -47.346084878647844,
+        0.0
+      ],
+      "gas_reserve_species_kg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gas_reserve_MJ": 0.0
+    },
+    "thermodynamic_audit": {
+      "max_abs_Z_minus_one": 2.052761102544487e-06,
+      "max_compressor_work_relative_error": 3.064737533793906e-10,
+      "max_audited_compressor_outlet_K": 1206.1178839670195,
+      "domain_failures": [],
+      "low_density_chamber_EOS_screen_passed": true,
+      "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+    }
+  },
+  "layout_only": {
+    "audits": {
+      "species_kg": 1.0459189070388675e-11,
+      "energy_MJ": 4.249159246683121e-09,
+      "min_gas_kg": -3.037387265223674e-05,
+      "forward_integrations": 1,
+      "rhs_evaluations": 61505
+    },
+    "closure": {
+      "rack_enthalpy_J_kg": [
+        -0.2558845688326983,
+        -0.18149158150481526,
+        -0.002752839107415639,
+        -0.8770731627300847,
+        -0.0431255833391333
+      ],
+      "battery_MJ": -1.994057807372883,
+      "warm_MJ": 0.6900634316261858,
+      "gas_kg": -0.002019042309957974,
+      "gas_MJ": 0.00017012946195819423,
+      "rotor_MJ": 1.933851933365803e-12,
+      "thrust_relative": -8.770761894538737e-15,
+      "reserve_deficit_kg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gas_reserve_species_kg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gas_reserve_MJ": 0.0
+    },
+    "thermodynamic_audit": {
+      "max_abs_Z_minus_one": 1.4472890148775619e-05,
+      "max_compressor_work_relative_error": 3.7443224613078215e-10,
+      "max_audited_compressor_outlet_K": 1309.435496489581,
+      "domain_failures": [],
+      "low_density_chamber_EOS_screen_passed": true,
+      "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+    }
+  },
+  "gas_smaller_plant": {
+    "audits": {
+      "species_kg": 3.637978807091713e-11,
+      "energy_MJ": 5.3551048040390015e-09,
+      "min_gas_kg": -3.0173823041513117e-05,
+      "forward_integrations": 1,
+      "rhs_evaluations": 61062
+    },
+    "closure": {
+      "rack_enthalpy_J_kg": [
+        -0.13251877352013253,
+        -0.36468923681240994,
+        -0.0025862781185423955,
+        -0.4409092074929504,
+        -0.43694794732437003
+      ],
+      "battery_MJ": -0.03513256646692753,
+      "warm_MJ": 0.5133338838932104,
+      "gas_kg": -0.0020136983585268193,
+      "gas_MJ": 0.00016967916749074838,
+      "rotor_MJ": 1.2690599771811657e-12,
+      "thrust_relative": -1.0103029524088925e-14,
+      "reserve_deficit_kg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gas_reserve_species_kg": [
+        8.185452315956354e-12,
+        -7.048583938740194e-12,
+        -6.252776074688882e-13
+      ],
+      "gas_reserve_MJ": 0.04553642276857772
+    },
+    "thermodynamic_audit": {
+      "max_abs_Z_minus_one": 0.0019003484825512729,
+      "max_compressor_work_relative_error": 3.731680197525852e-10,
+      "max_audited_compressor_outlet_K": 1306.1585731426198,
+      "domain_failures": [],
+      "low_density_chamber_EOS_screen_passed": true,
+      "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+    }
+  },
+  "joint_dense": {
+    "audits": {
+      "species_kg": 1.4779288903810084e-11,
+      "energy_MJ": 6.461050361394882e-09,
+      "min_gas_kg": -4.2831289860292903e-05,
+      "forward_integrations": 1,
+      "rhs_evaluations": 81780
+    },
+    "closure": {
+      "rack_enthalpy_J_kg": [
+        -0.12409404292702675,
+        -0.5554186567896977,
+        -0.21285569288011175,
+        -0.05949237945606001,
+        -0.8907338799326681
+      ],
+      "battery_MJ": -0.0019195948261767626,
+      "warm_MJ": 0.5011240364401601,
+      "gas_kg": -0.002000816136820318,
+      "gas_MJ": 0.0001685936798628052,
+      "rotor_MJ": 1.3209382705286231e-12,
+      "thrust_relative": -9.325873406851315e-15,
+      "reserve_deficit_kg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gas_reserve_species_kg": [
+        -593.2838453214899,
+        -182.30708889348955,
+        -10.215483429376654
+      ],
+      "gas_reserve_MJ": 43.62562412021555
+    },
+    "thermodynamic_audit": {
+      "max_abs_Z_minus_one": 0.001561034223945601,
+      "max_compressor_work_relative_error": 3.016628952261515e-10,
+      "max_audited_compressor_outlet_K": 1202.9537596358584,
+      "domain_failures": [],
+      "low_density_chamber_EOS_screen_passed": true,
+      "note": "HEOS compressor work; low-density chamber EOS checked at 101 times plus extrema. This is not a nonideal mixture chamber solver or physical validation."
+    }
+  }
+}

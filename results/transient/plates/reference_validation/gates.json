@@ -1,0 +1,86 @@
+{
+  "case_72": {
+    "coarse_to_refined": {
+      "passed": true,
+      "checks": {
+        "two_complete_trajectories": true,
+        "conservation_and_nonnegative_inventory": true,
+        "resolution_within_half_percent": true,
+        "two_feasible_cycles": true
+      },
+      "relative_changes": {
+        "net_liquid_kg": 7.753624694217674e-06,
+        "admitted_kg": 3.833312431231617e-06,
+        "lost_kg": 5.726081302190437e-06,
+        "propellant_kg": 7.0866012841880746e-15
+      }
+    },
+    "refined_to_finer": {
+      "passed": true,
+      "checks": {
+        "two_complete_trajectories": true,
+        "conservation_and_nonnegative_inventory": true,
+        "resolution_within_half_percent": true,
+        "two_feasible_cycles": true
+      },
+      "relative_changes": {
+        "net_liquid_kg": 1.4296279861657291e-05,
+        "admitted_kg": 7.173499965603888e-06,
+        "lost_kg": 8.870140100346407e-05,
+        "propellant_kg": 3.4167541905906547e-15
+      }
+    },
+    "payoffs": [
+      278.0185894036864,
+      278.0164337686001,
+      278.0204084261662
+    ],
+    "battery_MJ": [
+      -79.71924919006415,
+      -79.94513165438548,
+      -78.08374754339457
+    ]
+  },
+  "case_97": {
+    "coarse_to_refined": {
+      "passed": false,
+      "checks": {
+        "two_complete_trajectories": true,
+        "conservation_and_nonnegative_inventory": true,
+        "resolution_within_half_percent": true,
+        "two_feasible_cycles": false
+      },
+      "relative_changes": {
+        "net_liquid_kg": 2.654161447305768e-05,
+        "admitted_kg": 1.3070343645832238e-05,
+        "lost_kg": 2.8921768627417572e-05,
+        "propellant_kg": 8.868152263795903e-16
+      }
+    },
+    "refined_to_finer": {
+      "passed": false,
+      "checks": {
+        "two_complete_trajectories": true,
+        "conservation_and_nonnegative_inventory": true,
+        "resolution_within_half_percent": true,
+        "two_feasible_cycles": false
+      },
+      "relative_changes": {
+        "net_liquid_kg": 8.0693850733686e-06,
+        "admitted_kg": 4.029840868554793e-06,
+        "lost_kg": 3.227206895528185e-05,
+        "propellant_kg": 4.6874519108635445e-15
+      }
+    },
+    "payoffs": [
+      277.6698583558584,
+      null,
+      277.6647293287508
+    ],
+    "battery_MJ": [
+      -89.53306094533764,
+      -101.18667060462758,
+      -99.82309405179694
+    ]
+  }
+}

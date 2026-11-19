@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "termination": "unresolved forward evaluation; optimizer stopped",
+  "error": "p is not a valid number",
+  "evaluations": 11,
+  "best_feasible_days": 399.283498283796
+}

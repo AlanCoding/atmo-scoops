@@ -1,0 +1,517 @@
+{
+  "base": {
+    "design": {
+      "perigee_km": 85.0,
+      "apogee_km": 3499.9999999999995,
+      "inlet_ceiling_km": 150,
+      "inlet_taper_km": 10,
+      "bore_m": 30.0,
+      "clearance_m": 0.85,
+      "length_diameter": 10.0,
+      "rack_depth_m": [
+        5.42,
+        0.06400000000000002,
+        0.028800000000000017,
+        0.03200000000000001,
+        0.051200000000000016
+      ],
+      "clear_depth_m": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rack_initial_K": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "materials": [
+        "sic",
+        "aluminum",
+        "aluminum",
+        "aluminum",
+        "aluminum"
+      ],
+      "rod_radius_m": 0.001,
+      "rod_pitch_m": 0.01,
+      "stage_pitch_m": [
+        0.03,
+        0.0039999999999999975,
+        0.0039999999999999975,
+        0.0039999999999999975,
+        0.0007999999999999994
+      ],
+      "stage_radius_m": [
+        0.002999999999999999,
+        0.0009999999999999994,
+        0.0009999999999999994,
+        0.0009999999999999994,
+        0.00019999999999999985
+      ],
+      "rack_flow_layout": "inline_bank",
+      "propellant_storage": "gas",
+      "gas_volume_m3": 499.99999999999983,
+      "gas_reserve_kg": 4500.000000000001,
+      "gas_initial_K": 340.0,
+      "gas_initial_fractions": [
+        0.755,
+        0.232,
+        0.013
+      ],
+      "gas_rated_Pa": 1500000.0,
+      "gas_feed_min_Pa": 100000.0,
+      "gas_feed_max_kg_s": 5.0,
+      "gas_tank_count": 4,
+      "gas_fill_suction_m3_s": 10.0,
+      "gas_fill_head_J_kg": 1500000.0,
+      "gas_fill_motor_MW": 5.0,
+      "gas_fill_UA_W_K": 50000.0,
+      "gas_thermal_UA_W_K": 50000.0,
+      "suction_m3_s": [
+        27463.99999999999,
+        6206.9999999999945,
+        1723.0,
+        686.9999999999998
+      ],
+      "head_J_kg": [
+        941483.9999999992,
+        1212999.9999999988,
+        933923.9999999995,
+        823743.0
+      ],
+      "motor_MW": [
+        35.00000000000001,
+        13.999999999999996,
+        11.000000000000002,
+        17.999999999999996
+      ],
+      "rated_pressure_Pa": [
+        2000,
+        10000,
+        30000,
+        6500
+      ],
+      "coast_suction_m3_s": 499.99999999999983,
+      "coast_suction_fractions": [
+        1,
+        0.25,
+        0.0625
+      ],
+      "coast_head_J_kg": 5000000.000000003,
+      "coast_motor_MW": 30.000000000000004,
+      "plant_flow_kg_s": 2.0,
+      "plant_electric_MW": 20.000000000000007,
+      "precool_UA_W_K": 200000.0,
+      "condenser_UA_W_K": 250000.0,
+      "solar_area_m2": 3188830.076666671,
+      "battery_MWh": 586.0552573333335,
+      "battery_MW": 1551.3227400000003,
+      "bus_MW": 1551.3227400000003,
+      "warm_radiator_m2": 68947.67733333328,
+      "warm_store_kg": 775661.3699999992,
+      "warm_initial_K": 340.0,
+      "warm_max_K": 450.0,
+      "battery_initial_soc": 0.95,
+      "isp_s": 4000.0,
+      "burn_s": 1799.9999999999989,
+      "liquid_tank_m3": 20.0,
+      "reserve_kg": 0.0,
+      "mixing_ratio": 0.0,
+      "plant_start_s": 650.0,
+      "plant_stop_s": 4200.0,
+      "pump_stop_s": 239.99999999999997,
+      "vent_duration_s": 30.000000000000014,
+      "cutoff_Pa": 5.000000000000001,
+      "compression_model": "HEOS_table",
+      "integrator": "BDF",
+      "atol": 1e-07,
+      "max_step_s": 10,
+      "rtol": 2e-05,
+      "early_reject": 1,
+      "max_rhs_evaluations": 160000,
+      "jacobian_relative_step": 1e-06,
+      "jacobian_absolute_step": 0
+    },
+    "capabilities": {
+      "rack_loss_multiplier": 1.0,
+      "skin_friction_coefficient": 0.002,
+      "skin_area_multiplier": 1.0,
+      "eta_compressor": 0.75,
+      "eta_motor": 0.95,
+      "eta_thruster": 0.6,
+      "retained_thruster_loss": 0.2,
+      "thruster_kg_kW": 2.0,
+      "bus_kg_kW": 1.0,
+      "solar_W_m2": 250.0,
+      "solar_W_kg": 150.0,
+      "battery_Wh_kg": 150.0,
+      "battery_W_kg": 1500.0,
+      "battery_usable": 0.8,
+      "charge_eta": 0.95,
+      "discharge_eta": 0.95,
+      "buffer_cp_J_kg_K": 2000.0,
+      "radiator_kg_m2": 5.0,
+      "radiator_emissivity": 0.85,
+      "radiator_view": 0.8,
+      "rack_view": 0.7,
+      "environment_W_m2": 80.0,
+      "deployment_m_s": 10.0,
+      "machinery_kg_m3": 250.0,
+      "fill_fraction": 0.7,
+      "margin": 0.25,
+      "idle_fraction": 0.01,
+      "spin_s": 120.0,
+      "brake_s": 30.0,
+      "vacuum_regularization_kg": 0.001,
+      "carnot_fraction": 0.15,
+      "separation_J_kg": 250000.0,
+      "auxiliary_W": 10000.0,
+      "tank_heat_W": 1000.0,
+      "heat_pump_kg_W_equivalent": 0.25,
+      "exchanger_UA_per_kg": 200.0,
+      "head_depth_m": 1.5,
+      "rack_mechanism_kg_m2": 1.0,
+      "upper_gas_K": 2000.0
+    }
+  },
+  "coordinates": [
+    {
+      "name": "radius:0",
+      "low": 0.0002,
+      "high": 0.01,
+      "log": true
+    },
+    {
+      "name": "radius:1",
+      "low": 0.0002,
+      "high": 0.01,
+      "log": true
+    },
+    {
+      "name": "radius:2",
+      "low": 0.0002,
+      "high": 0.01,
+      "log": true
+    },
+    {
+      "name": "radius:3",
+      "low": 0.0002,
+      "high": 0.01,
+      "log": true
+    },
+    {
+      "name": "radius:4",
+      "low": 0.0002,
+      "high": 0.01,
+      "log": true
+    },
+    {
+      "name": "pitch_diameter:0",
+      "low": 1.25,
+      "high": 8.0,
+      "log": false
+    },
+    {
+      "name": "pitch_diameter:1",
+      "low": 1.25,
+      "high": 8.0,
+      "log": false
+    },
+    {
+      "name": "pitch_diameter:2",
+      "low": 1.25,
+      "high": 8.0,
+      "log": false
+    },
+    {
+      "name": "pitch_diameter:3",
+      "low": 1.25,
+      "high": 8.0,
+      "log": false
+    },
+    {
+      "name": "pitch_diameter:4",
+      "low": 1.25,
+      "high": 8.0,
+      "log": false
+    },
+    {
+      "name": "solid_depth:0",
+      "low": 0.06810972872982672,
+      "high": 0.42568580456141697,
+      "log": true
+    },
+    {
+      "name": "solid_depth:1",
+      "low": 0.00502654824574367,
+      "high": 0.031415926535897934,
+      "log": true
+    },
+    {
+      "name": "solid_depth:2",
+      "low": 0.0022619467105846514,
+      "high": 0.014137166941154071,
+      "log": true
+    },
+    {
+      "name": "solid_depth:3",
+      "low": 0.002513274122871835,
+      "high": 0.015707963267948967,
+      "log": true
+    },
+    {
+      "name": "solid_depth:4",
+      "low": 0.004021238596594936,
+      "high": 0.02513274122871835,
+      "log": true
+    },
+    {
+      "name": "clear_depth_m:0",
+      "low": 0.0,
+      "high": 5.0,
+      "log": false
+    },
+    {
+      "name": "clear_depth_m:1",
+      "low": 0.0,
+      "high": 5.0,
+      "log": false
+    },
+    {
+      "name": "clear_depth_m:2",
+      "low": 0.0,
+      "high": 5.0,
+      "log": false
+    },
+    {
+      "name": "clear_depth_m:3",
+      "low": 0.0,
+      "high": 5.0,
+      "log": false
+    },
+    {
+      "name": "suction_m3_s:0",
+      "low": 16478.399999999994,
+      "high": 49435.19999999998,
+      "log": true
+    },
+    {
+      "name": "suction_m3_s:1",
+      "low": 3724.1999999999966,
+      "high": 11172.599999999991,
+      "log": true
+    },
+    {
+      "name": "suction_m3_s:2",
+      "low": 1033.8,
+      "high": 3101.4,
+      "log": true
+    },
+    {
+      "name": "suction_m3_s:3",
+      "low": 412.1999999999999,
+      "high": 1236.5999999999997,
+      "log": true
+    },
+    {
+      "name": "head_J_kg:0",
+      "low": 564890.3999999994,
+      "high": 1694671.1999999986,
+      "log": true
+    },
+    {
+      "name": "head_J_kg:1",
+      "low": 727799.9999999993,
+      "high": 2183399.999999998,
+      "log": true
+    },
+    {
+      "name": "head_J_kg:2",
+      "low": 560354.3999999997,
+      "high": 1681063.1999999993,
+      "log": true
+    },
+    {
+      "name": "head_J_kg:3",
+      "low": 494245.8,
+      "high": 1482737.4000000001,
+      "log": true
+    },
+    {
+      "name": "motor_MW:0",
+      "low": 21.000000000000004,
+      "high": 63.000000000000014,
+      "log": true
+    },
+    {
+      "name": "motor_MW:1",
+      "low": 8.399999999999997,
+      "high": 25.199999999999996,
+      "log": true
+    },
+    {
+      "name": "motor_MW:2",
+      "low": 6.6000000000000005,
+      "high": 19.800000000000004,
+      "log": true
+    },
+    {
+      "name": "motor_MW:3",
+      "low": 10.799999999999997,
+      "high": 32.39999999999999,
+      "log": true
+    },
+    {
+      "name": "solar_area_m2",
+      "low": 2232181.0536666694,
+      "high": 5421011.130333341,
+      "log": true
+    },
+    {
+      "name": "battery_MWh",
+      "low": 410.23868013333345,
+      "high": 996.293937466667,
+      "log": true
+    },
+    {
+      "name": "battery_MW",
+      "low": 1085.9259180000001,
+      "high": 2637.2486580000004,
+      "log": true
+    },
+    {
+      "name": "bus_MW",
+      "low": 1085.9259180000001,
+      "high": 2637.2486580000004,
+      "log": true
+    },
+    {
+      "name": "warm_radiator_m2",
+      "low": 48263.374133333295,
+      "high": 117211.05146666657,
+      "log": true
+    },
+    {
+      "name": "warm_store_kg",
+      "low": 542962.9589999994,
+      "high": 1318624.3289999985,
+      "log": true
+    },
+    {
+      "name": "coast_suction_m3_s",
+      "low": 250,
+      "high": 1500,
+      "log": true
+    },
+    {
+      "name": "coast_head_J_kg",
+      "low": 2500000.0,
+      "high": 8000000.0,
+      "log": true
+    },
+    {
+      "name": "coast_motor_MW",
+      "low": 15,
+      "high": 60,
+      "log": true
+    },
+    {
+      "name": "plant_flow_kg_s",
+      "low": 1,
+      "high": 4,
+      "log": true
+    },
+    {
+      "name": "plant_electric_MW",
+      "low": 10,
+      "high": 40,
+      "log": true
+    },
+    {
+      "name": "isp_s",
+      "low": 1200,
+      "high": 6000.0,
+      "log": true
+    },
+    {
+      "name": "burn_s",
+      "low": 800,
+      "high": 2000,
+      "log": true
+    },
+    {
+      "name": "apogee_km",
+      "low": 1800,
+      "high": 6000,
+      "log": true
+    },
+    {
+      "name": "gas_reserve_kg",
+      "low": 3500,
+      "high": 9000,
+      "log": true
+    },
+    {
+      "name": "gas_volume_m3",
+      "low": 300,
+      "high": 1500,
+      "log": true
+    },
+    {
+      "name": "cutoff_Pa",
+      "low": 1,
+      "high": 20,
+      "log": true
+    },
+    {
+      "name": "pump_stop_s",
+      "low": 120,
+      "high": 600,
+      "log": true
+    },
+    {
+      "name": "vent_duration_s",
+      "low": 10,
+      "high": 60,
+      "log": true
+    },
+    {
+      "name": "rack_initial_K:0",
+      "low": 300,
+      "high": 400,
+      "log": false
+    },
+    {
+      "name": "rack_initial_K:1",
+      "low": 300,
+      "high": 400,
+      "log": false
+    },
+    {
+      "name": "rack_initial_K:2",
+      "low": 300,
+      "high": 400,
+      "log": false
+    },
+    {
+      "name": "rack_initial_K:3",
+      "low": 300,
+      "high": 400,
+      "log": false
+    },
+    {
+      "name": "rack_initial_K:4",
+      "low": 300,
+      "high": 400,
+      "log": false
+    }
+  ],
+  "algorithm": "DE/rand/1/bin with feasibility-first selection",
+  "population": 8,
+  "generations": 1,
+  "seed": 73,
+  "wall_budget_s": 480
+}

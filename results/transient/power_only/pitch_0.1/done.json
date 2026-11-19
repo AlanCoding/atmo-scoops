@@ -1,0 +1,7 @@
+{
+  "best": "r0_combined",
+  "payoff_days": 283.8834580898568,
+  "evaluations": 47,
+  "convergence_certified": false,
+  "termination": "finite search budget"
+}

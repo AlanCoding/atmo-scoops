@@ -10,18 +10,18 @@ That page introduces the idea; this repository supplies its engineering
 description, quantitative model and design studies.
 
 Collect atmospheric gas during repeated perigee passes, remove its encounter
-energy, store it aft, and liquefy useful products during coast. Reboost uses
-oxygen separated from the collected air. The mission payoff counts useful
+energy, store it aft, and liquefy useful products during coast. Reboost uses a reserved fraction of the collected atmospheric gas. The mission payoff counts useful
 liquid delivered to circular apogee; the present numerical package resolves the
 operating cycle and has yet to add delivery and return.
 
 The vehicle has a mouth and shock/diffuser region, a solid metal precooling rack
 in a low-pressure front compartment, successive compressor/cooling chambers,
 and separate rear gas tanks. Compressors move gas out of the front while the
-inlet admits it. The staged arrangement is detailed below; the existing
-two-compartment diagram and numerical model lump the compressor train.
-Physical front and rear depths and all three diameters are independent inputs;
-rear depth includes rounded ends. Required hardware mass is an output.
+inlet admits it. The active coupled model resolves five gas/cooler volumes and four dive compressor
+blocks. The 30 m bore and 317 m outside length are fixed in this study; the aft
+receiver gets the volume remaining after other chambers and installed packages.
+Rear depth includes rounded ends. Required hardware mass is an output. The
+two-compartment diagram below is a simplified functional overview.
 
 ![Gas path and the two pressure compartments](images/gas_capture.svg)
 
@@ -29,9 +29,9 @@ Metal racks absorb entry heat and, between compressor blocks, compression heat.
 Their attached sheets deploy during coast to radiate directly to space; the
 staged layout provides dedicated pressure-retaining deployment hatches.
 Separate solar panels
-supply electricity and a warm ammonia-loop radiator rejects remaining compressor,
+supply electricity and a warm-loop radiator rejects remaining compressor,
 refrigeration and electrical losses. Gas storage, refrigeration/heat exchange,
-liquid storage, batteries, oxygen thrusters and power distribution have separate
+liquid storage, batteries, air-propellant thrusters and power distribution have separate
 entries in the mass and energy ledgers.
 
 ![Heat storage, warm radiation and electrical supply](images/thermal_cycle.svg)
@@ -128,7 +128,7 @@ The design omits a mouth closure following the [payoff comparison](../investigat
 
 1. **Prepare for entry.** Retract arrays, warm radiators and every attached metal
    rack. Close, latch and verify deployment hatches. Charge batteries and reserve
-   reboost oxygen and any mixing coolant.
+   reboost propellant and any mixing coolant.
 2. **Collect.** The open inlet admits air through its shock/diffuser and metal
    rack. Successive compressor blocks and metal coolers transfer gas into rear
    tanks, with all deployment hatches closed. The continuous model
@@ -143,7 +143,7 @@ The design omits a mouth closure following the [payoff comparison](../investigat
 5. **Process in coast.** Radiate stored heat, recharge batteries, separate and
    liquefy the retained gas. Restore any injected LN2 inventory before counting
    net new product. All metal stays attached and is reused next orbit.
-6. **Repeat and deliver.** Reserve the next reboost's oxygen. Circular-apogee
+6. **Repeat and deliver.** Reserve the next reboost's gas. Circular-apogee
    export and return still need trajectory and hardware budgets.
 
 ## Optional phase-change cooler cores
@@ -187,13 +187,39 @@ conditional on the exchanger and machinery approximations.
 
 ## Propellant accounting and reboost
 
-The coupled reference uses nitrogen/oxygen electric propulsion with a symmetric
-finite-duration burn around perigee. Its current reserve accounting stores those
-species as liquids; the thruster itself would require a gas-feed system. An
-[independent gas-reserve/bypass investigation](../investigations/propellant_feed/PLAN.md)
-will compare avoiding propellant liquefaction, including a pressure buffer and
-feed hardware. All expelled propellant is deducted from useful product; recycling
-is not new product. No bypass payoff credit is claimed yet.
+The coupled model supports a separate **mixed-gas propellant reserve**. During
+coast, the existing compressor feeds two branches: product liquefaction and a
+small booster/aftercooler feeding four spherical pressure tanks. A regulated
+manifold supplies the next perigee burn directly from those gas tanks. The
+reference has 500 m³ total reserve volume, four 6.25 m outer-diameter tanks and
+4,500 kg starting gas inventory. The tanks remain isolated when rack deployment
+hatches open. Their thermal jackets share the warm rejection loop.
+
+![Gas reserve and independently spaced racks](images/feed_racks.svg)
+
+Gas refill, compression, aftercooling, pressure limits, feed rate and cyclic
+species/energy closure are integrated. Only the product branch pays liquefaction;
+propellant diversion is not subtracted twice. Liquid-feed comparison remains
+available. See [equations and assumptions](../modeling/propellant_feed/GAS_RESERVE.md)
+and [joint comparison](../investigations/feed_pitch/RESULTS.md).
+
+The working reference uses **flow-aligned parallel plates**, SiC in front and
+aluminum downstream. Each stage has independently sized full thickness, clear
+gap, metal inventory and initial temperature. Finite heat exchange, displaced
+gas volume, rack envelope, deployment and radiation remain in the cycle.
+Plane-Poiseuille wall friction is charged at **100%** as additional compressor
+electricity and warm-loop heat, without changing suction pressure. This is an
+energy approximation, not a resolved hydraulic pressure field.
+
+The [plate investigation](../investigations/plates/README.md) documents the actual
+33-variable constrained COBYLA solve and the approximately **278-day operating-orbit
+reference**, checked at three integration resolutions. Older rod and reduced-loss
+studies remain reproducible but no longer define the working design.
+
+A separate [power-only resistance experiment](../investigations/staged_refinement/POWER_OPTIMIZATION.md)
+tests pitch and radius by charging losses to motor, electrical and warm-loop
+budgets without lowering suction pressure. It is an energy trade study, not
+hydraulic validation of the selected geometry.
 
 For capture-only momentum, propellant/admitted mass is approximately encounter
 speed/exhaust speed. Lower exhaust velocity saves electrical hardware but consumes
@@ -214,9 +240,9 @@ Zero injection is the current reference setting, not a final selection.
 Optional LN2 injection upstream of the compressors can supplement the solid
 rack. The model balances mixing enthalpy, compression, coolant losses and coast
 reliquefaction; circulating nitrogen is not counted as new product. In the
-current numerical model, compressor heat goes to the warm loop because mixed
-gas can be cooler than the rack. The staged refinement must resolve each rack's
-gas/metal temperature difference before crediting heat absorption.
+coupled numerical model, compressor shaft work enters the downstream gas; motor
+and friction-surcharge losses enter the warm loop. Each finite rack exchanges
+heat using its evolving gas/metal temperature difference.
 The [incremental mixing study](../investigations/incremental_mixing/ANALYSIS.md)
 contains the quantitative trade. Film-cooling requirements and a calibrated
 compressor-temperature map remain separate engineering work.
@@ -259,7 +285,15 @@ reproduction. Payoff still ends in the operating orbit. Circular-apogee delivery
 is not included, and no saved candidate is an approved final vehicle.
 
 The pump map, vent/hatch hardware, external drag, structural qualification and
-refrigeration package still need refinement. Lattice pressure loss must precede
-optimization of rack pitch. The [improvement list](MODEL_IMPROVEMENTS.md) records
+refrigeration package still need refinement. Parallel-plate friction is an electricity surcharge; rarefied channel transport,
+entry effects and coupled hydraulic pressure losses remain pending. The [improvement list](MODEL_IMPROVEMENTS.md) records
 the remaining work; detailed CFD and stability studies remain outside the cycle
 optimizer.
+
+### Parallel-plate cooler geometry
+
+Gas flows between parallel faces. Full thickness sets metal inventory per face;
+clear gap controls hydraulic diameter and shear resistance. The optimizer can
+trade these independently while respecting the chamber envelope. Plates retract
+through the cooler hatches and spread during coast to expose both radiating
+faces. See [equations and limitations](../modeling/metal_coolers/PLATES.md).

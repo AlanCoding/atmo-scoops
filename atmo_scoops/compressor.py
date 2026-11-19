@@ -7,6 +7,7 @@ from dataclasses import dataclass, asdict
 import math
 import numpy as np
 import CoolProp.CoolProp as CP
+from .low_density import gas_update
 from scipy.optimize import brentq
 
 _compression_cache = {}
@@ -75,7 +76,7 @@ class RealAir:
     def state(self,p,T):
         if not 1e-4<=p<=1e7 or not 200<=T<=2000:
             raise ValueError(f'Compressor property domain exceeded: {p:g} Pa, {T:g} K')
-        f=self.fluid;f.update(CP.PT_INPUTS,float(p),float(T))
+        f=gas_update(self.fluid,p,T)
         return dict(p_Pa=float(p),T_K=float(T),h_J_kg=f.hmass(),s_J_kg_K=f.smass(),
                     cp_J_kg_K=f.cpmass(),rho_kg_m3=f.rhomass(),sound_m_s=f.speed_sound(),mu_Pa_s=f.viscosity(),Z=f.compressibility_factor())
 
@@ -89,11 +90,11 @@ class RealAir:
         a=self.state(p1,T1);p2=max(p1,p2)
         f=self.fluid
         def residual(T,kind,value):
-            f.update(CP.PT_INPUTS,float(p2),float(T))
-            return (f.smass() if kind=='s' else f.hmass())-value
+            ff=gas_update(f,p2,T)
+            return (ff.smass() if kind=='s' else ff.hmass())-value
         try:
             Ts=brentq(residual,T1,2000.,args=('s',a['s_J_kg_K']),xtol=1e-8) if p2>p1 else T1
-            f.update(CP.PT_INPUTS,float(p2),Ts)
+            f=gas_update(f,p2,Ts)
             hs=f.hmass();hout=a['h_J_kg']+(hs-a['h_J_kg'])/eta
             T2=brentq(residual,T1,2000.,args=('h',hout),xtol=1e-8) if p2>p1 else T1
         except ValueError as exc:
