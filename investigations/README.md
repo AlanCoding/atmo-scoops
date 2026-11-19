@@ -50,3 +50,6 @@ General component calculations and annotated references live in
 - [Rod radius/pitch constrained search](rack_radius/RESULTS.md): per-stage geometry, pressure loss, finite heat transfer and full-cycle constraints.
 
 - [Parallel-plate coolers and constrained optimization](plates/README.md): replaces rod-bank resistance with channel wall friction in the power-only approximation; records the actual COBYLA termination and closure checks.
+
+- [Plate scale sensitivity plan](plate_scale/PLAN.md): planned one-off 1×/2×/4× thickness and clearance comparison, with the other coordinates reoptimized.
+- [Collector-only mass yield](collector_metrics/README.md): frozen-reference one-pass battery and solar-assisted subsystem metrics; not a new optimized spacecraft.

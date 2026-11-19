@@ -78,3 +78,16 @@ with a finished tank, or turn the generic bus/rack allowances into asserted
 parts. Pin the feed architecture and pressure-hatch/support arrangement before
 presenting a manufacturing-level layout. No publishing or external handoff is
 performed merely by writing this plan.
+
+## Next agreed scope: packaging snapshot and collector boundaries
+
+Plan only: [plate scale sensitivity](../investigations/plate_scale/PLAN.md), then
+[volume, mass-distribution and Blender requirements](PACKAGING_AND_BLENDER_PLAN.md).
+Blender production and the three new optimizer runs have not started. Keep v1.0
+as the deployable-plate snapshot; investigate fixed exchangers/active coolant in
+higher-pressure volumes as the separate v1.1 direction.
+
+The [collector-only metrics](../investigations/collector_metrics/README.md)
+formalize captured gas per dry mass when propulsion and coast liquefaction are
+outside the collector boundary. They supplement, not replace, useful-liquid
+payoff. The first values are frozen-trajectory accounting, not new forward solves.

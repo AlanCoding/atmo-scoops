@@ -1,0 +1,42 @@
+{
+  "source": "results/transient/plates/reference_validation/case_72.json.gz",
+  "source_sha256": "35a57331e5e9d6e36bc220f5701dd597f488b82c40485da4291bcd5143ef9932",
+  "endpoint_s": 600.0,
+  "captured_new_receiver_gas_kg": 7110.760538515207,
+  "receiver_pressure_Pa": 4137.460614706494,
+  "receiver_temperature_K": 352.25849626968545,
+  "capture_load_MWh": 4.553471266645902,
+  "shaft_to_gas_MWh": 1.2941691076536548,
+  "installed_capture_rating_MW": 61.99780073005377,
+  "sampled_peak_capture_MW": 45.70278345154854,
+  "battery_MWh": 6.390836865467932,
+  "thermal_store_heat_MJ": 12596.250749210258,
+  "components_kg": {
+    "racks": 454731.0150749974,
+    "rack_mechanisms": 107685.62628612737,
+    "dive_compressors": 921734.8500248631,
+    "pressure_vessels": 229740.10626173738,
+    "hull": 126278.20166663387,
+    "auxiliary": 5000.0,
+    "battery": 42605.57910311955,
+    "bus": 61997.80073005377,
+    "warm_store": 57255.685223682995
+  },
+  "margin_fraction": 0.25,
+  "battery_only_dry_kg": 2508786.0804640194,
+  "battery_only_capture_kg_per_kg": 0.0028343431087596025,
+  "battery_only_equivalent_passes": 352.81543610915594,
+  "solar_area_m2": 33041.82437216121,
+  "solar_mass_kg": 55069.70728693535,
+  "solar_recharge_MWh": 5.058068897027385,
+  "solar_addition_dry_kg": 2577623.2145726886,
+  "solar_addition_capture_kg_per_kg": 0.002758650099950318,
+  "solar_addition_equivalent_passes": 362.49613534460553,
+  "notes": [
+    "Frozen trajectory attribution, not a new feasible forward simulation.",
+    "Compressed gas at 600 s, not cryogenic liquid; upstream residual gas is excluded.",
+    "Thermal buffer sized conservatively without radiative credit; retained rack mechanisms permit external reset.",
+    "Solar variant adds electrical recharge only: thermal reset, handoff, orbit restoration and mothership mass are external.",
+    "All hull and pressure vessel mass retained; no credit for using freed volume or changing structure."
+  ]
+}

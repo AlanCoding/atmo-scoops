@@ -297,3 +297,9 @@ clear gap controls hydraulic diameter and shear resistance. The optimizer can
 trade these independently while respecting the chamber envelope. Plates retract
 through the cooler hatches and spread during coast to expose both radiating
 faces. See [equations and limitations](../modeling/metal_coolers/PLATES.md).
+
+Packaging and mass distribution will be resolved before a v1.0 Blender snapshot;
+see the [layout requirements and proposed solar location](PACKAGING_AND_BLENDER_PLAN.md).
+A subsequent v1.1 study will consider fixed coolant exchangers in the higher-pressure
+volumes instead of extracting those coolers through side hatches. Neither layout
+nor that conversion is yet a validated change to the numerical reference.
