@@ -71,3 +71,5 @@ Each dossier follows the [review workflow](WORKFLOW.md): source evidence → sta
 
 - [Transient chamber laboratory](chambers/README.md): separate mass/energy states, independently allocated rack and empty volumes, and coast withdrawal; outside the primary optimizer.
 - [Per-rack material properties](chambers/MATERIALS.md): sourced caloric data, surface assumptions and thermal-reset screening in the isolated transient model.
+
+- [v1.0 independent variables, fixed choices and constraints](optimization/V1_VARIABLES.md): exact scope of the 33-coordinate plate search, including receiver-state dependence and closure tolerances.

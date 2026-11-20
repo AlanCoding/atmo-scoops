@@ -29,13 +29,13 @@
         "allow_nitrogen_propellant": false
       },
       "relative_resolution_errors": {
-        "captured_kg": 1.5919495612859436e-06,
-        "retained_kg": 1.5991902388989843e-06,
-        "total_dry_kg": 2.2876509859770522e-05,
-        "compressor_kWh": 5.68453900302579e-05,
-        "hot_absorbed_GJ": 9.30219044215086e-06
+        "captured_kg": 2.3796258734609665e-06,
+        "retained_kg": 2.3870738332654184e-06,
+        "total_dry_kg": 2.3147712179483193e-05,
+        "compressor_kWh": 5.7753944696203874e-05,
+        "hot_absorbed_GJ": 1.0098284716875128e-05
       },
-      "thermal_residual_J": -1.52587890625e-05
+      "thermal_residual_J": 3.814697265625e-06
     },
     {
       "design": {
@@ -65,13 +65,13 @@
         "allow_nitrogen_propellant": false
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.56553410382665e-06,
-        "retained_kg": 2.5739343842978712e-06,
-        "total_dry_kg": 4.297045108625497e-07,
-        "compressor_kWh": 5.476443210028492e-08,
-        "hot_absorbed_GJ": 1.0034733231023552e-05
+        "captured_kg": 2.4769624165088544e-06,
+        "retained_kg": 2.4852936402197656e-06,
+        "total_dry_kg": 4.254497678601865e-07,
+        "compressor_kWh": 2.5649707113828413e-07,
+        "hot_absorbed_GJ": 9.940810525410626e-06
       },
-      "thermal_residual_J": -1.9073486328125e-06
+      "thermal_residual_J": -1.52587890625e-05
     },
     {
       "design": {
@@ -101,13 +101,13 @@
         "allow_nitrogen_propellant": false
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.192807001311081e-06,
-        "retained_kg": 2.201622531838865e-06,
-        "total_dry_kg": 1.0411136803778476e-06,
-        "compressor_kWh": 4.468014465297543e-06,
-        "hot_absorbed_GJ": 9.823705519718118e-06
+        "captured_kg": 1.6587967806014348e-06,
+        "retained_kg": 1.6673681251244687e-06,
+        "total_dry_kg": 9.274121546276604e-07,
+        "compressor_kWh": 3.337345179099671e-06,
+        "hot_absorbed_GJ": 9.18465619137443e-06
       },
-      "thermal_residual_J": -2.288818359375e-05
+      "thermal_residual_J": 9.5367431640625e-06
     },
     {
       "design": {
@@ -137,13 +137,13 @@
         "allow_nitrogen_propellant": false
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.228545598725873e-06,
-        "retained_kg": 2.2440631877174155e-06,
-        "total_dry_kg": 7.018249963297585e-06,
-        "compressor_kWh": 1.4779775339590628e-05,
-        "hot_absorbed_GJ": 1.005595262659753e-05
+        "captured_kg": 2.2542703190797653e-06,
+        "retained_kg": 2.2693630068459925e-06,
+        "total_dry_kg": 7.3621165499471175e-06,
+        "compressor_kWh": 1.6169565252521778e-05,
+        "hot_absorbed_GJ": 9.962103936667077e-06
       },
-      "thermal_residual_J": 7.62939453125e-06
+      "thermal_residual_J": -1.9073486328125e-06
     },
     {
       "design": {
@@ -173,13 +173,13 @@
         "allow_nitrogen_propellant": false
       },
       "relative_resolution_errors": {
-        "captured_kg": 3.157292688626967e-06,
-        "retained_kg": 3.1786559921975766e-06,
-        "total_dry_kg": 3.9063458667776274e-07,
-        "compressor_kWh": 4.085809938603191e-06,
-        "hot_absorbed_GJ": 1.190843679488296e-05
+        "captured_kg": 2.604175976195222e-06,
+        "retained_kg": 2.6258305865223264e-06,
+        "total_dry_kg": 2.75449448783327e-06,
+        "compressor_kWh": 1.1193046645097127e-06,
+        "hot_absorbed_GJ": 1.1329699981521557e-05
       },
-      "thermal_residual_J": -5.7220458984375e-06
+      "thermal_residual_J": 1.52587890625e-05
     },
     {
       "design": {
@@ -209,13 +209,13 @@
         "allow_nitrogen_propellant": false
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.2580855016940404e-06,
-        "retained_kg": 2.2589450030530145e-06,
-        "total_dry_kg": 9.013774804333963e-08,
-        "compressor_kWh": 5.450891122915635e-06,
-        "hot_absorbed_GJ": 8.932259743410498e-06
+        "captured_kg": 2.903011598887062e-07,
+        "retained_kg": 2.9028535963870894e-07,
+        "total_dry_kg": 1.4414047400101992e-06,
+        "compressor_kWh": 1.174186450292325e-06,
+        "hot_absorbed_GJ": 6.406017645455009e-06
       },
-      "thermal_residual_J": 0.0
+      "thermal_residual_J": 1.52587890625e-05
     },
     {
       "design": {
@@ -245,13 +245,13 @@
         "allow_nitrogen_propellant": false
       },
       "relative_resolution_errors": {
-        "captured_kg": 7.700632731699741e-06,
-        "retained_kg": 7.710211997524752e-06,
-        "total_dry_kg": 4.435529166180174e-06,
-        "compressor_kWh": 1.2065681182171772e-05,
-        "hot_absorbed_GJ": 1.526540830876222e-05
+        "captured_kg": 6.0611226102569304e-06,
+        "retained_kg": 6.0695081476325186e-06,
+        "total_dry_kg": 2.384347068895565e-06,
+        "compressor_kWh": 6.972159527940391e-06,
+        "hot_absorbed_GJ": 1.3695806484914641e-05
       },
-      "thermal_residual_J": 2.6702880859375e-05
+      "thermal_residual_J": 1.1444091796875e-05
     },
     {
       "design": {
@@ -281,13 +281,13 @@
         "allow_nitrogen_propellant": false
       },
       "relative_resolution_errors": {
-        "captured_kg": 2.931440144848807e-06,
-        "retained_kg": 2.9368850018585135e-06,
-        "total_dry_kg": 1.1873904360415466e-05,
-        "compressor_kWh": 2.5283613535376226e-05,
-        "hot_absorbed_GJ": 1.103179384465136e-05
+        "captured_kg": 3.3075134233673253e-06,
+        "retained_kg": 3.312896658558273e-06,
+        "total_dry_kg": 1.151085676087682e-05,
+        "compressor_kWh": 2.499896505825383e-05,
+        "hot_absorbed_GJ": 1.144186896495647e-05
       },
-      "thermal_residual_J": -1.9073486328125e-06
+      "thermal_residual_J": 1.9073486328125e-06
     }
   ],
   "orbit_energy_angular_invariants": "passed",

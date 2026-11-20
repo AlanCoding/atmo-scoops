@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="960" viewBox="0 0 1440 960" role="img"><title>MINOVITCH · 1988 | Capture while descending</title><desc>A nuclear-electric transfer vehicle collects air as atmospheric drag lowers its return-orbit apogee.</desc><defs>
+<marker id="a1965a3" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#1965a3"/></marker>
+<marker id="a13785c" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#13785c"/></marker>
+<marker id="aa7530c" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#a7530c"/></marker>
+<marker id="ab23e49" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#b23e49"/></marker>
+<marker id="a536779" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#536779"/></marker>
+</defs>
+<rect width="1440" height="960" fill="#ffffff"/>
+<text x="54" y="63" font-family="DejaVu Sans, sans-serif" font-size="32" fill="#172b40" text-anchor="start">MINOVITCH · 1988 | Capture while descending</text>
+<text x="54" y="99" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#536779" text-anchor="start">A nuclear-electric transfer vehicle collects air as atmospheric drag lowers its return-orbit apogee.</text>
+<ellipse cx="548.3895777742898" cy="430" rx="324.056663004238" ry="219.50656037129758" fill="none" stroke="#1965a3" stroke-width="3" stroke-dasharray=""/>
+<ellipse cx="429.7417987757024" cy="430" rx="205.4088840056506" ry="166.89730751095425" fill="none" stroke="#536779" stroke-width="3" stroke-dasharray="9 7"/>
+<ellipse cx="356.3624234814001" cy="430" rx="132.0295087113483" ry="123.62166824424962" fill="none" stroke="#536779" stroke-width="3" stroke-dasharray="9 7"/>
+<ellipse cx="311.0006278449223" cy="430" rx="86.6677130748705" ry="86.66193647469485" fill="none" stroke="#a7530c" stroke-width="3" stroke-dasharray=""/>
+<circle cx="310" cy="430" r="90" fill="none" stroke="#b6d2e8" stroke-width="6"/>
+<circle cx="310" cy="430" r="85" fill="#e0eff9" stroke="#1965a3" stroke-width="2"/>
+<path d="M259.0 404.5q42.5 -34.0 76.5 0t-17.0 59.49999999999999t-42.5 -42.5" fill="#b9d8c9" stroke="#80b5a0" stroke-width="1"/>
+<text x="310" y="437" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#172b40" text-anchor="middle">EARTH</text>
+<circle cx="310" cy="430" r="87.66834091979281" fill="none" stroke="#13785c" stroke-width="2"/>
+<text x="650" y="177" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#1965a3" text-anchor="middle">GEO departure → atmospheric return</text>
+<path d="M873 430L873 500" fill="none" stroke="#1965a3" stroke-width="3" marker-end="url(#a1965a3)"/>
+<text x="900" y="428" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#1965a3" text-anchor="start">GEO</text>
+<text x="900" y="458" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#536779" text-anchor="start">35,786 km</text>
+<circle cx="224" cy="430" r="7" fill="#a7530c" stroke="none" stroke-width="2"/>
+<path d="M220 446L112 566" fill="none" stroke="#a7530c" stroke-width="2"/>
+<text x="56" y="598" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#a7530c" text-anchor="start">Atmospheric capture</text>
+<text x="56" y="627" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#a7530c" text-anchor="start">50 km perigee in the</text>
+<text x="56" y="656" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#a7530c" text-anchor="start">single-dive example</text>
+<path d="M600 333L488 350" fill="none" stroke="#536779" stroke-width="3" marker-end="url(#a536779)"/>
+<text x="540" y="310" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#536779" text-anchor="start">Apogee decreases</text>
+<path d="M399 431L399 495" fill="none" stroke="#13785c" stroke-width="3" marker-end="url(#a13785c)"/>
+<text x="458" y="431" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#13785c" text-anchor="start">Final burn at low apogee</text>
+<text x="458" y="458" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#13785c" text-anchor="start">raises perigee → circular LEO</text>
+<rect x="1010" y="160" width="375" height="135" rx="9" fill="#f0f4f8" stroke="none" stroke-width="2"/>
+<text x="1028" y="189" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#1965a3" text-anchor="start">1  Powered transfer</text>
+<text x="1028" y="221" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Onboard nuclear-electric engine</text>
+<text x="1028" y="249" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">takes the vehicle from LEO to GEO.</text>
+<text x="1028" y="277" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Payload is delivered there.</text>
+<rect x="1010" y="320" width="375" height="135" rx="9" fill="#f0f4f8" stroke="none" stroke-width="2"/>
+<text x="1028" y="349" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#a7530c" text-anchor="start">2  Return and collect</text>
+<text x="1028" y="381" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Lower perigee into atmosphere.</text>
+<text x="1028" y="409" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Capture drag brakes the craft;</text>
+<text x="1028" y="437" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">no restoration of high apogee.</text>
+<rect x="1010" y="480" width="375" height="135" rx="9" fill="#f0f4f8" stroke="none" stroke-width="2"/>
+<text x="1028" y="509" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#13785c" text-anchor="start">3  Finish in low orbit</text>
+<text x="1028" y="541" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">After capture, raise perigee</text>
+<text x="1028" y="569" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">with an onboard engine burn</text>
+<text x="1028" y="597" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">near the new, low apogee.</text>
+<rect x="55" y="710" width="1330" height="135" rx="9" fill="#f0f4f8" stroke="none" stroke-width="2"/>
+<text x="73" y="739" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#a7530c" text-anchor="start">REFUELING DURING A TRANSFER — NOT A FIXED COLLECTION ELLIPSE</text>
+<text x="73" y="771" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">The description allows several decelerating passes. Its worked numerical example uses one dive near 50 km.</text>
+<text x="73" y="799" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Dashed ellipses illustrate falling apogee; they are not calculated intermediate trajectories. Outbound spiral omitted.</text>
+<text x="73" y="827" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Earth and the example return ellipses share a distance scale. Atmospheric thickness and event markers are exaggerated.</text>
+<text x="54" y="925" font-family="DejaVu Sans, sans-serif" font-size="15" fill="#536779" text-anchor="start">Source: US 4,754,601 · description of Fig. 9 and Earth-return example. Original schematic; powered maneuvers are retained.</text>
+</svg>

@@ -228,3 +228,5 @@ Numerical gate `verify_final`:
   }
 }
 ```
+
+For a publication-oriented inventory of every scalar coordinate, fixed choice and constraint, see [the v1.0 optimization register](../../modeling/optimization/V1_VARIABLES.md).

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="960" viewBox="0 0 1440 960" role="img"><title>SLOUGH · 2022 | Refueling Orbital Navigator</title><desc>Repeated collection with perigee drag compensation — a different design from the 2026 Space Gas Station.</desc><defs>
+<marker id="a1965a3" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#1965a3"/></marker>
+<marker id="a13785c" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#13785c"/></marker>
+<marker id="aa7530c" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#a7530c"/></marker>
+<marker id="ab23e49" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#b23e49"/></marker>
+<marker id="a536779" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#536779"/></marker>
+</defs>
+<rect width="1440" height="960" fill="#ffffff"/>
+<text x="54" y="63" font-family="DejaVu Sans, sans-serif" font-size="32" fill="#172b40" text-anchor="start">SLOUGH · 2022 | Refueling Orbital Navigator</text>
+<text x="54" y="99" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#536779" text-anchor="start">Repeated collection with perigee drag compensation — a different design from the 2026 Space Gas Station.</text>
+<ellipse cx="410.38220059645266" cy="445" rx="266.1505258201225" ry="265.70564596774784" fill="none" stroke="#1965a3" stroke-width="3" stroke-dasharray=""/>
+<circle cx="395" cy="445" r="250" fill="none" stroke="#b6d2e8" stroke-width="6"/>
+<circle cx="395" cy="445" r="245" fill="#e0eff9" stroke="#1965a3" stroke-width="2"/>
+<path d="M248.0 371.5q122.5 -98.0 220.5 0t-49.0 171.5t-122.5 -122.5" fill="#b9d8c9" stroke="#80b5a0" stroke-width="1"/>
+<text x="395" y="452" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#172b40" text-anchor="middle">EARTH</text>
+<circle cx="395" cy="445" r="250.76832522366976" fill="none" stroke="#c2d0db" stroke-width="1"/>
+<circle cx="144.23167477633024" cy="445" r="8" fill="#a7530c" stroke="none" stroke-width="2"/>
+<circle cx="676.5327264165751" cy="445" r="6" fill="#1965a3" stroke="none" stroke-width="2"/>
+<text x="60" y="160" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#a7530c" text-anchor="start">PERIGEE</text>
+<text x="60" y="188" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#a7530c" text-anchor="start">150 km nominal</text>
+<text x="60" y="216" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#a7530c" text-anchor="start">151 km worked case</text>
+<path d="M143 238L144.23167477633024 422" fill="none" stroke="#a7530c" stroke-width="2"/>
+<path d="M144.23167477633024 445L144.23167477633024 365" fill="none" stroke="#13785c" stroke-width="4" marker-end="url(#a13785c)"/>
+<path d="M144.23167477633024 453L144.23167477633024 510" fill="none" stroke="#a7530c" stroke-width="3" marker-end="url(#aa7530c)"/>
+<text x="66" y="550" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#13785c" text-anchor="start">Thrust ↑</text>
+<text x="66" y="579" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#a7530c" text-anchor="start">Drag ↓</text>
+<path d="M671.5327264165751 445L671.5327264165751 505" fill="none" stroke="#1965a3" stroke-width="3" marker-end="url(#a1965a3)"/>
+<text x="700" y="425" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#1965a3" text-anchor="start">APOGEE</text>
+<text x="700" y="455" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#1965a3" text-anchor="start">950 km</text>
+<rect x="900" y="155" width="485" height="135" rx="9" fill="#f0f4f8" stroke="none" stroke-width="2"/>
+<text x="918" y="184" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#a7530c" text-anchor="start">1  Perigee: collect + reboost</text>
+<text x="918" y="216" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Scoop → compressors → gas tank.</text>
+<text x="918" y="244" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Batteries supply the Hall thruster.</text>
+<text x="918" y="272" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Some collected gas offsets drag.</text>
+<rect x="900" y="340" width="485" height="135" rx="9" fill="#f0f4f8" stroke="none" stroke-width="2"/>
+<text x="918" y="369" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#13785c" text-anchor="start">2  Coast: recharge</text>
+<text x="918" y="401" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Solar supply replenishes batteries.</text>
+<text x="918" y="429" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Net collected gas remains in storage.</text>
+<text x="918" y="457" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Return to the collection pass.</text>
+<rect x="900" y="525" width="485" height="106" rx="9" fill="#f0f4f8" stroke="none" stroke-width="2"/>
+<text x="918" y="554" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#1965a3" text-anchor="start">3  After refueling</text>
+<text x="918" y="586" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Leave the collection orbit to perform</text>
+<text x="918" y="614" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">the next servicing / debris mission.</text>
+<rect x="55" y="755" width="1330" height="135" rx="9" fill="#f0f4f8" stroke="none" stroke-width="2"/>
+<text x="73" y="784" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#13785c" text-anchor="start">REPEATED REFUELING IS EXPLICIT IN THE 2022 PAPER</text>
+<text x="73" y="816" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">The paper proposes maintaining the collection orbit with perigee thrust, rather than letting apogee decay each pass.</text>
+<text x="73" y="844" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Earth and orbit are drawn at the same scale: 150 × 950 km is only modestly eccentric (e ≈ 0.058).</text>
+<text x="73" y="872" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#536779" text-anchor="start">Arrows show force directions at perigee, not a calculated thrust profile; exact orbit closure is not independently verified here.</text>
+<text x="54" y="925" font-family="DejaVu Sans, sans-serif" font-size="15" fill="#536779" text-anchor="start">Source: Slough, RON (IEEE Aerospace 2022), pp. 5–6, mission stage 3 and Fig. 9. Original explanatory schematic.</text>
+</svg>

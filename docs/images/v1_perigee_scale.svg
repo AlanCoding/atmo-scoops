@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1050" viewBox="0 0 1800 1050" role="img" aria-labelledby="title desc">
+<title id="title">Atmospheric scoop diver v1.0: scale side view at perigee</title>
+<desc id="desc">The 317 metre by 31.7 metre hull uses equal horizontal and vertical scale. The mouth faces left, motion and thrust point left, incoming air and exhaust point right. The loaded perigee center of mass is 32.80 metres behind the mouth. Thruster axial spans follow the provisional register; pod dimensions and aft fins are illustrative. The Earth and altitude indicator are not to scale.</desc>
+<defs>
+<marker id="blue" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#8fc8ff"/></marker>
+<marker id="orange" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#f5ae66"/></marker>
+<marker id="green" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#74dfb5"/></marker>
+<pattern id="bay" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 12L12 0" stroke="#38536b" stroke-width="1"/></pattern>
+</defs>
+<rect width="1800" height="1050" fill="#0b1424"/>
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#edf3fa} .sub{fill:#a7bfd4} .dim{stroke:#a7bfd4;stroke-width:1.5;fill:none} .leader{stroke:#90a9c0;stroke-width:1.5;fill:none}</style>
+
+<text x="55.000" y="58.000" font-size="34" text-anchor="start">ATMOSPHERIC SCOOP DIVER · v1.0 AT PERIGEE</text>
+<text x="55.000" y="91.000" font-size="21" text-anchor="start" style="fill:#a7bfd4">Scale side elevation of the hull • all deployables stowed • nose-first attitude assumed</text>
+<rect x="55" y="115" width="405" height="72" fill="#132338"/>
+<text x="70.000" y="139.000" font-size="14" text-anchor="start" style="fill:#a7bfd4">ALTITUDE</text>
+<text x="70.000" y="169.000" font-size="23" text-anchor="start">85 km above Earth</text>
+<rect x="490" y="115" width="405" height="72" fill="#132338"/>
+<text x="505.000" y="139.000" font-size="14" text-anchor="start" style="fill:#a7bfd4">INERTIAL SPEED</text>
+<text x="505.000" y="169.000" font-size="23" text-anchor="start">8.34 km/s</text>
+<rect x="900" y="115" width="405" height="72" fill="#132338"/>
+<text x="915.000" y="139.000" font-size="14" text-anchor="start" style="fill:#a7bfd4">ORBIT</text>
+<text x="915.000" y="169.000" font-size="23" text-anchor="start">85 × 2,000 km</text>
+<rect x="1330" y="115" width="405" height="72" fill="#132338"/>
+<text x="1345.000" y="139.000" font-size="14" text-anchor="start" style="fill:#a7bfd4">DRY MASS</text>
+<text x="1345.000" y="169.000" font-size="23" text-anchor="start">13,250 tonnes</text>
+<line x1="1200" y1="235" x2="760" y2="235" stroke="#8fc8ff" stroke-width="4" marker-end="url(#blue)"/>
+<text x="980.000" y="217.000" font-size="21" text-anchor="middle" style="fill:#8fc8ff">DIRECTION OF MOTION</text>
+<text x="1430.000" y="231.000" font-size="18" text-anchor="middle" style="fill:#a7bfd4">Radial velocity = 0 at perigee</text>
+<text x="351.208" y="282.000" font-size="24" text-anchor="start" style="fill:#ffdb71">Perigee CM: 32.80 m</text>
+<text x="351.208" y="309.000" font-size="18" text-anchor="start" style="fill:#a7bfd4">Dry CM: 32.76 m</text>
+<line x1="650" y1="339" x2="405" y2="339" stroke="#74dfb5" stroke-width="3" marker-end="url(#green)"/>
+<text x="663.000" y="346.000" font-size="21" text-anchor="start" style="fill:#74dfb5">Forward thrust</text>
+<rect x="300.0" y="400.0" width="1268.0" height="126.8" fill="#173445"/>
+<rect x="303.58569413516733" y="400.0" width="48.0" height="126.8" fill="#25364c"/>
+<rect x="303.58569413516733" y="400.0" width="48.0" height="126.8" fill="url(#bay)"/>
+<rect x="304.58569413516733" y="406.0" width="46.0" height="8" fill="#5796bf"/>
+<rect x="304.58569413516733" y="512.8" width="46.0" height="8" fill="#5796bf"/>
+<rect x="363.8079758435053" y="400.0" width="40.0" height="126.8" fill="#25364c"/>
+<rect x="363.8079758435053" y="400.0" width="40.0" height="126.8" fill="url(#bay)"/>
+<rect x="364.8079758435053" y="406.0" width="38.0" height="8" fill="#5796bf"/>
+<rect x="364.8079758435053" y="512.8" width="38.0" height="8" fill="#5796bf"/>
+<rect x="415.9376004095205" y="400.0" width="40.0" height="126.8" fill="#25364c"/>
+<rect x="415.9376004095205" y="400.0" width="40.0" height="126.8" fill="url(#bay)"/>
+<rect x="416.9376004095205" y="406.0" width="38.0" height="8" fill="#5796bf"/>
+<rect x="416.9376004095205" y="512.8" width="38.0" height="8" fill="#5796bf"/>
+<rect x="468.0307304246782" y="400.0" width="110.47809705116146" height="126.8" fill="#25364c"/>
+<rect x="468.0307304246782" y="400.0" width="110.47809705116146" height="126.8" fill="url(#bay)"/>
+<rect x="469.0307304246782" y="406.0" width="108.47809705116146" height="8" fill="#5796bf"/>
+<rect x="469.0307304246782" y="512.8" width="108.47809705116146" height="8" fill="#5796bf"/>
+<rect x="300.0" y="400.0" width="3.5856941351673184" height="126.8" fill="#5c472a"/>
+<rect x="351.58569413516733" y="400.0" width="12.222281708337974" height="126.8" fill="#5c472a"/>
+<rect x="403.8079758435053" y="400.0" width="12.129624566015195" height="126.8" fill="#5c472a"/>
+<rect x="455.9376004095205" y="400.0" width="12.093130015157726" height="126.8" fill="#5c472a"/>
+<line x1="351.58569413516733" y1="402.0" x2="351.58569413516733" y2="524.8" stroke="#6ab8b7" stroke-width="1.5"/>
+<line x1="403.8079758435053" y1="402.0" x2="403.8079758435053" y2="524.8" stroke="#6ab8b7" stroke-width="1.5"/>
+<line x1="455.9376004095205" y1="402.0" x2="455.9376004095205" y2="524.8" stroke="#6ab8b7" stroke-width="1.5"/>
+<line x1="578.5088274758397" y1="402.0" x2="578.5088274758397" y2="524.8" stroke="#6ab8b7" stroke-width="1.5"/>
+<line x1="300.0" y1="400.0" x2="1568.0" y2="400.0" stroke="#a9c4d8" stroke-width="3"/>
+<line x1="300.0" y1="526.8" x2="1568.0" y2="526.8" stroke="#a9c4d8" stroke-width="3"/>
+<line x1="1568.0" y1="400.0" x2="1568.0" y2="526.8" stroke="#a9c4d8" stroke-width="3"/>
+<line x1="300.0" y1="463.4" x2="1568.0" y2="463.4" stroke="#8aa5b8" stroke-width="1" stroke-dasharray="10 7"/>
+<text x="1060.000" y="455.400" font-size="26" text-anchor="middle" style="fill:#97dfd6">AFT GAS RECEIVER</text>
+<text x="1060.000" y="485.400" font-size="20" text-anchor="middle" style="fill:#a7bfd4">x = 69.63–317 m · 247.37 m deep</text>
+<path d="M1420.0 400.0 L1528.0 346.0 L1560.0 400.0" fill="none" stroke="#718da6" stroke-width="2" stroke-dasharray="7 5"/>
+<path d="M1420.0 526.8 L1528.0 580.8 L1560.0 526.8" fill="none" stroke="#718da6" stroke-width="2" stroke-dasharray="7 5"/>
+<rect x="415.9376004095205" y="345.0" width="40.0" height="14" fill="#235346" stroke="#74dfb5" stroke-width="2"/>
+<line x1="435.9376004095205" y1="352.0" x2="435.9376004095205" y2="400.0" stroke="#74dfb5" stroke-width="1.5"/>
+<line x1="461.9376004095205" y1="352.0" x2="605.9376004095204" y2="352.0" stroke="#74dfb5" stroke-width="2" stroke-dasharray="8 5" marker-end="url(#green)"/>
+<rect x="415.9376004095205" y="567.8" width="40.0" height="14" fill="#235346" stroke="#74dfb5" stroke-width="2"/>
+<line x1="435.9376004095205" y1="574.8" x2="435.9376004095205" y2="526.8" stroke="#74dfb5" stroke-width="1.5"/>
+<line x1="461.9376004095205" y1="574.8" x2="605.9376004095204" y2="574.8" stroke="#74dfb5" stroke-width="2" stroke-dasharray="8 5" marker-end="url(#green)"/>
+<rect x="468.0307304246782" y="368.0" width="110.47809705116146" height="14" fill="#235346" stroke="#74dfb5" stroke-width="2"/>
+<line x1="523.2697789502589" y1="375.0" x2="523.2697789502589" y2="400.0" stroke="#74dfb5" stroke-width="1.5"/>
+<line x1="584.5088274758397" y1="375.0" x2="728.5088274758397" y2="375.0" stroke="#74dfb5" stroke-width="2" stroke-dasharray="8 5" marker-end="url(#green)"/>
+<rect x="468.0307304246782" y="544.8" width="110.47809705116146" height="14" fill="#235346" stroke="#74dfb5" stroke-width="2"/>
+<line x1="523.2697789502589" y1="551.8" x2="523.2697789502589" y2="526.8" stroke="#74dfb5" stroke-width="1.5"/>
+<line x1="584.5088274758397" y1="551.8" x2="728.5088274758397" y2="551.8" stroke="#74dfb5" stroke-width="2" stroke-dasharray="8 5" marker-end="url(#green)"/>
+<text x="845.000" y="378.000" font-size="20" text-anchor="start" style="fill:#74dfb5">Exhaust aft →</text>
+<line x1="55" y1="440.0" x2="285" y2="440.0" stroke="#f5ae66" stroke-width="3" marker-end="url(#orange)"/>
+<line x1="55" y1="483.0" x2="285" y2="483.0" stroke="#f5ae66" stroke-width="3" marker-end="url(#orange)"/>
+<text x="55.000" y="409.000" font-size="20" text-anchor="start" style="fill:#f5ae66">Relative airflow</text>
+<text x="55.000" y="553.800" font-size="19" text-anchor="start" style="fill:#f5ae66">OPEN MOUTH</text>
+<line x1="431.2076831352267" y1="360.0" x2="431.2076831352267" y2="591.8" stroke="#ffdb71" stroke-width="2" stroke-dasharray="6 4"/>
+<circle cx="431.2076831352267" cy="463.4" r="9" fill="#ffdb71" stroke="#0b1424" stroke-width="2"/>
+<line x1="418.2076831352267" y1="463.4" x2="444.2076831352267" y2="463.4" stroke="#0b1424" stroke-width="2"/>
+<line x1="431.2076831352267" y1="450.4" x2="431.2076831352267" y2="476.4" stroke="#0b1424" stroke-width="2"/>
+<line x1="340.0" y1="528.8" x2="320" y2="610" stroke="#a7bfd4" stroke-width="2"/>
+<text x="205.000" y="642.000" font-size="20" text-anchor="start">Forward batteries + compressors</text>
+<line x1="544.0" y1="560.8" x2="650" y2="610" stroke="#a7bfd4" stroke-width="2"/>
+<text x="610.000" y="642.000" font-size="19" text-anchor="start">Thruster groups: x ≈ 29–39 and 42–70 m</text>
+<line x1="1500.0" y1="586.8" x2="1460" y2="610" stroke="#a7bfd4" stroke-width="2"/>
+<text x="1310.000" y="642.000" font-size="19" text-anchor="start" style="fill:#a7bfd4">Aft stabilizers: illustrative</text>
+<line x1="1628.0" y1="400.0" x2="1628.0" y2="526.8" stroke="#a7bfd4" stroke-width="2"/>
+<line x1="1619.0" y1="400.0" x2="1637.0" y2="400.0" stroke="#a7bfd4" stroke-width="2"/>
+<line x1="1619.0" y1="526.8" x2="1637.0" y2="526.8" stroke="#a7bfd4" stroke-width="2"/>
+<text x="1643.000" y="459.400" font-size="22" text-anchor="start">31.7 m</text>
+<text x="1643.000" y="485.400" font-size="17" text-anchor="start" style="fill:#a7bfd4">hull OD</text>
+<line x1="300.0" y1="675" x2="300.0" y2="734" stroke="#a7bfd4" stroke-width="1"/>
+<line x1="1568.0" y1="675" x2="1568.0" y2="734" stroke="#a7bfd4" stroke-width="1"/>
+<line x1="300.0" y1="715" x2="1568.0" y2="715" stroke="#a7bfd4" stroke-width="2"/>
+<line x1="300.0" y1="707" x2="300.0" y2="723" stroke="#a7bfd4" stroke-width="2"/>
+<line x1="1568.0" y1="707" x2="1568.0" y2="723" stroke="#a7bfd4" stroke-width="2"/>
+<text x="934.000" y="702.000" font-size="23" text-anchor="middle" style="fill:#edf3fa">317 m overall hull length · L / D = 10</text>
+<text x="300.000" y="780.000" font-size="18" text-anchor="middle" style="fill:#a7bfd4">x = 0 m</text>
+<text x="1568.000" y="755.000" font-size="18" text-anchor="middle" style="fill:#a7bfd4">x = 317 m</text>
+<rect x="70" y="730" width="100" height="8" fill="#edf3fa"/>
+<rect x="170" y="730" width="100" height="8" fill="#5e829a"/>
+<text x="70.000" y="766.000" font-size="16" text-anchor="start" style="fill:#a7bfd4">0</text>
+<text x="270.000" y="766.000" font-size="16" text-anchor="end" style="fill:#a7bfd4">50 m</text>
+<rect x="55" y="805" width="1690" height="182" fill="#101f31"/>
+<text x="78.000" y="838.000" font-size="18" text-anchor="start" style="fill:#8fc8ff">PERIGEE CONFIGURATION</text>
+<text x="78.000" y="870.000" font-size="20" text-anchor="start">Solar arrays, warm radiators and solid coolers are stowed.</text>
+<text x="78.000" y="900.000" font-size="20" text-anchor="start">Batteries power compression and air-fed electric reboost.</text>
+<text x="78.000" y="930.000" font-size="17" text-anchor="start" style="fill:#a7bfd4">Dawn–dusk SSO target: inclination ≈ 99.35°; seasonal lighting still to be modeled.</text>
+<line x1="1510" y1="828" x2="1510" y2="930" stroke="#8fc8ff" stroke-width="2" marker-end="url(#blue)"/>
+<path d="M1500 867L1520 876L1500 885L1520 894" stroke="#0b1424" stroke-width="9" fill="none"/><path d="M1500 867L1520 876L1500 885L1520 894" stroke="#8fc8ff" stroke-width="2" fill="none"/>
+<text x="1530.000" y="855.000" font-size="19" text-anchor="start" style="fill:#8fc8ff">85 km altitude</text>
+<text x="1530.000" y="914.000" font-size="18" text-anchor="start" style="fill:#a7bfd4">Earth below</text>
+<line x1="1395" y1="948" x2="1695" y2="948" stroke="#477da5" stroke-width="4"/>
+<text x="1510.000" y="976.000" font-size="15" text-anchor="middle" style="fill:#a7bfd4">Altitude indicator not to scale</text>
+<text x="55.000" y="1020.000" font-size="17" text-anchor="start" style="fill:#a7bfd4">Hull dimensions and CM are scaled. Internal radial layout, pod dimensions, plume cones and fins are schematic; no stability claim.</text>
+</svg>

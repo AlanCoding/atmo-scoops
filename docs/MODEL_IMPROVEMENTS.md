@@ -262,3 +262,14 @@ The working-reference [parallel-plate model](../modeling/metal_coolers/PLATES.md
 The plate optimization exposed two concrete HEOS edge cases: a near-vacuum pressure flash and a nominal three-species mixture with exactly zero constituents during an implicit-solver trial. The common gas-update helper now uses density-based dilute updates and the actual nonzero-species backend. These fixes preserve real-gas properties; they do not establish that every integration/optimizer stability issue is resolved.
 
 The nominal COBYLA return missed battery closure under tighter integration. Keep integration-resolution checks and explicit closure reserve when selecting a working reference; the released plate point passes three resolutions without loosening the 100 MJ battery criterion. A future optimizer should encode a justified numerical reserve in its constraints instead of relying on post-search selection.
+
+## Explicit optimization scope and closure granularity
+
+The [v1.0 variable/constraint register](../modeling/optimization/V1_VARIABLES.md)
+distinguishes free coordinates from derived receiver geometry and evolving gas
+states. Receiver pressure rating, orbit, clear chamber depths, and suction/head
+capabilities are fixed in the plate search. Chamber-gas mass/energy closure is
+currently aggregate across all five chambers; consider individual chamber/species
+residuals when non-negligible interstage inventories are introduced. Do not imply
+that L/D versus perigee has already been jointly optimized. These are recorded
+limitations and future study directions, not model changes in this documentation.

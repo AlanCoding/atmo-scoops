@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="780" viewBox="0 0 1440 780" role="img"><title>MINOVITCH · 1988 | Nuclear-electric collector / transport</title><desc>Capture phase emphasized below; radiators shown in dotted lines will unfurl in the coast phase.</desc><defs>
+<marker id="a1965a3" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#1965a3"/></marker>
+<marker id="a13785c" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#13785c"/></marker>
+<marker id="aa7530c" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#a7530c"/></marker>
+<marker id="ab23e49" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#b23e49"/></marker>
+<marker id="a536779" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7Z" fill="#536779"/></marker>
+</defs>
+<rect width="1440" height="780" fill="#ffffff"/>
+<text x="54" y="63" font-family="DejaVu Sans, sans-serif" font-size="32" fill="#172b40" text-anchor="start">MINOVITCH · 1988 | Nuclear-electric collector / transport</text>
+<text x="54" y="99" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#536779" text-anchor="start">Capture phase emphasized below; radiators shown in dotted lines will unfurl in the coast phase.</text>
+<path d="M430 190L120 190" fill="none" stroke="#1965a3" stroke-width="4" marker-end="url(#a1965a3)"/>
+<text x="120" y="168" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#1965a3" text-anchor="start">Vehicle motion</text>
+<path d="M150 396L342 412L1150 412L1150 468L342 468L150 484" fill="#edf2f7" stroke="#536779" stroke-width="2"/>
+<path d="M150 396L150 484" fill="none" stroke="#1965a3" stroke-width="4"/>
+<path d="M150 404L320 430L385 430 M150 476L320 450L385 450" fill="none" stroke="#a7530c" stroke-width="3"/>
+<path d="M68 440L116 440" fill="none" stroke="#1965a3" stroke-width="3" marker-end="url(#a1965a3)"/>
+<path d="M105 440L153 440" fill="none" stroke="#1965a3" stroke-width="3" marker-end="url(#a1965a3)"/>
+<rect x="365" y="415" width="100" height="50" rx="2" fill="#fae0c7" stroke="#a7530c" stroke-width="2"/>
+<rect x="475" y="415" width="110" height="50" rx="2" fill="#e2e8ef" stroke="#536779" stroke-width="2"/>
+<rect x="598" y="416" width="18" height="48" rx="2" fill="#d9eee5" stroke="#13785c" stroke-width="2"/>
+<rect x="624" y="416" width="18" height="48" rx="2" fill="#d9eee5" stroke="#13785c" stroke-width="2"/>
+<rect x="650" y="416" width="18" height="48" rx="2" fill="#d9eee5" stroke="#13785c" stroke-width="2"/>
+<rect x="685" y="415" width="95" height="50" rx="18" fill="#dcebf9" stroke="#1965a3" stroke-width="2"/>
+<rect x="798" y="415" width="110" height="50" rx="2" fill="#f4dfb9" stroke="#a7530c" stroke-width="2"/>
+<rect x="930" y="415" width="165" height="50" rx="3" fill="#e3eaf2" stroke="#536779" stroke-width="2"/>
+<path d="M1095 418L1150 410L1150 470L1095 462" fill="#dbeaf8" stroke="#1965a3" stroke-width="2"/>
+<rect x="950" y="414" width="40" height="52" rx="12" fill="#dcebf9" stroke="#1965a3" stroke-width="2"/>
+<rect x="950" y="437" width="40" height="6" rx="0" fill="#ffffff" stroke="#1965a3" stroke-width="2"/>
+<path d="M990 450L1190 510" fill="none" stroke="#1965a3" stroke-width="2"/>
+<text x="1110" y="550" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#1965a3" text-anchor="start">LN₂ tank 149</text>
+<text x="1110" y="577" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#1965a3" text-anchor="start">1,000,000 kg</text>
+<text x="1110" y="604" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#1965a3" text-anchor="start">10 m × 13 m</text>
+<text x="1110" y="631" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#1965a3" text-anchor="start">Toroidal; access tunnel</text>
+<path d="M800 412L770 270L940 270L910 412" fill="none" stroke="#a7530c" stroke-width="2" stroke-dasharray="7 6"/>
+<path d="M800 468L770 610L940 610L910 468" fill="none" stroke="#a7530c" stroke-width="2" stroke-dasharray="7 6"/>
+<rect x="800" y="402" width="110" height="7" rx="0" fill="#c58f50" stroke="none" stroke-width="2"/>
+<rect x="800" y="471" width="110" height="7" rx="0" fill="#c58f50" stroke="none" stroke-width="2"/>
+<path d="M947 412L917 270L1090 270L1060 412" fill="none" stroke="#a7530c" stroke-width="2" stroke-dasharray="7 6"/>
+<path d="M947 468L917 610L1090 610L1060 468" fill="none" stroke="#a7530c" stroke-width="2" stroke-dasharray="7 6"/>
+<rect x="947" y="402" width="113" height="7" rx="0" fill="#c58f50" stroke="none" stroke-width="2"/>
+<rect x="947" y="471" width="113" height="7" rx="0" fill="#c58f50" stroke="none" stroke-width="2"/>
+<text x="75" y="340" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#1965a3" text-anchor="start">22 m inlet</text>
+<text x="75" y="368" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#1965a3" text-anchor="start">48 m diffuser</text>
+<path d="M188 369L222 409" fill="none" stroke="#1965a3" stroke-width="2"/>
+<text x="270" y="245" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#a7530c" text-anchor="start">Hypervelocity intake and</text>
+<text x="270" y="274" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#a7530c" text-anchor="start">radiative cooling chamber</text>
+<text x="270" y="303" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#a7530c" text-anchor="start">Gas cooled to ~1,600 K</text>
+<path d="M420 319L420 413" fill="none" stroke="#a7530c" stroke-width="2"/>
+<text x="490" y="355" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#536779" text-anchor="start">Tank 52</text>
+<text x="490" y="382" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#536779" text-anchor="start">Hot-gas buffer: 500 m³</text>
+<path d="M530 389L530 413" fill="none" stroke="#536779" stroke-width="2"/>
+<path d="M460 430L480 450L480 430L460 450Z" fill="#ffffff" stroke="#b23e49" stroke-width="2"/>
+<text x="470" y="416" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#b23e49" text-anchor="middle">?</text>
+<path d="M470 452L420 510L350 510" fill="none" stroke="#b23e49" stroke-width="2"/>
+<text x="100" y="540" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#b23e49" text-anchor="start">Isolation valve ?</text>
+<text x="100" y="568" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#b23e49" text-anchor="start">Not specified in the patent</text>
+<text x="550" y="550" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#13785c" text-anchor="start">Compression + cooling</text>
+<text x="550" y="578" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#13785c" text-anchor="start">Liquefier → cryogenic tanks</text>
+<path d="M636 474L636 518" fill="none" stroke="#13785c" stroke-width="2"/>
+<text x="760" y="214" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#a7530c" text-anchor="start">3,500 MW nuclear-electric plant</text>
+<text x="760" y="242" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#a7530c" text-anchor="start">Folding power-plant radiators</text>
+<path d="M845 258L845 269" fill="none" stroke="#a7530c" stroke-width="2"/>
+<text x="1100" y="305" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#1965a3" text-anchor="start">Onboard microwave /</text>
+<text x="1100" y="332" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#1965a3" text-anchor="start">ECR accelerator</text>
+<text x="1100" y="359" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#1965a3" text-anchor="start">and its radiators</text>
+<path d="M1130 374L1125 409" fill="none" stroke="#1965a3" stroke-width="2"/>
+<text x="1080" y="650" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#536779" text-anchor="end">Processing continues after the atmospheric pass</text>
+<path d="M150 680L1150 680" fill="none" stroke="#536779" stroke-width="2"/>
+<path d="M150 668L150 692" fill="none" stroke="#536779" stroke-width="2"/>
+<path d="M1150 668L1150 692" fill="none" stroke="#536779" stroke-width="2"/>
+<text x="650" y="711" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#172b40" text-anchor="middle">250 m overall</text>
+<text x="54" y="745" font-family="DejaVu Sans, sans-serif" font-size="15" fill="#536779" text-anchor="start">Source: US Patent 4,754,601</text>
+</svg>

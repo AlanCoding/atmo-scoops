@@ -134,3 +134,7 @@ This checks exact mass-category sums, total length, bank lengths and package
 volume allocation, then writes the register and publication figures. It does not
 change or rerun the optimizer. [Sun-synchronous target](SUN_SYNCHRONOUS.md) is a
 separate orbital assumption screen.
+
+## Perigee scale illustration
+
+[PNG side view](../../docs/images/v1_perigee_scale.png) / [SVG](../../docs/images/v1_perigee_scale.svg): hull dimensions use the same 4 drawing units per metre in both axes. The CM marker uses the loaded perigee state (32.80 m); dry CM is labeled separately. Thruster axial zones match the register, with illustrative staggered outboard mounts to avoid drawing an upstream exhaust through a downstream pod. Plume cones and fin sizes remain unresolved. Earth/altitude is a broken-scale indicator, not part of the hull scale. Rebuild this figure and the mechanism PNG with `.venv/bin/python investigations/v1_layout/draw_perigee.py` (ImageMagick required).
