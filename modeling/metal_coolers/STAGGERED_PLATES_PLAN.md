@@ -1,7 +1,6 @@
 # Longer, more widely spaced, staggered plate cooler
 
-Status: planned geometry and offline fluid study; not implemented in the cycle
-or optimized. [Illustration SVG](../../docs/images/staggered_plate_cooler.svg) ·
+Status: offline validation remains planned. A [provisional reduced implementation](INTERRUPTED_REDUCED_MODEL.md) is being evaluated in checkpoint A; it is not a CFD-validated replacement. [Illustration SVG](../../docs/images/staggered_plate_cooler.svg) ·
 [PNG](../../docs/images/staggered_plate_cooler.png).
 
 ## Design being investigated

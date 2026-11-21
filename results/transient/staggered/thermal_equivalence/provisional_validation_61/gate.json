@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "checks": {
+    "two_complete_trajectories": false
+  },
+  "relative_changes": {}
+}

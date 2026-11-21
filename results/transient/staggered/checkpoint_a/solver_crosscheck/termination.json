@@ -1,0 +1,4 @@
+{
+  "status": "Interrupted runtime diagnostic",
+  "note": "Both LSODA probes exceeded the production BDF cycle runtime without completing. No physics or feasibility conclusion; production integrator unchanged."
+}

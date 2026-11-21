@@ -106,3 +106,5 @@ connects these quantities to the per-stage dynamics and remaining rear tank.
 
 
 See the [planned longer staggered plate geometry](STAGGERED_PLATES_PLAN.md) for distributing the same material through a longer serial flow region.
+
+First implementation experiment: [provisional interrupted-channel reduced model](INTERRUPTED_REDUCED_MODEL.md). It retains the existing thermal state vector and exposes correlation uncertainty.

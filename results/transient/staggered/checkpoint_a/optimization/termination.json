@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "termination": "Explicitly interrupted to restart from the validated old-pitch warm start",
+  "evaluations": 10,
+  "best_feasible_days": 422.97869114700575,
+  "note": "Not an optimizer convergence claim. No numerical failures among saved evaluations."
+}

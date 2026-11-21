@@ -38,6 +38,16 @@ trace-inventory numerical regularization/Jacobian treatment before broad coupled
 pitch optimization: some low-inventory tails stall even when conservation is good.
 
 Completed numerical decisions are indexed in [investigations](../investigations/README.md).
+
+The [corrected staggered-plate checkpoint](../investigations/staggered_stage_a/README.md)
+adds two explicit follow-ups: validate thermal-spacing equivalence and offset-row
+losses together, and resolve the front rack's low-pressure-tail hydraulic limit.
+The power-only surcharge can report pressure loss larger than inlet pressure;
+it does not demonstrate that the commanded flow is achievable. Also investigate
+active rack frontal area and row count before interpreting full-bore, shallow
+downstream cores as mechanically preferred. Event-start integration needs
+physically scaled tolerances/initial-step controls; see the
+[numerical review](../investigations/staggered_stage_a/NUMERICAL_REVIEW.md).
 The [mixing development plan](DESIGN_STUDIES_PLAN.md) describes the remaining
 physical calibration needed beyond the current conditional trade.
 

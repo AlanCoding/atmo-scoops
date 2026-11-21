@@ -27,7 +27,7 @@ top=510
 for row in range(4):
  xx=x0+row*260
  rect(xx,top,length,220,'#eef5f7','#849aa6')
- offset=0 if row%2==0 else 26
+ offset=row*13
  for j in range(4):rect(xx,top+11+offset+j*52,length,4,'#b57639')
  text(xx+80,top+249,f'Row {row+1}',18)
  # arrows at representative channel centers, no imposed winding trajectory
@@ -37,11 +37,11 @@ for row in range(4):
 for yy in [top+65,top+165]:line(70,yy,205,yy,'#167e97',True);line(1250,yy,1430,yy,'#167e97',True)
 text(1270,top+112,'To compressor',18)
 line(220,796,1240,796);text(420,825,'Total plate-bearing length = 3.586 m (4 × 0.896 m)',21)
-text(50,866,'All gas traverses all four rows. Alternate rows shift sideways by half a pitch.',21)
+text(50,866,'All gas traverses all four rows. Each row shifts by ¼ of the wide pitch; four phases sample the original spacing.',21)
 text(50,902,'Pitch: 30.499 mm  |  clear gap: 29.064 mm  |  thickness, material mass and broad-face area unchanged.',20)
-text(50,938,'Offsets interrupt channels; heat-transfer gains and edge/turning losses must be evaluated together.',20)
+text(50,938,'Model: wide hydraulic gap, original effective thermal gap; edge/turning losses remain charged.',20)
 text(50,978,'Schematic slice: transverse spacing/thickness magnified; plate count illustrative. Same axial scale in A and B.',17)
-text(50,1008,'Visible row separations are illustrative; real row clearance adds length and must be budgeted. No performance gain assumed.',17)
+text(50,1008,'Visible row separations are illustrative; real row clearance adds length and must be budgeted. Thermal equivalence assumed; flow validation remains needed.',17)
 p.append('</svg>')
 out=ROOT/'docs/images/staggered_plate_cooler.svg';out.write_text('\n'.join(p)+'\n')
 subprocess.run(['magick','-background','white',str(out),str(out.with_suffix('.png'))],check=True)

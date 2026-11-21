@@ -203,4 +203,4 @@ The [gas-reserve and rack-spacing study](investigations/feed_pitch/RESULTS.md) a
 
 Publication assets for the current snapshot: [v1.0 publication kit](docs/publication/V1_0.md), including current-reference figures, numerical tables and the provisional axial mass layout.
 
-Next work: [incremental model changes from the scale-image review](docs/SCALE_REVIEW_IMPLEMENTATION_PLAN.md), starting with the staggered plate cooler; each accepted constrained-optimization stage receives its own review packet and commit.
+New development checkpoint: [corrected staggered plates and explicit stage geometry](investigations/staggered_stage_a/README.md), constrained convergence at **275.7 operating-orbit days**, with rack dimensions, pressure-loss diagnostics and an updated scale drawing. The frozen v1.0 reference above is unchanged. [Subsequent packaging/storage checkpoints](docs/SCALE_REVIEW_IMPLEMENTATION_PLAN.md) remain separate.

@@ -20,6 +20,13 @@ class Design:
     stage_radius_m: tuple=()
     plate_thickness_m: tuple=(.001,)*5
     plate_gap_m: tuple=(.003,)*5
+    chamber_initial_pressure_Pa: float=.001
+    plate_thermal_model: str="developing"
+    plate_rows: tuple=(1,1,1,1,1)
+    plate_offset_fraction: float=.5
+    plate_row_clearance_m: float=0.
+    explicit_stage_packing: int=0
+    stage_hatch_buffer_m: float=0.
     rack_flow_layout: str="legacy_mixed"
     rack_pressure_model: str="layout"
     rack_loss_mode: str="pressure"
@@ -81,6 +88,8 @@ class Design:
 
 @dataclass(frozen=True)
 class Capabilities:
+    plate_entrance_credit: float=1.
+    plate_restart_loss_K: float=.674
     rack_loss_multiplier: float=0.
     skin_friction_coefficient: float=0.
     skin_area_multiplier: float=1.
@@ -129,7 +138,7 @@ def read_config(config):
         if set(data)-{f.name for f in fields(cls)}:raise ValueError(f'Unknown {name} inputs')
         obj=cls(**data)
         for k,v in asdict(obj).items():
-            if k in ('materials','propellant_storage','rack_flow_layout','rack_pressure_model','rack_loss_mode','integrator','compression_model'):continue
+            if k in ('materials','propellant_storage','rack_flow_layout','rack_pressure_model','rack_loss_mode','integrator','compression_model','plate_thermal_model'):continue
             values=v if isinstance(v,(tuple,list)) else (v,)
             if any(not isinstance(z,(int,float)) or isinstance(z,bool) or not math.isfinite(z) or z<0 for z in values):raise ValueError(f'Invalid {name}.{k}')
         return obj
@@ -171,6 +180,14 @@ def read_config(config):
     if d.rack_flow_layout=='parallel_plates':
         if d.rack_loss_mode!='power_only' or d.rack_pressure_model!='layout':raise ValueError('Plates currently require power_only mode and layout pressure model')
         if len(d.plate_thickness_m)!=5 or len(d.plate_gap_m)!=5 or min(*d.plate_thickness_m,*d.plate_gap_m)<=0:raise ValueError('Five positive plate thicknesses and gaps required')
+    if d.plate_thermal_model not in ('developing','offset_equivalent'):raise ValueError('Unknown plate thermal model')
+    if len(d.plate_rows)!=5 or any(not isinstance(n,int) or isinstance(n,bool) or n<1 for n in d.plate_rows):raise ValueError('Five positive integer plate row counts required')
+    if not 0<=d.plate_offset_fraction<=.5 or not 0<=c.plate_entrance_credit<=1:raise ValueError('Invalid plate offset/entrance credit')
+    if d.explicit_stage_packing not in (0,1):raise ValueError('explicit_stage_packing must be 0 or 1')
+    if (max(d.plate_rows)>1 or d.explicit_stage_packing) and d.rack_flow_layout!='parallel_plates':raise ValueError('Explicit row/packing study requires plates')
+    if d.plate_thermal_model=='offset_equivalent':
+        if d.rack_flow_layout!='parallel_plates':raise ValueError('Offset-equivalent spacing requires plates')
+        if any((g+t)/n<=t for g,t,n in zip(d.plate_gap_m,d.plate_thickness_m,d.plate_rows)):raise ValueError('Nonpositive effective thermal gap')
     return d,c
 
 def defaults():return dict(design=asdict(Design()),capabilities=asdict(Capabilities()))

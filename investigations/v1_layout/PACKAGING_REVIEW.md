@@ -1,5 +1,11 @@
 # v1.0 packaging, gas feeds and thruster placement
 
+**Historical frozen-reference review.** The current scale image now comes from
+the [corrected-spacing checkpoint](../staggered_stage_a/README.md); use its
+[length table](DRAWING_LENGTHS.md) and placement register for current dimensions
+and estimated CM. Older locations and relocation estimates below are not the
+current drawing.
+
 This reviews the frozen case 72, not a new optimized design. See the generated
 [volume register and relocation calculations](VOLUME_REGISTER.md), the
 [mass register](MASS_REGISTER.md), and the [publication kit](../../docs/publication/V1_0.md).
@@ -161,3 +167,13 @@ low-pressure feed capability and any required pumping remain unresolved.
 For the complete optimizer → geometry → flow indexing → drawing audit, see
 [why the front compartment is smaller](FRONT_GEOMETRY_TRACE.md). The fixed
 head-volume assumptions, not a reversal of stages, explain the dimensions.
+
+### Compressor-length display correction
+
+The latest scale figure draws each compressor at its actual modeled bank length,
+at the start of its inherited shared bay. The remainder is light/dashed shared
+packing allowance, not extra compressor length or new gas volume. This moves
+the illustrated compressor centroids and gives a relocation-only dry CM of
+85.77 m, superseding the prior 86.00 m placement sensitivity. See the
+[generated present lengths](DRAWING_LENGTHS.md). The redundant aft-reserve
+dimension bar has been removed.

@@ -42,29 +42,29 @@
 <line x1="255" y1="548" x2="420" y2="548" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
 <line x1="255" y1="652" x2="420" y2="652" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
 <rect x="480" y="510" width="240" height="220" fill="#eef5f7" stroke="#849aa6"/>
-<rect x="480" y="547" width="240" height="4" fill="#b57639" stroke="none"/>
-<rect x="480" y="599" width="240" height="4" fill="#b57639" stroke="none"/>
-<rect x="480" y="651" width="240" height="4" fill="#b57639" stroke="none"/>
-<rect x="480" y="703" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="480" y="534" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="480" y="586" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="480" y="638" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="480" y="690" width="240" height="4" fill="#b57639" stroke="none"/>
 <text x="560" y="759" font-size="18">Row 2</text>
-<line x1="515" y1="574" x2="680" y2="574" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
-<line x1="515" y1="678" x2="680" y2="678" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="515" y1="561" x2="680" y2="561" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="515" y1="665" x2="680" y2="665" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
 <rect x="740" y="510" width="240" height="220" fill="#eef5f7" stroke="#849aa6"/>
-<rect x="740" y="521" width="240" height="4" fill="#b57639" stroke="none"/>
-<rect x="740" y="573" width="240" height="4" fill="#b57639" stroke="none"/>
-<rect x="740" y="625" width="240" height="4" fill="#b57639" stroke="none"/>
-<rect x="740" y="677" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="740" y="547" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="740" y="599" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="740" y="651" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="740" y="703" width="240" height="4" fill="#b57639" stroke="none"/>
 <text x="820" y="759" font-size="18">Row 3</text>
-<line x1="775" y1="548" x2="940" y2="548" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
-<line x1="775" y1="652" x2="940" y2="652" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="775" y1="574" x2="940" y2="574" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="775" y1="678" x2="940" y2="678" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
 <rect x="1000" y="510" width="240" height="220" fill="#eef5f7" stroke="#849aa6"/>
-<rect x="1000" y="547" width="240" height="4" fill="#b57639" stroke="none"/>
-<rect x="1000" y="599" width="240" height="4" fill="#b57639" stroke="none"/>
-<rect x="1000" y="651" width="240" height="4" fill="#b57639" stroke="none"/>
-<rect x="1000" y="703" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="1000" y="560" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="1000" y="612" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="1000" y="664" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="1000" y="716" width="240" height="4" fill="#b57639" stroke="none"/>
 <text x="1080" y="759" font-size="18">Row 4</text>
-<line x1="1035" y1="574" x2="1200" y2="574" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
-<line x1="1035" y1="678" x2="1200" y2="678" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="1035" y1="587" x2="1200" y2="587" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="1035" y1="691" x2="1200" y2="691" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
 <line x1="70" y1="575" x2="205" y2="575" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
 <line x1="1250" y1="575" x2="1430" y2="575" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
 <line x1="70" y1="675" x2="205" y2="675" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
@@ -72,9 +72,9 @@
 <text x="1270" y="622" font-size="18">To compressor</text>
 <line x1="220" y1="796" x2="1240" y2="796" stroke="#80929c" stroke-width="2" stroke-dasharray=""/>
 <text x="420" y="825" font-size="21">Total plate-bearing length = 3.586 m (4 × 0.896 m)</text>
-<text x="50" y="866" font-size="21">All gas traverses all four rows. Alternate rows shift sideways by half a pitch.</text>
+<text x="50" y="866" font-size="21">All gas traverses all four rows. Each row shifts by ¼ of the wide pitch; four phases sample the original spacing.</text>
 <text x="50" y="902" font-size="20">Pitch: 30.499 mm  |  clear gap: 29.064 mm  |  thickness, material mass and broad-face area unchanged.</text>
-<text x="50" y="938" font-size="20">Offsets interrupt channels; heat-transfer gains and edge/turning losses must be evaluated together.</text>
+<text x="50" y="938" font-size="20">Model: wide hydraulic gap, original effective thermal gap; edge/turning losses remain charged.</text>
 <text x="50" y="978" font-size="17">Schematic slice: transverse spacing/thickness magnified; plate count illustrative. Same axial scale in A and B.</text>
-<text x="50" y="1008" font-size="17">Visible row separations are illustrative; real row clearance adds length and must be budgeted. No performance gain assumed.</text>
+<text x="50" y="1008" font-size="17">Visible row separations are illustrative; real row clearance adds length and must be budgeted. Thermal equivalence assumed; flow validation remains needed.</text>
 </svg>

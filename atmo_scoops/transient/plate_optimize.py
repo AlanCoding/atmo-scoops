@@ -3,7 +3,7 @@
 Every objective/constraint pair shares ONE cached cycle. Numerical failures stop
 optimization rather than masquerading as physical rejection or objective noise.
 """
-import argparse,copy,json,math,signal,time
+import argparse,copy,json,math,signal,time,hashlib
 from pathlib import Path
 import numpy as np
 from scipy.optimize import minimize,Bounds
@@ -17,7 +17,8 @@ SCALES=dict(reserve_kg=100.,material_K=100.,pressure_Pa=1000.,warm_K=100.,SOC=.1
 def specs(base,thickness=True):
     d=base['design'];s=[]
     def add(key,lo,hi):s.append(dict(key=key,low=lo,high=hi))
-    for i in range(5):add(f'plate_gap_m:{i}',.0005,.03)
+    thermal=d.get('plate_thermal_model')=='offset_equivalent'
+    for i in range(5):add(f"{'thermal_gap_m' if thermal else 'plate_gap_m'}:{i}",.0005,.03 if thermal else .12 if max(d.get('plate_rows',[1]))>1 else .03)
     if thickness:
         for i in range(5):add(f'plate_thickness_m:{i}',.0002,.005)
     for i in range(5):
@@ -38,7 +39,8 @@ def encode(c,spec):
         k=s['key']
         if ':' in k:
             k,i=k.split(':');i=int(i)
-            v=d[k][i] if k!='solid_depth' else d['rack_depth_m'][i]*d['plate_thickness_m'][i]/(d['plate_thickness_m'][i]+d['plate_gap_m'][i])
+            if k=='thermal_gap_m':v=(d['plate_gap_m'][i]+d['plate_thickness_m'][i])/d['plate_rows'][i]-d['plate_thickness_m'][i]
+            else:v=d[k][i] if k!='solid_depth' else d['rack_depth_m'][i]*d['plate_thickness_m'][i]/(d['plate_thickness_m'][i]+d['plate_gap_m'][i])
         else:v=d[k]
         out.append(math.log(v/s['low'])/math.log(s['high']/s['low']))
     return np.array(out)
@@ -46,13 +48,17 @@ def encode(c,spec):
 
 def decode(x,base,spec):
     c=copy.deepcopy(base);d=c['design'];solid=[z*t/(t+g) for z,t,g in zip(d['rack_depth_m'],d['plate_thickness_m'],d['plate_gap_m'])]
+    thermal=[(g+t)/n-t for g,t,n in zip(d['plate_gap_m'],d['plate_thickness_m'],d.get('plate_rows',[1]*5))]
     for u,s in zip(x,spec):
         v=s['low']*math.exp(float(u)*math.log(s['high']/s['low']));k=s['key']
         if ':' in k:
             k,i=k.split(':');i=int(i)
-            if k=='solid_depth':solid[i]=v
+            if k=='thermal_gap_m':thermal[i]=v
+            elif k=='solid_depth':solid[i]=v
             else:d[k][i]=v
         else:d[k]=v
+    if d.get('plate_thermal_model')=='offset_equivalent':
+        d['plate_gap_m']=[n*(g+t)-t for n,g,t in zip(d['plate_rows'],thermal,d['plate_thickness_m'])]
     d['rack_depth_m']=[v*(t+g)/t for v,t,g in zip(solid,d['plate_thickness_m'],d['plate_gap_m'])]
     return c
 
@@ -80,6 +86,9 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--config',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--fixed-thickness',action='store_true');p.add_argument('--maxiter',type=int,default=300);p.add_argument('--tol',type=float,default=.01);p.add_argument('--rhobeg',type=float,default=.03);p.add_argument('--seconds',type=int,default=300);a=p.parse_args()
     base=json.loads(a.config.read_text());spec=specs(base,not a.fixed_thickness);a.output.mkdir(parents=True,exist_ok=True)
     manifest=dict(base=base,coordinates=spec,algorithm='scipy.optimize.minimize COBYLA',options=dict(maxiter=a.maxiter,tol=a.tol,rhobeg=a.rhobeg,catol=1e-7),seconds=a.seconds)
+    if max(base['design'].get('plate_rows',[1]))>1:
+        sources=[Path(__file__).with_name(name) for name in ('plate_optimize.py','plates.py','hardware.py','inputs.py','cycle.py','thermo.py','porous.py')]
+        manifest['implementation_sha256']=hashlib.sha256(b''.join(p.read_bytes() for p in sources)).hexdigest()
     mp=a.output/'search.json'
     if mp.exists() and json.loads(mp.read_text())!=manifest:raise ValueError('Changed search manifest')
     mp.write_text(json.dumps(manifest,indent=2)+'\n');ep=a.output/'evaluations.json'

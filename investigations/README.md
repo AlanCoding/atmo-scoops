@@ -1,5 +1,7 @@
 # Design investigations
 
+- [Corrected staggered plates and explicit stage geometry](staggered_stage_a/README.md): constrained convergence, five-rack thermal/hydraulic review and numerical scale drawing.
+
 - [Current staged refinement](staged_refinement/README.md): bypass-only optimization first; numerical gates before pressure losses, pitch and radius.
 
 These documents record decision evidence separately from the single current

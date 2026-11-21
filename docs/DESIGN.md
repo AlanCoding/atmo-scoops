@@ -6,6 +6,12 @@ v1.1 fixed coolant tubes in higher-pressure volumes with retained front SiC
 racks, and the v2.0 propulsion-free diver/tether-mothership split. Those plans
 do not change the frozen v1.0 numerical reference.
 
+The [staggered-plate development checkpoint](../investigations/staggered_stage_a/README.md)
+uses wider physical channels and smaller effective thermal spacing, charged to
+actual rack length. Its constrained result is about 275.7 operating-orbit days;
+front-tail hydraulic applicability remains unresolved. See its exact rack and
+stage dimensions before using the updated scale drawing.
+
 ![Overall spacecraft during its dive and coast](images/spacecraft_overview.svg)
 
 ## Purpose and architecture

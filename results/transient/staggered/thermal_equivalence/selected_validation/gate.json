@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": {
+    "two_complete_trajectories": true,
+    "conservation_and_nonnegative_inventory": true,
+    "resolution_within_half_percent": true,
+    "two_feasible_cycles": true
+  },
+  "relative_changes": {
+    "net_liquid_kg": 1.6018950336564988e-05,
+    "admitted_kg": 7.936698435830882e-06,
+    "lost_kg": 3.628794069633697e-05,
+    "propellant_kg": 2.064985425049696e-14
+  },
+  "selected_optimizer_index": 61,
+  "refined_initial_step_s": 0.0001,
+  "refined_source": "results/transient/staggered/thermal_equivalence/start_step_check_61/tenth_ms.json.gz",
+  "note": "Automatic refined first-step selection failed at burn start; explicit numerical initialization passes. See NUMERICAL_REVIEW.md."
+}

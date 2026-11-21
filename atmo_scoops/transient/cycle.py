@@ -29,9 +29,9 @@ def simulate(config,samples=1001):
  th.table_enabled=d.compression_model=='HEOS_table'
  V=np.array([g['gas_m3'] for g in geom]);M=np.array([g['mass_kg'] for g in geom]);start,end=hw['start_s'],hw['end_s'];o=hw['orbit']
  y0=np.zeros(40+len(LEDGERS));y0[20:25]=[m.energy(T)*mass/1e6 for m,T,mass in zip(mats,d.rack_initial_K,M)]
- # A declared trace residual avoids singular empty-vessel temperature states.
+ # Physical starting residual; decode separately regularizes the vacuum limit.
  for i in range(5):
-  trace=.001*V[i]/(float(Y@th.R)*300.)
+  trace=d.chamber_initial_pressure_Pa*V[i]/(float(Y@th.R)*300.)
   y0[3*i:3*i+3]=trace*Y;y0[15+i]=trace*float(Y@th.at(300.)[0]-float(Y@th.R)*300.)/1e6
  capacity=d.battery_MWh*3600.;y0[25]=capacity*d.battery_initial_soc;y0[26]=d.warm_store_kg*c.buffer_cp_J_kg_K*d.warm_initial_K/1e6;y0[27:30]=d.reserve_kg*Y
  gas_mode=d.propellant_storage=='gas'
@@ -240,7 +240,7 @@ def simulate(config,samples=1001):
   counter=[0]
   def rhs(t,y):
    counter[0]+=1
-   if os.environ.get("ATMO_PROGRESS") and counter[0]%10000==0:print(f"  rhs {counter[0]} t={t:.6f}",file=sys.stderr,flush=True)
+   if os.environ.get("ATMO_PROGRESS") and counter[0]%10000==0:print(f"  rhs {counter[0]} t={t:.6f} gas_kg={y[:15].reshape(5,3).sum(axis=1).tolist()}",file=sys.stderr,flush=True)
    # Use the interior one-sided control value at BOTH event boundaries.
    # A burn is off at exact |t|=burn/2 but on immediately to its right at
    # burn start; feeding the left value to BDF's initial derivative can force
@@ -295,7 +295,7 @@ def simulate(config,samples=1001):
  audits=dict(species_kg=float(abs(mr).max()),energy_MJ=float(abs(er).max()),min_gas_kg=float(states[:,:15].min()),forward_integrations=1,rhs_evaluations=evaluations[0])
  feasible=all(z>=-1e-6 for z in margins.values()) and all(safe_hatch) and audits['species_kg']<1e-4 and audits['energy_MJ']<.01 and audits['min_gas_kg']>-.0001
  output_hw={k:v for k,v in hw.items() if k not in ('orbit','forcing','rack_motion_s')};output_hw['rack_motion_s']=hw['rack_motion_s'].tolist()
- result=dict(model='transient-v2',inputs=dict(design=asdict(d),capabilities=asdict(c)),hardware=output_hw,time_s=tt.tolist(),history=history,gas_species_kg=states[:,:15].reshape(-1,5,3).tolist(),liquid_species_kg=states[:,27:30].tolist(),gas_reserve_species_kg=states[:,35:38].tolist(),ledger={name:states[:,index].tolist() for name,index in LI.items()},events=events,audits=audits,closure=residuals,margins=margins,feasible=bool(feasible),dry_kg=hw['dry_kg'],net_liquid_kg=net,diagnostic_payoff_days=hw['dry_kg']/net*o.period/86400 if net>0 else None,operating_payoff_days=hw['dry_kg']/net*o.period/86400 if net>0 and feasible else None,delivered_payoff_days=None)
+ result=dict(model='transient-v2-interrupted-provisional' if max(d.plate_rows)>1 else 'transient-v2',inputs=dict(design=asdict(d),capabilities=asdict(c)),hardware=output_hw,time_s=tt.tolist(),history=history,gas_species_kg=states[:,:15].reshape(-1,5,3).tolist(),liquid_species_kg=states[:,27:30].tolist(),gas_reserve_species_kg=states[:,35:38].tolist(),ledger={name:states[:,index].tolist() for name,index in LI.items()},events=events,audits=audits,closure=residuals,margins=margins,feasible=bool(feasible),dry_kg=hw['dry_kg'],net_liquid_kg=net,diagnostic_payoff_days=hw['dry_kg']/net*o.period/86400 if net>0 else None,operating_payoff_days=hw['dry_kg']/net*o.period/86400 if net>0 and feasible else None,delivered_payoff_days=None)
 
  # No extra trajectory: validate the realized property regime and report the
  # operating-orbit offload map explicitly after the pre-offload audit.

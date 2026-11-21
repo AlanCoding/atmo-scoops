@@ -35,6 +35,17 @@ def compile_hardware(d,c):
   from .plates import geometry as plate_geometry
   rack_depths=list(d.rack_depth_m)
   geom=[plate_geometry(A,z,t,g,m.density) for z,t,g,m in zip(rack_depths,d.plate_thickness_m,d.plate_gap_m,mats)]
+  for i,g in enumerate(geom):
+   g.update(row_count=d.plate_rows[i],offset_fraction=d.plate_offset_fraction,
+            thermal_model=d.plate_thermal_model,
+            row_clearance_m=d.plate_row_clearance_m,restart_loss_K=c.plate_restart_loss_K,
+            entrance_credit=c.plate_entrance_credit,
+            installed_rack_depth_m=rack_depths[i]+(d.plate_rows[i]-1)*d.plate_row_clearance_m)
+  for g in geom:
+   if d.plate_thermal_model=='offset_equivalent':
+    g.update(thermal_gap_m=g['pitch_m']/g['row_count']-g['thickness_m'],
+             row_offsets_m=[j*g['pitch_m']/g['row_count'] for j in range(g['row_count'])])
+  rack_depths=[g['installed_rack_depth_m'] for g in geom]
  else:
   rack_depths=[math.ceil(z/p-1e-9)*p if d.rack_flow_layout in ('outlet_planes','inline_bank') or d.rack_pressure_model=='inline_laminar' else z for z,p in zip(d.rack_depth_m,pitches)]
   geom=[Chamber(str(i),d.bore_m,max(z,1),z,rod_radius_m=radii[i],rod_pitch_m=pitches[i],material=n).geometry(.5 if d.rack_flow_layout=='inline_bank' else .25) for i,(z,n) in enumerate(zip(rack_depths,d.materials))]
@@ -70,19 +81,46 @@ def compile_hardware(d,c):
  bay=sum(packages.values())/c.fill_fraction/A;outside=d.bore_m+2*d.clearance_m;length=outside*d.length_diameter
  hd=c.head_depth_m;rad=d.bore_m/2;headV=math.pi*hd*(3*rad**2+hd**2)/6
  depths=[rack_depths[i]+d.clear_depth_m[i]+(2*hd if i else 0) for i in range(4)]
+ packing=None
+ if d.explicit_stage_packing:
+  # No arbitrary shared axial blocks: actual bank envelopes + dedicated hatch zones.
+  bay=sum(b['bank_length_m']+d.stage_hatch_buffer_m for b in banks)
+  x=0.;stages=[]
+  for i,(L,b) in enumerate(zip(depths,banks)):
+   rack_start=x+d.clear_depth_m[i]+(hd if i else 0.)
+   stages.append(dict(stage=i+1,gas_start_m=x,gas_end_m=x+L,
+      rack_start_m=rack_start,rack_end_m=rack_start+rack_depths[i],
+      compressor_start_m=x+L,compressor_end_m=x+L+b['bank_length_m'],
+      hatch_start_m=x+L+b['bank_length_m'],hatch_end_m=x+L+b['bank_length_m']+d.stage_hatch_buffer_m))
+   x=stages[-1]['hatch_end_m']
+  # All other existing hardware is still charged by volume in the aft region.
+  # The next checkpoint assigns actual radial sectors and narrows the tank.
+  other=dict(packages)
+  front_mechanisms=footprint[:4]*c.rack_mechanism_kg_m2
+  other['machines']-=(masses['dive_compressors']+float(sum(front_mechanisms)))/c.machinery_kg_m3
+  if any(front_mechanisms/c.machinery_kg_m3 > d.stage_hatch_buffer_m*A*c.fill_fraction):
+   raise ValueError('Rack mechanisms exceed dedicated hatch equipment buffers')
+  packing=dict(stages=stages,receiver_start_m=x,receiver_end_m=length,
+       front_mechanisms_m3=(front_mechanisms/c.machinery_kg_m3).tolist(),
+       aft_packages_m3=other,aft_displacement_m3=sum(other.values())/c.fill_fraction,
+       note='Aft package displacement preserves all hardware; radial layout pending')
  depths.append(length-bay-sum(depths))
  if depths[-1]<rack_depths[-1]+2*hd:raise ValueError('Installed hardware/racks exceed fixed hull length')
  vessel=0
  for i,(g,L) in enumerate(zip(geom,depths)):
   gross=A*L if i==0 else A*(L-2*hd)+2*headV
-  g.update(gross_m3=gross,gas_m3=gross-g['solid_m3'],depth_m=L,deployed_physical_m2=float(footprint[i]))
+  displacement=packing['aft_displacement_m3'] if packing and i==4 else 0.
+  gas_volume=gross-g['solid_m3']-displacement
+  if gas_volume<=0 or (i==4 and gas_volume<g['envelope_m3']-g['solid_m3']):raise ValueError('Aft equipment/rack displacement exceeds receiver')
+  g.update(gross_m3=gross,gas_m3=gas_volume,depth_m=L,deployed_physical_m2=float(footprint[i]))
+  if packing:g['equipment_displacement_m3']=displacement
   if i:
    rating=d.rated_pressure_Pa[i-1];barrel=A*0+2*math.pi*rad*(L-2*hd);heads=2*math.pi*(rad**2+hd**2);R=(rad**2+hd**2)/(2*hd)
    vessel+=(barrel*max(.001,1.5*rating*rad/150e6)+heads*max(.001,1.5*rating*R/(2*150e6)))*2700*1.5+(barrel+heads)
  masses['pressure_vessels']=vessel;masses['hull']=math.pi*outside*length*4
  masses['margin']=sum(masses.values())*c.margin
  prop=J*penalty['impulse_multiplier']/(d.isp_s*9.80665)
- return dict(orbit=o,geometry=geom,gas_system=gas_system,banks=banks,coast_banks=coast,masses_kg=masses,dry_kg=sum(masses.values()),packages_m3=packages,bay_m=bay,length_m=length,outside_m=outside,
+ return dict(orbit=o,geometry=geom,stage_packing=packing,gas_system=gas_system,banks=banks,coast_banks=coast,masses_kg=masses,dry_kg=sum(masses.values()),packages_m3=packages,bay_m=bay,length_m=length,outside_m=outside,
   thrust_W=power,required_impulse_Ns=J*penalty['impulse_multiplier'],geometric_impulse_Ns=inlet_impulse,total_drag_impulse_Ns=J,skin_friction=skin,skin_impulse_fraction=skin['impulse_Ns']/inlet_impulse,unresolved_exospheric_incident_kg=float(np.trapezoid(supply*(1-inlet_window),times)),propellant_reference_kg=prop,arc=penalty,
   start_s=start,end_s=end,forcing=dict(time=times,phase=phase,supply=supply*inlet_window,pressure=state['ram_Pa']*inlet_window,temperature=state['temperature_K'],speed=state['speed_m_s']),
   array_motion_s=math.sqrt(d.solar_area_m2)/c.deployment_m_s,radiator_motion_s=math.sqrt(d.warm_radiator_m2)/c.deployment_m_s,

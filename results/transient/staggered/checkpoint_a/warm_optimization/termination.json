@@ -1,0 +1,5 @@
+{
+  "success": false,
+  "termination": "Stopped at owner correction of thermal-spacing model",
+  "note": "Search incomplete; old wide-channel thermal assumption does not test the intended staggered arrangement."
+}

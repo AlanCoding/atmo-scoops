@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="760" viewBox="0 0 1500 760"><rect width="1500" height="760" fill="white"/><style>text{font-family:DejaVu Sans,sans-serif;fill:#233748}</style>
+<text x="55" y="45" font-size="30">Combined cooler and stage-packing candidate</text>
+<text x="55" y="78" font-size="18">Exact axial scale from the saved simulation • not the published v1.0 reference</text>
+<rect x="90.0" y="170.0" width="1268.0" height="126.8" fill="#edf5f7" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="90.0" y="170.0" width="54.40277654066927" height="126.8" fill="#edf5f7" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="130.0" y="170.0" width="14.402776540669272" height="126.8" fill="#cd8b46" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="144.40277654066927" y="170.0" width="20.4748538695628" height="126.8" fill="#a5b8c8" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="164.8776304102321" y="170.0" width="4.0" height="126.8" fill="#bbaccf" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="168.8776304102321" y="170.0" width="12.949126833351897" height="126.8" fill="#edf5f7" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="174.8776304102321" y="170.0" width="0.9491268333518974" height="126.8" fill="#cd8b46" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="181.82675724358398" y="170.0" width="26.309188364376283" height="126.8" fill="#a5b8c8" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="208.13594560796025" y="170.0" width="4.0" height="126.8" fill="#bbaccf" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="212.13594560796025" y="170.0" width="12.578498264060755" height="126.8" fill="#edf5f7" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="218.13594560796025" y="170.0" width="0.5784982640607552" height="126.8" fill="#cd8b46" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="224.714443872021" y="170.0" width="19.805729416731452" height="126.8" fill="#a5b8c8" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="244.52017328875246" y="170.0" width="4.0" height="126.8" fill="#bbaccf" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="248.52017328875246" y="170.0" width="12.432520060630878" height="126.8" fill="#edf5f7" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="254.52017328875246" y="170.0" width="0.43252006063087833" height="126.8" fill="#cd8b46" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="260.95269334938337" y="170.0" width="17.484812668107367" height="126.8" fill="#a5b8c8" stroke="#5f7785" stroke-width="0.7"/>
+<rect x="278.4375060174907" y="170.0" width="4.0" height="126.8" fill="#bbaccf" stroke="#5f7785" stroke-width="0.7"/>
+<text x="90.0" y="152.0" font-size="18">Mouth → flow</text>
+<text x="312.4375060174907" y="233.4" font-size="17">Aft receiver: residual gas volume after equipment displacement</text>
+<text x="55" y="340" font-size="18">Blue-white: gas space   •   Amber: plate rack   •   Grey: compressor   •   Purple: 1 m hatch equipment</text>
+<text x="55" y="373" font-size="17">Front clear space: 10 m. Downstream pressure-vessel heads retain their explicit gas volume.</text>
+<text x="55" y="415" font-size="18">Stage</text>
+<text x="155" y="415" font-size="18">Gas region (m)</text>
+<text x="430" y="415" font-size="18">Rack region (m)</text>
+<text x="700" y="415" font-size="18">Compressor (m)</text>
+<text x="1000" y="415" font-size="18">Hatch region (m)</text>
+<text x="55" y="451" font-size="18">1</text>
+<text x="155" y="451" font-size="18">0.000–13.601</text>
+<text x="430" y="451" font-size="18">10.000–13.601</text>
+<text x="700" y="451" font-size="18">13.601–18.719</text>
+<text x="1000" y="451" font-size="18">18.719–19.719</text>
+<text x="55" y="485" font-size="18">2</text>
+<text x="155" y="485" font-size="18">19.719–22.957</text>
+<text x="430" y="485" font-size="18">21.219–21.457</text>
+<text x="700" y="485" font-size="18">22.957–29.534</text>
+<text x="1000" y="485" font-size="18">29.534–30.534</text>
+<text x="55" y="519" font-size="18">3</text>
+<text x="155" y="519" font-size="18">30.534–33.679</text>
+<text x="430" y="519" font-size="18">32.034–32.179</text>
+<text x="700" y="519" font-size="18">33.679–38.630</text>
+<text x="1000" y="519" font-size="18">38.630–39.630</text>
+<text x="55" y="553" font-size="18">4</text>
+<text x="155" y="553" font-size="18">39.630–42.738</text>
+<text x="430" y="553" font-size="18">41.130–41.238</text>
+<text x="700" y="553" font-size="18">42.738–47.109</text>
+<text x="1000" y="553" font-size="18">47.109–48.109</text>
+<text x="55" y="615" font-size="18">Receiver: x = 48.109–317.000 m. Hull OD 31.7 m; length 317.0 m.</text>
+<text x="55" y="650" font-size="17">Other equipment volume is retained in the receiver budget; radial locations await the next checkpoint.</text>
+<text x="55" y="682" font-size="17">The last-125-m isolation tank, five-pass liquid storage and relocated thruster hardware are not implemented here.</text>
+</svg>
