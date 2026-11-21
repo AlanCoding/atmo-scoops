@@ -1,102 +1,97 @@
-"""Scale side elevation from the publication register; appendages illustrative."""
+"""Proposed packaging revision; frozen cycle results are not recalculated."""
 from pathlib import Path
-import json,html,subprocess
+import json, html, subprocess
 ROOT=Path(__file__).resolve().parents[2]
 r=json.loads((ROOT/'investigations/v1_layout/results.json').read_text())
-cm=next(v['CM_m'] for v in r['loaded'] if v['state']=='Perigee')
-S=4.;X=300.;Y=400.;D=31.7;L=317.;bottom=Y+D*S;mid=(Y+bottom)/2
-x=lambda m:X+S*m
-parts=['''<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1050" viewBox="0 0 1800 1050" role="img" aria-labelledby="title desc">
-<title id="title">Atmospheric scoop diver v1.0: scale side view at perigee</title>
-<desc id="desc">The 317 metre by 31.7 metre hull uses equal horizontal and vertical scale. The mouth faces left, motion and thrust point left, incoming air and exhaust point right. The loaded perigee center of mass is 32.80 metres behind the mouth. Thruster axial spans follow the provisional register; pod dimensions and aft fins are illustrative. The Earth and altitude indicator are not to scale.</desc>
-<defs>
-<marker id="blue" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#8fc8ff"/></marker>
-<marker id="orange" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#f5ae66"/></marker>
-<marker id="green" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#74dfb5"/></marker>
-<pattern id="bay" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 12L12 0" stroke="#38536b" stroke-width="1"/></pattern>
-</defs>
-<rect width="1800" height="1050" fill="#0b1424"/>
-<style>text{font-family:DejaVu Sans,sans-serif;fill:#edf3fa} .sub{fill:#a7bfd4} .dim{stroke:#a7bfd4;stroke-width:1.5;fill:none} .leader{stroke:#90a9c0;stroke-width:1.5;fill:none}</style>
-''']
-def text(a,b,s,size=22,color=None,anchor='start'):
- parts.append(f'<text x="{a:.3f}" y="{b:.3f}" font-size="{size}" text-anchor="{anchor}"'+(f' style="fill:{color}"' if color else '')+'>'+html.escape(s)+'</text>')
-def line(a,b,c,d,stroke='#a7bfd4',width=2,dash=None,marker=None):
- parts.append(f'<line x1="{a}" y1="{b}" x2="{c}" y2="{d}" stroke="{stroke}" stroke-width="{width}"'+(f' stroke-dasharray="{dash}"' if dash else '')+(f' marker-end="url(#{marker})"' if marker else '')+'/>')
-def rect(a,b,w,h,fill,stroke=None):
- parts.append(f'<rect x="{a}" y="{b}" width="{w}" height="{h}" fill="{fill}"'+(f' stroke="{stroke}" stroke-width="2"' if stroke else '')+'/>')
-text(55,58,'ATMOSPHERIC SCOOP DIVER · v1.0 AT PERIGEE',34)
-text(55,91,'Scale side elevation of the hull • all deployables stowed • nose-first attitude assumed',21,'#a7bfd4')
-for a,label,value in [(55,'ALTITUDE','85 km above Earth'),(490,'INERTIAL SPEED',f'{r["orbit"]["perigee_speed_km_s"]:.2f} km/s'),(900,'ORBIT','85 × 2,000 km'),(1330,'DRY MASS','13,250 tonnes')]:
- rect(a,115,405,72,'#132338');text(a+15,139,label,14,'#a7bfd4');text(a+15,169,value,23)
-line(1200,235,760,235,'#8fc8ff',4,marker='blue');text(980,217,'DIRECTION OF MOTION',21,'#8fc8ff','middle')
-text(1430,231,'Radial velocity = 0 at perigee',18,'#a7bfd4','middle')
-text(x(cm)-80,282,f'Perigee CM: {cm:.2f} m',24,'#ffdb71')
-text(x(cm)-80,309,f'Dry CM: {r["dry_CM_m"]:.2f} m',18,'#a7bfd4')
-line(650,339,405,339,'#74dfb5',3,marker='green');text(663,346,'Forward thrust',21,'#74dfb5')
-# Body envelope, pressure volumes, and equipment bay strips; same scale x/y.
-rect(X,Y,L*S,D*S,'#173445')
-for a,b in r['equipment_bays_m']:
- rect(x(a),Y,(b-a)*S,D*S,'#25364c');rect(x(a),Y,(b-a)*S,D*S,'url(#bay)')
- # Folded solar cassettes: occupy upper/lower peripheral sectors symbolically.
- rect(x(a)+1,Y+6,max(1,(b-a)*S-2),8,'#5796bf');rect(x(a)+1,bottom-14,max(1,(b-a)*S-2),8,'#5796bf')
-for a,b in r['chambers_m'][:-1]:
- rect(x(a),Y,(b-a)*S,D*S,'#5c472a')
-for a,b in r['chambers_m'][1:]:line(x(a),Y+2,x(a),bottom-2,'#6ab8b7',1.5)
-# Exact total outline, open inlet, symbolic aft cap within 317 m.
-line(X,Y,x(L),Y,'#a9c4d8',3);line(X,bottom,x(L),bottom,'#a9c4d8',3);line(x(L),Y,x(L),bottom,'#a9c4d8',3)
-line(X,mid,x(L),mid,'#8aa5b8',1,dash='10 7')
-text(1060,mid-8,'AFT GAS RECEIVER',26,'#97dfd6','middle')
-text(1060,mid+22,'x = 69.63–317 m · 247.37 m deep',20,'#a7bfd4','middle')
-# Indicative aft stabilizer surfaces, deliberately dashed/unfilled.
-for yy,outer in [(Y,Y-54),(bottom,bottom+54)]:
- parts.append(f'<path d="M{x(280)} {yy} L{x(307)} {outer} L{x(315)} {yy}" fill="none" stroke="#718da6" stroke-width="2" stroke-dasharray="7 5"/>')
-# Two symmetric groups of side-mounted modules. Axial spans from the register;
-# radial offsets and pod heights deliberately illustrative.
-for group,(a,b) in enumerate([(28.98440010238012,38.98440010238012),(42.00768260616955,69.62720686895992)]):
- # Stagger radial offsets so an upstream group's schematic exhaust does not
- # pass through the downstream pod at the same projected radius.
- for yy in ([Y-55,bottom+41] if group==0 else [Y-32,bottom+18]):
-  rect(x(a),yy,(b-a)*S,14,'#235346','#74dfb5')
-  line((x(a)+x(b))/2,yy+7,(x(a)+x(b))/2,Y if yy<Y else bottom,'#74dfb5',1.5)
-  line(x(b)+6,yy+7,x(b)+150,yy+7,'#74dfb5',2,dash='8 5',marker='green')
-text(845,378,'Exhaust aft →',20,'#74dfb5')
-# Inflow relative to the moving craft.
-for yy in [Y+40,Y+83]:line(55,yy,285,yy,'#f5ae66',3,marker='orange')
-text(55,Y+9,'Relative airflow',20,'#f5ae66')
-text(55,bottom+27,'OPEN MOUTH',19,'#f5ae66')
-# CM mark: all phases differ by less than a pixel here.
-line(x(cm),Y-40,x(cm),bottom+65,'#ffdb71',2,dash='6 4')
-parts.append(f'<circle cx="{x(cm)}" cy="{mid}" r="9" fill="#ffdb71" stroke="#0b1424" stroke-width="2"/>')
-line(x(cm)-13,mid,x(cm)+13,mid,'#0b1424',2);line(x(cm),mid-13,x(cm),mid+13,'#0b1424',2)
-# Selected callouts with separate landing zones.
-line(x(10),bottom+2,320,610);text(205,642,'Forward batteries + compressors',20)
-line(x(61),bottom+34,650,610);text(610,642,'Thruster groups: x ≈ 29–39 and 42–70 m',19)
-line(x(300),bottom+60,1460,610);text(1310,642,'Aft stabilizers: illustrative',19,'#a7bfd4')
-# Diameter dimension outside the tail.
-xd=x(L)+60
-line(xd,Y,xd,bottom);line(xd-9,Y,xd+9,Y);line(xd-9,bottom,xd+9,bottom)
-text(xd+15,mid-4,'31.7 m',22);text(xd+15,mid+22,'hull OD',17,'#a7bfd4')
-# Overall and front equipment dimensions.
-for xx in [X,x(L)]:line(xx,675,xx,734,'#a7bfd4',1)
-line(X,715,x(L),715);line(X,707,X,723);line(x(L),707,x(L),723)
-text((X+x(L))/2,702,'317 m overall hull length · L / D = 10',23,'#edf3fa','middle')
-text(X,780,'x = 0 m',18,'#a7bfd4','middle');text(x(L),755,'x = 317 m',18,'#a7bfd4','middle')
-# A measurable 50 m scale bar.
-rect(70,730,100,8,'#edf3fa');rect(170,730,100,8,'#5e829a');text(70,766,'0',16,'#a7bfd4');text(270,766,'50 m',16,'#a7bfd4','end')
-# Perigee context below the actual drawing: intentionally broken altitude scale.
-rect(55,805,1690,182,'#101f31')
-text(78,838,'PERIGEE CONFIGURATION',18,'#8fc8ff')
-text(78,870,'Solar arrays, warm radiators and solid coolers are stowed.',20)
-text(78,900,'Batteries power compression and air-fed electric reboost.',20)
-text(78,930,'Dawn–dusk SSO target: inclination ≈ 99.35°; seasonal lighting still to be modeled.',17,'#a7bfd4')
-line(1510,828,1510,930,'#8fc8ff',2,marker='blue')
-# Zigzag break makes clear that Earth is not 85 km away on the drawing scale.
-parts.append('<path d="M1500 867L1520 876L1500 885L1520 894" stroke="#0b1424" stroke-width="9" fill="none"/><path d="M1500 867L1520 876L1500 885L1520 894" stroke="#8fc8ff" stroke-width="2" fill="none"/>')
-text(1530,855,'85 km altitude',19,'#8fc8ff');text(1530,914,'Earth below',18,'#a7bfd4')
-line(1395,948,1695,948,'#477da5',4);text(1510,976,'Altitude indicator not to scale',15,'#a7bfd4','middle')
-text(55,1020,'Hull dimensions and CM are scaled. Internal radial layout, pod dimensions, plume cones and fins are schematic; no stability claim.',17,'#a7bfd4')
-parts.append('</svg>')
-out=ROOT/'docs/images/v1_perigee_scale.svg';out.write_text('\n'.join(parts)+'\n')
-subprocess.run(['magick','-background','none','-density','192',str(out),str(out.with_suffix('.png'))],check=True)
-subprocess.run(['magick','-background','none','-density','192',str(ROOT/'docs/images/feed_racks.svg'),str(ROOT/'docs/images/feed_racks.png')],check=True)
-print(out)
+# Relocate complete mass categories; all other masses, including margin, stay put.
+cm=r['dry_CM_m']
+for category,new_x in [('thrusters',324.),('solar',132.5),('coast_compressors',80.),('refrigerator',80.),('external_exchangers',80.),('separator',80.),('liquid_tanks',85.)]:
+ rows=[c for c in r['components'] if c['category']==category]
+ cm+=sum(c['mass_kg']*(new_x-c['centroid_m']) for c in rows)/r['dry_mass_kg']
+S=4.;X=230.;Y=370.;L=317.;D=31.7;B=Y+D*S;M=(Y+B)/2
+x=lambda v:X+S*v
+p=['''<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1040" viewBox="0 0 1800 1040" role="img" aria-labelledby="title desc">
+<title id="title">Atmospheric scoop diver: proposed perigee packaging</title>
+<desc id="desc">Equal-scale 317 metre hull, aft thrusters, solar stowage alongside the forward receiver, and a 125 metre isolated aft propellant compartment. This is a proposed layout, not a rerun of the v1.0 cycle.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#236b87"/></marker></defs>
+<rect width="1800" height="1040" fill="#ffffff"/>
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#203344}line,path,rect{stroke-linejoin:round}</style>''']
+def text(a,b,s,size=20,color='#203344',anchor='start'):
+ p.append(f'<text x="{a}" y="{b}" font-size="{size}" text-anchor="{anchor}" fill="{color}">{html.escape(s)}</text>')
+def line(a,b,c,d,color='#64798a',width=2,dash='',arrow=False):
+ p.append(f'<line x1="{a}" y1="{b}" x2="{c}" y2="{d}" stroke="{color}" stroke-width="{width}" stroke-dasharray="{dash}"'+(' marker-end="url(#arrow)"' if arrow else '')+'/>')
+def rect(a,b,w,h,fill,stroke='#64798a'):
+ p.append(f'<rect x="{a}" y="{b}" width="{w}" height="{h}" fill="{fill}" stroke="{stroke}" stroke-width="1.5"/>')
+text(55,55,'ATMOSPHERIC SCOOP DIVER · PROPOSED PACKAGING',32)
+text(55,89,'v1.0 geometry • revised stowage and propellant partition • numerical cycle update pending',21)
+text(55,135,'85 km perigee   |   85 × 2,000 km reference orbit   |   all deployables stowed',23)
+line(1050,190,650,190,'#236b87',4,arrow=True);text(850,174,'Motion and forward thrust',22,anchor='middle')
+text(55,247,f'Illustrative relocated dry CM: {cm:.1f} m',23,'#996300')
+text(55,274,'Existing masses relocated only; larger liquid tanks not yet re-budgeted.',17)
+# Existing machinery and pressure-volume positions remain provisional.
+rect(X,Y,L*S,D*S,'#e9f4f5')
+for a,b in r['equipment_bays_m']:rect(x(a),Y,(b-a)*S,D*S,'#dce2e8')
+rack_depths=[.8964235337918296,.055570427084493626,.03240614150379688,.023282503789430302]
+for i,((a,b),depth) in enumerate(zip(r['chambers_m'][:-1],rack_depths)):
+ rect(x(a),Y,(b-a)*S,D*S,'#f6eddc')
+ start=a if i==0 else b-1.5-depth
+ # Preserve true plate-bank thickness, even where subpixel in this overview.
+ p.append(f'<rect x="{x(start)}" y="{Y}" width="{depth*S}" height="{D*S}" fill="#b66f20"/>')
+# Rounded pressure vessels; constant barrel radius, heads illustrative.
+# Main tank 24 m diameter leaves peripheral equipment space inside 30 m bore.
+p.append(f'<rect x="{x(69.63)}" y="{M-48}" width="{(192-69.63)*S}" height="96" rx="16" fill="#e9f4f5" stroke="#426b7a" stroke-width="2"/>')
+p.append(f'<rect x="{x(192)}" y="{M-60}" width="{125*S}" height="120" rx="16" fill="#d9ede1" stroke="#366c50" stroke-width="2"/>')
+# Valve icon across bulkhead, connection is internal.
+p.append(f'<path d="M{x(192)-12} {M-9} L{x(192)+12} {M+9} L{x(192)+12} {M-9} L{x(192)-12} {M+9} Z" fill="#fff" stroke="#366c50" stroke-width="2"/>')
+# Solar stowage in opposing peripheral sectors, avoiding forward rack exits.
+for yy in [Y+4,B-16]:
+ rect(x(90),yy,85*S,12,'#96bfe8','#416a97')
+ rect(x(70),yy,20*S,12,'#c8b7e1','#785a98')
+# Product tank marker in the same peripheral service zone.
+rect(x(82),Y+4,6*S,12,'#f1d297','#9f792f')
+text(x(130),M-3,'MAIN RECEIVER',21,anchor='middle')
+text(x(130),M+22,'24 m barrel diameter',17,anchor='middle')
+text(x(254),M-6,'PROPELLANT RESERVE',21,anchor='middle')
+text(x(254),M+20,'125 m · 30 m barrel diameter',19,anchor='middle')
+# Modest cryogenic package marker; callout, not detailed internals.
+# Cryogenic plant is now in the receiver peripheral zone, not the front bays.
+# Tail pods occupy last 10 m; motor head/PPU split is unresolved.
+for yy,sign in [(Y-23,-1),(B+7,1)]:
+ rect(x(319),yy,10*S,16,'#a3cdb8','#366c50')
+ cy=yy+8
+ p.append(f'<path d="M{x(329)} {cy} L{x(329)+110} {cy-64} L{x(329)+110} {cy+64} Z" fill="#d7eee5" fill-opacity="0.65" stroke="#459476" stroke-dasharray="6 4"/>')
+ line(x(329),cy,x(329)+125,cy,'#236b87',2,arrow=True)
+# Conceptual fins; not a stability result.
+for yy,outer in [(Y,Y-50),(B,B+50)]:
+ p.append(f'<path d="M{x(280)} {yy} L{x(302)} {outer} L{x(307)} {yy}" fill="none" stroke="#7e8c97" stroke-width="2" stroke-dasharray="6 4"/>')
+line(X,Y,x(L),Y,'#354c5c',3);line(X,B,x(L),B,'#354c5c',3);line(x(L),Y,x(L),B,'#354c5c',3)
+line(x(cm),Y-35,x(cm),B+35,'#b77a00',2,'6 4')
+p.append(f'<circle cx="{x(cm)}" cy="{M}" r="7" fill="#b77a00"/>')
+for yy in [Y+40,Y+85]:line(55,yy,X-12,yy,'#236b87',3,arrow=True)
+text(55,Y+12,'Incoming air',18);text(55,B+25,'Open mouth',18)
+# Top and bottom labels, separated from the hull.
+line(x(132.5),Y+3,x(132.5),318);text(x(132.5),310,'Folded solar: x = 90–175 m · 11,527 m³',19,anchor='middle')
+text(1110,273,'Tail-mounted electric thrusters',22)
+text(1110,302,'30° plume half-angle shown for screening',18)
+line(1430,310,x(324),Y-23)
+line(x(80),B,550,583);text(290,611,'Cryogenic plant wraps forward receiver',19)
+text(290,637,'60 m³ liquid capacity ≈ 15 passes (provisional)',17)
+line(x(192),B,1050,583);text(880,611,'Separate rounded reserve + isolation valve',19)
+text(880,637,'Opens when collection pressure catches reserve pressure',17)
+# Dimensions.
+for a,b,yy,label in [(0,317,700,'317 m overall · 31.7 m hull OD · L/D = 10'),(192,317,755,'125 m reserved aft length')]:
+ line(x(a),yy,x(b),yy)
+ for q in [a,b]:line(x(q),yy-7,x(q),yy+7)
+ text((x(a)+x(b))/2,yy-12,label,21,anchor='middle')
+text(X,735,'x = 0',16);text(x(192),787,'x = 192 m',16,anchor='middle');text(x(317),787,'x = 317 m',16,anchor='middle')
+rect(55,820,1690,170,'#f0f4f7','#d6e0e6')
+text(78,849,'FRONT COOLERS · SAVED REFERENCE DIMENSIONS',20)
+text(78,879,'Rack depths: SiC 0.896 m  |  Al 0.0556 m  |  Al 0.0324 m  |  Al 0.0233 m',20)
+text(78,908,'Chamber axial envelopes: 0.896 m  |  3.056 m  |  3.032 m  |  3.023 m (downstream includes vessel heads)',18)
+text(78,939,'Coast: isolate reserve. Pre-dive: draw it down. Reopen when collection pressure catches reserve pressure.',18)
+text(78,969,'Front chamber positions retained from reference; 12 / 10 / 10 / 27.62 m machinery bays remain provisional.',17)
+text(55,1020,'317 m hull excludes aft thrusters (x = 319–329 m). Tank heads and radial packaging provisional; cycle update pending.',17)
+p.append('</svg>')
+out=ROOT/'docs/images/v1_perigee_scale.svg';out.write_text('\n'.join(p)+'\n')
+subprocess.run(['magick','-background','white','-density','120',str(out),str(out.with_suffix('.png'))],check=True)
+print(f'{out}\nRelocated dry CM: {cm:.3f} m')

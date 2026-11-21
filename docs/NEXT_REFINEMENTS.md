@@ -1,4 +1,6 @@
-# Refinement plan for the coupled design and geometry handoff
+# Earlier refinement plan for the coupled design and geometry handoff
+
+**Superseded immediate sequence:** use [the scale-review implementation plan](SCALE_REVIEW_IMPLEMENTATION_PLAN.md). The reduced-loss rod status below is historical; the frozen numerical baseline is now the validated plate case 72.
 
 The active [staged reference](../investigations/staged_refinement/RESULTS.md)
 now has a [reduced-loss continuation](../investigations/staged_refinement/REDUCED_LOSS.md)

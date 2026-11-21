@@ -3,7 +3,7 @@
 **Scope update:** the subsequently supplied **Slough 2022 RON paper** explicitly
 describes repeated elliptical refueling with battery-backed perigee thrust.
 It is a different source from the 2026 *Space Gas Station* reviewed below.
-See [the illustrated break-out article](REFUELING_PRECEDENTS.md). Do not extend
+See [the illustrated break-out article](ELLIPTICAL_COLLECTION_ORBITS.md). Do not extend
 this original two-document comparison into a claim that Slough never described
 such a cycle, or that this project originated perigee-reboost collection.
 

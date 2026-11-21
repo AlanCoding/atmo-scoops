@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc"><title id="title">Longer staggered plate cooler: serial flow</title><desc id="desc">A short dense reference stack is compared with four successive wider-pitch rows holding the same material. All gas flows through all four rows. Transverse spacing is magnified; this is not a full spacecraft elevation.</desc><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#167e97"/></marker></defs><rect width="1600" height="1050" fill="white"/><style>text{font-family:DejaVu Sans,sans-serif;fill:#243748}</style>
+<text x="50" y="55" font-size="29">SAME COOLER MATERIAL · WIDER PITCH · LONGER SERIAL FLOW PATH</text>
+<text x="50" y="90" font-size="21">Proposed staggered plates — geometry study, not a simulated performance result</text>
+<text x="50" y="135" font-size="24">A. Reference: one dense, uninterrupted plate stack</text>
+<rect x="220" y="165" width="240" height="220" fill="#eef5f7" stroke="#849aa6"/>
+<rect x="220" y="176" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="189" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="202" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="215" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="228" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="241" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="254" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="267" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="280" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="293" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="306" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="319" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="332" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="345" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="358" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="371" width="240" height="4" fill="#b57639" stroke="none"/>
+<line x1="70" y1="200" x2="205" y2="200" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="475" y1="200" x2="580" y2="200" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="70" y1="265" x2="205" y2="265" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="475" y1="265" x2="580" y2="265" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="70" y1="330" x2="205" y2="330" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="475" y1="330" x2="580" y2="330" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<text x="650" y="205" font-size="23">Front SiC reference</text>
+<text x="650" y="242" font-size="20">Plate thickness: 1.435 mm</text>
+<text x="650" y="274" font-size="20">Pitch: 7.625 mm  |  clear gap: 6.190 mm</text>
+<text x="650" y="306" font-size="20">Material: 382.83 tonnes  |  wetted area: 166,207 m²</text>
+<text x="650" y="338" font-size="20">Axial flow depth: 0.896 m</text>
+<line x1="220" y1="407" x2="460" y2="407" stroke="#80929c" stroke-width="2" stroke-dasharray=""/>
+<text x="278" y="432" font-size="18">0.896 m</text>
+<text x="50" y="480" font-size="24">B. Four successive rows: 4× pitch, ¼ as many sheets per row</text>
+<rect x="220" y="510" width="240" height="220" fill="#eef5f7" stroke="#849aa6"/>
+<rect x="220" y="521" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="573" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="625" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="220" y="677" width="240" height="4" fill="#b57639" stroke="none"/>
+<text x="300" y="759" font-size="18">Row 1</text>
+<line x1="255" y1="548" x2="420" y2="548" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="255" y1="652" x2="420" y2="652" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<rect x="480" y="510" width="240" height="220" fill="#eef5f7" stroke="#849aa6"/>
+<rect x="480" y="547" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="480" y="599" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="480" y="651" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="480" y="703" width="240" height="4" fill="#b57639" stroke="none"/>
+<text x="560" y="759" font-size="18">Row 2</text>
+<line x1="515" y1="574" x2="680" y2="574" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="515" y1="678" x2="680" y2="678" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<rect x="740" y="510" width="240" height="220" fill="#eef5f7" stroke="#849aa6"/>
+<rect x="740" y="521" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="740" y="573" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="740" y="625" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="740" y="677" width="240" height="4" fill="#b57639" stroke="none"/>
+<text x="820" y="759" font-size="18">Row 3</text>
+<line x1="775" y1="548" x2="940" y2="548" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="775" y1="652" x2="940" y2="652" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<rect x="1000" y="510" width="240" height="220" fill="#eef5f7" stroke="#849aa6"/>
+<rect x="1000" y="547" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="1000" y="599" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="1000" y="651" width="240" height="4" fill="#b57639" stroke="none"/>
+<rect x="1000" y="703" width="240" height="4" fill="#b57639" stroke="none"/>
+<text x="1080" y="759" font-size="18">Row 4</text>
+<line x1="1035" y1="574" x2="1200" y2="574" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="1035" y1="678" x2="1200" y2="678" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="70" y1="575" x2="205" y2="575" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="1250" y1="575" x2="1430" y2="575" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="70" y1="675" x2="205" y2="675" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<line x1="1250" y1="675" x2="1430" y2="675" stroke="#167e97" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
+<text x="1270" y="622" font-size="18">To compressor</text>
+<line x1="220" y1="796" x2="1240" y2="796" stroke="#80929c" stroke-width="2" stroke-dasharray=""/>
+<text x="420" y="825" font-size="21">Total plate-bearing length = 3.586 m (4 × 0.896 m)</text>
+<text x="50" y="866" font-size="21">All gas traverses all four rows. Alternate rows shift sideways by half a pitch.</text>
+<text x="50" y="902" font-size="20">Pitch: 30.499 mm  |  clear gap: 29.064 mm  |  thickness, material mass and broad-face area unchanged.</text>
+<text x="50" y="938" font-size="20">Offsets interrupt channels; heat-transfer gains and edge/turning losses must be evaluated together.</text>
+<text x="50" y="978" font-size="17">Schematic slice: transverse spacing/thickness magnified; plate count illustrative. Same axial scale in A and B.</text>
+<text x="50" y="1008" font-size="17">Visible row separations are illustrative; real row clearance adds length and must be budgeted. No performance gain assumed.</text>
+</svg>

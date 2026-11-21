@@ -6,6 +6,10 @@ The concept was first published on AlanCoding's
 [Atmospheric Scoop Divers page](https://alancoding.github.io/concepts/atmospheric-scoop-divers/).
 This repository develops its engineering description and numerical analysis.
 
+**Version plan:** [v1.0.1 accuracy refinements → v1.1 downstream coolant tubes →
+v2.0 propulsion-free diver and tether mothership](docs/VERSION_ROADMAP.md).
+These are documented plans; the published v1.0 reference remains unchanged.
+
 The concept is a spacecraft that collects air during repeated 7–8 km/s
 atmospheric passes, transfers it into rear tanks, and makes useful cryogenic
 liquids during the coast. A solid metal rack absorbs entry heat. Once clear of
@@ -198,3 +202,5 @@ The [gas-reserve and rack-spacing study](investigations/feed_pitch/RESULTS.md) a
 - [Earlier joint radius/pitch experiment](investigations/rack_radius/RESULTS.md): retained research, not the active reference.
 
 Publication assets for the current snapshot: [v1.0 publication kit](docs/publication/V1_0.md), including current-reference figures, numerical tables and the provisional axial mass layout.
+
+Next work: [incremental model changes from the scale-image review](docs/SCALE_REVIEW_IMPLEMENTATION_PLAN.md), starting with the staggered plate cooler; each accepted constrained-optimization stage receives its own review packet and commit.

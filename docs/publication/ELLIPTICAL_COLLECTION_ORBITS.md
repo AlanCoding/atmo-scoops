@@ -1,6 +1,8 @@
-# Two atmospheric-refueling architectures: Minovitch 1988 and Slough 2022
+# Prior elliptical collection orbits: Minovitch 1988 and Slough 2022
 
-Break-out article draft and illustration kit. These are original explanatory
+Published literature review: [Atmosphere orbital scoop diver literature](https://medium.com/@alanse/atmosphere-orbital-scoop-diver-literature-db3aba700a28).
+
+Local source notes and illustration kit for these prior scoop-diver concepts. These are original explanatory
 drawings based on the references, not reproductions of their figures or newly
 validated spacecraft designs. The distinction is **collection during a
 descending transfer versus repeated collection with perigee drag compensation**.

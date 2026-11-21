@@ -43,3 +43,8 @@ coefficient is acceptable only if the study establishes its applicable range.
 Keep each fluid case's inputs, mesh, raw fields and validation separate from
 primary-model results. Do not restore obsolete spacecraft assumptions when
 reusing numerical solver infrastructure.
+
+
+## Next cooler geometry study
+
+The [staggered plate plan](../metal_coolers/STAGGERED_PLATES_PLAN.md) defines the offline channel/row study, validity checks and eventual reduced-map interface. This is planned work, not an installed CFD solver.

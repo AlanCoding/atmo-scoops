@@ -1,5 +1,11 @@
 # Spacecraft design
 
+This page describes the integrated v1 architecture. The
+[version roadmap](VERSION_ROADMAP.md) records planned v1.0.1 accuracy work,
+v1.1 fixed coolant tubes in higher-pressure volumes with retained front SiC
+racks, and the v2.0 propulsion-free diver/tether-mothership split. Those plans
+do not change the frozen v1.0 numerical reference.
+
 ![Overall spacecraft during its dive and coast](images/spacecraft_overview.svg)
 
 ## Purpose and architecture
@@ -300,8 +306,11 @@ faces. See [equations and limitations](../modeling/metal_coolers/PLATES.md).
 
 Packaging and mass distribution will be resolved before a v1.0 Blender snapshot;
 see the [layout requirements and proposed solar location](PACKAGING_AND_BLENDER_PLAN.md).
-A subsequent v1.1 study will consider fixed coolant exchangers in the higher-pressure
-volumes instead of extracting those coolers through side hatches. Neither layout
-nor that conversion is yet a validated change to the numerical reference.
+The planned v1.1 architecture replaces downstream extracted racks with fixed
+coolant-tube exchangers, eliminating their pressure-sealed deployment doors.
+The front SiC rack retains direct deployment through the open mouth. The
+[roadmap](VERSION_ROADMAP.md#v11--retain-the-open-mouth-cooler-change-downstream-heat-storage)
+defines the thermal and packaging accounting still required; this conversion
+is not implemented or credited in the numerical reference.
 
 The v1.0 publication snapshot uses a [provisional axial mass register](../investigations/v1_layout/MASS_REGISTER.md): about 33 m dry CM from the mouth, with heavy equipment ahead of the long aft receiver. The intended orbit is [dawn–dusk sun-synchronous](../investigations/v1_layout/SUN_SYNCHRONOUS.md), approximately 99.35° inclination by a first-order J2 screen. Seasonal illumination and 3D orbit maintenance have not been added to the saved payoff calculation. The [publication kit](publication/V1_0.md) selects current figures and tables; publication precedes Blender and further sensitivity studies.

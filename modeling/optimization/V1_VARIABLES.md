@@ -164,3 +164,10 @@ To test that proposition later, fix a sequence of L/D values, release perigee un
 - [Forward balances, path margins and closure](../../atmo_scoops/transient/cycle.py).
 - [Independent thermodynamic audit](../../atmo_scoops/transient/validate.py).
 - [Full saved search manifest](../../results/transient/plates/cobyla_stable/search.json).
+
+### Consequence of fixed clear depths
+
+The [geometry provenance trace](../../investigations/v1_layout/FRONT_GEOMETRY_TRACE.md)
+shows why the first SiC gas compartment is smaller than the next three despite
+its much larger rack. Fixed 1.5 m vessel heads dominate downstream volume.
+This search did **not** establish an optimal distribution of empty chamber space.

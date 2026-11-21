@@ -103,3 +103,6 @@ merely to obtain compact storage. A rolled coast package, a folded transit
 package and the collection configuration may be different states; check each
 required state and transition. [Close-pass allocation](../deployment/CLOSE_PASS_VOLUME.md)
 connects these quantities to the per-stage dynamics and remaining rear tank.
+
+
+See the [planned longer staggered plate geometry](STAGGERED_PLATES_PLAN.md) for distributing the same material through a longer serial flow region.

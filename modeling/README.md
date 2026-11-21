@@ -73,3 +73,5 @@ Each dossier follows the [review workflow](WORKFLOW.md): source evidence → sta
 - [Per-rack material properties](chambers/MATERIALS.md): sourced caloric data, surface assumptions and thermal-reset screening in the isolated transient model.
 
 - [v1.0 independent variables, fixed choices and constraints](optimization/V1_VARIABLES.md): exact scope of the 33-coordinate plate search, including receiver-state dependence and closure tolerances.
+
+- [Longer staggered plate cooler plan](metal_coolers/STAGGERED_PLATES_PLAN.md): wider pitch, serial offset rows, offline pressure/heat-transfer maps and staged integration.

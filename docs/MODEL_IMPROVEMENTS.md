@@ -4,6 +4,28 @@ This is a maintained list of missing capabilities, not a work diary. Remove or
 rewrite an item when the model resolves it, and link its validation. Priorities
 reflect how strongly a missing relationship can distort design selection.
 
+## Version scope
+
+The [version roadmap](VERSION_ROADMAP.md) is the current sequencing plan:
+
+- **v1.0.1:** improve model accuracy in the integrated plate-cooled architecture,
+  starting with calibrated/bounded exterior side shear. The frozen reference
+  already uses an effective Cf of 0.002; this is refinement, not a new duplicate
+  drag charge. Propagate penalties through power, propellant and cycle closure.
+- **v1.1:** retain deployable front SiC racks; use fixed coolant tubes and a
+  carried coolant inventory in volumes 2–5, including the receiver. Remove
+  downstream rack extraction and its pressure-sealed doors, while accounting
+  for tubes, pumps, coolant storage, heat transfer and coast radiators.
+- **v2.0:** a propulsion-free diver retains its processing and deployment
+  systems, solar panels and batteries; a tether mothership supplies release,
+  capture, retrieval and external reboost. Establish multi-pass resonance and
+  full-system conservation before optimizing payoff. See the retained
+  [source handoff](V2_TETHER_HANDOFF.md), with current overrides noted.
+
+All three are plans only. No model scaffolding or new optimizer inputs are
+authorized by this documentation update; individual backlog items below are
+not commitments to implement every subsystem in v1.0.1.
+
 The current ordered [refinement and geometry-handoff plan](NEXT_REFINEMENTS.md) identifies gaseous propellant routing, pressure-loss-constrained rack pitch, skin friction, and the main potentially optimistic omissions. The [mass allowance definitions](../modeling/primary/MASS_ALLOWANCES.md) separate bus, rack mechanisms and contingency.
 
 Gas reserve/bypass and independent stage pitch with a provisional hydraulic law
@@ -273,3 +295,23 @@ currently aggregate across all five chambers; consider individual chamber/specie
 residuals when non-negligible interstage inventories are introduced. Do not imply
 that L/D versus perigee has already been jointly optimized. These are recorded
 limitations and future study directions, not model changes in this documentation.
+
+## Thruster placement and physical packaging
+
+See the [v1.0 packaging review](../investigations/v1_layout/PACKAGING_REVIEW.md).
+Research N₂/O₂ Hall-thruster angular plume distributions and atmospheric
+charge-exchange/impingement; a thin exhaust arrow is not a clearance envelope.
+Separate thruster heads from remote power-processing mass, compare tail mounting
+with canted side pods, and propagate cable/support mass and vector losses.
+Resolve folded solar, radiator and cryogenic package dimensions and deployment
+corridors before treating the axial register as a Blender-ready arrangement.
+
+## Front gas-volume allocation and inlet geometry
+
+The [case-72 geometry trace](../investigations/v1_layout/FRONT_GEOMETRY_TRACE.md)
+confirms that the plate search fixed all four extra clear depths at zero.
+Downstream gas volumes are 97–99% prescribed vessel-head space; they are not
+independently optimized inventories. Before claiming a volume-allocation optimum,
+expose the intended clear-depth variables, review separate full-bore head geometry,
+and establish a spatial inlet/diffuser allowance independently of rack thickness.
+The lumped open-front model does not validate shock containment in a 0.896 m inlet.

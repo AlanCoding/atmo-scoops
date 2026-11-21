@@ -4,6 +4,8 @@ Status: planning only. The verified numerical reference is the starting point,
 not a mechanically resolved spacecraft. No stability claim or construction-ready
 layout follows from the existing aggregate equipment bay.
 
+The current numerical-to-drawing sequence is [the scale-review implementation plan](SCALE_REVIEW_IMPLEMENTATION_PLAN.md). It supersedes the earlier ordering below.
+
 ## v1.0 scope and sequence
 
 1. Publish the verified plate reference as **v1.0 now**; the new sensitivity study
@@ -113,3 +115,12 @@ Specify which stages change; do not silently replace the front SiC system.
 Recompute heat transfer, pumping, fluid/solid volumes, mass, thermal reset and
 access requirements before crediting a benefit. Record the user's preference
 for this direction without assuming it already improves payoff.
+
+## Numerical v1.0 packaging review
+
+The [volume register](../investigations/v1_layout/VOLUME_REGISTER.md) extracts
+actual frozen package allowances and chamber volumes. The accompanying
+[packaging and propulsion review](../investigations/v1_layout/PACKAGING_REVIEW.md)
+explains gas branches, missing cold-box detail, plume clearance and aft-thruster
+CM sensitivity. The scale illustration's two pod groups are provisional;
+its solar strips are not volume-scaled. Use the register before building solids.
