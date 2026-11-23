@@ -13,7 +13,7 @@ from ..reboost import state_at
 from .inputs import read_config
 from .hardware import compile_hardware
 from .thermo import properties,Y
-from .gas_feed import state as gas_state
+from .gas_feed import state as gas_state, valve_flow
 from .porous import pump_flow,suction_pressure,viscosity
 from .loss_power_screen import charge as rack_power_charge
 
@@ -34,14 +34,15 @@ def simulate(config,samples=1001):
   trace=d.chamber_initial_pressure_Pa*V[i]/(float(Y@th.R)*300.)
   y0[3*i:3*i+3]=trace*Y;y0[15+i]=trace*float(Y@th.at(300.)[0]-float(Y@th.R)*300.)/1e6
  capacity=d.battery_MWh*3600.;y0[25]=capacity*d.battery_initial_soc;y0[26]=d.warm_store_kg*c.buffer_cp_J_kg_K*d.warm_initial_K/1e6;y0[27:30]=d.reserve_kg*Y
- gas_mode=d.propellant_storage=='gas'
+ gas_mode=d.propellant_storage in ('gas','valve');valve_mode=d.propellant_storage=='valve';boosted=d.propellant_storage=='gas'
+ reserve_volume=hw['gas_system'].get('usable_internal_m3',d.gas_volume_m3)
  if gas_mode:
   y0[35:38]=d.gas_reserve_kg*np.array(d.gas_initial_fractions)
   h0,_,R0=th.at(d.gas_initial_K,np.array(d.gas_initial_fractions));y0[38]=d.gas_reserve_kg*(np.array(d.gas_initial_fractions)@h0-R0*d.gas_initial_K)/1e6
  Emax=np.array([b['spin_energy_J'] for b in hw['banks']]+[sum(b['spin_energy_J'] for b in hw['coast_banks']),hw['gas_system']['fill_bank']['spin_energy_J']])
- masses_limit=np.array(list(d.motor_MW)+[d.coast_motor_MW,d.gas_fill_motor_MW if gas_mode else 0.])*1e6
+ masses_limit=np.array(list(d.motor_MW)+[d.coast_motor_MW,d.gas_fill_motor_MW if boosted else 0.])*1e6
  release=np.array([d.pump_stop_s+d.vent_duration_s]*4+[d.plant_stop_s+d.vent_duration_s]);vent_start=release-d.vent_duration_s
- purged=np.zeros(5,dtype=bool);safe_hatch=np.ones(5,dtype=bool)
+ purged=np.zeros(5,dtype=bool);safe_hatch=np.ones(5,dtype=bool);valve_open=False
  forcing=hw['forcing'];r,vr,vt=state_at(o,forcing['time']);f=np.arctan2(vr*o.h/(MU*o.e),(o.h**2/(MU*r)-1)/o.e)
  shadow=(r*np.cos(f)<0)&(abs(r*np.sin(f))<R_EARTH);sun=(~shadow).astype(float)
  initial_liquid_h=float(y0[27:30]@th.liquid_h)
@@ -78,9 +79,9 @@ def simulate(config,samples=1001):
   # Optional recycled LN2: transfer liquid mass/enthalpy internally, never fresh product.
   injection=admitted*d.mixing_ratio*float(np.clip(y[27]/10,0,1))
   dy[0]+=injection;dy[15]+=injection*th.liquid_h[0]/1e6;dy[27]-=injection;dy[LI['mix_kg']]=injection
-  active=np.array([-500<=t<d.pump_stop_s]*4+[d.plant_start_s<=t<d.plant_stop_s,gas_mode and d.plant_start_s<=t<d.plant_stop_s])
+  active=np.array([-500<=t<d.pump_stop_s]*4+[d.plant_start_s<=t<d.plant_stop_s,boosted and d.plant_start_s<=t<d.plant_stop_s])
   rotor=np.r_[y[30:35],y[39]]
-  gs=gas_state(th,np.maximum(y[35:38],0),y[38],d.gas_volume_m3) if gas_mode else None
+  gs=gas_state(th,np.maximum(y[35:38],0),y[38],reserve_volume) if gas_mode else None
   spinfrac=np.clip(rotor*1e6/np.maximum(Emax,1),0,1);speed=np.sqrt(spinfrac)
   spin_request=np.where(active,np.minimum(masses_limit,np.maximum(Emax-rotor*1e6,0)/c.spin_s/c.eta_motor),0.)
   flows=np.zeros(4);work=np.zeros(4);pump_request=np.zeros(4);suction=p[:4].copy();rack_info=[dict(drop_Pa=0.,Re=0.,Kn=0.,pore_Mach=0.) for _ in range(5)]
@@ -130,7 +131,7 @@ def simulate(config,samples=1001):
    preheat=max(0.,float(yy[4]@hs[4])+w-float(yy[4]@th.at(temp)[0]))
    capacity=min(capacity,d.precool_UA_W_K*20/max(preheat,1))
    fill=0.;fw=0.;fh=0.
-   if gas_mode:
+   if boosted:
     fw=th.compression(temp,1e5,max(gs['p'],1e5),yy[4],c.eta_compressor)
     cap=max(0.,1-(fw/max(d.gas_fill_head_J_kg*spinfrac[5],1.))**2)
     fill=min(capacity,max(0.,d.gas_reserve_kg-gs['mass'])/20,d.gas_fill_suction_m3_s*speed[5]*1e5/(R[4]*temp)*cap,max(0.,masses_limit[5]-spin_request[5])/max(fw/c.eta_motor,1),d.gas_fill_UA_W_K*20/max(fw,1))
@@ -161,7 +162,25 @@ def simulate(config,samples=1001):
    nonlocal available
    actual=min(max(available,0),request);available-=actual;return actual
   thrust_limit=thrust_request
-  if gas_mode:thrust_limit=min(thrust_limit,d.gas_feed_max_kg_s*(d.isp_s*9.80665)**2/(2*c.eta_thruster)*np.clip((gs['p']-d.gas_feed_min_Pa)/(.1*d.gas_feed_min_Pa),0,1))
+  if boosted:thrust_limit=min(thrust_limit,d.gas_feed_max_kg_s*(d.isp_s*9.80665)**2/(2*c.eta_thruster)*np.clip((gs['p']-d.gas_feed_min_Pa)/(.1*d.gas_feed_min_Pa),0,1))
+  valve_transfer=0.;feed_capacity=0.
+  if valve_mode:
+   # Pressure-triggered latch opens on catch-up; thereafter both directions
+   # are allowed until coast isolation. Donor species and enthalpy cross together.
+   isolate=max(d.pump_stop_s,d.burn_s/2)
+   if valve_open and t<isolate:
+    forward=p[4]>=gs['p']
+    if forward:
+     valve_transfer=valve_flow(p[4],gs['p'],T[4],d.reserve_valve_area_m2,R[4],cp[4])
+     donor_y=yy[4];donor_h=float(yy[4]@hs[4])
+    else:
+     valve_transfer=-valve_flow(gs['p'],p[4],gs['T'],d.reserve_valve_area_m2,gs['R'],gs['cp'])
+     donor_y=gs['fractions'];donor_h=gs['h']
+    dy[12:15]-=valve_transfer*donor_y;dy[35:38]+=valve_transfer*donor_y
+    transfer_heat=valve_transfer*donor_h/1e6
+    dy[19]-=transfer_heat;dy[38]+=transfer_heat
+   feed_capacity=valve_flow(gs['p'],d.feed_downstream_Pa,gs['T'],d.feed_area_m2,gs['R'],gs['cp'])
+   thrust_limit=min(thrust_limit,feed_capacity*(d.isp_s*9.80665)**2/(2*c.eta_thruster))
   thrust=allocate(thrust_limit);base=allocate(c.auxiliary_W+holdP)
   spins=np.array([allocate(z) for z in spin_request]);pumpP=np.array([allocate(z) for z in pump_request]);gasP=allocate(gas_request);coastP=allocate(coast_request)
   pump_fraction=np.divide(pumpP,pump_request,out=np.ones(4),where=pump_request>0)
@@ -226,52 +245,67 @@ def simulate(config,samples=1001):
     dy[20+i]-=q/1e6;rad+=q
   qr=rad_exposure*2*d.warm_radiator_m2*max(0,c.radiator_emissivity*c.radiator_view*5.670374419e-8*Tw**4-c.environment_W_m2)*np.clip((Tw-d.warm_initial_K)/.5,0,1)
   dy[26]=(warm-qr)/1e6;dy[LI['radiated_MJ']]=(rad+qr)/1e6
-  return dy,dict(rack_loss_MW=(loss_paid/1e6).tolist(),compression_base_MW=float(flows@work+coast_flow*coast_work+gas_fill*fill_work)/c.eta_motor/1e6,stage_compression_base_MW=(np.r_[flows*work/c.eta_motor,(coast_flow*coast_work+gas_fill*fill_work)/c.eta_motor]/1e6).tolist(),buffer_Pa=gs['p'] if gas_mode else 0.,buffer_K=gs['T'] if gas_mode else 0.,buffer_kg=gs['mass'] if gas_mode else 0.,gas_fill_kg_s=gas_fill,gas_fill_MW=gasP/1e6,liquefaction_kg_s=liquid_flow,compressor_suction_Pa=suction.tolist(),coast_suction_Pa=coast_suction,rack_drop_Pa=[a['drop_Pa'] for a in rack_info],rack_Re=[a['Re'] for a in rack_info],rack_Kn=[a['Kn'] for a in rack_info],rack_pore_Mach=[a['pore_Mach'] for a in rack_info],pressure_Pa=p.tolist(),gas_K=T.tolist(),rack_K=Tm.tolist(),warm_K=float(Tw),SOC=float(y[25]/capacity),solar_MW=solar/1e6,load_MW=load/1e6,thrust_MW=thrust/1e6,coast_kg_s=coast_flow,pump_kg_s=flows.tolist(),heat_MW=(heats/1e6).tolist(),rack_exposure=exposures.tolist(),Bi=biots.tolist(),unmet_MW=max(0,demand-load)/1e6)
+  return dy,dict(reserve_valve_open=bool(valve_mode and valve_open and t<max(d.pump_stop_s,d.burn_s/2)),valve_transfer_kg_s=valve_transfer,feed_capacity_kg_s=feed_capacity,incident_kg_s=S,admitted_kg_s=admitted,rack_loss_MW=(loss_paid/1e6).tolist(),compression_base_MW=float(flows@work+coast_flow*coast_work+gas_fill*fill_work)/c.eta_motor/1e6,stage_compression_base_MW=(np.r_[flows*work/c.eta_motor,(coast_flow*coast_work+gas_fill*fill_work)/c.eta_motor]/1e6).tolist(),buffer_Pa=gs['p'] if gas_mode else 0.,buffer_K=gs['T'] if gas_mode else 0.,buffer_kg=gs['mass'] if gas_mode else 0.,gas_fill_kg_s=gas_fill,gas_fill_MW=gasP/1e6,liquefaction_kg_s=liquid_flow,compressor_suction_Pa=suction.tolist(),coast_suction_Pa=coast_suction,rack_drop_Pa=[a['drop_Pa'] for a in rack_info],rack_Re=[a['Re'] for a in rack_info],rack_Kn=[a['Kn'] for a in rack_info],rack_pore_Mach=[a['pore_Mach'] for a in rack_info],pressure_Pa=p.tolist(),gas_K=T.tolist(),rack_K=Tm.tolist(),warm_K=float(Tw),SOC=float(y[25]/capacity),solar_MW=solar/1e6,load_MW=load/1e6,thrust_MW=thrust/1e6,coast_kg_s=coast_flow,pump_kg_s=flows.tolist(),heat_MW=(heats/1e6).tolist(),rack_exposure=exposures.tolist(),Bi=biots.tolist(),unmet_MW=max(0,demand-load)/1e6)
  # Event boundaries guarantee each hardware/control transition is visited once.
  breaks=sorted(set([start,end,-500.,d.pump_stop_s,*release,d.plant_start_s,d.plant_stop_s,-d.burn_s/2,d.burn_s/2]))
  # Optional numerical restarts carry the entire state/ledger forward unchanged.
  # They refresh BDF history/Jacobian; they are not repeated cycles or resets.
  if d.integration_segment_s:
   breaks=sorted(set(breaks+np.arange(start,end,d.integration_segment_s).tolist()))
- breaks=[t for t in breaks if start<=t<=end];times=np.unique(np.r_[np.linspace(start,end,samples),breaks]);ys=[];ts=[];diag=[];current=y0.copy();events=[]
+ breaks=[t for t in breaks if start<=t<=end];times=np.unique(np.r_[np.linspace(start,end,samples),breaks]);ys=[];ts=[];diag=[];current=y0.copy();events=[];reserve_events=[]
  def total_energy(y):return float(sum(y[15:27])+sum(y[30:35])+y[38]+y[39]+y[27:30]@th.liquid_h/1e6)
- for left,right in zip(breaks[:-1],breaks[1:]):
-  if os.environ.get("ATMO_PROGRESS"):print(f"Integrating {left:.1f} to {right:.1f}",file=sys.stderr,flush=True)
-  counter=[0]
-  def rhs(t,y):
-   counter[0]+=1
-   if os.environ.get("ATMO_PROGRESS") and counter[0]%10000==0:print(f"  rhs {counter[0]} t={t:.6f} gas_kg={y[:15].reshape(5,3).sum(axis=1).tolist()}",file=sys.stderr,flush=True)
-   # Use the interior one-sided control value at BOTH event boundaries.
-   # A burn is off at exact |t|=burn/2 but on immediately to its right at
-   # burn start; feeding the left value to BDF's initial derivative can force
-   # sub-ULP steps when tolerances are tightened.
-   return rates(max(np.nextafter(left,right),min(t,np.nextafter(right,left))),y)[0]
-  def jac(t,y):
-   base=rhs(t,y);j=np.zeros((len(y),len(y)))
-   for k in range(40):
-    delta=max(d.jacobian_absolute_step,d.jacobian_relative_step*max(abs(y[k]),1e-5));z=y.copy();z[k]+=delta;j[:,k]=(rhs(t,z)-base)/delta
-   return j
-  def hard_path(t,y):
-   _,mm,_,tg,tm,pp=decode(y)
-   tw=y[26]*1e6/(d.warm_store_kg*c.buffer_cp_J_kg_K)
-   return min(min((m.limit_K+100-tm[i])/100 for i,m in enumerate(mats)),
-              min((1.5*d.rated_pressure_Pa[i-1]-pp[i])/1000 for i in range(1,5)),
-              (d.warm_max_K+100-tw)/100,
-              (y[25]/capacity-(1-c.battery_usable)+.05)/.1)
-  hard_path.terminal=True;hard_path.direction=-1
-  sol=solve_ivp(rhs,(left,right),current,events=hard_path if d.early_reject else None,method='BDF' if d.integrator=='BDF_auto' else d.integrator,jac=jac if d.integrator=='BDF' else None,rtol=d.rtol,atol=d.atol,max_step=d.max_step_s,dense_output=True)
-  if sol.status==1:raise ConstraintViolation(f'Hard path rejection at {sol.t[-1]:.3f} s: material/warm temperature, pressure or battery exceeded broad rejection threshold')
-  if not sol.success:raise RuntimeError(f'{sol.message}; t={sol.t[-1]}, state={sol.y[:40,-1].tolist()}')
-  selected=np.unique(np.r_[times[(times>=left)&(times<right)],sol.t[:-1]]);states=sol.sol(selected).T
-  for t,y in zip(selected,states):ts.append(float(t));ys.append(y);diag.append(rates(float(t),y,True)[1])
-  current=sol.y[:,-1]
-  for i in range(5):
-   if right==release[i]:
-    m,tot,frac,T,Tm,P=decode(current);safe_hatch[i]=P[i]<100.
-    if safe_hatch[i]:
-     lost=current[3*i:3*i+3].copy();U=current[15+i];current[LI['lost_N2']:LI['lost_Ar']+1]+=lost;current[LI['boundary_MJ']]-=U
-     current[3*i:3*i+3]=0.;current[15+i]=0.;purged[i]=True
-    events.append(dict(time_s=right,chamber=i,pressure_before_Pa=float(P[i]),final_purge_kg=float(tot[i]),hatch_allowed=bool(safe_hatch[i])))
+ for segment_left,right in zip(breaks[:-1],breaks[1:]):
+  left=segment_left
+  while left<right:
+   if os.environ.get("ATMO_PROGRESS"):print(f"Integrating {left:.1f} to {right:.1f}",file=sys.stderr,flush=True)
+   counter=[0]
+   def rhs(t,y):
+    counter[0]+=1
+    if os.environ.get("ATMO_PROGRESS") and counter[0]%10000==0:print(f"  rhs {counter[0]} t={t:.6f} gas_kg={y[:15].reshape(5,3).sum(axis=1).tolist()}",file=sys.stderr,flush=True)
+    # Use the interior one-sided control value at BOTH event boundaries.
+    # A burn is off at exact |t|=burn/2 but on immediately to its right at
+    # burn start; feeding the left value to BDF's initial derivative can force
+    # sub-ULP steps when tolerances are tightened.
+    return rates(max(np.nextafter(left,right),min(t,np.nextafter(right,left))),y)[0]
+   def jac(t,y):
+    base=rhs(t,y);j=np.zeros((len(y),len(y)))
+    for k in range(40):
+     delta=max(d.jacobian_absolute_step,d.jacobian_relative_step*max(abs(y[k]),1e-5));z=y.copy();z[k]+=delta;j[:,k]=(rhs(t,z)-base)/delta
+    return j
+   def hard_path(t,y):
+    _,mm,_,tg,tm,pp=decode(y)
+    tw=y[26]*1e6/(d.warm_store_kg*c.buffer_cp_J_kg_K)
+    return min(min((m.limit_K+100-tm[i])/100 for i,m in enumerate(mats)),
+               min((1.5*d.rated_pressure_Pa[i-1]-pp[i])/1000 for i in range(1,5)),
+               (d.warm_max_K+100-tw)/100,
+               (y[25]/capacity-(1-c.battery_usable)+.05)/.1)
+   hard_path.terminal=True;hard_path.direction=-1
+   def pressure_catch(t,y):
+    pmain=decode(y)[-1][4]
+    reserve=gas_state(th,np.maximum(y[35:38],0),y[38],reserve_volume)
+    return pmain-reserve['p']
+   pressure_catch.terminal=True;pressure_catch.direction=1
+   catching=valve_mode and not valve_open and right<=max(d.pump_stop_s,d.burn_s/2)
+   solver_events=([hard_path] if d.early_reject else [])+([pressure_catch] if catching else [])
+   sol=solve_ivp(rhs,(left,right),current,events=solver_events or None,method='BDF' if d.integrator=='BDF_auto' else d.integrator,jac=jac if d.integrator=='BDF' else None,rtol=d.rtol,atol=d.atol,max_step=d.max_step_s,dense_output=True)
+   caught=bool(catching and len(sol.t_events[-1]))
+   if sol.status==1 and not caught:raise ConstraintViolation(f'Hard path rejection at {sol.t[-1]:.3f} s: material/warm temperature, pressure or battery exceeded broad rejection threshold')
+   if not sol.success:raise RuntimeError(f'{sol.message}; t={sol.t[-1]}, state={sol.y[:40,-1].tolist()}')
+   selected=np.unique(np.r_[times[(times>=left)&(times<sol.t[-1])],sol.t[:-1]]);states=sol.sol(selected).T
+   for t,y in zip(selected,states):ts.append(float(t));ys.append(y);diag.append(rates(float(t),y,True)[1])
+   current=sol.y[:,-1]
+   if caught:
+    left=float(sol.t[-1]);valve_open=True
+    reserve_events.append(dict(time_s=left,event='reserve_pressure_catch',receiver_Pa=float(decode(current)[-1][4])))
+    continue
+   for i in range(5):
+    if right==release[i]:
+     m,tot,frac,T,Tm,P=decode(current);safe_hatch[i]=P[i]<100.
+     if safe_hatch[i]:
+      lost=current[3*i:3*i+3].copy();U=current[15+i];current[LI['lost_N2']:LI['lost_Ar']+1]+=lost;current[LI['boundary_MJ']]-=U
+      current[3*i:3*i+3]=0.;current[15+i]=0.;purged[i]=True
+     events.append(dict(time_s=right,chamber=i,pressure_before_Pa=float(P[i]),final_purge_kg=float(tot[i]),hatch_allowed=bool(safe_hatch[i])))
+   left=right
  ts.append(end);ys.append(current.copy());diag.append(rates(end,current,True)[1]);states=np.array(ys);tt=np.array(ts)
  species=states[:,:15].reshape(-1,5,3).sum(axis=1)+states[:,27:30]+states[:,35:38]
  initial_species=y0[:15].reshape(5,3).sum(axis=0)+y0[27:30]+y0[35:38]
@@ -285,7 +319,15 @@ def simulate(config,samples=1001):
  closure=max(max(abs(np.array(residuals['rack_enthalpy_J_kg'])))/500.,abs(residuals['battery_MJ'])/100.,abs(residuals['warm_MJ'])/100.,abs(residuals['gas_kg'])/.1,abs(residuals['gas_MJ'])/.01,abs(residuals['rotor_MJ'])/.01,abs(residuals['thrust_relative'])/1e-4)
  if gas_mode:closure=max(closure,max(abs(current[35:38]-y0[35:38]))/.1,abs(current[38]-y0[38])/1.)
  margins=dict(reserve_kg=float(min(liquid_surplus)),material_K=min(m.limit_K-float(Tm[:,i].max()) for i,m in enumerate(mats)),pressure_Pa=min(d.rated_pressure_Pa[i-1]-float(P[:,i].max()) for i in range(1,5)),warm_K=d.warm_max_K-max(history['warm_K']),SOC=min(history['SOC'])-(1-c.battery_usable),liquid_kg=float(states[:,27:30].min()),tank_m3=d.liquid_tank_m3-float((states[:,27:30]/th.liquid_density).sum(axis=1).max()),Bi=.1-float(np.max(history['Bi'])),gas_K=c.upper_gas_K-float(np.max(np.where(mass>.01,Tgas,0))),unmet_MJ=1.-float(current[LI['unmet_MJ']]),product_kg=net,periodic=1.-closure)
- if gas_mode:margins.update(gas_buffer_Pa=d.gas_rated_Pa-max(history['buffer_Pa']),gas_buffer_K=500.-max(history['buffer_K']),gas_buffer_inventory_kg=float(states[:,35:38].min()))
+ if gas_mode:margins.update(gas_buffer_Pa=(d.rated_pressure_Pa[-1] if valve_mode else d.gas_rated_Pa)-max(history['buffer_Pa']),gas_buffer_K=500.-max(history['buffer_K']),gas_buffer_inventory_kg=float(states[:,35:38].min()))
+ if valve_mode:
+  # Integral supply is exact for the piecewise-linear forcing used in the RHS.
+  incident=float(np.trapezoid(forcing['supply'],forcing['time']))
+  admitted_total=float(sum(current[LI[k]] for k in ('in_N2','in_O2','in_Ar')))
+  residuals['missed_capture_kg']=incident-admitted_total
+  residuals['receiver_fill_Pa']=float(P[:,4].max()-d.receiver_fill_Pa)
+  margins['full_capture']=d.capture_tolerance-(incident-admitted_total)/incident
+  margins['receiver_fill_Pa']=d.receiver_fill_tolerance_Pa-abs(residuals['receiver_fill_Pa'])
  if hydraulic_loss:margins['rack_Mach']=.3-float(np.max(history['rack_pore_Mach']))
  if d.rack_flow_layout=='inline_bank' or d.rack_pressure_model=='inline_laminar':
   margins['rack_Re']=75.-float(np.max(history['rack_Re']))
@@ -295,7 +337,7 @@ def simulate(config,samples=1001):
  audits=dict(species_kg=float(abs(mr).max()),energy_MJ=float(abs(er).max()),min_gas_kg=float(states[:,:15].min()),forward_integrations=1,rhs_evaluations=evaluations[0])
  feasible=all(z>=-1e-6 for z in margins.values()) and all(safe_hatch) and audits['species_kg']<1e-4 and audits['energy_MJ']<.01 and audits['min_gas_kg']>-.0001
  output_hw={k:v for k,v in hw.items() if k not in ('orbit','forcing','rack_motion_s')};output_hw['rack_motion_s']=hw['rack_motion_s'].tolist()
- result=dict(model='transient-v2-interrupted-provisional' if max(d.plate_rows)>1 else 'transient-v2',inputs=dict(design=asdict(d),capabilities=asdict(c)),hardware=output_hw,time_s=tt.tolist(),history=history,gas_species_kg=states[:,:15].reshape(-1,5,3).tolist(),liquid_species_kg=states[:,27:30].tolist(),gas_reserve_species_kg=states[:,35:38].tolist(),ledger={name:states[:,index].tolist() for name,index in LI.items()},events=events,audits=audits,closure=residuals,margins=margins,feasible=bool(feasible),dry_kg=hw['dry_kg'],net_liquid_kg=net,diagnostic_payoff_days=hw['dry_kg']/net*o.period/86400 if net>0 else None,operating_payoff_days=hw['dry_kg']/net*o.period/86400 if net>0 and feasible else None,delivered_payoff_days=None)
+ result=dict(model='transient-v2-interrupted-provisional' if max(d.plate_rows)>1 else 'transient-v2',inputs=dict(design=asdict(d),capabilities=asdict(c)),hardware=output_hw,time_s=tt.tolist(),history=history,gas_species_kg=states[:,:15].reshape(-1,5,3).tolist(),liquid_species_kg=states[:,27:30].tolist(),gas_reserve_species_kg=states[:,35:38].tolist(),ledger={name:states[:,index].tolist() for name,index in LI.items()},events=events,reserve_events=reserve_events,audits=audits,closure=residuals,margins=margins,feasible=bool(feasible),dry_kg=hw['dry_kg'],net_liquid_kg=net,diagnostic_payoff_days=hw['dry_kg']/net*o.period/86400 if net>0 else None,operating_payoff_days=hw['dry_kg']/net*o.period/86400 if net>0 and feasible else None,delivered_payoff_days=None)
 
  # No extra trajectory: validate the realized property regime and report the
  # operating-orbit offload map explicitly after the pre-offload audit.

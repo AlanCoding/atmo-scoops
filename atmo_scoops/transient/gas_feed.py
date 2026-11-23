@@ -10,6 +10,12 @@ from ..compressor import bank_mass
 def hardware(d,c,spec,dummy):
     if d.propellant_storage=='liquid':
         return dict(enabled=False,fill_bank=dict(total_kg=0.,spin_energy_J=0.),mass_kg=0.,package_m3=0.)
+    if d.propellant_storage=='valve':
+        # Tank shell is charged with the pressure vessels, not as a folded package.
+        valves=500.+500.*d.reserve_valve_area_m2
+        return dict(enabled=True,architecture='valve',fill_bank=dict(total_kg=0.,spin_energy_J=0.),
+                    mass_kg=valves,package_m3=valves/c.machinery_kg_m3,
+                    feed_hardware_kg=valves,rated_Pa=d.rated_pressure_Pa[-1])
     n=d.gas_tank_count
     radius=(3*d.gas_volume_m3/(4*math.pi*n))**(1/3)
     thickness=max(.001,1.5*d.gas_rated_Pa*radius/(2*150e6))
@@ -31,3 +37,15 @@ def state(th,species,U_MJ,volume):
     T=th.temperature(U_MJ*1e6,species)
     h,cp,R=th.at(T,y)
     return dict(mass=mass,fractions=y,T=T,p=mass*R*T/volume,h=float(y@h),cp=cp,R=R)
+
+
+def valve_flow(up,down,T,area,R,cp):
+    """Finite ideal-gas orifice, regularized only within 0.1% pressure equality.
+
+    This computes a positive donor-to-recipient magnitude. The cycle selects
+    either donor after the pressure-triggered valve opens, allowing both directions.
+    """
+    from ..open_mouth import port_flow
+    if up<=down or up<=0:return 0.
+    fraction=min(1.,(up-down)/(.001*up))
+    return port_flow(up,min(down,up*.999),T,area,R,cp/(cp-R),.8)*fraction

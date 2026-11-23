@@ -1,0 +1,89 @@
+{
+  "source": "selected_validation/check_refined.json.gz",
+  "refill_kg": 3567.534663923152,
+  "plant_start_minutes": 10.833333333333334,
+  "milestones": [
+    {
+      "fraction": 0.5,
+      "minutes": 20.749540671278066,
+      "minutes_since_plant_start": 9.916207337944734,
+      "source_Pa": 2912.8019743903924,
+      "reserve_bar": 6.594727553221068
+    },
+    {
+      "fraction": 0.9,
+      "minutes": 31.79105141486049,
+      "minutes_since_plant_start": 20.957718081527158,
+      "source_Pa": 1243.6950452523388,
+      "reserve_bar": 9.665403393612488
+    },
+    {
+      "fraction": 0.99,
+      "minutes": 34.55822899995889,
+      "minutes_since_plant_start": 23.724895666625557,
+      "source_Pa": 860.068990483653,
+      "reserve_bar": 10.32247599770235
+    },
+    {
+      "fraction": 0.999,
+      "minutes": 35.327922169893164,
+      "minutes_since_plant_start": 24.494588836559828,
+      "source_Pa": 791.0867790025382,
+      "reserve_bar": 10.315071467854555
+    },
+    {
+      "fraction": 0.9999,
+      "minutes": 36.09371981994654,
+      "minutes_since_plant_start": 25.26038648661321,
+      "source_Pa": 739.4146377308039,
+      "reserve_bar": 10.241876633712252
+    }
+  ],
+  "quarter_orbit_after_perigee": {
+    "minutes": 26.507057486947424,
+    "fraction_refilled": 0.7185870079834031,
+    "source_Pa": 2010.3547587918447
+  },
+  "powers": {
+    "booster_only": {
+      "peak_MW": 1.0526315789473686,
+      "energy_MWh": 0.4108079515262615
+    },
+    "shared_compression_for_reserve": {
+      "peak_MW": 2.841501218592286,
+      "energy_MWh": 0.7026820272083167
+    },
+    "reserve_branch": {
+      "peak_MW": 3.8941359972212415,
+      "energy_MWh": 1.113492044569659
+    },
+    "refrigerator_only": {
+      "peak_MW": 14.638333278804774,
+      "energy_MWh": 8.586319272690643
+    },
+    "liquid_product_branch": {
+      "peak_MW": 17.103906606487868,
+      "energy_MWh": 9.713180048878087
+    },
+    "dive_compression_and_rack_loss": {
+      "peak_MW": 31.024320084770608,
+      "energy_MWh": 1.7210525440193314
+    },
+    "thrusters": {
+      "peak_MW": 759.1287493570012,
+      "energy_MWh": 260.24833197128
+    }
+  },
+  "installed_MW": {
+    "booster": 5.0,
+    "dive_blocks": [
+      30.935675916031006,
+      10.118923206338728,
+      7.95302607561776,
+      13.004831919223918
+    ],
+    "coast_compressors": 21.68086485761136,
+    "refrigerator": 14.638333278804772
+  },
+  "max_power_reconstruction_error_MW": 3.0814881757379453e-09
+}

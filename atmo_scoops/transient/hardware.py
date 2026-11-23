@@ -77,6 +77,7 @@ def compile_hardware(d,c):
   battery=max(d.battery_MWh*1e6/280000,masses['battery']/1800),warm_store=d.warm_store_kg/800,
   machines=sum(masses[k] for k in ['dive_compressors','coast_compressors','refrigerator','external_exchangers','separator','bus','thrusters','rack_mechanisms','auxiliary'])/c.machinery_kg_m3,
   liquid_tanks=d.liquid_tank_m3*1.2)
+ if d.propellant_storage=='valve':packages['machines']-=masses['thrusters']/c.machinery_kg_m3
  if gas_system['enabled']:packages['gas_reserve_system']=gas_system['package_m3']
  bay=sum(packages.values())/c.fill_fraction/A;outside=d.bore_m+2*d.clearance_m;length=outside*d.length_diameter
  hd=c.head_depth_m;rad=d.bore_m/2;headV=math.pi*hd*(3*rad**2+hd**2)/6
@@ -104,19 +105,42 @@ def compile_hardware(d,c):
        front_mechanisms_m3=(front_mechanisms/c.machinery_kg_m3).tolist(),
        aft_packages_m3=other,aft_displacement_m3=sum(other.values())/c.fill_fraction,
        note='Aft package displacement preserves all hardware; radial layout pending')
- depths.append(length-bay-sum(depths))
+ depths.append(length-bay-sum(depths)-(d.reserve_depth_m if d.propellant_storage=='valve' else 0.))
+ receiver_rad=rad
+ if d.propellant_storage=='valve':
+  L=depths[-1];displacement=packing['aft_displacement_m3']
+  # Rounded heads: V=pi*r²*(L-hd)+pi*hd³/3. Packages occupy annulus once.
+  r2=rad**2-displacement/(math.pi*(L-hd))
+  if r2<=0:raise ValueError('Packages exceed main receiver radial capacity')
+  receiver_rad=math.sqrt(r2);area=math.pi*r2
+  g=geom[-1];ratio=A/area
+  g['rack_depth_m']*=ratio
+  g['installed_rack_depth_m']=g['rack_depth_m']+(g['row_count']-1)*d.plate_row_clearance_m
+  g['frontal_m2']=area;rack_depths[-1]=g['installed_rack_depth_m']
+  reserve_volume=A*(d.reserve_depth_m-hd)+math.pi*hd**3/3
+  gas_system.update(usable_internal_m3=reserve_volume,depth_m=d.reserve_depth_m,
+                    start_m=length-d.reserve_depth_m,end_m=length,internal_radius_m=rad)
+  packing.update(receiver_end_m=length-d.reserve_depth_m,receiver_radius_m=receiver_rad,
+                 reserve_start_m=length-d.reserve_depth_m,reserve_end_m=length,
+                 note='All aft packages ahead of reserve; annular displacement charged once')
  if depths[-1]<rack_depths[-1]+2*hd:raise ValueError('Installed hardware/racks exceed fixed hull length')
  vessel=0
  for i,(g,L) in enumerate(zip(geom,depths)):
-  gross=A*L if i==0 else A*(L-2*hd)+2*headV
+  vr=receiver_rad if i==4 else rad;va=math.pi*vr**2
+  gross=va*L if i==0 else va*(L-hd)+math.pi*hd**3/3
   displacement=packing['aft_displacement_m3'] if packing and i==4 else 0.
-  gas_volume=gross-g['solid_m3']-displacement
+  gas_volume=gross-g['solid_m3']-(0. if d.propellant_storage=='valve' and i==4 else displacement)
   if gas_volume<=0 or (i==4 and gas_volume<g['envelope_m3']-g['solid_m3']):raise ValueError('Aft equipment/rack displacement exceeds receiver')
   g.update(gross_m3=gross,gas_m3=gas_volume,depth_m=L,deployed_physical_m2=float(footprint[i]))
   if packing:g['equipment_displacement_m3']=displacement
   if i:
-   rating=d.rated_pressure_Pa[i-1];barrel=A*0+2*math.pi*rad*(L-2*hd);heads=2*math.pi*(rad**2+hd**2);R=(rad**2+hd**2)/(2*hd)
-   vessel+=(barrel*max(.001,1.5*rating*rad/150e6)+heads*max(.001,1.5*rating*R/(2*150e6)))*2700*1.5+(barrel+heads)
+   rating=d.rated_pressure_Pa[i-1];barrel=2*math.pi*vr*(L-2*hd);heads=2*math.pi*(vr**2+hd**2);R=(vr**2+hd**2)/(2*hd)
+   vessel+=(barrel*max(.001,1.5*rating*vr/150e6)+heads*max(.001,1.5*rating*R/(2*150e6)))*2700*1.5+(barrel+heads)
+ if d.propellant_storage=='valve':
+  L=d.reserve_depth_m;rating=d.rated_pressure_Pa[-1]
+  barrel=2*math.pi*rad*(L-2*hd);heads=2*math.pi*(rad**2+hd**2);R=(rad**2+hd**2)/(2*hd)
+  shell=(barrel*max(.001,1.5*rating*rad/150e6)+heads*max(.001,1.5*rating*R/(2*150e6)))*2700*1.5+(barrel+heads)
+  vessel+=shell;gas_system['shell_and_support_kg']=shell
  masses['pressure_vessels']=vessel;masses['hull']=math.pi*outside*length*4
  masses['margin']=sum(masses.values())*c.margin
  prop=J*penalty['impulse_multiplier']/(d.isp_s*9.80665)

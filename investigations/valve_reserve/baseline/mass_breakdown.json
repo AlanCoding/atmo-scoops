@@ -1,0 +1,21 @@
+{
+  "racks": 453880.14619512635,
+  "rack_mechanisms": 106740.84515480153,
+  "dive_compressors": 921759.5064120208,
+  "coast_compressors": 47716.48217587975,
+  "refrigerator": 140272.33890125403,
+  "external_exchangers": 2250.0,
+  "separator": 2496.2164560544206,
+  "solar": 3071587.4964259476,
+  "battery": 2220682.6524692597,
+  "bus": 754441.8246882277,
+  "thrusters": 1310220.3388692003,
+  "warm_store": 520905.2752167912,
+  "warm_radiator": 336177.8707971464,
+  "liquid_tanks": 6000.0,
+  "auxiliary": 5000.0,
+  "gas_reserve_system": 2500.0,
+  "pressure_vessels": 238730.48999526908,
+  "hull": 126278.20166663387,
+  "margin": 2566909.921355903
+}

@@ -1,5 +1,10 @@
 # Staggered cooling plates: constrained checkpoint A
 
+**Rejected architecture: v1.0.1-rejected-boosted.** These numerical results remain
+reproducible but do not describe the agreed valve-connected reserve. See the
+[frozen archive](../../docs/design_archive/v1.0.1_rejected_boosted/README.md) and
+[replacement plan](../../docs/V1_0_1_RESTORE_PLAN.md).
+
 **COBYLA converged at 275.726 operating-orbit payoff days**, with 100 requested
 forward evaluations, status 0, and maximum scaled constraint violation
 1.8e-23. It terminated when the trust-region radius reached the configured
@@ -38,8 +43,9 @@ to plate friction.
 
 - [Rack masses, dimensions, temperatures, pressure losses, full mass budget and closure](OPTIMIZED_REVIEW.md)
 - [All 33 independent coordinates, selected values and bounds](VARIABLES.md)
-- [Updated scale drawing SVG](../../docs/images/v1_perigee_scale.svg) / [PNG](../../docs/images/v1_perigee_scale.png)
+- [Archived scale drawing SVG](../../docs/design_archive/v1.0.1_rejected_boosted/scale.svg) / [PNG](../../docs/design_archive/v1.0.1_rejected_boosted/scale.png)
 - [Exact axial length table](../v1_layout/DRAWING_LENGTHS.md)
+- [Aft receiver coast draw-down and liquefaction audit](RECEIVER_COAST.md)
 - [Cycle P/T/inventory chart](optimized_cycle.png)
 - [Pressure-loss / inlet-pressure histories](optimized_pressure.png)
 - [Numerical review, including the refined burn-start issue](NUMERICAL_REVIEW.md)
@@ -98,7 +104,9 @@ PYTHONPATH=. .venv/bin/python investigations/staggered_stage_a/validate_start_st
 PYTHONPATH=. .venv/bin/python investigations/staggered_stage_a/report.py \
   results/transient/staggered/thermal_equivalence/selected_validation/check_refined.json.gz \
   --output investigations/staggered_stage_a/OPTIMIZED_REVIEW.md
-.venv/bin/python investigations/v1_layout/draw_perigee.py
+PYTHONPATH=. .venv/bin/python investigations/staggered_stage_a/draw_checkpoint.py \
+  results/transient/staggered/thermal_equivalence/selected_validation/check_refined.json.gz \
+  --output /tmp/rejected-staggered-scale.svg
 ```
 
 Earlier `checkpoint_a/` searches used the superseded wide-channel thermal

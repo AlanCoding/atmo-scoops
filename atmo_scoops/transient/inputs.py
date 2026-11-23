@@ -31,6 +31,13 @@ class Design:
     rack_pressure_model: str="layout"
     rack_loss_mode: str="pressure"
     propellant_storage: str="liquid"
+    reserve_depth_m: float=125.
+    reserve_valve_area_m2: float=4.
+    feed_area_m2: float=1.
+    feed_downstream_Pa: float=100.
+    receiver_fill_Pa: float=4766.8327597
+    receiver_fill_tolerance_Pa: float=50.
+    capture_tolerance: float=.001
     gas_volume_m3: float=500.
     gas_reserve_kg: float=4500.
     gas_initial_K: float=340.
@@ -149,7 +156,7 @@ def read_config(config):
     if not .2<d.battery_initial_soc<1 or min(d.max_step_s,d.rtol,d.warm_store_kg,d.battery_MWh,d.isp_s,d.burn_s)<=0:raise ValueError('Invalid integration/capacity')
     if any(v<=0 for v in (*d.rack_depth_m,*d.suction_m3_s,*d.head_J_kg,*d.motor_MW)):raise ValueError('Positive installed bank/rack required')
     if not all(0<z<=1 for z in (c.eta_compressor,c.eta_motor,c.eta_thruster,c.charge_eta,c.discharge_eta,c.fill_fraction)):raise ValueError('Invalid efficiency')
-    if d.perigee_km!=85 or d.apogee_km<=250:raise ValueError('Initial molecular-air release fixes 85 km perigee; apogee must exceed 250 km')
+    if not 75<=d.perigee_km<=110 or d.apogee_km<=250:raise ValueError('Perigee outside declared molecular-air study range or apogee below 250 km')
     if len(d.coast_suction_fractions)!=3 or any(z<=0 for z in d.coast_suction_fractions):raise ValueError('Three positive coast suction fractions required')
     if not 0<d.pump_stop_s<d.plant_start_s<d.plant_stop_s:raise ValueError('Invalid processing schedule')
     if d.warm_max_K<=d.warm_initial_K:raise ValueError('Warm-store operating range must be positive')
@@ -159,7 +166,7 @@ def read_config(config):
     if d.early_reject not in (0,1):raise ValueError('early_reject must be 0 or 1')
     if d.integration_segment_s!=0 and not d.integration_segment_s>=1:raise ValueError('Integration segments must be zero (events only) or at least one second')
     if not isinstance(d.max_rhs_evaluations,int) or isinstance(d.max_rhs_evaluations,bool) or d.max_rhs_evaluations<1:raise ValueError('Positive integer RHS budget required')
-    if d.propellant_storage not in ('liquid','gas') or d.rack_flow_layout not in ('legacy_mixed','outlet_planes','inline_bank','parallel_plates'):raise ValueError('Unknown feed/rack architecture')
+    if d.propellant_storage not in ('liquid','gas','valve') or d.rack_flow_layout not in ('legacy_mixed','outlet_planes','inline_bank','parallel_plates'):raise ValueError('Unknown feed/rack architecture')
     radii=d.stage_radius_m or [d.rod_radius_m]*5
     pitches=d.stage_pitch_m or [d.rod_pitch_m]*5
     if len(radii)!=5 or len(pitches)!=5:raise ValueError('Five radii and pitches required')
@@ -177,6 +184,10 @@ def read_config(config):
         if min(d.gas_volume_m3,d.gas_reserve_kg,d.gas_initial_K,d.gas_feed_min_Pa,d.gas_feed_max_kg_s,d.gas_fill_suction_m3_s,d.gas_fill_head_J_kg,d.gas_fill_motor_MW,d.gas_fill_UA_W_K,d.gas_thermal_UA_W_K)<=0:raise ValueError('Positive gas-feed capacities required')
         if not isinstance(d.gas_tank_count,int) or d.gas_tank_count<1:raise ValueError('Positive integer gas tank count required')
         if d.gas_rated_Pa<=d.gas_feed_min_Pa:raise ValueError('Gas pressure rating below regulator minimum')
+    if d.propellant_storage=='valve':
+        if not d.explicit_stage_packing:raise ValueError('Valve reserve requires explicit packing')
+        if min(d.reserve_depth_m,d.reserve_valve_area_m2,d.feed_area_m2,d.feed_downstream_Pa,d.gas_reserve_kg,d.gas_initial_K)<=0:raise ValueError('Positive valve reserve geometry/state required')
+        if d.gas_thermal_UA_W_K!=0:raise ValueError('Valve reserve baseline is adiabatic, no free thermal conditioning')
     if d.rack_flow_layout=='parallel_plates':
         if d.rack_loss_mode!='power_only' or d.rack_pressure_model!='layout':raise ValueError('Plates currently require power_only mode and layout pressure model')
         if len(d.plate_thickness_m)!=5 or len(d.plate_gap_m)!=5 or min(*d.plate_thickness_m,*d.plate_gap_m)<=0:raise ValueError('Five positive plate thicknesses and gaps required')

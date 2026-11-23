@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "status": 0,
+  "message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+  "nfev": 284,
+  "maxcv": 0.0,
+  "feasible": true,
+  "days": 306.4005593984632,
+  "best_feasible_days": 306.4005593984632,
+  "evaluations": 325
+}

@@ -4,6 +4,10 @@ This is a maintained list of missing capabilities, not a work diary. Remove or
 rewrite an item when the model resolves it, and link its validation. Priorities
 reflect how strongly a missing relationship can distort design selection.
 
+The immediate review gate is the [v1.0.1 valve-reserve restoration plan](V1_0_1_RESTORE_PLAN.md).
+Its geometry, fixed-input reconciliation and full-capture constraints precede
+further model improvements. The boosted-reserve candidate is rejected.
+
 ## Version scope
 
 The [version roadmap](VERSION_ROADMAP.md) is the current sequencing plan:

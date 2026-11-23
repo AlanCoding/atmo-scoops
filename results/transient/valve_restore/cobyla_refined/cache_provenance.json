@@ -1,0 +1,6 @@
+{
+  "source": "../cobyla",
+  "same_implementation": true,
+  "same_base_and_coordinates": true,
+  "changed_only": "optimizer maxiter and stopping radius; identical x evaluations reused"
+}

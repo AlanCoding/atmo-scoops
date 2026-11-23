@@ -27,7 +27,7 @@ def check(r):
                     workerr=max(workerr,abs(w-expected['shaft_J_kg'])/max(expected['shaft_J_kg'],1.))
                     outlet=max(outlet,expected['outlet']['T_K'])
             except ValueError as exc:domain_failures.append(dict(index=int(j),stage=k,error=str(exc)))
-    if r['inputs']['design'].get('propellant_storage')=='gas':
+    if r['inputs']['design'].get('propellant_storage') in ('gas','valve'):
         for j in indices:
             m=np.asarray(r['gas_reserve_species_kg'][j]);real.fluid.set_mass_fractions((m/m.sum()).tolist())
             try:zerr=max(zerr,abs(real.state(r['history']['buffer_Pa'][j],r['history']['buffer_K'][j])['Z']-1))

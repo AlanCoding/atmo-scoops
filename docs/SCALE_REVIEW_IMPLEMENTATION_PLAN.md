@@ -1,8 +1,58 @@
 # Model changes from the scale-image review: accepted grouped sequence
 
+**Current controlling plan:** [restore the valve-connected v1.0.1 design](V1_0_1_RESTORE_PLAN.md). The boosted-reserve candidate is rejected and archived. The sequence below is historical context; restoration planning and fixed-input reconciliation precede further implementation.
+
 The owner has combined the earlier six steps into three numerical checkpoints.
 The numerical baseline remains frozen plate case 72 (~278 operating-orbit days).
 Checkpoint A now has a [converged 275.7-day result and review packet](../investigations/staggered_stage_a/README.md). Front dimensions in the updated scale figure come from that result; aft placement remains proposed. B and C follow independently after review.
+
+## Current disposition and remaining agenda
+
+The boosted spherical-reserve architecture has been rejected. Its [timing/power audit](../investigations/staggered_stage_a/RESERVE_REFILL.md) is historical evidence. The valve-connected compartment remains the agreed architecture.
+
+**Further numerical changes are on hold while the owner reviews the design.**
+The existing coast liquefaction approximation is accepted for now; detailed
+cryogenic-process refinement is deferred. The receiver coast readout and explicit
+thruster-reserve drawing document existing behavior, not new hardware or payoff.
+
+The present model already contains four boosted gas-reserve spheres: 500 m³
+combined internal volume, 4,500 kg initial charge, 15 bar rating, refill booster,
+feed hardware and separate gas/energy states. Their actual optimized-cycle
+pressure varies approximately 2.30–10.35 bar. The updated scale drawing shows them
+at a proposed axial station around 88.6 m; tank diameters are scaled, radial
+placement and pipe routes are conceptual. This is different from checkpoint B's
+proposed full-cross-section 125 m compartment.
+
+Remaining agreed geometry/storage checkpoints:
+
+1. **B: radial packaging and alternative aft reserve.** Resolve folded panels,
+   radiators, cryogenic packages, deployment exits and CM; replace the existing
+   boosted reserve with the proposed aft compartment only with explicit valve,
+   feed-pressure and cycle-closure accounting. Deduct other packages only from
+   the receiver portion forward of its protected 125 m.
+2. **C: five-cycle product storage.** Size usable liquid volume and ullage, carry
+   growing product mass, and account for thermal holding and offload.
+
+Unscheduled model-quality follow-ups, to be scoped individually:
+
+- **Rack hydraulics/buildability:** resolve front-tail losses greater than inlet
+  pressure, review pump cutoff, and investigate active rack area/row count. Test
+  staggered thermal-spacing equivalence and offset losses together.
+- **Compressor sizing freedom:** current motor powers vary, but flow capacities
+  and available head remain fixed. Release them in a controlled collection/mass
+  trade before calling the compressor hardware globally optimized. No additional
+  receiver-pressure coordinate is currently requested.
+- **Numerical robustness:** replace fragile automatic event-start steps with
+  tested initialization and/or physically scaled state tolerances. Preserve
+  single-cycle evaluation and resolution checks without weakening closure.
+- **Flight and deployment:** refine exterior skin-friction/spillage allowances,
+  inlet behavior, material limits, plume clearance, CM/stability, actual package
+  routes and sun-synchronous illumination. Detailed CFD remains outside the
+  optimizer. Circular-apogee delivery remains a separate mission-accounting gap.
+
+Later architecture studies remain **v1.1** (fixed downstream coolant tubes,
+retained deployable front SiC) and **v2.0** (diver plus tether mothership).
+These are agenda items, not instructions to start simultaneous implementation.
 
 ## A — Staggered cooler AND explicit stage geometry together
 
@@ -37,8 +87,8 @@ Checkpoint A now has a [converged 275.7-day result and review packet](../investi
 - Narrow the main receiver to a constant barrel radius with explicit heads;
   resolve cryogenic equipment around its forward end and solar stowage farther
   aft. Move thrusters wholly behind the hull. Track CM, routes and clearances.
-- Add separate species/energy/pressure states for the isolated aft compartment,
-  and finite valve flow. Isolate in coast, feed pre-entry thrust from it, reopen
+- Reuse the existing reserve species/energy states for the isolated aft compartment,
+  calculate its pressure, and add finite valve flow. Isolate in coast, feed pre-entry thrust from it, reopen
   when collecting-receiver pressure catches reserve pressure, and resolve shared
   feeding/refill and subsequent isolation. Prevent chatter with documented controls.
 - Replace old boosted-reserve equipment only when its function is replaced. Few-kPa

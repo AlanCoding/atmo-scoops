@@ -1,6 +1,8 @@
 # Coast refrigeration and liquefaction
 
-**Status: research stub; not implemented or validated.**
+**Status: process-design research stub. A reduced duty/capacity model is implemented in the transient cycle; a complete process and its hardware scaling remain unvalidated.**
+
+The [current optimized receiver/plant readout](../../investigations/staggered_stage_a/RECEIVER_COAST.md) records actual draw-down, processing limits, energy use, and the distinction between withdrawal and final venting. This is an audit of existing equations, not a new plant model.
 
 ## Scope and interfaces
 

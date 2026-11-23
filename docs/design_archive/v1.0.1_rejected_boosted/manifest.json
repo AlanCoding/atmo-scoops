@@ -1,0 +1,12 @@
+{
+  "status": "rejected by owner",
+  "label": "v1.0.1-rejected-boosted",
+  "numerical_checkpoint": "e88f733",
+  "trajectory": "results/transient/staggered/thermal_equivalence/selected_validation/check_refined.json.gz",
+  "files": {
+    "scale.svg": "81668b5639d4dc761803109e48a626981d7ba4ba27844719445782b425fa6abf",
+    "scale.png": "b777e53fb2d52f255f6899f5794bd9845fd5c672dda418f2a0ec105522b857cc",
+    "layout.json": "41fb585ef7284d90cb21786c1a3a50229875d460f3b7f72046171a9925f4201d",
+    "inputs.json": "0644123e75917e9a148afc83a38cc8f51273ff599756b9d5b02a33e63496bb7d"
+  }
+}

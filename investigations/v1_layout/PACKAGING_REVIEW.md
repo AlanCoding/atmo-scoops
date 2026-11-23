@@ -1,10 +1,10 @@
 # v1.0 packaging, gas feeds and thruster placement
 
-**Historical frozen-reference review.** The current scale image now comes from
-the [corrected-spacing checkpoint](../staggered_stage_a/README.md); use its
-[length table](DRAWING_LENGTHS.md) and placement register for current dimensions
-and estimated CM. Older locations and relocation estimates below are not the
-current drawing.
+**Historical frozen-reference review.** The current scale image is the
+[working valve-reserve restoration](../../docs/V1_0_1_RESTORE_PLAN.md), not a
+validated numerical checkpoint. Use its [length table](DRAWING_LENGTHS.md).
+No updated CM is claimed. Older locations and relocation estimates below are
+not the current drawing.
 
 This reviews the frozen case 72, not a new optimized design. See the generated
 [volume register and relocation calculations](VOLUME_REGISTER.md), the

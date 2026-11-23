@@ -1,0 +1,6 @@
+{
+  "success": true,
+  "termination": "Feasible restoration gate reached; stopped before further root refinement, not a payoff optimization",
+  "evaluations": 13,
+  "days": 309.0370375666802
+}

@@ -6,11 +6,11 @@ v1.1 fixed coolant tubes in higher-pressure volumes with retained front SiC
 racks, and the v2.0 propulsion-free diver/tether-mothership split. Those plans
 do not change the frozen v1.0 numerical reference.
 
-The [staggered-plate development checkpoint](../investigations/staggered_stage_a/README.md)
-uses wider physical channels and smaller effective thermal spacing, charged to
-actual rack length. Its constrained result is about 275.7 operating-orbit days;
-front-tail hydraulic applicability remains unresolved. See its exact rack and
-stage dimensions before using the updated scale drawing.
+The [current v1.0.1 working layout](images/v1_perigee_scale.svg) restores the
+125 m valve-connected aft reserve. Its [restoration plan](V1_0_1_RESTORE_PLAN.md)
+contains the algebraic orbit screen and fixed-input audit. The 275.7-day boosted
+reserve candidate is [rejected and archived](design_archive/v1.0.1_rejected_boosted/README.md);
+the replacement constrained solution gives **306.4 days operating-orbit payoff**; see [numerical evidence](../investigations/valve_reserve/README.md).
 
 ![Overall spacecraft during its dive and coast](images/spacecraft_overview.svg)
 
@@ -199,21 +199,22 @@ conditional on the exchanger and machinery approximations.
 
 ## Propellant accounting and reboost
 
-The coupled model supports a separate **mixed-gas propellant reserve**. During
-coast, the existing compressor feeds two branches: product liquefaction and a
-small booster/aftercooler feeding four spherical pressure tanks. A regulated
-manifold supplies the next perigee burn directly from those gas tanks. The
-reference has 500 m³ total reserve volume, four 6.25 m outer-diameter tanks and
-4,500 kg starting gas inventory. The tanks remain isolated when rack deployment
-hatches open. Their thermal jackets share the warm rejection loop.
+The working v1.0.1 layout uses the final **125 m of the hull as a valve-connected
+mixed-gas reserve**. It supplies pre-entry thrust; the valve opens when main
+receiver pressure catches reserve pressure, then isolates the reserve before
+coast liquefaction draws down the main receiver. Propellant bypasses liquefaction.
+There is no reserve refill compressor or separate high-pressure storage bank.
+The [restoration plan](V1_0_1_RESTORE_PLAN.md) records the implemented changes,
+including finite valve flow, thermal/species closure and the low-pressure
+thruster-feed interface that still needs validation.
 
-![Gas reserve and independently spaced racks](images/feed_racks.svg)
-
-Gas refill, compression, aftercooling, pressure limits, feed rate and cyclic
-species/energy closure are integrated. Only the product branch pays liquefaction;
-propellant diversion is not subtracted twice. Liquid-feed comparison remains
-available. See [equations and assumptions](../modeling/propellant_feed/GAS_RESERVE.md)
-and [joint comparison](../investigations/feed_pitch/RESULTS.md).
+The coupled model now implements that valve-connected architecture. A
+[46-variable constrained solution](../investigations/valve_reserve/README.md)
+passes the cycle constraints and has completed COBYLA termination.
+The historical boosted implementation remains available only for reproduction
+and is [rejected](design_archive/v1.0.1_rejected_boosted/README.md). Its older
+[feed mechanism diagram](images/feed_racks.svg) does not depict the current
+valve-connected reserve; use the current scale drawing for that layout.
 
 The working reference uses **flow-aligned parallel plates**, SiC in front and
 aluminum downstream. Each stage has independently sized full thickness, clear

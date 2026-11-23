@@ -82,7 +82,7 @@ radiation and propellant through a complete orbit. Each candidate compiles its
 hardware first and integrates once. The [current plate results](investigations/plates/README.md)
 replace the isolated chamber study's anchored payoff proxy.
 
-The working **parallel-plate cooler** reference gives **278.02 days** in the
+The frozen v1.0.0 **parallel-plate cooler** reference gives **278.02 days** in the
 operating orbit: **13,250 tonnes dry** and **3,509 kg of new liquid per orbit**.
 It retains gaseous propellant bypass and uses full plane-Poiseuille friction as
 additional compressor electricity, without suction-pressure feedback.
@@ -203,4 +203,4 @@ The [gas-reserve and rack-spacing study](investigations/feed_pitch/RESULTS.md) a
 
 Publication assets for the current snapshot: [v1.0 publication kit](docs/publication/V1_0.md), including current-reference figures, numerical tables and the provisional axial mass layout.
 
-New development checkpoint: [corrected staggered plates and explicit stage geometry](investigations/staggered_stage_a/README.md), constrained convergence at **275.7 operating-orbit days**, with rack dimensions, pressure-loss diagnostics and an updated scale drawing. The frozen v1.0 reference above is unchanged. [Subsequent packaging/storage checkpoints](docs/SCALE_REVIEW_IMPLEMENTATION_PLAN.md) remain separate.
+Current v1.0.1 numerical checkpoint: **306.4 days operating-orbit payoff**, with a 125 m valve-connected reserve. The 46-variable constrained solve completed successfully. See the [results and validation](investigations/valve_reserve/README.md) and [current scale drawing](docs/images/v1_perigee_scale.svg). The 275.7-day boosted-reserve candidate is [rejected and archived](docs/design_archive/v1.0.1_rejected_boosted/README.md). Circular-apogee delivery remains unmodeled.

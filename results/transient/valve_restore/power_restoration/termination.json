@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "message": "`xtol` termination condition is satisfied.",
+  "nfev": 7,
+  "feasible": false,
+  "days": null,
+  "min_constraint": -600.8969604712667,
+  "evaluations": 16
+}

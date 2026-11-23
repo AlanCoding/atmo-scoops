@@ -1,0 +1,6 @@
+{
+  "source": "../cobyla_refined",
+  "same_forward_model": true,
+  "same_physical_constraints": true,
+  "changed": "positive constraint scaling in optimizer only; all sign boundaries and physical tolerances retained"
+}

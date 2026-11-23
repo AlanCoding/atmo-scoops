@@ -1,0 +1,5 @@
+{
+  "success": false,
+  "termination": "Continued with smaller trust-region stopping radius for strict inventory closure",
+  "replacement": "../cobyla_refined"
+}

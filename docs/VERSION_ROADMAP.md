@@ -1,5 +1,9 @@
 # Design versions and planned model work
 
+Specific integrated snapshots now use **v1.0.z**; see the
+[snapshot register](DESIGN_VERSIONS.md). The boosted-reserve candidate is rejected; the valve-connected replacement is
+in planning. Version headings below describe broader work scopes.
+
 **Disposition: documentation only.** This records the agreed development path;
 it does not introduce code branches, new configuration fields, replacement
 physics, optimization runs or new payoff claims. The saved v1.0 reference stays

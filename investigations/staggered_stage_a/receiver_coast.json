@@ -1,0 +1,93 @@
+{
+  "source": "results/transient/staggered/thermal_equivalence/selected_validation/check_refined.json.gz",
+  "rows": [
+    {
+      "minutes": 10.8333333333333,
+      "pressure_Pa": 4763.329104541404,
+      "receiver_kg": 7110.212391963424,
+      "liquid_kg": 0.0,
+      "gas_refilled_kg": 0.0,
+      "liquid_kg_s": 0.0
+    },
+    {
+      "minutes": 20,
+      "pressure_Pa": 3037.386859658082,
+      "receiver_kg": 4681.715209105072,
+      "liquid_kg": 754.7939451652654,
+      "gas_refilled_kg": 1673.7032376930858,
+      "liquid_kg_s": 1.588548333584357
+    },
+    {
+      "minutes": 30,
+      "pressure_Pa": 1498.1815009533427,
+      "receiver_kg": 2380.8632630730754,
+      "liquid_kg": 1732.4157827927565,
+      "gas_refilled_kg": 2996.9333460975936,
+      "liquid_kg_s": 1.6659292696714072
+    },
+    {
+      "minutes": 40,
+      "pressure_Pa": 482.7827247647576,
+      "receiver_kg": 783.8510673694298,
+      "liquid_kg": 2758.826663609999,
+      "gas_refilled_kg": 3567.5346609839958,
+      "liquid_kg_s": 1.7688766392311588
+    },
+    {
+      "minutes": 50,
+      "pressure_Pa": 79.78824430402494,
+      "receiver_kg": 130.66587685345016,
+      "liquid_kg": 3412.01185118681,
+      "gas_refilled_kg": 3567.534663923152,
+      "liquid_kg_s": 0.3933598431957315
+    },
+    {
+      "minutes": 60,
+      "pressure_Pa": 13.834834805147793,
+      "receiver_kg": 22.686901930090283,
+      "liquid_kg": 3519.9908261101414,
+      "gas_refilled_kg": 3567.534663923152,
+      "liquid_kg_s": 0.06385148954603505
+    },
+    {
+      "minutes": 70,
+      "pressure_Pa": 2.7755825527672453,
+      "receiver_kg": 4.552473137239133,
+      "liquid_kg": 3538.125254902965,
+      "gas_refilled_kg": 3567.534663923152,
+      "liquid_kg_s": 0.0
+    },
+    {
+      "minutes": 72,
+      "pressure_Pa": 0.0,
+      "receiver_kg": 0.0,
+      "liquid_kg": 3538.125254902965,
+      "gas_refilled_kg": 3567.534663923152,
+      "liquid_kg_s": 0.0
+    },
+    {
+      "minutes": 86.0282299478,
+      "pressure_Pa": 0.0,
+      "receiver_kg": 0.0,
+      "liquid_kg": 3538.125254902965,
+      "gas_refilled_kg": 3567.534663923152,
+      "liquid_kg_s": 0.0
+    }
+  ],
+  "budget": {
+    "receiver_at_processing_start_kg": 7110.212391963424,
+    "liquid_kg": 3538.125254902965,
+    "gas_refilled_kg": 3567.534663923152,
+    "receiver_at_shutdown_kg": 4.552473137239133,
+    "balance_error_kg": 6.792788553866558e-11
+  },
+  "peak_liquid_kg_s": 1.7910279605158494,
+  "product_branch_kWh_per_kg": 2.745316611154177,
+  "receiver_release_event": {
+    "time_s": 4320.0,
+    "chamber": 4,
+    "pressure_before_Pa": 1.6969041008529336e-05,
+    "final_purge_kg": 2.7984661064200798e-05,
+    "hatch_allowed": true
+  }
+}

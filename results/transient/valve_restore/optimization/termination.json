@@ -1,0 +1,5 @@
+{
+  "success": false,
+  "termination": "Stopped: finite-difference signal comparable to integration noise; no SLSQP optimum accepted",
+  "replacement": "../cobyla"
+}

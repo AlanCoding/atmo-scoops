@@ -1,117 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1180" viewBox="0 0 2000 1180"><rect width="2000" height="1180" fill="white"/><style>text{font-family:DejaVu Sans,sans-serif;fill:#223746}</style><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#226d86"/></marker></defs>
-<text x="55" y="55" font-size="29">ATMOSPHERIC SCOOP DIVER · CORRECTED THERMAL-SPACING CHECKPOINT</text>
-<text x="55" y="92" font-size="21">85 × 2,000 km orbit · 317 m hull · 31.7 m outside diameter · perigee, all deployables stowed</text>
-<text x="55" y="128" font-size="21">Saved cycle: 275.73 operating-orbit payoff days · 13,249.5 tonnes dry</text>
-<text x="55" y="170" font-size="19">Front geometry and rack sizes are numerical outputs. Aft package locations and CM are layout estimates.</text>
-<line x1="980" y1="224" x2="650" y2="224" stroke="#6d828e" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
-<text x="680" y="209" font-size="20">Motion / prograde thrust</text>
-<text x="55" y="275" font-size="21">Estimated dry CM: x = 120.1 m</text>
-<text x="55" y="302" font-size="17">Uses proposed aft locations; not a stability calculation.</text>
-<rect x="180.0" y="360.0" width="1585.0" height="158.5" fill="#edf5f7" stroke="#6d828e" stroke-dasharray=""/>
-<rect x="180.0" y="360.0" width="68.06569892866244" height="158.5" fill="#f8f0de" stroke="#6d828e" stroke-dasharray=""/>
-<rect x="230.0" y="360.0" width="18.065698928662446" height="158.5" fill="#c8873d" stroke="#b66b1c" stroke-dasharray=""/>
-<rect x="248.06569892866244" y="360.0" width="25.59356733695349" height="158.5" fill="#a9bac9" stroke="#6d828e" stroke-dasharray=""/>
-<rect x="273.65926626561594" y="360.0" width="5.0" height="158.5" fill="#c8b6d8" stroke="#6d828e" stroke-dasharray=""/>
-<text x="252.8624825971392" y="445.25" font-size="13">C1</text>
-<rect x="278.65926626561594" y="360.0" width="16.185464223756725" height="158.5" fill="#f8f0de" stroke="#6d828e" stroke-dasharray=""/>
-<rect x="286.15926626561594" y="360.0" width="1.1854642237567248" height="158.5" fill="#c8873d" stroke="#b66b1c" stroke-dasharray=""/>
-<rect x="294.84473048937264" y="360.0" width="32.88648545547035" height="158.5" fill="#a9bac9" stroke="#6d828e" stroke-dasharray=""/>
-<rect x="327.73121594484303" y="360.0" width="5.0" height="158.5" fill="#c8b6d8" stroke="#6d828e" stroke-dasharray=""/>
-<text x="303.28797321710783" y="445.25" font-size="13">C2</text>
-<rect x="332.73121594484303" y="360.0" width="15.648155242010588" height="158.5" fill="#f8f0de" stroke="#6d828e" stroke-dasharray=""/>
-<rect x="340.23121594484303" y="360.0" width="0.6481552420105885" height="158.5" fill="#c8873d" stroke="#b66b1c" stroke-dasharray=""/>
-<rect x="348.37937118685363" y="360.0" width="24.757161770914315" height="158.5" fill="#a9bac9" stroke="#6d828e" stroke-dasharray=""/>
-<rect x="373.13653295776794" y="360.0" width="5.0" height="158.5" fill="#c8b6d8" stroke="#6d828e" stroke-dasharray=""/>
-<text x="352.75795207231073" y="445.25" font-size="13">C3</text>
-<rect x="378.13653295776794" y="360.0" width="15.555512873666366" height="158.5" fill="#f8f0de" stroke="#6d828e" stroke-dasharray=""/>
-<rect x="385.63653295776794" y="360.0" width="0.5555128736664017" height="158.5" fill="#c8873d" stroke="#b66b1c" stroke-dasharray=""/>
-<rect x="393.69204583143426" y="360.0" width="21.856015835134208" height="158.5" fill="#a9bac9" stroke="#6d828e" stroke-dasharray=""/>
-<rect x="415.5480616665685" y="360.0" width="5.0" height="158.5" fill="#c8b6d8" stroke="#6d828e" stroke-dasharray=""/>
-<text x="396.6200537490014" y="445.25" font-size="13">C4</text>
-<rect x="420.5480616665685" y="361.0" width="1344.4519383334316" height="156.5" rx="7.5" fill="none" stroke="#7895a1"/>
-<rect x="428.0480616665685" y="360.0" width="0.8945131895786318" height="158.5" fill="#c8873d" stroke="#b66b1c" stroke-dasharray=""/>
-<text x="815.4116259304883" y="435.25" font-size="23">SHARED AFT GAS RECEIVER</text>
-<text x="815.4116259304883" y="464.25" font-size="17">Package displacement included; isolation partition is the next checkpoint</text>
-<rect x="430.5480616665685" y="363.0" width="40.0" height="10" fill="#dfc69e" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="430.5480616665685" y="505.5" width="40.0" height="10" fill="#dfc69e" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="470.5480616665685" y="363.0" width="25.0" height="10" fill="#d8d9ba" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="470.5480616665685" y="505.5" width="25.0" height="10" fill="#d8d9ba" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="495.5480616665685" y="363.0" width="49.999999999999964" height="10" fill="#b2c0ce" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="495.5480616665685" y="505.5" width="49.999999999999964" height="10" fill="#b2c0ce" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="545.5480616665684" y="363.0" width="30.0" height="10" fill="#c7b6e0" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="545.5480616665684" y="505.5" width="30.0" height="10" fill="#c7b6e0" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="575.5480616665684" y="363.0" width="30.0" height="10" fill="#9bcaba" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="575.5480616665684" y="505.5" width="30.0" height="10" fill="#9bcaba" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="605.5480616665684" y="363.0" width="35.0" height="10" fill="#b9c9aa" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="605.5480616665684" y="505.5" width="35.0" height="10" fill="#b9c9aa" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="640.5480616665684" y="363.0" width="489.45193833343154" height="10" fill="#91b9e1" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="640.5480616665684" y="505.5" width="489.45193833343154" height="10" fill="#91b9e1" stroke="#6d828e" stroke-dasharray="4 3"/>
-<rect x="1775.0" y="337.0" width="50.0" height="14" fill="#9cc9b2" stroke="#6d828e" stroke-dasharray=""/>
-<path d="M1825.0 344.0 L1925.0 299.0 L1925.0 389.0Z" fill="#e3f2ed" stroke="#6c9d87" stroke-dasharray="5 4"/>
-<line x1="1825.0" y1="344.0" x2="1945.0" y2="344.0" stroke="#6d828e" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
-<rect x="1775.0" y="526.5" width="50.0" height="14" fill="#9cc9b2" stroke="#6d828e" stroke-dasharray=""/>
-<path d="M1825.0 533.5 L1925.0 488.5 L1925.0 578.5Z" fill="#e3f2ed" stroke="#6c9d87" stroke-dasharray="5 4"/>
-<line x1="1825.0" y1="533.5" x2="1945.0" y2="533.5" stroke="#6d828e" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
-<line x1="780.4116259304883" y1="330.0" x2="780.4116259304883" y2="548.5" stroke="#b48122" stroke-width="2" stroke-dasharray="6 4"/>
-<circle cx="780.4116259304883" cy="439.25" r="6" fill="#b48122"/>
-<line x1="40" y1="405.0" x2="168.0" y2="405.0" stroke="#6d828e" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
-<line x1="40" y1="470.0" x2="168.0" y2="470.0" stroke="#6d828e" stroke-width="2" stroke-dasharray="" marker-end="url(#a)"/>
-<text x="35" y="382.0" font-size="18">Air →</text>
-<line x1="560.5480616665684" y1="358.0" x2="560.5480616665684" y2="305" stroke="#6d828e" stroke-width="2" stroke-dasharray=""/>
-<text x="495.5480616665685" y="298" font-size="17">Coast plant / cryogenics</text>
-<text x="650.5480616665684" y="330" font-size="18">Folded solar: 11,518 m³</text>
-<text x="1470" y="275" font-size="20">Aft thrusters: proposed placement</text>
-<text x="1470" y="303" font-size="17">Plume is illustrative</text>
-<line x1="180.0" y1="590" x2="1765.0" y2="590" stroke="#6d828e" stroke-width="2" stroke-dasharray=""/>
-<line x1="180.0" y1="582" x2="180.0" y2="598" stroke="#6d828e" stroke-width="2" stroke-dasharray=""/>
-<line x1="1765.0" y1="582" x2="1765.0" y2="598" stroke="#6d828e" stroke-width="2" stroke-dasharray=""/>
-<text x="650" y="580" font-size="21">317 m hull; external thrusters extend beyond it</text>
-<text x="55" y="635" font-size="18">Amber: actual rack thickness · Grey: compressor bank · Purple: 1 m hatch equipment · Dashed bands: proposed packages</text>
-<text x="55" y="675" font-size="18">All dimensions below are metres aft of the mouth; subpixel racks are not enlarged.</text>
-<text x="55" y="716" font-size="18">Stage</text>
-<text x="160" y="716" font-size="18">Gas volume range</text>
-<text x="440" y="716" font-size="18">Rack range</text>
-<text x="720" y="716" font-size="18">Compressor range</text>
-<text x="1000" y="716" font-size="18">Hatch range</text>
-<text x="1280" y="716" font-size="18">Rack mass (t)</text>
-<text x="1510" y="716" font-size="18">Core length (m)</text>
-<text x="55" y="754" font-size="20">1</text>
-<text x="160" y="754" font-size="20">0.000–13.613</text>
-<text x="440" y="754" font-size="20">10.000–13.613</text>
-<text x="720" y="754" font-size="20">13.613–18.732</text>
-<text x="1000" y="754" font-size="20">18.732–19.732</text>
-<text x="1280" y="754" font-size="20">381.950</text>
-<text x="1510" y="754" font-size="20">3.5981</text>
-<text x="55" y="793" font-size="20">2</text>
-<text x="160" y="793" font-size="20">19.732–22.969</text>
-<text x="440" y="793" font-size="20">21.232–21.469</text>
-<text x="720" y="793" font-size="20">22.969–29.546</text>
-<text x="1000" y="793" font-size="20">29.546–30.546</text>
-<text x="1280" y="793" font-size="20">26.633</text>
-<text x="1510" y="793" font-size="20">0.2221</text>
-<text x="55" y="832" font-size="20">3</text>
-<text x="160" y="832" font-size="20">30.546–33.676</text>
-<text x="440" y="832" font-size="20">32.046–32.176</text>
-<text x="720" y="832" font-size="20">33.676–38.627</text>
-<text x="1000" y="832" font-size="20">38.627–39.627</text>
-<text x="1280" y="832" font-size="20">12.913</text>
-<text x="1510" y="832" font-size="20">0.1146</text>
-<text x="55" y="871" font-size="20">4</text>
-<text x="160" y="871" font-size="20">39.627–42.738</text>
-<text x="440" y="871" font-size="20">41.127–41.238</text>
-<text x="720" y="871" font-size="20">42.738–47.110</text>
-<text x="1000" y="871" font-size="20">47.110–48.110</text>
-<text x="1280" y="871" font-size="20">11.807</text>
-<text x="1510" y="871" font-size="20">0.0961</text>
-<text x="55" y="910" font-size="20">5</text>
-<text x="160" y="910" font-size="20">48.110–317.000</text>
-<text x="440" y="910" font-size="20">49.610–49.789</text>
-<text x="720" y="910" font-size="20">Coast plant (proposed)</text>
-<text x="1000" y="910" font-size="20">Receiver mechanism</text>
-<text x="1280" y="910" font-size="20">20.577</text>
-<text x="1510" y="910" font-size="20">0.1639</text>
-<text x="55" y="983" font-size="17">Stage 1 has 10 m empty inlet space. Stages 2–4 include explicit vessel heads. Rack 5 is shown at the forward receiver service port.</text>
-<text x="55" y="1018" font-size="17">Aft package bands are symbols, not verified radial cross sections. Their full volume remains deducted from receiver gas volume.</text>
-<text x="55" y="1053" font-size="17">The planned 125 m isolation tank and five-cycle product store are subsequent checkpoints; they are not credited in this run.</text>
-<text x="55" y="1088" font-size="17">Thermal-spacing equivalence is an explicit approximation. Pressure-loss electricity does not establish hydraulic or structural feasibility.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="850" viewBox="0 0 1800 850"><title>v1.0.1 working valve-connected reserve layout</title><rect width="1800" height="850" fill="white"/><style>text{font-family:DejaVu Sans,sans-serif;fill:#243b48}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#286f82"/></marker></defs>
+<text x="45" y="48" font-size="29">v1.0.1 WORKING DESIGN · VALVE-CONNECTED AFT RESERVE</text>
+<text x="45" y="85" font-size="21">Simulated orbit: 85.80 × 2,000 km · 317 m hull · 31.7 m outer diameter</text>
+<text x="45" y="118" font-size="18">Forward-cycle geometry; valve-connected reserve. See numerical report for optimizer termination and validation.</text>
+<text x="45" y="149" font-size="18">Fill screen: 4.812 kPa at 341.5 K · main receiver peak from trajectory</text>
+<line x1="850" y1="210" x2="550" y2="210" stroke="#6d858e" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="580" y="194" font-size="18">Motion / prograde thrust</text>
+<rect x="135.0" y="330" width="1426.5" height="142.65" rx="0" fill="#eff4f6" stroke="#6d858e"/>
+<rect x="135.0" y="330" width="61.11658752139569" height="142.65" rx="0" fill="#fbf3df" stroke="#6d858e"/>
+<rect x="180.0" y="330" width="16.116587521395687" height="142.65" rx="0" fill="#cd8b35" stroke="#6d858e"/>
+<rect x="196.11658752139567" y="330" width="23.03063557537127" height="142.65" rx="0" fill="#a7bac9" stroke="#6d858e"/>
+<rect x="219.14722309676696" y="330" width="4.5" height="142.65" rx="0" fill="#c4b4d1" stroke="#6d858e"/>
+<text x="200.63190530908133" y="405.325" font-size="11">C1</text>
+<rect x="223.64722309676696" y="330" width="14.573816564147318" height="142.65" rx="0" fill="#fbf3df" stroke="#6d858e"/>
+<rect x="230.39722309676696" y="330" width="1.073816564147318" height="142.65" rx="0" fill="#cd8b35" stroke="#6d858e"/>
+<rect x="238.22103966091427" y="330" width="29.59845164094427" height="142.65" rx="0" fill="#a7bac9" stroke="#6d858e"/>
+<rect x="267.81949130185853" y="330" width="4.5" height="142.65" rx="0" fill="#c4b4d1" stroke="#6d858e"/>
+<text x="246.02026548138642" y="405.325" font-size="11">C2</text>
+<rect x="272.31949130185853" y="330" width="14.083150906726633" height="142.65" rx="0" fill="#fbf3df" stroke="#6d858e"/>
+<rect x="279.06949130185853" y="330" width="0.5831509067266332" height="142.65" rx="0" fill="#cd8b35" stroke="#6d858e"/>
+<rect x="286.4026422085852" y="330" width="22.356675970142373" height="142.65" rx="0" fill="#a7bac9" stroke="#6d858e"/>
+<rect x="308.75931817872754" y="330" width="4.5" height="142.65" rx="0" fill="#c4b4d1" stroke="#6d858e"/>
+<text x="290.5809801936564" y="405.325" font-size="11">C3</text>
+<rect x="313.25931817872754" y="330" width="13.99823116589641" height="142.65" rx="0" fill="#fbf3df" stroke="#6d858e"/>
+<rect x="320.00931817872754" y="330" width="0.49823116589641003" height="142.65" rx="0" fill="#cd8b35" stroke="#6d858e"/>
+<rect x="327.25754934462395" y="330" width="19.67802493073862" height="142.65" rx="0" fill="#a7bac9" stroke="#6d858e"/>
+<rect x="346.93557427536257" y="330" width="4.5" height="142.65" rx="0" fill="#c4b4d1" stroke="#6d858e"/>
+<text x="330.09656180999326" y="405.325" font-size="11">C4</text>
+<rect x="351.43557427536257" y="343.0470389184641" width="647.5644257246374" height="116.55592216307177" rx="6.75" fill="#e3f0f6" stroke="#6d858e"/>
+<rect x="999.0" y="333.825" width="562.5" height="135.0" rx="6.75" fill="#e3f2e3" stroke="#6d858e"/>
+<rect x="358.18557427536257" y="343.0470389184641" width="1.0546762683553617" height="116.55592216307177" rx="0" fill="#cd8b35" stroke="#6d858e"/>
+<rect x="360.43557427536257" y="333" width="58.5" height="9" rx="0" fill="#dfc89b" stroke="#6d858e"/>
+<rect x="360.43557427536257" y="460.65" width="58.5" height="9" rx="0" fill="#dfc89b" stroke="#6d858e"/>
+<rect x="418.93557427536257" y="333" width="99.00000000000003" height="9" rx="0" fill="#c5b5df" stroke="#6d858e"/>
+<rect x="418.93557427536257" y="460.65" width="99.00000000000003" height="9" rx="0" fill="#c5b5df" stroke="#6d858e"/>
+<rect x="549.4355742753626" y="333" width="440.5644257246374" height="9" rx="0" fill="#93b8db" stroke="#6d858e"/>
+<rect x="549.4355742753626" y="460.65" width="440.5644257246374" height="9" rx="0" fill="#93b8db" stroke="#6d858e"/>
+<text x="396.43557427536257" y="387.325" font-size="22">MAIN RECEIVER</text>
+<text x="396.43557427536257" y="414.325" font-size="18">143.9 m long · Ø 25.90 m</text>
+<text x="396.43557427536257" y="439.325" font-size="17">3.68 t gas at fill target</text>
+<text x="1044.0" y="387.325" font-size="22">THRUSTER RESERVE</text>
+<text x="1044.0" y="414.325" font-size="18">125 m long · Ø 30 m</text>
+<text x="1044.0" y="439.325" font-size="17">3.51 t retained working inventory</text>
+<line x1="971.0" y1="355" x2="1027.0" y2="355" stroke="#397c49" stroke-width="2"/>
+<path d="M990.0 347L1008.0 363L1008.0 347L990.0 363Z" fill="white" stroke="#397c49" stroke-width="2"/>
+<line x1="999.0" y1="346" x2="999.0" y2="270" stroke="#6d858e" stroke-width="2"/>
+<text x="899.0" y="255" font-size="17">Isolation / equalization valve</text>
+<text x="361.43557427536257" y="285" font-size="17">Coast compressors / cryogenics</text>
+<line x1="463.9355742753626" y1="290" x2="463.9355742753626" y2="333" stroke="#6d858e" stroke-width="2"/>
+<text x="598.9355742753626" y="312" font-size="16">Folded solar panels around main receiver</text>
+<line x1="486.4355742753626" y1="371.0470389184641" x2="486.4355742753626" y2="340" stroke="#6d858e" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="1521.0" y1="401.325" x2="1584.0" y2="401.325" stroke="#6d858e" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1269.0" y="516.65" font-size="16">Gaseous feed; low-pressure interface to verify</text>
+<rect x="1575.0" y="310" width="45.0" height="12" rx="0" fill="#9cc6b3" stroke="#6d858e"/>
+<line x1="1620.0" y1="316" x2="1710.0" y2="316" stroke="#6d858e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1575.0" y="481.65" width="45.0" height="12" rx="0" fill="#9cc6b3" stroke="#6d858e"/>
+<line x1="1620.0" y1="487.65" x2="1710.0" y2="487.65" stroke="#6d858e" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1450" y="285" font-size="18">Aft thrusters</text>
+<line x1="30" y1="372" x2="127" y2="372" stroke="#6d858e" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="30" y1="430" x2="127" y2="430" stroke="#6d858e" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="30" y="350" font-size="17">Air →</text>
+<line x1="135" y1="550" x2="1561.5" y2="550" stroke="#6d858e" stroke-width="2"/>
+<line x1="135" y1="542" x2="135" y2="558" stroke="#6d858e" stroke-width="2"/>
+<line x1="1561.5" y1="542" x2="1561.5" y2="558" stroke="#6d858e" stroke-width="2"/>
+<text x="610" y="538" font-size="19">317 m hull · geometry drawn at common scale</text>
+<text x="45" y="615" font-size="17">Valve sequence: reserve feeds pre-entry thrust → open when receiver pressure catches reserve → shared feeding → isolate for coast.</text>
+<text x="45" y="660" font-size="17">Main-tank packages: 25,626 m³ equivalent displacement, all ahead of x = 192 m; radial sectors remain provisional.</text>
+<text x="45" y="705" font-size="17">Receiver rack: Al plates within the narrowed tank; 0.219 m core depth.</text>
+<text x="45" y="750" font-size="17">Low-pressure thruster feed remains a development assumption; no updated CM is claimed.</text>
 </svg>

@@ -1,0 +1,59 @@
+{
+  "status": "algebraic planning estimate, not a new simulation",
+  "base_perigee_km": 85.0,
+  "apogee_km": 2000.0,
+  "main_start_m": 48.1096123333137,
+  "split_m": 192.0,
+  "hull_end_m": 317.0,
+  "main_length_m": 143.8903876666863,
+  "reserve_length_m": 125.0,
+  "main_radius_m": 12.141279764447379,
+  "reserve_radius_m": 15.0,
+  "main_gas_m3": 65937.51273530406,
+  "reserve_gas_m3": 87300.54015336165,
+  "retained_package_displacement_m3": 34708.23446619313,
+  "head_depth_m": 1.5,
+  "receiver_rack_core_m": 0.2501724770035228,
+  "reference_incident_kg": 7113.6731696965035,
+  "reference_propellant_kg": 3567.5346639230706,
+  "beta": 0.5015038755393475,
+  "local_density_scale_height_km": 5.684835722394131,
+  "cases": [
+    {
+      "name": "preserve_previous_working_pressure",
+      "target_pressure_Pa": 4766.83275968651,
+      "temperature_K": 357.2873174910714,
+      "fresh_capture_kg": 6147.438713310764,
+      "propellant_kg": 3082.964339365968,
+      "main_mass_kg": 3064.474373944796,
+      "reserve_mass_kg": 4057.330297026434,
+      "fresh_capture_scale": 0.8641722168932646,
+      "perigee_km": 85.82989053827126,
+      "preentry_halfburn_remaining_kg": 2515.84812734345
+    },
+    {
+      "name": "inherited_rating_divided_by_1.1",
+      "target_pressure_Pa": 5909.090909090909,
+      "temperature_K": 357.2873174910714,
+      "fresh_capture_kg": 7620.526258489318,
+      "propellant_kg": 3821.7234522817566,
+      "main_mass_kg": 3798.8028062075614,
+      "reserve_mass_kg": 5029.573048187815,
+      "fresh_capture_scale": 1.0712505447891472,
+      "perigee_km": 84.60873152011686,
+      "preentry_halfburn_remaining_kg": 3118.7113220469373
+    },
+    {
+      "name": "inherited_rating_no_margin",
+      "target_pressure_Pa": 6500,
+      "temperature_K": 357.2873174910714,
+      "fresh_capture_kg": 8382.57888433825,
+      "propellant_kg": 4203.895797509933,
+      "main_mass_kg": 4178.683086828318,
+      "reserve_mass_kg": 5532.530353006597,
+      "fresh_capture_scale": 1.1783755992680618,
+      "perigee_km": 84.06690880525743,
+      "preentry_halfburn_remaining_kg": 3430.58245425163
+    }
+  ]
+}
