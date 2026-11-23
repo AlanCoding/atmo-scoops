@@ -6,7 +6,7 @@ v1.1 fixed coolant tubes in higher-pressure volumes with retained front SiC
 racks, and the v2.0 propulsion-free diver/tether-mothership split. Those plans
 do not change the frozen v1.0 numerical reference.
 
-The [current v1.0.1 working layout](images/v1_perigee_scale.svg) restores the
+The [accepted v1.0.1 layout](images/v1_perigee_scale.svg) restores the
 125 m valve-connected aft reserve. Its [restoration plan](V1_0_1_RESTORE_PLAN.md)
 contains the algebraic orbit screen and fixed-input audit. The 275.7-day boosted
 reserve candidate is [rejected and archived](design_archive/v1.0.1_rejected_boosted/README.md);
@@ -199,7 +199,7 @@ conditional on the exchanger and machinery approximations.
 
 ## Propellant accounting and reboost
 
-The working v1.0.1 layout uses the final **125 m of the hull as a valve-connected
+The accepted v1.0.1 layout uses the final **125 m of the hull as a valve-connected
 mixed-gas reserve**. It supplies pre-entry thrust; the valve opens when main
 receiver pressure catches reserve pressure, then isolates the reserve before
 coast liquefaction draws down the main receiver. Propellant bypasses liquefaction.

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="850" viewBox="0 0 1800 850"><title>v1.0.1 working valve-connected reserve layout</title><rect width="1800" height="850" fill="white"/><style>text{font-family:DejaVu Sans,sans-serif;fill:#243b48}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#286f82"/></marker></defs>
-<text x="45" y="48" font-size="29">v1.0.1 WORKING DESIGN · VALVE-CONNECTED AFT RESERVE</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="850" viewBox="0 0 1800 850"><title>v1.0.1 valve-connected reserve layout</title><rect width="1800" height="850" fill="white"/><style>text{font-family:DejaVu Sans,sans-serif;fill:#243b48}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#286f82"/></marker></defs>
+<text x="45" y="48" font-size="29">v1.0.1 REFERENCE DESIGN · VALVE-CONNECTED AFT RESERVE</text>
 <text x="45" y="85" font-size="21">Simulated orbit: 85.80 × 2,000 km · 317 m hull · 31.7 m outer diameter</text>
 <text x="45" y="118" font-size="18">Forward-cycle geometry; valve-connected reserve. See numerical report for optimizer termination and validation.</text>
 <text x="45" y="149" font-size="18">Fill screen: 4.812 kPa at 341.5 K · main receiver peak from trajectory</text>

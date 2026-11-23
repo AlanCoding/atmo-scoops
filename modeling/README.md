@@ -4,9 +4,11 @@ Research dossiers develop evidence-backed replacement models before code updates
 
 ## Numerical model and studies
 
+- [Post-v1.0.1 staged design workflow](optimization/STAGED_DESIGN_PLAN.md): worksheet sizing, derived altitude, coordinated subsystem studies and transient correction maps (planned).
+
 - [Staged refinement and release gates](../investigations/staged_refinement/README.md): active gas bypass at fixed geometry, followed by separately validated pressure, pitch and radius stages.
 
-- [Mixed-gas propellant reserve](propellant_feed/GAS_RESERVE.md): conservative reserve, booster, warm-loop coupling and hardware.
+- [Accepted valve-only reserve](propellant_feed/VALVE_RESERVE.md). The [boosted-reserve dossier](propellant_feed/GAS_RESERVE.md) describes a rejected historical architecture.
 - Experimental [low-Re inline rack bank](metal_coolers/LOW_RE_BANK.md): paired array resistance/heat transfer, per-stage radius and common pitch, and constrained search.
 - [Parallel-plate cooler model](metal_coolers/PLATES.md): explicit clear gap, plate thickness, Poiseuille friction, finite thermal inventory and nonlinear constrained optimization.
 - [Power-only rack-loss model](metal_coolers/POWER_ONLY.md): explicit electrical/thermal surcharge, conservative finite-motor derating, and separate pitch/radius experiments without hydraulic pressure feedback.

@@ -6,9 +6,10 @@ The concept was first published on AlanCoding's
 [Atmospheric Scoop Divers page](https://alancoding.github.io/concepts/atmospheric-scoop-divers/).
 This repository develops its engineering description and numerical analysis.
 
-**Version plan:** [v1.0.1 accuracy refinements → v1.1 downstream coolant tubes →
-v2.0 propulsion-free diver and tether mothership](docs/VERSION_ROADMAP.md).
-These are documented plans; the published v1.0 reference remains unchanged.
+**Current publication reference: v1.0.1 — 306.4 days operating-orbit payoff.**
+See the [publication kit](docs/publication/V1_0_1.md), [validated results](investigations/valve_reserve/README.md)
+and [version roadmap](docs/VERSION_ROADMAP.md). v1.1 downstream coolant tubes and
+v2.0 propulsion-free diver/tether mothership remain future architectures.
 
 The concept is a spacecraft that collects air during repeated 7–8 km/s
 atmospheric passes, transfers it into rear tanks, and makes useful cryogenic
@@ -79,26 +80,19 @@ hardware-development targets.
 The new [coupled forward-cycle model](modeling/primary/TRANSIENT_IMPLEMENTATION.md)
 tracks gas and rack states, finite compressors, liquefaction, power storage,
 radiation and propellant through a complete orbit. Each candidate compiles its
-hardware first and integrates once. The [current plate results](investigations/plates/README.md)
-replace the isolated chamber study's anchored payoff proxy.
+hardware first and integrates once. The accepted [v1.0.1 result](investigations/valve_reserve/README.md)
+is **306.4 days**, **12,840 tonnes dry**, and **3,086 kg of new useful liquid per orbit**.
+A 46-coordinate constrained COBYLA solve terminated successfully and passed a
+tighter-resolution replay. Perigee is selected at **85.804 km**, apogee fixed at
+2,000 km. Capture is **99.9787%** of modeled incident supply; the reserve feeds all
+commanded thrust without a refill compressor.
 
-The frozen v1.0.0 **parallel-plate cooler** reference gives **278.02 days** in the
-operating orbit: **13,250 tonnes dry** and **3,509 kg of new liquid per orbit**.
-It retains gaseous propellant bypass and uses full plane-Poiseuille friction as
-additional compressor electricity, without suction-pressure feedback.
-
-A real **33-variable constrained COBYLA optimization** terminated successfully
-after **99 completed forward evaluations**, with no missing or failed cycles.
-Its returned 277.66-day point missed battery closure under refined integration.
-The working reference is a nearby actual optimizer-history point with additional
-closure reserve; it passes all constraints and numerical gates at **three
-resolutions**. Tolerances were not relaxed. This is a local, scoped search, not a
-certified global optimum. See the [plate results](investigations/plates/README.md)
-and [model equations](modeling/metal_coolers/PLATES.md).
+The [original 278.02-day plate study](investigations/plates/README.md) remains a
+historical reference, not the current layout or payoff. The [comparison](investigations/publication_v1_0_1/README.md)
+explains the changed budgets. Neither result includes circular-apogee delivery.
 
 ```bash
-.venv/bin/python -m atmo_scoops.transient --config configs/transient_active.json
-OPENBLAS_NUM_THREADS=1 .venv/bin/python -m atmo_scoops.transient.plate_optimize --config configs/transient_plates_optimization_seed.json --output results/transient/plates/new_search --maxiter 300 --tol 0.01 --rhobeg 0.03 --seconds 240
+.venv/bin/python -m atmo_scoops.transient --config configs/transient_v1_0_1_valve.json
 ```
 
 The [skin-friction sensitivity](investigations/skin_friction/ANALYSIS.md) adds explicit external drag: a Cf=0.002 capacity proposal gives about 308 days, versus the 285-day zero-skin comparison. Cf is an illustrative scenario, not a calibrated prediction. [Planned refinements](docs/NEXT_REFINEMENTS.md) cover gaseous propellant bypass, rack pitch and omitted penalties.
@@ -201,6 +195,8 @@ The [gas-reserve and rack-spacing study](investigations/feed_pitch/RESULTS.md) a
 - [Staged refinement](investigations/staged_refinement/README.md): active gas bypass first, then gated pressure-loss, pitch and radius releases.
 - [Earlier joint radius/pitch experiment](investigations/rack_radius/RESULTS.md): retained research, not the active reference.
 
-Publication assets for the current snapshot: [v1.0 publication kit](docs/publication/V1_0.md), including current-reference figures, numerical tables and the provisional axial mass layout.
+Publication assets for the current snapshot: [v1.0.1 publication kit](docs/publication/V1_0_1.md), including selected-reference figures, numerical tables and the valve-only layout.
 
-Current v1.0.1 numerical checkpoint: **306.4 days operating-orbit payoff**, with a 125 m valve-connected reserve. The 46-variable constrained solve completed successfully. See the [results and validation](investigations/valve_reserve/README.md) and [current scale drawing](docs/images/v1_perigee_scale.svg). The 275.7-day boosted-reserve candidate is [rejected and archived](docs/design_archive/v1.0.1_rejected_boosted/README.md). Circular-apogee delivery remains unmodeled.
+Accepted v1.0.1 publication reference: **306.4 days operating-orbit payoff**, with a 125 m valve-connected reserve. The 46-variable constrained solve completed successfully. See the [results and validation](investigations/valve_reserve/README.md) and [current scale drawing](docs/images/v1_perigee_scale.svg). The 275.7-day boosted-reserve candidate is [rejected and archived](docs/design_archive/v1.0.1_rejected_boosted/README.md). Circular-apogee delivery remains unmodeled.
+
+Next methodology, after freezing this reference: [staged sizing, subsystem optimization and transient validation](modeling/optimization/STAGED_DESIGN_PLAN.md). This is a plan; no replacement model is implemented.

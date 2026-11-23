@@ -4,15 +4,14 @@ This is a maintained list of missing capabilities, not a work diary. Remove or
 rewrite an item when the model resolves it, and link its validation. Priorities
 reflect how strongly a missing relationship can distort design selection.
 
-The immediate review gate is the [v1.0.1 valve-reserve restoration plan](V1_0_1_RESTORE_PLAN.md).
-Its geometry, fixed-input reconciliation and full-capture constraints precede
-further model improvements. The boosted-reserve candidate is rejected.
+The v1.0.1 valve-only reference is now frozen for [publication](publication/V1_0_1.md).
+Before further design extensions, review the [staged methodology plan](../modeling/optimization/STAGED_DESIGN_PLAN.md): transparent sizing, conditional altitude matching, coordinated subsystem optimization and transient validation. No implementation is authorized by this plan alone. The boosted-reserve candidate remains rejected.
 
 ## Version scope
 
 The [version roadmap](VERSION_ROADMAP.md) is the current sequencing plan:
 
-- **v1.0.1:** improve model accuracy in the integrated plate-cooled architecture,
+- **After v1.0.1:** improve model accuracy in the integrated plate-cooled architecture,
   starting with calibrated/bounded exterior side shear. The frozen reference
   already uses an effective Cf of 0.002; this is refinement, not a new duplicate
   drag charge. Propagate penalties through power, propellant and cycle closure.

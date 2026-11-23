@@ -8,7 +8,7 @@ The final 125 m of the hull holds the valve-only reserve. It feeds approach thru
 |---|---:|
 | Dry mass | 12,840.22 t |
 | New liquid per orbit | 3,085.886 kg |
-| Admitted gas | 6,188.807 kg |
+| Admitted gas | 6,188.858 kg |
 | Propellant | 3,101.412 kg |
 | Perigee / apogee | 85.804456 / 2,000 km |
 | Isp / total burn duration | 1811.98 s / 1235.14 s |
@@ -81,4 +81,4 @@ PYTHONPATH=. .venv/bin/python investigations/valve_reserve/verify.py /tmp/valve.
 PYTHONPATH=. OPENBLAS_NUM_THREADS=1 .venv/bin/python investigations/valve_reserve/cobyla_scaled.py --manifest results/transient/valve_restore/optimization/manifest.json --output /tmp/valve_search --workers 4 --maxiter 300 --rhobeg .03 --tol .001
 ```
 
-Exact selected and refined histories, inputs, solver manifests, termination, trial metrics and test logs are retained under `results/transient/valve_restore/`. Redundant trial histories were removed; each trial JSON preserves its inputs for replay. The default scale generator reads the selected refined trajectory.
+Exact selected and refined histories, inputs, solver manifests, termination, selected metrics and test logs are retained under `results/transient/valve_restore/`. Anonymous per-trial caches and worker payloads are ignored by Git; local caches may remain, and a fresh checkout regenerates them. The default scale generator reads the selected refined trajectory.

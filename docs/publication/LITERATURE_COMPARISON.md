@@ -1,4 +1,4 @@
-# Literature comparison for the v1.0 publication
+# Literature comparison for the v1.0.1 publication
 
 **Scope update:** the subsequently supplied **Slough 2022 RON paper** explicitly
 describes repeated elliptical refueling with battery-backed perigee thrust.
@@ -7,8 +7,8 @@ See [the illustrated break-out article](ELLIPTICAL_COLLECTION_ORBITS.md). Do not
 this original two-document comparison into a claim that Slough never described
 such a cycle, or that this project originated perigee-reboost collection.
 
-This supports [the publication kit](V1_0.md#1a-what-is-inherited-and-what-is-different--about-250-words).
-It compares the two documents supplied by the author with the frozen v1.0
+This supports [the publication kit](V1_0_1.md).
+It compares the two documents supplied by the author with the accepted v1.0.1
 reference. It is not an exhaustive literature search or a determination of
 patent novelty. Absence below means **not found in these two disclosures**, not
 that nobody has proposed it. No numerical model assumptions were changed by
@@ -35,10 +35,10 @@ The collector drawings and mass tables were checked against the rendered PDF.
 
 ## Feature-by-feature comparison
 
-| Feature | What the supplied literature already describes | What v1.0 does / defensible distinction |
+| Feature | What the supplied literature already describes | What v1.0.1 does / defensible distinction |
 |---|---|---|
 | Atmospheric collection and self-refueling | M: atmospheric ingestion during decelerating maneuvers, then use of collected gas for propulsion. S: an orbital propellant-production station. | Shared premise. Producing useful liquid rather than only consuming intake gas is not new here. |
-| Deep atmospheric passes | M: worked Earth maneuver reaching roughly 50 km; it deliberately uses capture drag for deceleration. S: primarily much higher collection altitudes. | Our 85 km pass is a different reference, not a new deep-dip principle. Repeated restoration of a production orbit differs from M's illustrated transfer maneuvers. |
+| Deep atmospheric passes | M: worked Earth maneuver reaching roughly 50 km; it deliberately uses capture drag for deceleration. S: primarily much higher collection altitudes. | Our 85.8 km pass is a different reference, not a new deep-dip principle. Repeated restoration of a production orbit differs from M's illustrated transfer maneuvers. |
 | Staged compression with intercooling | M: holding tank 52, turbocompressors 53 and 58, radiators 54 and 60; description of Fig. 4. Compression raises temperature from about 500 to 1,000 K, followed by cooling back toward 500 K. | Explicit precedent. Four dive compressor blocks and five finite gas/cooler inventories are this project's implementation, not invention of intercooling. |
 | Buffering capture and processing later | M: approximately 500 m³ temporary hot-gas tank; liquefaction explicitly continues after the atmospheric maneuver. S: frozen inventory is accumulated and later regenerated (§2.5). | A large aft receiver and coast processing are refinements of an established separation in time. |
 | Handling entry heat before cryogenic cooling | M: hot-gas radiation chamber and subsequent radiators. S: warm collector wall takes arrival/recombination energy; cold louvers capture re-emitted molecules (§§2.2–2.4). | Shared thermal objective. Our finite sensible-heat plates and their deployment cycle are the specific difference. |
@@ -80,9 +80,9 @@ as collisionless (§2.3), and the ambient ion accelerator obtains its reaction
 mass from the ionosphere rather than consuming an onboard product allocation.
 That physics is not our dense-pass shock/diffuser and compressor model.
 
-Our reference is 13,250 tonnes dry, about 3.509 tonnes of useful new liquid per
-106-minute orbit, and 278 days of **operating-orbit** payoff. It spends about
-3.594 tonnes of onboard gas propellant each orbit. Circular-apogee export and
+Our v1.0.1 reference is 12,840 tonnes dry, about 3.086 tonnes of useful new liquid per
+106-minute orbit, and 306.4 days of **operating-orbit** payoff. It spends about
+3.101 tonnes of onboard gas propellant each orbit. Circular-apogee export and
 return are not included. The sources use different products, propulsion,
 thermal loads, mass models and delivery boundaries. Their numerical payoff
 estimates should be reported as conditional results, not ranked as though only

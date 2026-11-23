@@ -6,3 +6,10 @@ __pycache__/
 .cache/
 
 AGENTS.md
+
+# Regenerable per-evaluation optimizer caches and worker payloads.
+# Keep named selected/best inputs, manifests, termination reports and validation.
+/results/**/eval_*.json
+/results/**/task_*.json
+/results/**/trajectory_[0-9a-f]*.json
+/results/**/trajectory_[0-9a-f]*.json.gz

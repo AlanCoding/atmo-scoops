@@ -4,33 +4,29 @@ Specific integrated snapshots now use **v1.0.z**; see the
 [snapshot register](DESIGN_VERSIONS.md). The boosted-reserve candidate is rejected; the valve-connected replacement is
 in planning. Version headings below describe broader work scopes.
 
-**Disposition: documentation only.** This records the agreed development path;
-it does not introduce code branches, new configuration fields, replacement
-physics, optimization runs or new payoff claims. The saved v1.0 reference stays
-reproducible. Future versions must report their own inputs and validation.
+**Current status:** v1.0.1 is the accepted numerical publication reference. Later
+architecture changes remain plans. See the [version register](DESIGN_VERSIONS.md).
+The earlier v1.0.0 inputs remain reproducible.
 
 | Version | Role | Cooling architecture | Orbital recovery |
 |---|---|---|---|
-| **v1.0** | Frozen publication reference | Front SiC and downstream aluminum plates; direct coast deployment | Integrated electric propulsion with finite-duration reboost |
-| **v1.0.1** | Accuracy improvements to the same architecture | Retain v1.0 thermal design | Retain onboard propulsion; improve physical penalties and accounting |
+| **v1.0.0** | Historical publication snapshot | Front SiC and downstream aluminum plates; direct coast deployment | Integrated electric propulsion with finite-duration reboost |
+| **v1.0.1** | Accepted numerical reference | Staggered SiC/Al plates with corrected packing | Valve-only 125 m reserve; finite-duration onboard reboost |
 | **v1.1** | Simplify downstream cooling hardware | Deployable front SiC rack; fixed coolant tubes in higher-pressure gas volumes | Retain onboard propulsion |
 | **v2.0** | Split collector and propulsion into two craft | Diver inherits the v1.1 thermal arrangement and retains processing hardware | Mothership/tether release, capture and retrieval; bulk reboost on mothership |
 
-Versions describe study scope, not flight readiness. The [publication kit](publication/V1_0.md)
-and [reference configuration](../configs/transient_plates_reference.json) define
-the numerical v1.0 snapshot. The component research library remains in
+Versions describe study scope, not flight readiness. The [publication kit](publication/V1_0_1.md)
+and [reference configuration](../configs/transient_v1_0_1_valve.json) define
+the numerical v1.0.1 snapshot. The component research library remains in
 [modeling](../modeling/README.md); unresolved items remain in the
 [improvement register](MODEL_IMPROVEMENTS.md).
 
-## v1.0.1 — improve accuracy without changing architecture
+## After v1.0.1 — methodology before further accuracy refinements
 
-**Current immediate priority:** the [scale-review implementation sequence](SCALE_REVIEW_IMPLEMENTATION_PLAN.md), beginning with the longer staggered plate cooler. External shear refinement follows that sequence. There is
-already an implemented effective-coefficient screen and the frozen plate
-configuration explicitly sets `skin_friction_coefficient = 0.002` and
-`skin_area_multiplier = 1`. Therefore this task improves the coefficient model
-and its use, rather than adding a previously absent penalty or charging it twice.
-The [existing study](../investigations/skin_friction/ANALYSIS.md) includes older
-zero-shear comparisons; those are not the current plate reference.
+First review the [staged design workflow](../modeling/optimization/STAGED_DESIGN_PLAN.md)
+after freezing v1.0.1 publication assets. It introduces no new model implementation
+yet. The following accuracy items then remain future work. The existing reference
+already includes effective exterior Cf=0.002; refinement must not double-count it.
 
 Planned accuracy work, in order:
 

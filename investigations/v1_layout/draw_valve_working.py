@@ -13,11 +13,11 @@ if solved:
  j=max(range(len(r['time_s'])),key=lambda j:r['history']['pressure_Pa'][j][-1])
  z=dict(perigee_km=r['inputs']['design']['perigee_km'],target_pressure_Pa=r['history']['pressure_Pa'][j][-1],temperature_K=r['history']['gas_K'][j][-1],main_mass_kg=sum(r['gas_species_kg'][j][-1]),reserve_mass_kg=sum(r['gas_reserve_species_kg'][0]))
 S=4.5;X=135;Y=330;H=31.7*S;mid=Y+H/2;x=lambda m:X+S*m
-p=['<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="850" viewBox="0 0 1800 850"><title>v1.0.1 working valve-connected reserve layout</title><rect width="1800" height="850" fill="white"/><style>text{font-family:DejaVu Sans,sans-serif;fill:#243b48}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#286f82"/></marker></defs>']
+p=['<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="850" viewBox="0 0 1800 850"><title>v1.0.1 valve-connected reserve layout</title><rect width="1800" height="850" fill="white"/><style>text{font-family:DejaVu Sans,sans-serif;fill:#243b48}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#286f82"/></marker></defs>']
 def text(xx,yy,s,size=19):p.append(f'<text x="{xx}" y="{yy}" font-size="{size}">{html.escape(s)}</text>')
 def line(xx,yy,ex,ey,color='#6d858e',arrow=False):p.append(f'<line x1="{xx}" y1="{yy}" x2="{ex}" y2="{ey}" stroke="{color}" stroke-width="2"'+(' marker-end="url(#arrow)"' if arrow else '')+'/>')
 def rect(lo,hi,yy,hh,fill,rx=0):p.append(f'<rect x="{x(lo)}" y="{yy}" width="{S*(hi-lo)}" height="{hh}" rx="{rx}" fill="{fill}" stroke="#6d858e"/>')
-text(45,48,'v1.0.1 WORKING DESIGN · VALVE-CONNECTED AFT RESERVE',29)
+text(45,48,'v1.0.1 REFERENCE DESIGN · VALVE-CONNECTED AFT RESERVE',29)
 text(45,85,f"{'Simulated orbit:' if solved else 'Algebraic starting orbit:'} {z['perigee_km']:.2f} × 2,000 km · 317 m hull · 31.7 m outer diameter",21)
 text(45,118,('Forward-cycle geometry; valve-connected reserve. See numerical report for optimizer termination and validation.' if solved else 'Planning geometry only: revised simulation, mass budget, CM and payoff are pending review and implementation.'),18)
 text(45,149,f"Fill screen: {z['target_pressure_Pa']/1000:.3f} kPa at {z['temperature_K']:.1f} K · {'main receiver peak from trajectory' if solved else 'equal tank temperature assumed for this calculation'}",18)
