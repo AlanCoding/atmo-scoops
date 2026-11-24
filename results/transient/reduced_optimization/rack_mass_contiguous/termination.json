@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "status": "interrupted_by_agent",
+  "cycles": 28,
+  "message": "Finite-difference probes and objective tolerance below useful simulation resolution; restarted with larger probes at a feasible neighborhood."
+}

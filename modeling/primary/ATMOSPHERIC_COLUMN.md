@@ -157,7 +157,7 @@ air, capacity at a common temperature becomes
 alone. For r=10 at the same 1,000 K and R, the first row would require eleven
 times the volume. Whether mixing changes the required temperature, admissible
 pressure, heat-transfer performance or compressor map enough to compensate is
-a separate [planned study](../../docs/DESIGN_STUDIES_PLAN.md).
+a separate [planned study](../../local-issue-drafts/specifications/docs/DESIGN_STUDIES_PLAN.md).
 
 ## 5. What the altitude cancellation does and does not say
 

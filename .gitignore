@@ -13,3 +13,6 @@ AGENTS.md
 /results/**/task_*.json
 /results/**/trajectory_[0-9a-f]*.json
 /results/**/trajectory_[0-9a-f]*.json.gz
+
+# Local issue drafts for review; not repository deliverables.
+/local-issue-drafts/

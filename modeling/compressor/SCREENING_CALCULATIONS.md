@@ -6,7 +6,7 @@ banks. This note uses saved reference quantities and pencil-and-paper ideal-gas
 calculations. It changes no simulation inputs, component coefficients or payoff
 results. Mixing remains supported and is not excluded by this proposal.
 
-The planned state-resolved replacement is specified in [MODEL_PLAN.md](MODEL_PLAN.md),
+The planned state-resolved replacement is specified in [MODEL_PLAN.md](../../local-issue-drafts/specifications/modeling/compressor/MODEL_PLAN.md),
 including independent rack masses and lattice heat-transfer inputs.
 
 General equations and annotated sources are indexed in the

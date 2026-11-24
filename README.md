@@ -1,5 +1,7 @@
 # Atmospheric Scoop Divers
 
+Published article: [Actively Cooled Atmospheric Scoop Diver Concept](https://medium.com/@alanse/actively-cooled-atmospheric-scoop-diver-concept-8ae047bc5bb7).
+
 **A reusable orbital factory, fed by Earth's atmosphere.**
 
 The concept was first published on AlanCoding's
@@ -8,7 +10,7 @@ This repository develops its engineering description and numerical analysis.
 
 **Current publication reference: v1.0.1 — 306.4 days operating-orbit payoff.**
 See the [version design document](docs/publication/V1_0_1.md), [validated results](investigations/valve_reserve/README.md)
-and [version roadmap](docs/VERSION_ROADMAP.md). v1.1 downstream coolant tubes and
+and [version comparison](docs/VERSION_ROADMAP.md). v1.1 downstream coolant tubes and
 v2.0 propulsion-free diver/tether mothership remain future architectures.
 
 The concept is a spacecraft that collects air during repeated 7–8 km/s
@@ -73,7 +75,7 @@ open-mouth control/capacity search at this geometry, not a final operating polic
 
 Detailed fluid and stability simulations are **outside the optimization loop**.
 They can supply reviewed coefficient tables or reduced constraints back to the
-primary model. The [improvement list](docs/MODEL_IMPROVEMENTS.md) tracks these
+primary model. The [scope and evidence limits](docs/MODEL_IMPROVEMENTS.md) describe these
 interfaces and missing physics. [Sources](docs/SOURCES.md) separate evidence from
 hardware-development targets.
 
@@ -95,7 +97,7 @@ explains the changed budgets. Neither result includes circular-apogee delivery.
 .venv/bin/python -m atmo_scoops.transient --config configs/transient_v1_0_1_valve.json
 ```
 
-The [skin-friction sensitivity](investigations/skin_friction/ANALYSIS.md) adds explicit external drag: a Cf=0.002 capacity proposal gives about 308 days, versus the 285-day zero-skin comparison. Cf is an illustrative scenario, not a calibrated prediction. [Planned refinements](docs/NEXT_REFINEMENTS.md) cover gaseous propellant bypass, rack pitch and omitted penalties.
+The [skin-friction sensitivity](investigations/skin_friction/ANALYSIS.md) adds explicit external drag: a Cf=0.002 capacity proposal gives about 308 days, versus the 285-day zero-skin comparison. Cf is an illustrative scenario, not a calibrated prediction. [Planned refinements](local-issue-drafts/specifications/docs/NEXT_REFINEMENTS.md) cover gaseous propellant bypass, rack pitch and omitted penalties.
 
 The geometry is fixed at 30 m bore and 317 m overall length. The current search fixes the orbit at 85 × 2,000 km and holds suction/head
 capabilities, peak electrical ratings and processing schedule fixed; it is not a
@@ -199,4 +201,4 @@ Publication assets for the current snapshot: [v1.0.1 design and publication refe
 
 Accepted v1.0.1 publication reference: **306.4 days operating-orbit payoff**, with a 125 m valve-connected reserve. The 46-variable constrained solve completed successfully. See the [results and validation](investigations/valve_reserve/README.md) and [current scale drawing](docs/images/v1_perigee_scale.svg). The 275.7-day boosted-reserve candidate is [rejected and archived](docs/design_archive/v1.0.1_rejected_boosted/README.md). Circular-apogee delivery remains unmodeled.
 
-Next methodology, after freezing this reference: [staged sizing, subsystem optimization and transient validation](modeling/optimization/STAGED_DESIGN_PLAN.md). This is a plan; no replacement model is implemented.
+Development proposals are collected as [issue drafts for review](local-issue-drafts/README.md), with dependencies and acceptance criteria. No replacement model or GitHub issues are created by those drafts.

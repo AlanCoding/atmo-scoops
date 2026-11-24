@@ -1,0 +1,30 @@
+{
+  "snapshots": [
+    {
+      "label": "Prior accepted case",
+      "time_s": 51.51491396007363,
+      "gas_K": 922.190789709133,
+      "front_pressure_Pa": 324.68076101709534,
+      "incident_kg_s": 30.06904208122734,
+      "admitted_kg_s": 30.06904208122734,
+      "first_pump_kg_s": 30.19555985720529
+    },
+    {
+      "label": "Rejected lower-metal trial",
+      "time_s": 51.52690837064914,
+      "gas_K": 988.4293468967467,
+      "front_pressure_Pa": 337.421348573511,
+      "incident_kg_s": 30.399416656307856,
+      "admitted_kg_s": 28.752697726480417,
+      "first_pump_kg_s": 28.878600850443387
+    }
+  ],
+  "first_pump_screen": {
+    "nominal_full_speed_suction_kg_s": 32.523350022543994,
+    "head_derating": 0.8946086586718189,
+    "full_speed_flow_after_head_kg_s": 29.095670539182155,
+    "actual_flow_kg_s": 28.878600850443387,
+    "approx_electric_MW": 11.928957991224408,
+    "motor_MW": 32.39836703554259
+  }
+}

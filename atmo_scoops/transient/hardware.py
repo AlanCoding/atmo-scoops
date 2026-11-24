@@ -10,7 +10,7 @@ from ..atmosphere import make_profile
 from ..encounter import orbit_state
 from ..reboost import arc_restore
 from .thermo import properties,Y
-from .drag import skin_impulse
+from .drag import skin_impulse,flat_plate_laminar
 from .gas_feed import hardware as gas_hardware
 
 def compile_hardware(d,c):
@@ -24,7 +24,11 @@ def compile_hardware(d,c):
  supply=A*state['density_kg_m3']*state['speed_m_s'];inlet_window=np.clip((d.inlet_ceiling_km-state['altitude_km'])/d.inlet_taper_km,0.,1.);J=float(np.trapezoid(supply*state['speed_m_s'],times))
  inlet_impulse=J
  outside=d.bore_m+2*d.clearance_m;length=outside*d.length_diameter
- skin=skin_impulse(times,state['density_kg_m3'],state['speed_m_s'],outside,length,c.skin_friction_coefficient,c.skin_area_multiplier)
+ if c.skin_model=='constant':
+  skin=skin_impulse(times,state['density_kg_m3'],state['speed_m_s'],outside,length,c.skin_friction_coefficient,c.skin_area_multiplier)
+ elif c.skin_model=='flat_plate_laminar':
+  skin=flat_plate_laminar(times,state['density_kg_m3'],state['speed_m_s'],state['temperature_K'],outside,length,c.skin_wall_K,c.skin_area_multiplier)
+ else:raise ValueError('Unknown external skin model')
  J=inlet_impulse+skin['impulse_Ns']
  penalty=arc_restore(o,0,d.burn_s/2,samples=1001);power=J*penalty['impulse_multiplier']*d.isp_s*9.80665/(2*c.eta_thruster*d.burn_s)
  mats=[material(n) for n in d.materials]

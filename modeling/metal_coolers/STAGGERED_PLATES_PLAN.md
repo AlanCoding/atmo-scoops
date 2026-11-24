@@ -1,6 +1,6 @@
 # Longer, more widely spaced, staggered plate cooler
 
-Status: offline validation remains planned. A [provisional reduced implementation](INTERRUPTED_REDUCED_MODEL.md) is being evaluated in checkpoint A; it is not a CFD-validated replacement. [Illustration SVG](../../docs/images/staggered_plate_cooler.svg) ·
+Status: the provisional reduced implementation is part of accepted v1.0.1; offline validation is not established. See the [implemented approximation](INTERRUPTED_REDUCED_MODEL.md) and [validation issue draft](../../local-issue-drafts/05-validate-staggered-plate-heat-transfer-and-hydraulic-limits.md). [Illustration SVG](../../docs/images/staggered_plate_cooler.svg) ·
 [PNG](../../docs/images/staggered_plate_cooler.png).
 
 ## Design being investigated
@@ -121,22 +121,12 @@ space from the receiver at fixed hull length. Include finite material capacity,
 additional segmented-panel supports/deployment mechanisms and coast radiation.
 Splitting a rack adds mechanical complexity even with unchanged plate area.
 
-## Validation and release sequence
+## Validation status
 
-- Geometry: conserve material and broad-face area; derive larger gas volume and
-  length; offset=0 recovers the aligned geometry; zero flow gives zero pumping
-  power without suppressing legitimate static thermal exchange.
-- Flow benchmarks: reproduce ordinary channel pressure/heat transfer in their
-  valid limits; inspect mass/energy conservation and grid/time convergence.
-- Validate slip/temperature-jump treatment and entrance effects independently.
-  Do not assume a conventional offset-fin correlation is valid at Re≈20 and the
-  reference Kn range merely because its geometry resembles our plates.
-- Show characteristic curves for fixed geometry before any optimization. Reconcile
-  hydraulic pressure requirements with the inlet/first-compressor operating point.
-- Run isolated pass histories, then one forward cycle for a chosen geometry.
-  Add closure residuals for each independent thermal inventory at cycle boundaries;
-  no internal cycle-to-cycle iteration. Only then enable geometry coordinates in
-  the outer constrained optimizer and compare payoff with explicit feasibility.
+The cycle model uses a provisional thermal-spacing equivalence and energy-only
+resistance surcharge. Channel, offset-row and rarefied-flow validation is not
+established by a converged system optimization. The benchmark and release gates
+are recorded in [draft 05](../../local-issue-drafts/05-validate-staggered-plate-heat-transfer-and-hydraulic-limits.md).
 
 ## Research starting points
 

@@ -1,0 +1,8 @@
+{
+  "success": false,
+  "status": "interrupted_by_agent",
+  "cycles": 9,
+  "configurations_are_completed_only": true,
+  "in_flight_work_discarded_on_manual_interrupt": true,
+  "message": "Stopped backtracking from an infeasible seed; measured Jacobian reused for one explicit closure correction before restarting the same constrained problem."
+}

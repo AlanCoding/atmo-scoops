@@ -51,7 +51,7 @@ to plate friction.
 - [Numerical review, including the refined burn-start issue](NUMERICAL_REVIEW.md)
 - [Equations and thermal-spacing assumption](../../modeling/metal_coolers/INTERRUPTED_REDUCED_MODEL.md)
 - [Offset-row schematic](../../docs/images/staggered_plate_cooler.svg)
-- [Grouped implementation plan](../../docs/SCALE_REVIEW_IMPLEMENTATION_PLAN.md)
+- [Grouped implementation plan](../../local-issue-drafts/specifications/docs/SCALE_REVIEW_IMPLEMENTATION_PLAN.md)
 - [Optimizer termination](../../results/transient/staggered/thermal_equivalence/optimization/termination.json), [search manifest](../../results/transient/staggered/thermal_equivalence/optimization/search.json), [selected inputs](../../results/transient/staggered/thermal_equivalence/optimization/selected_config.json), [validation gate](../../results/transient/staggered/thermal_equivalence/selected_validation/gate.json)
 
 ## Engineering interpretation

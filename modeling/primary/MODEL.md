@@ -14,7 +14,7 @@ call it. [Inputs](PARAMETERS.md) separate geometry, capability assumptions,
 controls and optional mixing. No detailed CFD runs inside this model.
 
 The default compressor path is now real-fluid, staged compression with a
-geometry-based mass screen. See the [implemented compressor model](../../modeling/compressor/IMPLEMENTED_MODEL.md).
+geometry-based mass screen. See the [implemented compressor model](../compressor/IMPLEMENTED_MODEL.md).
 Use `compressor.mode="legacy"` only to reproduce the old isothermal calculation.
 The chamber inventory dynamics still lump the train into front and rear volumes;
 independent interstage inventories and finite metal intercooling remain pending.

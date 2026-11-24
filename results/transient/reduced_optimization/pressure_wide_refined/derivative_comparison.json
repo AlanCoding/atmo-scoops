@@ -1,0 +1,14 @@
+[
+  {
+    "label": "2.55 t probe, rtol=1e-7",
+    "payoff_days_per_one_percent_rack_mass": 0.13441876402943867,
+    "reserve_mass_residual_kg_per_one_percent_rack_mass": -0.1974816778141531,
+    "scaled_closure_jacobian_condition": 12.3972873583098
+  },
+  {
+    "label": "0.255 t probe, rtol=1e-8",
+    "payoff_days_per_one_percent_rack_mass": -0.0005517119053252806,
+    "reserve_mass_residual_kg_per_one_percent_rack_mass": 0.6127246773225178,
+    "scaled_closure_jacobian_condition": 12.385467868974231
+  }
+]

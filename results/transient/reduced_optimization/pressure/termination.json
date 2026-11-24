@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "status": 0,
+  "message": "Optimization terminated successfully",
+  "nit": 3,
+  "nfev": 4,
+  "cycles": 19,
+  "days": 289.5711648340072,
+  "feasible": true,
+  "bound_hits": [
+    "total_rack_mass_ratio",
+    "reserve_delta_1000kg"
+  ]
+}

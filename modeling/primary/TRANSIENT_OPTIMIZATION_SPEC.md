@@ -1,7 +1,7 @@
 # Periodic coupled design optimization: mathematical specification
 
 **Status: first forward evaluator and limited constrained candidate search implemented.** The full general optimization remains a target; see [implementation scope](TRANSIENT_IMPLEMENTATION.md). This is the authoritative optimization
-formulation for the [transient implementation plan](TRANSIENT_MODEL_PLAN.md).
+formulation for the [transient implementation plan](../../local-issue-drafts/specifications/modeling/primary/TRANSIENT_MODEL_PLAN.md).
 The [scalar search scope](SCALAR_SEARCH_SCOPE.md) fixes the owner-selected diameter
 and exact L/D, and separates proposed temporary locks from scalar optimizer inputs.
 It replaces the plan's earlier one-sided readiness interpretation with a periodic

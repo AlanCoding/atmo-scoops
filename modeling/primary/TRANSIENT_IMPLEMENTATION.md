@@ -204,6 +204,6 @@ regularization sensitivity belong in the numerical validation report.
 
 The evaluator also returns the explicit surplus offload and liquid reserve map. It applies the independent property-domain audit before granting an accepted payoff. Optional LN₂ injection is species/enthalpy conservative; a dedicated injection hardware/flow-limit model remains pending. Numerical controls include a Jacobian differencing step and an RHS evaluation budget; an exhausted budget is reported as unresolved, not physical infeasibility.
 
-See [mass allowance definitions](MASS_ALLOWANCES.md) for bus, rack mechanisms and contingency. The [next refinement plan](../../docs/NEXT_REFINEMENTS.md) covers gaseous propellant bypass, pressure-loss-constrained pitch and the geometry handoff.
+See [mass allowance definitions](MASS_ALLOWANCES.md) for bus, rack mechanisms and contingency. The [next refinement plan](../../local-issue-drafts/specifications/docs/NEXT_REFINEMENTS.md) covers gaseous propellant bypass, pressure-loss-constrained pitch and the geometry handoff.
 
 The [gas-reserve branch](../propellant_feed/GAS_RESERVE.md) conserves mass and enthalpy through coast refill and next-pass drawdown. It shares the coast compressor and warm loop with the product branch; only the product branch pays liquefaction. See the [coupled comparison](../../investigations/feed_pitch/RESULTS.md).

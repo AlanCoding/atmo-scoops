@@ -1,194 +1,51 @@
-# Design versions and planned model work
+# Design version comparison
 
-Specific integrated snapshots now use **v1.0.z**; see the
-[snapshot register](DESIGN_VERSIONS.md). The boosted-reserve candidate is rejected; the valve-connected replacement is
-in planning. Version headings below describe broader work scopes.
+**v1.0.1 is the accepted published numerical reference.** The boosted-reserve
+candidate is rejected; the valve-only replacement is accepted. Version labels
+identify architecture snapshots, not flight readiness.
 
-**Current status:** v1.0.1 is the accepted numerical publication reference. Later
-architecture changes remain plans. See the [version register](DESIGN_VERSIONS.md).
-The earlier v1.0.0 inputs remain reproducible.
-
-| Version | Role | Cooling architecture | Orbital recovery |
+| Version | Status | Cooling architecture | Orbital recovery |
 |---|---|---|---|
-| **v1.0.0** | Historical publication snapshot | Front SiC and downstream aluminum plates; direct coast deployment | Integrated electric propulsion with finite-duration reboost |
-| **v1.0.1** | Accepted numerical reference | Staggered SiC/Al plates with corrected packing | Valve-only 125 m reserve; finite-duration onboard reboost |
-| **v1.1** | Simplify downstream cooling hardware | Fixed solid heat stores with embedded coast-recovery channels; front SiC deployment remains an option | Retain onboard propulsion |
-| **v2.0** | Split collector and propulsion into two craft | Diver inherits the v1.1 thermal arrangement and retains processing hardware | Mothership/tether release, capture and retrieval; bulk reboost on mothership |
+| v1.0.0-alpha | Historical concept | Direct LN₂ mixing; closure to retain gas | Elliptical scoop concept without a closed numerical cycle |
+| v1.0.0 | Historical 278-day snapshot | Front SiC and downstream Al plates, directly deployed in coast | Integrated finite-duration electric reboost |
+| v1.0.1 | Published 306.4-day reference | Staggered SiC/Al plates with corrected packing | Valve-only reserve and finite-duration onboard reboost |
+| v1.1 | Concept, no numerical release | Fixed solid heat stores with embedded coast-recovery channels; front SiC deployment remains an option | Onboard propulsion retained |
+| v2.0 | Concept, no numerical release | Diver retains cooling, processing, solar panels and batteries | Mothership/tether release, capture and retrieval; external reboost on mothership |
 
-Versions describe study scope, not flight readiness. The [publication kit](publication/V1_0_1.md)
-and [reference configuration](../configs/transient_v1_0_1_valve.json) define
-the numerical v1.0.1 snapshot. The component research library remains in
-[modeling](../modeling/README.md); unresolved items remain in the
-[improvement register](MODEL_IMPROVEMENTS.md).
+The [version register](DESIGN_VERSIONS.md), [publication document](publication/V1_0_1.md)
+and [reference configuration](../configs/transient_v1_0_1_valve.json) identify the
+frozen inputs and results. The published article is
+[Actively Cooled Atmospheric Scoop Diver Concept](https://medium.com/@alanse/actively-cooled-atmospheric-scoop-diver-concept-8ae047bc5bb7).
 
-## After v1.0.1 — methodology before further accuracy refinements
+## v1.1 concept boundary
 
-First review the [staged design workflow](../modeling/optimization/STAGED_DESIGN_PLAN.md)
-after freezing v1.0.1 publication assets. It introduces no new model implementation
-yet. The following accuracy items then remain future work. The existing reference
-already includes effective exterior Cf=0.002; refinement must not double-count it.
+[Fixed solid thermal stores](V1_1_FIXED_THERMAL_STORES.md) retain heat in the solid
+during the brief atmospheric pass. Embedded coolant channels primarily restore
+that solid during coast through external radiators. This differs from requiring
+a large liquid inventory to carry the entire pulse immediately. Downstream racks
+can remain inside pressurized tanks, eliminating their extraction hatches while
+adding coolant plumbing, supports and regeneration hardware. Hot-pass thermal
+access and coast conduction are distinct limits. No mass or payoff improvement
+is yet credited.
 
-Planned accuracy work, in order:
+## v2.0 concept boundary
 
-1. Replace or bound the constant external shear allowance using the relevant
-   flow regime, wall temperature, Reynolds/Mach numbers, transition, roughness,
-   accommodation and wetted geometry. Integrate shear impulse over the pass.
-   Separate exterior shear from plate-channel friction, inlet/spillage pressure
-   drag and fin/base drag. A single coefficient must not conceal those different
-   contributions. Keep L/D fixed until the evidence supports releasing it.
-2. Carry the revised external impulse consistently into finite-duration thrust,
-   propellant, installed power, battery recharge and heat rejection. Determine
-   wall heating separately: total drag work is not heat deposited in the skin.
-3. Audit existing capability assumptions and accounting before resizing: gas
-   propellant bypass, startup/rotor energy, compressor capacity versus operating
-   points, thermal losses and end-to-start inventories. Flag unsupported values
-   rather than claiming a new compressor hardware design. Full map development,
-   channel hydraulics and structural qualification remain larger research items.
-4. Improve orbital/illumination accounting where needed for an honest cycle:
-   distinguish the intended sun-synchronous orbit from the simplified lighting
-   history, and check finite-burn energy/angular-momentum consistency. A complete
-   3D guidance solution is not a prerequisite for the first shear sensitivity.
+The diver has no propulsion in the baseline. It retains its own collection,
+processing, solar, battery and thermal systems. Mechanical release begins a
+multi-pass sortie at a higher apogee; accumulated atmospheric drag lowers the
+apogee toward tether capture. The mothership retrieves the diver and restores
+the complete system's orbital energy and angular momentum. A velocity match alone
+does not establish rendezvous: position and epoch also matter.
 
-Acceptance: an unchanged-hardware comparison isolates each added penalty, then
-an explicitly identified constrained resizing/search produces any replacement
-reference. Recheck conservation, periodic thermal/electrical closure and
-integration resolution. Report uncertainty and infeasible cases. Keep the v1.0
-278-day operating-orbit result labeled with its original assumptions; do not
-silently replace it with new numbers. Circular-apogee delivery remains a distinct
-unimplemented mission boundary until separately resolved.
+System payoff includes both craft, tether, capture/retrieval equipment, ballast,
+power and propulsion. A diver-only or gas-only number is not comparable to the
+integrated useful-liquid payoff. The [source handoff](V2_TETHER_HANDOFF.md) is an
+attributed concept brief, not a solved flight sequence or implementation mandate.
 
-## v1.1 — fixed solid heat stores with coast coolant recovery
+## Development tracking
 
-The revised [v1.1 thermal concept](V1_1_FIXED_THERMAL_STORES.md) retains solid
-thermal storage but embeds coolant channels in fixed gas-contact structures.
-The solid accepts the short collection heat pulse; coolant primarily restores
-it during coast through deployable external radiators, with a heat pump only
-where justified. This replaces the earlier assumption of liquid carrying the
-full hot-phase load into a large coolant reservoir.
-
-The main receiver can be cooled while still pressurized, without extracting its
-rack. Downstream extraction hatches and deployment mechanisms can disappear;
-solid mass, coolant channels, supports, penetrations and recovery hardware remain.
-The front SiC choice is open: compare direct mouth deployment against a fixed
-store with suitable recovery plumbing. No inlet door is introduced.
-
-Gas-side transfer, short-pass access to the solid's heat capacity, and coast
-conduction to embedded channels are three separate performance limits. Greater
-receiver space helps distribute surface but does not remove gas displacement,
-bypass, local flow resistance or recovery constraints. The detailed concept
-records the required mass, volume, thermal and energy accounting.
-
-This is a documentation-only revision, to be investigated after the staged-model
-workflow. No numerical benefit is credited to the v1.0.1 publication result.
-
-## v2.0 — propulsion-free diver and tether mothership
-
-The [supplied tether research handoff](V2_TETHER_HANDOFF.md) is retained in full
-as a source brief. Its implementation requests are deferred. The following
-disposition incorporates the user's accompanying architecture instructions.
-
-### Equipment allocation and operating sequence
-
-| Scoop-diver retains | Scoop-diver deletes | Mothership/tether provides |
-|---|---|---|
-| Inlet, front SiC rack, compressors, fixed downstream coolant exchangers, gas/product storage and processing, including liquefaction as required by the product boundary | All onboard thrusters and the propulsion-only portions of feed, power conditioning, batteries and thermal hardware | Bulk electric propulsion, its power supply and orbital maintenance |
-| Its own solar panels, batteries, coolant radiators, front-rack deployment and control hardware | No blanket deletion of solar, batteries or radiators: compressor and processing duties still require them | Release impulse mechanism, capture equipment, retrieval/climber system, gas transfer and tether control |
-
-The diver starts a sortie at a **higher apogee**, is released below mothership
-CM, and makes several atmospheric encounters without reboost. Collection and
-drag reduce its apogee while retained product increases its mass. It returns
-near the final **lower apogee** to a lower tether point with a target of zero
-relative capture velocity. The mothership/tether retrieves the diver, unloads
-product, restores the appropriate release state and starts another sortie.
-
-Mechanical retrieval and release replace the diver's thrust, not the system's
-external energy and angular-momentum requirements. Mothership propulsion pays
-the orbital losses and release/capture disturbances. Its cost cannot be
-excluded from the system payoff.
-
-**No diver trim thrusters are included in the baseline.** This overrides the
-brief's optional trim-propulsion allowance. Study aerodynamic guidance and
-mothership/tether control authority. Any inability to achieve rendezvous without
-diver propulsion must be reported as a feasibility issue, not quietly repaired
-by introducing reboost or trim engines. The generally retrograde release
-adjustment must be applied mechanically by the tether/mothership system.
-
-### Orbital mechanics investigation, before hardware optimization
-
-Initial hypotheses: approximately 85 km perigee; a circular mothership orbit in
-the roughly 1,500–2,500 km region; radial gravity-gradient tether; release above
-the lower capture point but below CM. None of those mothership heights or
-tether lengths is a solved design. The brief's initial equatorial two-body
-model is an explicit simplification; it does not inherit v1.0 SSO lighting.
-
-With Earth radius R, gravitational parameter mu, fixed trial perigee radius
-rp, and mothership radius rm, the idealized kinematics are:
-
-```text
-omega_m = sqrt(mu / rm^3)
-v_apogee(ra) = sqrt(2 mu rp / [ra (ra + rp)])
-v_tether(r) = omega_m r
-capture: v_apogee(rc) = omega_m rc
-release: delta_v_rel = v_apogee(rrel) - omega_m rrel
-geometry: R < rp < rc <= rrel < rm
-apogee reduction over sortie: delta_ra = rrel - rc
-```
-
-Zero relative velocity is only one condition: capture also needs matching
-position and epoch, including tether orientation. Sweep the **N:(N−1)**
-one-slip families from 3:2 through at least 10:9, rather than selecting 5:4 or
-6:5 in advance. For N encounters and impulsive perigee braking:
-
-```text
-t_sortie = T0/2 + sum(Ti, i=1 ... N-1) + TN/2
-```
-
-Require the mothership's accumulated phase to reach the interception longitude
-at that time. In the fixed-apsis two-body family this corresponds to N−1
-mothership revolutions. Neither a single average diver period nor a velocity
-match alone establishes rendezvous. In subsequent propagation, integrate phase,
-mass accumulation, atmospheric corotation and distributed forces; later include
-J2, apsidal/nodal motion, tether flexibility and capture tolerances.
-
-Ballast is an independent trade variable, not a prescribed benefit. Start with
-a fixed atmospheric-impulse screen, then couple collection and drag. Increasing
-mass can reduce apogee loss and relative release speed, while increasing tether
-load, retrieval costs and system mass. Sweep equal, early-heavy and late-heavy
-encounter braking; do not impose a constant braking history as the final answer.
-Report release impulse and relative kinetic energy separately from orbital
-energy, gravitational/retrieval work and external reboost. No infinite-ballast
-solution is an acceptable vehicle selection.
-
-### Required evidence and performance boundary
-
-First establish families of feasible trajectories and their sensitivity before
-choosing a detailed tether or optimizing hardware. Include counterweight/upper
-extension, tensile load, capture/retrieval dynamics, release mechanisms,
-repeated deployment, density uncertainty and guidance authority. The diver
-must retain and cool its inventory over the full multi-pass sortie, with
-real electrical recharge and storage capacity between encounters.
-
-Close mass, energy and angular momentum over **the complete two-craft sortie**,
-including changing mothership state, tether/climber work, propellant spent,
-gas transfer and restoration for the next release. A rigid, prescribed tether
-is a useful initial kinematic boundary, not an infinite momentum reservoir.
-
-Primary future metric:
-
-```text
-system mass payoff = total installed dry mass / net useful product delivery rate
-total dry mass includes diver(s), ballast, mothership, tether, capture/retrieval,
-power/thermal systems and all propulsion/support equipment
-```
-
-Net delivery excludes recycled inventory, losses and gas consumed by system
-propulsion. Report operating-orbit production, delivered gas and delivered
-cryogenic liquid separately. Do not compare a gas-only or diver-only number
-directly with the integrated v1 useful-liquid payoff. Product condition and
-delivery orbit must be stated; transfer to a circular mothership may address
-delivery, but only after its complete mechanics and costs are included.
-
-Future deliverables are resonance tables, release/capture geometry and velocity
-plots, ballast/apogee-loss sensitivities, per-encounter retained mass and energy,
-system budgets and rejected-solution diagnostics. No such results are claimed
-by this plan.
+The proposed sequence, dependencies and acceptance criteria now live in the
+[temporary issue-review folder](../local-issue-drafts/README.md). No issues have been
+filed. The full earlier roadmap, including tether equations and resonance scope,
+is preserved in that folder's supporting specifications. These tasks do not
+change the accepted v1.0.1 inputs or publication numbers.

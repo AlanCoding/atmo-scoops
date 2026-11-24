@@ -2,9 +2,10 @@
 
 Current implementation and results: [feed/rack comparison](../feed_pitch/RESULTS.md).
 
-**Status:** research-backed architecture investigation and numerical duty/volume
-screen. No gas-bypass payoff benefit has yet been credited to the primary cycle.
-The existing liquid-fed inventory accounting remains the comparison baseline.
+**Historical research scope.** Gaseous feed and liquefaction bypass are now
+implemented. The accepted reference uses a valve-only reserve, not the older
+boosted tank. See [v1.0.1](../../docs/publication/V1_0_1.md). Unresolved propulsion
+capability work is tracked in [draft 10](../../local-issue-drafts/10-calibrate-propulsion-and-plume-clearance-tradeoffs.md).
 
 ## What the evidence supports
 

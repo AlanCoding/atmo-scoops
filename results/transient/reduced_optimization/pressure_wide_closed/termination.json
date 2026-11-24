@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "status": 0,
+  "message": "Optimization terminated successfully",
+  "nit": 1,
+  "nfev": 4,
+  "cycles": 9,
+  "days": 286.78246812451977,
+  "feasible": true,
+  "bound_hits": [
+    "perigee_delta_km"
+  ]
+}

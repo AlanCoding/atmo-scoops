@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "status": 0,
+  "message": "Optimization terminated successfully",
+  "nit": 1,
+  "nfev": 1,
+  "cycles": 5,
+  "days": 309.21410985379316,
+  "feasible": true,
+  "bound_hits": []
+}

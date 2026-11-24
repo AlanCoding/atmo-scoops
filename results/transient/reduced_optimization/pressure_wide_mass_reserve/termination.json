@@ -1,0 +1,8 @@
+{
+  "success": false,
+  "status": "interrupted_by_agent",
+  "cycles": 35,
+  "message": "Stopped for gradient-resolution refinement: 2.55-tonne mass probe spans the capture transition; same bounds, finer probe and tighter integration used next.",
+  "configurations_are_completed_only": true,
+  "in_flight_work_discarded_on_manual_interrupt": true
+}

@@ -100,6 +100,8 @@ class Capabilities:
     rack_loss_multiplier: float=0.
     skin_friction_coefficient: float=0.
     skin_area_multiplier: float=1.
+    skin_model: str='constant'
+    skin_wall_K: float=600.
     eta_compressor: float=.75
     eta_motor: float=.95
     eta_thruster: float=.6
@@ -145,11 +147,12 @@ def read_config(config):
         if set(data)-{f.name for f in fields(cls)}:raise ValueError(f'Unknown {name} inputs')
         obj=cls(**data)
         for k,v in asdict(obj).items():
-            if k in ('materials','propellant_storage','rack_flow_layout','rack_pressure_model','rack_loss_mode','integrator','compression_model','plate_thermal_model'):continue
+            if k in ('materials','propellant_storage','rack_flow_layout','rack_pressure_model','rack_loss_mode','integrator','compression_model','plate_thermal_model','skin_model'):continue
             values=v if isinstance(v,(tuple,list)) else (v,)
             if any(not isinstance(z,(int,float)) or isinstance(z,bool) or not math.isfinite(z) or z<0 for z in values):raise ValueError(f'Invalid {name}.{k}')
         return obj
     d,c=make(Design,'design'),make(Capabilities,'capabilities')
+    if c.skin_model not in ('constant','flat_plate_laminar') or c.skin_wall_K<=0:raise ValueError('Invalid external skin model/wall temperature')
     if any(len(getattr(d,k))!=n for k,n in [('rack_depth_m',5),('clear_depth_m',4),('rack_initial_K',5),('materials',5),('suction_m3_s',4),('head_J_kg',4),('motor_MW',4),('rated_pressure_Pa',4)]):raise ValueError('Invalid stage count')
     if (d.bore_m,d.clearance_m,d.length_diameter)!=(30.,.85,10.):raise ValueError('This release fixes 30 m bore / 31.7 m outside / 317 m length')
     if d.rod_pitch_m<=0 or not 0<d.rod_radius_m/d.rod_pitch_m<(.5 if d.rack_flow_layout=='inline_bank' else .25):raise ValueError('Invalid lattice')

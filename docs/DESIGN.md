@@ -1,7 +1,7 @@
 # Spacecraft design
 
 This page describes the integrated v1 architecture. The
-[version roadmap](VERSION_ROADMAP.md) records post-v1.0.1 accuracy work,
+[version comparison](VERSION_ROADMAP.md) distinguishes the accepted reference from
 v1.1 fixed solid heat stores with embedded coast-recovery channels, and the v2.0 propulsion-free diver/tether-mothership split. Those plans
 do not change the frozen v1.0.1 numerical reference.
 
@@ -311,7 +311,7 @@ through the cooler hatches and spread during coast to expose both radiating
 faces. See [equations and limitations](../modeling/metal_coolers/PLATES.md).
 
 Packaging and mass distribution will be resolved before a v1.0 Blender snapshot;
-see the [layout requirements and proposed solar location](PACKAGING_AND_BLENDER_PLAN.md).
+see the [layout requirements and proposed solar location](../local-issue-drafts/specifications/docs/PACKAGING_AND_BLENDER_PLAN.md).
 The planned [v1.1 architecture](V1_1_FIXED_THERMAL_STORES.md) keeps solid heat
 storage but embeds coolant channels in fixed gas-contact structures. The solids
 accept dive heat; coolant restores them during coast through external radiators.

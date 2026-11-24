@@ -59,7 +59,7 @@ to 100 Pa; qualification of the actual thruster distribution/feed hardware remai
 open. Inventory availability alone is not proof that a real thruster accepts it.
 
 The reduced/staged next-work proposal is in
-[the methodology plan](../../modeling/optimization/STAGED_DESIGN_PLAN.md).
+[the methodology plan](../../local-issue-drafts/specifications/modeling/optimization/STAGED_DESIGN_PLAN.md).
 
 ## Fill-while-thrusting audit
 

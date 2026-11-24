@@ -23,5 +23,4 @@
 Every dossier states its status: stub, sourced, formulated, benchmarked or
 integrated. Do not label old conditional results validated by newer research.
 Preserve historic arithmetic as screening evidence with its original assumptions.
-The first research priorities are compressor mass/state maps and metal coolers;
-all subsystem stubs can accumulate references in parallel over future work.
+Research priorities and dependencies are recorded in the [issue-review index](../local-issue-drafts/README.md). This document defines the evidence workflow, not a separate task queue.

@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "status": "interrupted_by_agent",
+  "reason": "Exact-zero equalities caused backtracking at residuals already inside physical tolerance; replaced by stricter-than-model guarded inequality bands.",
+  "cycles": 13
+}

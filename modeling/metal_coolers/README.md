@@ -80,7 +80,7 @@ states, pressure loss, solid temperature distribution, mass, exposed area and
 deployment requirements for every rack, with uncertainty and regime flags.
 Hand these reduced relations to the primary model only after benchmarking.
 
-Related: [compressor plan](../compressor/MODEL_PLAN.md),
+Related: [compressor plan](../../local-issue-drafts/specifications/modeling/compressor/MODEL_PLAN.md),
 [screening arithmetic](../compressor/SCREENING_CALCULATIONS.md),
 [properties](../gas_properties/README.md), [deployment](../deployment/README.md).
 

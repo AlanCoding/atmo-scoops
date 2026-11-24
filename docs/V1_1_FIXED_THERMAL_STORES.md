@@ -104,7 +104,7 @@ cooldown clamp or a single blended temperature to hide a hot core.
 Internal design quantities include gas-surface geometry and solid mass, channel
 radius/wall/spacing, module size, manifolds, coolant flow/control, coolant inventory,
 radiator area and temperature band. Distinguish these from externally selected
-craft diameter and current L/D. Reserve partition remains an internal sizing TODO.
+craft diameter and current L/D. Reserve partition is an unresolved internal sizing quantity; see [draft 04](../local-issue-drafts/04-size-the-valve-only-reserve-from-the-burn-and-refill-schedule.md).
 
 ## System-level trades to retain
 
@@ -133,17 +133,13 @@ craft diameter and current L/D. Reserve partition remains an internal sizing TOD
   exchange with the reserve. Include feed availability and refill timing; do not
   count density improvement without its effect on the connected gas inventories.
 
-## Comparison and sequencing
+## Comparison boundary
 
-After the staged worksheet is stable, compare matched missions:
-(A) frozen deployable solid storage;
-(B) fixed downstream solid stores with coast coolant recovery and a deployable
-front SiC store;
-(C) fixed stores throughout, with front-specific coolant/material provisions.
-First compare identical thermal inventories and gas-path requirements, then resize.
-Report hot-phase effectiveness, accessible storage, cold-state recovery, pressure
-loss, installed mass, gas displacement, pump/electrical demand and payoff together.
-Do not infer benefit from cooler mass or deployment simplification alone.
+The meaningful comparison is between deployable solid storage, fixed downstream
+stores with a deployable SiC front, and fixed stores throughout. All require the
+same mission and gas-path accounting. Reduced deployment complexity alone does
+not establish a payoff benefit. The proposed comparison protocol is in
+[draft 15](../local-issue-drafts/15-develop-v1-1-fixed-solid-heat-stores-with-coast-coolant-recovery.md).
 
 ## Background, not validation of this design
 

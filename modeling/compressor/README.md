@@ -23,7 +23,7 @@ not empirically validated mass bounds for the scoop operating regime.
 - [Staged-compression investigation](SCREENING_CALCULATIONS.md):
   continuity, all-block flow areas, axial Mach, ideal work, metal intercooler
   inventory, pressure losses and off-design behavior.
-- [State-resolved model plan](MODEL_PLAN.md):
+- [State-resolved model plan](../../local-issue-drafts/specifications/modeling/compressor/MODEL_PLAN.md):
   independent rack mass and lattice geometry in each volume, finite heat transfer,
   pressure losses, compressor maps, matched flow and periodic thermal restoration.
 - [Rear-depth investigation](../../investigations/rear_storage_depth/INVESTIGATION.md):

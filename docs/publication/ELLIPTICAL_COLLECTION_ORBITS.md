@@ -8,7 +8,7 @@ validated spacecraft designs. The distinction is **collection during a
 descending transfer versus repeated collection with perigee drag compensation**.
 
 All four light-scheme SVGs and PNGs are together in
-[`docs/images/refueling_precedents/`](../images/refueling_precedents/).
+[`docs/images/refueling_precedents/`](../images/refueling_precedents).
 
 ## The four illustrations
 

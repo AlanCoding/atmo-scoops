@@ -1,5 +1,14 @@
 # Design investigations
 
+- [Flat-plate exterior shear and altitude scaling](flat_plate_skin/RESULTS.md): referenced optional model and compiler comparison; no new cycle optimum.
+
+- [Incremental total-rack-mass and receiver-pressure optimization](reduced_optimization/RESULTS.md): fixed stage allocation, constrained closure and independent replay gates.
+- [Widened rack-mass and reserve bounds](reduced_optimization/WIDENED_BOUNDS.md): search boundaries, capture limits and numerical resolution checks with stage mass fractions held fixed.
+
+- [Pressure continuation with grouped hardware and reserve/fill restoration](pressure_continuation/RESULTS.md): exploratory v1.0.2 study, not a replacement reference.
+
+- [Reduced total-rack-mass coordinate: baseline replay and ±1% probes](reduced_coordinates/RESULTS.md). Conservative methodology experiment; published v1.0.1 remains unchanged.
+
 - [Corrected staggered plates and explicit stage geometry](staggered_stage_a/README.md): constrained convergence, five-rack thermal/hydraulic review and numerical scale drawing.
 
 - [Current staged refinement](staged_refinement/README.md): bypass-only optimization first; numerical gates before pressure losses, pitch and radius.
@@ -53,7 +62,7 @@ General component calculations and annotated references live in
 
 - [Parallel-plate coolers and constrained optimization](plates/README.md): replaces rod-bank resistance with channel wall friction in the power-only approximation; records the actual COBYLA termination and closure checks.
 
-- [Plate scale sensitivity plan](plate_scale/PLAN.md): planned one-off 1×/2×/4× thickness and clearance comparison, with the other coordinates reoptimized.
+- [Plate scale sensitivity plan](../local-issue-drafts/specifications/investigations/plate_scale/PLAN.md): planned one-off 1×/2×/4× thickness and clearance comparison, with the other coordinates reoptimized.
 - [Collector-only mass yield](collector_metrics/README.md): frozen-reference one-pass battery and solar-assisted subsystem metrics; not a new optimized spacecraft.
 
 - [v1.0 axial placement and stability screen](v1_layout/README.md): complete mass-location register, CM calculation, and dawn–dusk sun-synchronous target.

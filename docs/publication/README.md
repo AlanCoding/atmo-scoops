@@ -1,5 +1,7 @@
 # Version design and publication documents
 
+Published article: [Actively Cooled Atmospheric Scoop Diver Concept](https://medium.com/@alanse/actively-cooled-atmospheric-scoop-diver-concept-8ae047bc5bb7).
+
 One main document per design version combines architecture, figures, budgets,
 assumptions, numerical provenance and publication material. Implementation plans
 are temporary; completed decisions belong in the corresponding version document.

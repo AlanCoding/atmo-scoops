@@ -1,10 +1,12 @@
 # Modeling and analysis
 
-Research dossiers develop evidence-backed replacement models before code updates. The [design](../docs/DESIGN.md) gives the brief physical architecture; [investigations](../investigations/README.md) holds comparative decision evidence; [modeling/primary](../modeling/primary/MODEL.md) describes the currently implemented numerical package. These are distinct roles.
+Research dossiers develop evidence-backed replacement models before code updates. The [design](../docs/DESIGN.md) gives the brief physical architecture; [investigations](../investigations/README.md) holds comparative decision evidence; [modeling/primary](primary/MODEL.md) describes the currently implemented numerical package. These are distinct roles.
 
 ## Numerical model and studies
 
-- [Post-v1.0.1 staged design workflow](optimization/STAGED_DESIGN_PLAN.md): worksheet sizing, derived altitude, coordinated subsystem studies and transient correction maps (planned).
+- [External flat-plate shear](aerodynamics/FLAT_PLATE_SHEAR.md): finite-length boundary-layer derivation, reference enthalpy, applicability checks and an optional impulse model.
+
+- [Post-v1.0.1 staged design workflow](../local-issue-drafts/specifications/modeling/optimization/STAGED_DESIGN_PLAN.md): worksheet sizing, derived altitude, coordinated subsystem studies and transient correction maps (planned).
 
 - [Staged refinement and release gates](../investigations/staged_refinement/README.md): active gas bypass at fixed geometry, followed by separately validated pressure, pitch and radius stages.
 
@@ -15,7 +17,7 @@ Research dossiers develop evidence-backed replacement models before code updates
 - [Transverse rack planes](metal_coolers/TRANSVERSE_PLANES.md): drawable geometry, independent spacing, hydraulic coupling and validity limits.
 
 
-- [Mass allowance boundaries](primary/MASS_ALLOWANCES.md) and [ordered refinement plan](../docs/NEXT_REFINEMENTS.md).
+- [Mass allowance boundaries](primary/MASS_ALLOWANCES.md) and [ordered refinement plan](../local-issue-drafts/specifications/docs/NEXT_REFINEMENTS.md).
 
 - [Coupled forward-cycle implementation](primary/TRANSIENT_IMPLEMENTATION.md): installed hardware, state-resolved compression/cooling, finite power and plant, closure checks; [initial results](../investigations/transient/RESULTS.md).
 
@@ -23,7 +25,7 @@ Research dossiers develop evidence-backed replacement models before code updates
 
 - [Primary model](primary/MODEL.md) and [input parameters](primary/PARAMETERS.md).
 - [Periodic optimization specification](primary/TRANSIENT_OPTIMIZATION_SPEC.md): independent design/control/initial-state coordinates, net-liquid payoff, closure equations and path constraints.
-- [Coupled transient primary-model plan](primary/TRANSIENT_MODEL_PLAN.md): one forward cycle per candidate, installed capacities as design inputs, and external optimization; first implementation now available.
+- [Coupled transient primary-model plan](../local-issue-drafts/specifications/modeling/primary/TRANSIENT_MODEL_PLAN.md): one forward cycle per candidate, installed capacities as design inputs, and external optimization; first implementation now available.
 - [Altitude sensitivity](../investigations/altitude_sensitivity/ANALYSIS.md): 50–150 km before finite racks and packaging constraints.
 - [Optimization](optimization/RESULTS.md).
 - [Detailed fluid studies](fluid/README.md), outside the optimizer.

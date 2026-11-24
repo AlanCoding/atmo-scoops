@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "status": "interrupted_by_agent",
+  "cycles": 20,
+  "message": "Resolution check measured 11.8 g error in nitrogen closure at identical inputs, larger than optimizer termination resolution; superseded by high-resolution search."
+}

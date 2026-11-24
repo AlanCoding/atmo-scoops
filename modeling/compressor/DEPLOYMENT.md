@@ -61,6 +61,6 @@ compression duties. Multiple finite-capacity racks, interstage states,
 pressure hatches and their recovery sequence are **specified here but not yet
 implemented or included in reported payoff**. The
 [compressor calculation dossier](README.md)
-and [refinement plan](MODEL_PLAN.md) define
+and [refinement plan](../../local-issue-drafts/specifications/modeling/compressor/MODEL_PLAN.md) define
 the next model work.
 
