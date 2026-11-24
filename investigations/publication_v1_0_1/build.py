@@ -1,6 +1,6 @@
 """Read frozen trajectories; publish metrics/figures without rerunning physics."""
 from pathlib import Path
-import gzip, json, hashlib
+import gzip, json, hashlib, sys
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -18,6 +18,8 @@ out['rejected_comparison']=dict(payoff_days=old['operating_payoff_days'],perigee
 Path(__file__).with_name('metrics.json').write_text(json.dumps(out,indent=2)+'\n')
 plt.rcParams.update({'svg.fonttype':'none','font.size':10})
 def save(fig,name):
+ if '--orbit-only' in sys.argv and name not in ('orbit','schedule'):
+  plt.close(fig);return
  for ext in ['svg','png']:
   path=ROOT/f'docs/images/v1_0_1_{name}.{ext}'
   fig.savefig(path,dpi=160)
@@ -32,11 +34,53 @@ save(fig,'feed')
 fig,ax=plt.subplots(figsize=(11,5),layout='constrained')
 for i in range(5):ax.plot(t/60,np.array(h['rack_K'])[:,i],label=f'Rack {i+1}: {d["materials"][i]}')
 ax.set(xlabel='Minutes from perigee',ylabel='Solid temperature (K)',title='v1.0.1 solid coolers — capture heat, deploy, radiate, return');ax.legend();ax.grid(alpha=.2);save(fig,'coolers')
-fig,(ax,at)=plt.subplots(1,2,figsize=(13,6),layout='constrained');E=np.linspace(0,2*np.pi,600)
-ax.add_patch(plt.Circle((0,0),R_EARTH/1000,color='#306eaa',alpha=.85));ax.plot(o.a*(np.cos(E)-o.e)/1000,o.a*np.sqrt(1-o.e**2)*np.sin(E)/1000,color='#d97536');ax.plot(o.rp/1000,0,'o',color='#d97536');ax.set_aspect('equal');ax.set(xlabel='Orbit-plane distance (km)',ylabel='km',title=f'{d["perigee_km"]:.3f} × 2,000 km; {o.period/60:.2f} min')
-ax.annotate('Collection at perigee',xy=(o.rp/1000,0),xytext=(-1000,-6500),arrowprops={'arrowstyle':'->'})
-at.barh(0,d['burn_s']/60,left=-d['burn_s']/120,color='#ba4a46');at.barh(1,(d['plant_stop_s']-d['plant_start_s'])/60,left=d['plant_start_s']/60,color='#247c8c');at.scatter(max(d['pump_stop_s'],d['burn_s']/2)/60,2,color='#397c49')
-for ev in r['events']:at.scatter(ev['time_s']/60,3 if ev['chamber']<4 else 4,color='#dc9840')
-at.set_yticks(range(5),['Reboost','Coast processing window','Reserve isolates','Front rack hatch events','Receiver rack hatch event']);at.invert_yaxis();at.axvline(0,color='gray',ls=':');at.set(xlabel='Minutes from perigee',title='Saved-cycle schedule');at.grid(axis='x',alpha=.2)
-fig.suptitle('v1.0.1 orbit and cycle\nDawn–dusk SSO is intended; seasonal illumination remains unmodeled');save(fig,'orbit')
-print(json.dumps(out,indent=2))
+# Illustrative product-collection orbit: same apogee and apsidal orientation.
+# Sharing a position does not match velocity or phase; transfer is not costed.
+pickup=Orbit(1000.,d['apogee_km'])
+fig,ax=plt.subplots(figsize=(9,9),layout='constrained');E=np.linspace(0,2*np.pi,600)
+earth=plt.Circle((0,0),R_EARTH/1000,facecolor='#d3eff7',edgecolor='#77b5c6',lw=1.2)
+ax.add_patch(earth)
+# Stylized land silhouettes, not a geographical map or orbit-plane orientation.
+from matplotlib.patches import Polygon
+for coords in [
+ [(-4700,3500),(-3200,5100),(-1200,4700),(-1700,3400),(-700,2200),(-2200,1300),(-2800,-300),(-4000,900)],
+ [(-2200,-500),(-600,-1700),(-900,-3300),(-2100,-5200),(-2700,-3100),(-3000,-1300)],
+ [(500,4200),(2800,4900),(5100,3200),(4300,1900),(2500,2200),(1800,400),(3100,-500),(1400,-2600),(-100,-1000),(200,1200)],
+ [(3700,-2600),(5100,-2400),(5700,-3600),(4200,-4000)]]:
+ land=Polygon(coords,closed=True,facecolor='#a9d8ae',edgecolor='none');land.set_clip_path(earth);ax.add_patch(land)
+ax.text(0,0,'Earth',ha='center',va='center',color='#326053',fontsize=15)
+ax.plot(o.a*(np.cos(E)-o.e)/1000,o.a*np.sqrt(1-o.e**2)*np.sin(E)/1000,color='#c45d16',lw=2.3,label=f'Diver: {d["perigee_km"]:.1f} × 2,000 km')
+ax.plot(pickup.a*(np.cos(E)-pickup.e)/1000,pickup.a*np.sqrt(1-pickup.e**2)*np.sin(E)/1000,color='#684397',lw=2,ls='--',label='Product collection: 1,000 × 2,000 km (illustrative)')
+ax.plot(o.rp/1000,0,'o',color='#c45d16',zorder=5)
+ax.plot(-o.ra/1000,0,'o',color='#684397',zorder=5)
+ax.set_aspect('equal');ax.set(xlim=(-11200,11200),ylim=(-10500,11200),xlabel='Orbit-plane distance (km)',ylabel='km',title=f'Operating orbit and product pickup · diver period {o.period/60:.2f} min')
+ax.legend(loc='upper center',fontsize=9,frameon=True,facecolor='white')
+ax.annotate('Atmospheric collection\nat diver perigee',xy=(o.rp/1000,0),xytext=(4300,-9000),ha='center',fontsize=10,arrowprops={'arrowstyle':'->','color':'#914813'},bbox={'facecolor':'white','edgecolor':'none','pad':3})
+ax.annotate('Shared apogee altitude\nCandidate handoff region',xy=(-o.ra/1000,0),xytext=(-3800,-9000),ha='center',fontsize=10,arrowprops={'arrowstyle':'->','color':'#684397'},bbox={'facecolor':'white','edgecolor':'none','pad':3})
+ax.text(.5,-.13,'Rendezvous requires phasing and velocity matching; delivery cost is not modeled.',transform=ax.transAxes,ha='center',fontsize=9,color='#48545b')
+fig.suptitle('v1.0.1 operating and product-collection orbits\nDawn–dusk SSO intended; seasonal illumination remains unmodeled');save(fig,'orbit')
+
+# Use the exact prescribed forcing grid from the selected configuration.
+# This is inlet-support/ram pressure rho*v^2, not a resolved shock stagnation state.
+from atmo_scoops.transient.inputs import read_config
+from atmo_scoops.transient.hardware import compile_hardware
+forcing=compile_hardware(*read_config(r['inputs']))['forcing']
+ft=np.asarray(forcing['time']);fp=np.asarray(forcing['pressure']);peak=float(fp.max());threshold=.1*peak
+hit=np.flatnonzero(fp>=threshold);i,j=int(hit[0]),int(hit[-1])
+assert 0<i<=j<len(ft)-1
+assert np.all(np.diff(hit)==1), 'Expected one contiguous collection window'
+def crossing(a,b):return float(ft[a]+(threshold-fp[a])*(ft[b]-ft[a])/(fp[b]-fp[a]))
+left,right=crossing(i-1,i),crossing(j,j+1)
+schedule=dict(pressure_definition='Prescribed inlet-support ram pressure rho*v^2; not resolved stagnation pressure',peak_Pa=peak,threshold_fraction=.1,threshold_Pa=threshold,collection_start_s=left,collection_end_s=right,collection_duration_s=right-left,reboost_duration_s=d['burn_s'],collection_over_reboost=(right-left)/d['burn_s'])
+Path(__file__).with_name('schedule.json').write_text(json.dumps(schedule,indent=2)+'\n')
+fig,at=plt.subplots(figsize=(12,4.6),layout='constrained')
+bars=[('Reboost',-d['burn_s']/120,d['burn_s']/60,'#ba4a46'),('Collection',left/60,(right-left)/60,'#c45d16'),('Coast processing window',d['plant_start_s']/60,(d['plant_stop_s']-d['plant_start_s'])/60,'#247c8c')]
+for y,(label,start,width,color) in enumerate(bars):
+ at.barh(y,width,left=start,height=.48,color=color)
+ at.text(start+width+.7,y,f'{width:.2f} min',va='center',fontsize=11,color='#33444b')
+at.set_yticks(range(3),[b[0] for b in bars]);at.invert_yaxis();at.axvline(0,color='#606b70',ls=':',lw=1.2)
+at.set(xlim=(-12,80),xlabel='Minutes from perigee',title='v1.0.1 cycle schedule')
+at.grid(axis='x',alpha=.2);at.set_axisbelow(True)
+at.text(.5,-.25,'Collection bar: inlet-support pressure ≥ 10% of peak. Lower-rate collection continues outside this window.',transform=at.transAxes,ha='center',fontsize=10,color='#48545b')
+save(fig,'schedule')
+print(json.dumps(schedule,indent=2))

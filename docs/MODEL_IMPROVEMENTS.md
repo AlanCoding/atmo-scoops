@@ -15,10 +15,12 @@ The [version roadmap](VERSION_ROADMAP.md) is the current sequencing plan:
   starting with calibrated/bounded exterior side shear. The frozen reference
   already uses an effective Cf of 0.002; this is refinement, not a new duplicate
   drag charge. Propagate penalties through power, propellant and cycle closure.
-- **v1.1:** retain deployable front SiC racks; use fixed coolant tubes and a
-  carried coolant inventory in volumes 2–5, including the receiver. Remove
-  downstream rack extraction and its pressure-sealed doors, while accounting
-  for tubes, pumps, coolant storage, heat transfer and coast radiators.
+- **v1.1:** [fixed solid heat stores with embedded coolant channels](V1_1_FIXED_THERMAL_STORES.md).
+  Absorb dive heat in solid material; recover through a coolant loop during coast.
+  Resolve both short-pass solid accessibility and longer coast conduction, along
+  with gas-side transfer/pressure loss, coolant hydraulics and radiator sizing.
+  Front SiC deployment versus fixed storage remains open. Downstream hatches may
+  be removed; solid mass is retained rather than replaced for free.
 - **v2.0:** a propulsion-free diver retains its processing and deployment
   systems, solar panels and batteries; a tether mothership supplies release,
   capture, retrieval and external reboost. Establish multi-pass resonance and
@@ -328,3 +330,18 @@ independently optimized inventories. Before claiming a volume-allocation optimum
 expose the intended clear-depth variables, review separate full-bore head geometry,
 and establish a spatial inlet/diffuser allowance independently of rack thickness.
 The lumped open-front model does not validate shock containment in a 0.896 m inlet.
+
+## Reacting inlet, limited injection and low-incidence plate entry
+
+The [corrected alpha account](publication/V1_0_0_ALPHA.md) records direct LN₂
+mixing as the original cooling method and gas-inventory growth as its storage
+penalty. Preserve optional mixing. Investigate whether cold N₂/O₂ injection ahead
+of the first SiC rack can reduce dissociation, reactive-oxygen exposure or wall
+recombination heating enough to justify added inventory and recovery loads.
+Do not credit a guessed injection ratio or assume that downstream quenching
+prevents upstream dissociation. Compare with low-incidence plate entry before
+full stagnation, including finite-rate chemistry, gas–surface energy exchange,
+catalytic/material response and pressure recovery. Validate leading-edge life
+rather than inferring it from altitude or thermal-protection heritage. This is
+offline inlet research; any reviewed reduced coefficients can subsequently feed
+the cycle model. No such benefit is included in accepted v1.0.1 payoff.

@@ -26,13 +26,29 @@ physics is unstable or that constraints should be discarded.
 ## 1. A deterministic design worksheet
 
 One input set produces one sizing report, with intermediate calculations exposed.
-Begin with fixed diameter, L/D, reserve length, apogee, materials, deployment speed,
+Begin with fixed diameter (system scale), L/D, apogee, materials, deployment speed,
 pressure ratings and component capability assumptions. Declare which are requirements
-and which are provisional. Every other scalar is labeled input, derived quantity,
-integrated state, control rule or closure residual.
+and which are provisional. **Reserve length is an internal sizing result, not a
+project-level input.** The 125 m value belongs only to frozen v1.0.1. Size the
+reserve and main-receiver partition together from the burn/refill schedule, finite
+feed/valve capability, thermal state and allowable pressure. The partition may be
+an internal search coordinate, but the user should not have to prescribe it.
+Every other scalar is labeled input, derived quantity, integrated state, control
+rule or closure residual.
 
-1. Allocate actual package volumes and pressure-vessel heads. Compute main receiver
-   and reserve gas capacity; do not subtract equipment twice. Because power sizing
+Keep L/D=10 for this next step. Later, after a sufficiently credible exterior
+skin-friction model and structural/packaging limits are available, hold diameter
+fixed and let length be selected by the design process. The existing constant-Cf
+screen alone is not that qualification; do not release length yet.
+
+1. Allocate actual package volumes and pressure-vessel heads. Allocate the remaining
+   space between main receiver and reserve, rather than subtracting a fixed 125 m.
+   Size reserve working inventory from the maximum cumulative deficit between
+   thrust demand and net valve replenishment, plus the gas needed for finite feed
+   pressure/flow. Include refill during thrust, the refill peak, periodic closure
+   and any explicit engineering margin. No requirement to carry an entire pass
+   of propellant before firing. Compute both gas capacities without subtracting
+   equipment twice. Because power sizing
    changes packaging, the first pass is an explicitly provisional estimate.
 2. Specify a target collected batch and receiver fill state. Account for propellant
    taken during the pass and replenishment of reserve, not just final main-tank mass.
@@ -125,3 +141,15 @@ Report total simulations, errors, termination, bound hits and resolution sensiti
 This work changes the design workflow first, not the physical capabilities or the
 v1.0.1 publication numbers. Skin-friction refinement, detailed compressor maps,
 cryogenic integration and v1.1 remain separately tracked work.
+
+
+## Thermal scheduling detail to carry into the redesign
+
+Distinguish receiver rack 5 from the four compressor-inlet racks. v1.0.1 holds
+it stowed until plant stop + purge (+72 minutes), whereas racks 1–4 release at
++12 minutes. All racks throttle modeled radiation at their input starting
+temperature. In the staged model, make these control assumptions explicit:
+state/pressure-based deployment timing, passive cooldown versus controlled
+exposure, and the hardware/energy needed to stop at a target temperature.
+Validate gas-to-solid heat direction during receiver blowdown. Reserve partition
+sizing remains a subsequent internal-design TODO, not a fixed user requirement.

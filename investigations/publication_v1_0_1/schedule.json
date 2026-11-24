@@ -1,0 +1,11 @@
+{
+  "pressure_definition": "Prescribed inlet-support ram pressure rho*v^2; not resolved stagnation pressure",
+  "peak_Pa": 398.68147039026934,
+  "threshold_fraction": 0.1,
+  "threshold_Pa": 39.86814703902694,
+  "collection_start_s": -150.88800816000003,
+  "collection_end_s": 150.89387709581618,
+  "collection_duration_s": 301.7818852558162,
+  "reboost_duration_s": 1235.1391519837819,
+  "collection_over_reboost": 0.24433027223784318
+}

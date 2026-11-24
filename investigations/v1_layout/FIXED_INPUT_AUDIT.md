@@ -1,6 +1,6 @@
 # Fixed-input and optimizer-coordinate audit
 
-Values are the rejected boosted candidate, not proposed new settings. This enumerates every serialized input. Inline constants require the separate checklist below. Detailed dispositions and the restoration sequence are in [the review plan](../../docs/V1_0_1_RESTORE_PLAN.md).
+Values are the rejected boosted candidate, not proposed new settings. This enumerates every serialized input. Inline constants require the separate checklist below. Implemented dispositions are in [the finalized version document](../../docs/publication/V1_0_1.md).
 
 ## Design inputs
 

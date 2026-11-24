@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1740" viewBox="0 0 1600 1740">
+<title>v1.0.1 deployed spacecraft at a common scale</title>
+<rect width="1600" height="1740" fill="#fff"/>
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#233d4b;paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round}.link{fill:none;stroke-width:2}</style>
+<text x="55" y="50" font-size="32">v1.0.1 · The deployed scale</text>
+<text x="55" y="84" font-size="21">317 m spacecraft, solar arrays, radiators and all five cooling racks at one common scale</text>
+<text x="55" y="115" font-size="18">Illustrative late-coast arrangement · sheet areas from the accepted saved cycle</text>
+<rect x="850" y="165" width="623.3938161988827" height="623.3938161988827" fill="#8db8dd" stroke="#355968" stroke-width="1.5"/>
+<path d="M927.9242270248603,165 L927.9242270248603,788.3938161988827" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1005.8484540497207,165 L1005.8484540497207,788.3938161988827" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1083.772681074581,165 L1083.772681074581,788.3938161988827" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1161.6969080994413,165 L1161.6969080994413,788.3938161988827" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1239.6211351243016,165 L1239.6211351243016,788.3938161988827" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1317.545362149162,165 L1317.545362149162,788.3938161988827" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1395.4695891740225,165 L1395.4695891740225,788.3938161988827" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<text x="850" y="127" font-size="20">Solar wing A</text>
+<text x="850" y="153" font-size="16">959 × 959 m · 919,810 m²</text>
+<rect x="850" y="1000" width="623.3938161988827" height="623.3938161988827" fill="#8db8dd" stroke="#355968" stroke-width="1.5"/>
+<path d="M927.9242270248603,1000 L927.9242270248603,1623.3938161988826" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1005.8484540497207,1000 L1005.8484540497207,1623.3938161988826" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1083.772681074581,1000 L1083.772681074581,1623.3938161988826" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1161.6969080994413,1000 L1161.6969080994413,1623.3938161988826" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1239.6211351243016,1000 L1239.6211351243016,1623.3938161988826" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1317.545362149162,1000 L1317.545362149162,1623.3938161988826" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M1395.4695891740225,1000 L1395.4695891740225,1623.3938161988826" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<text x="850" y="962" font-size="20">Solar wing B</text>
+<text x="850" y="988" font-size="16">959 × 959 m · 919,810 m²</text>
+<path d="M771.0,820 L771.0,850" class="link" stroke="#397eae" stroke-dasharray=""/>
+<path d="M771.0,850 L850,790" class="link" stroke="#397eae" stroke-dasharray=""/>
+<path d="M771.0,850 L850,1000" class="link" stroke="#397eae" stroke-dasharray=""/>
+<rect x="650" y="450" width="119.1788779346931" height="119.1788779346931" fill="#a2c9c2" stroke="#355968" stroke-width="1.5"/>
+<path d="M664.8973597418367,450 L664.8973597418367,569.1788779346931" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M679.7947194836732,450 L679.7947194836732,569.1788779346931" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M694.6920792255099,450 L694.6920792255099,569.1788779346931" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M709.5894389673465,450 L709.5894389673465,569.1788779346931" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M724.4867987091832,450 L724.4867987091832,569.1788779346931" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M739.3841584510199,450 L739.3841584510199,569.1788779346931" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M754.2815181928564,450 L754.2815181928564,569.1788779346931" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<text x="650" y="412" font-size="20">Waste-heat radiator</text>
+<text x="650" y="438" font-size="16">183 × 183 m · 33,618 m²</text>
+<path d="M725.5,820 L709.5894389673465,569.1788779346931" class="link" stroke="#368477" stroke-dasharray=""/>
+<rect x="230" y="700" width="187.2189969165323" height="187.2189969165323" fill="#dcab66" stroke="#355968" stroke-width="1.5"/>
+<path d="M253.40237461456653,700 L253.40237461456653,887.2189969165323" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M276.80474922913305,700 L276.80474922913305,887.2189969165323" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M300.2071238436996,700 L300.2071238436996,887.2189969165323" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M323.60949845826616,700 L323.60949845826616,887.2189969165323" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M347.0118730728327,700 L347.0118730728327,887.2189969165323" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M370.4142476873992,700 L370.4142476873992,887.2189969165323" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M393.81662230196577,700 L393.81662230196577,887.2189969165323" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<text x="230" y="662" font-size="20">Rack 1 · SiC</text>
+<text x="230" y="688" font-size="16">288.0 × 288.0 m · 82,961 m²</text>
+<path d="M680,820 L417.2189969165323,793.6094984582661" class="link" stroke="#a2773d" stroke-dasharray=""/>
+<rect x="440" y="430" width="64.90286858997428" height="64.90286858997428" fill="#c5cbd3" stroke="#355968" stroke-width="1.5"/>
+<path d="M448.1128585737468,430 L448.1128585737468,494.9028685899743" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M456.2257171474936,430 L456.2257171474936,494.9028685899743" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M464.3385757212404,430 L464.3385757212404,494.9028685899743" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M472.45143429498717,430 L472.45143429498717,494.9028685899743" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M480.5642928687339,430 L480.5642928687339,494.9028685899743" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M488.6771514424807,430 L488.6771514424807,494.9028685899743" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M496.7900100162275,430 L496.7900100162275,494.9028685899743" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<text x="440" y="392" font-size="20">Rack 2 · Al</text>
+<text x="440" y="418" font-size="16">99.9 × 99.9 m · 9,970 m²</text>
+<path d="M693.7795988917552,820 L504.9028685899743,462.45143429498717" class="link" stroke="#818b98" stroke-dasharray=""/>
+<rect x="430" y="590" width="43.92706982159964" height="43.92706982159964" fill="#c5cbd3" stroke="#355968" stroke-width="1.5"/>
+<path d="M435.49088372769995,590 L435.49088372769995,633.9270698215996" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M440.9817674553999,590 L440.9817674553999,633.9270698215996" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M446.47265118309986,590 L446.47265118309986,633.9270698215996" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M451.9635349107998,590 L451.9635349107998,633.9270698215996" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M457.45441863849976,590 L457.45441863849976,633.9270698215996" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M462.9453023661997,590 L462.9453023661997,633.9270698215996" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M468.43618609389966,590 L468.43618609389966,633.9270698215996" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<text x="430" y="552" font-size="20">Rack 3 · Al</text>
+<text x="430" y="578" font-size="16">67.6 × 67.6 m · 4,567 m²</text>
+<path d="M700.8100376324907,820 L473.9270698215996,611.9635349107998" class="link" stroke="#818b98" stroke-dasharray=""/>
+<rect x="450" y="1070" width="36.56956186109603" height="36.56956186109603" fill="#c5cbd3" stroke="#355968" stroke-width="1.5"/>
+<path d="M454.571195232637,1070 L454.571195232637,1106.569561861096" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M459.142390465274,1070 L459.142390465274,1106.569561861096" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M463.713585697911,1070 L463.713585697911,1106.569561861096" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M468.28478093054804,1070 L468.28478093054804,1106.569561861096" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M472.855976163185,1070 L472.855976163185,1106.569561861096" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M477.42717139582203,1070 L477.42717139582203,1106.569561861096" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M481.99836662845905,1070 L481.99836662845905,1106.569561861096" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<text x="450" y="1032" font-size="20">Rack 4 · Al</text>
+<text x="450" y="1058" font-size="16">56.3 × 56.3 m · 3,165 m²</text>
+<path d="M706.7235681813718,820 L486.569561861096,1088.284780930548" class="link" stroke="#818b98" stroke-dasharray=""/>
+<rect x="610" y="1250" width="48.898481569004524" height="48.898481569004524" fill="#c5cbd3" stroke="#355968" stroke-width="1.5"/>
+<path d="M616.1123101961256,1250 L616.1123101961256,1298.8984815690046" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M622.2246203922512,1250 L622.2246203922512,1298.8984815690046" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M628.3369305883767,1250 L628.3369305883767,1298.8984815690046" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M634.4492407845023,1250 L634.4492407845023,1298.8984815690046" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M640.5615509806278,1250 L640.5615509806278,1298.8984815690046" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M646.6738611767533,1250 L646.6738611767533,1298.8984815690046" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<path d="M652.7861713728789,1250 L652.7861713728789,1298.8984815690046" class="link" stroke="#ffffff" stroke-dasharray=""/>
+<text x="610" y="1212" font-size="20">Rack 5 · Al</text>
+<text x="610" y="1238" font-size="16">75.2 × 75.2 m · 5,659 m²</text>
+<path d="M712.2379161,820 L658.8984815690045,1274.4492407845023" class="link" stroke="#818b98" stroke-dasharray=""/>
+<g transform="translate(680,809.6975) scale(0.14444444444444446) translate(-135,-330)">
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="135.0" y="330" width="1426.5" height="142.65" rx="0" fill="#eff4f6" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="135.0" y="330" width="61.11658752139569" height="142.65" rx="0" fill="#fbf3df" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="180.0" y="330" width="16.116587521395687" height="142.65" rx="0" fill="#cd8b35" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="196.11658752139567" y="330" width="23.03063557537127" height="142.65" rx="0" fill="#a7bac9" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="219.14722309676696" y="330" width="4.5" height="142.65" rx="0" fill="#c4b4d1" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="223.64722309676696" y="330" width="14.573816564147318" height="142.65" rx="0" fill="#fbf3df" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="230.39722309676696" y="330" width="1.073816564147318" height="142.65" rx="0" fill="#cd8b35" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="238.22103966091427" y="330" width="29.59845164094427" height="142.65" rx="0" fill="#a7bac9" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="267.81949130185853" y="330" width="4.5" height="142.65" rx="0" fill="#c4b4d1" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="272.31949130185853" y="330" width="14.083150906726633" height="142.65" rx="0" fill="#fbf3df" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="279.06949130185853" y="330" width="0.5831509067266332" height="142.65" rx="0" fill="#cd8b35" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="286.4026422085852" y="330" width="22.356675970142373" height="142.65" rx="0" fill="#a7bac9" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="308.75931817872754" y="330" width="4.5" height="142.65" rx="0" fill="#c4b4d1" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="313.25931817872754" y="330" width="13.99823116589641" height="142.65" rx="0" fill="#fbf3df" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="320.00931817872754" y="330" width="0.49823116589641003" height="142.65" rx="0" fill="#cd8b35" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="327.25754934462395" y="330" width="19.67802493073862" height="142.65" rx="0" fill="#a7bac9" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="346.93557427536257" y="330" width="4.5" height="142.65" rx="0" fill="#c4b4d1" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="351.43557427536257" y="343.0470389184641" width="647.5644257246374" height="116.55592216307177" rx="6.75" fill="#e3f0f6" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="999.0" y="333.825" width="562.5" height="135.0" rx="6.75" fill="#e3f2e3" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="358.18557427536257" y="343.0470389184641" width="1.0546762683553617" height="116.55592216307177" rx="0" fill="#cd8b35" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="360.43557427536257" y="333" width="58.5" height="9" rx="0" fill="#dfc89b" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="360.43557427536257" y="460.65" width="58.5" height="9" rx="0" fill="#dfc89b" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="418.93557427536257" y="333" width="99.00000000000003" height="9" rx="0" fill="#c5b5df" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="418.93557427536257" y="460.65" width="99.00000000000003" height="9" rx="0" fill="#c5b5df" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="549.4355742753626" y="333" width="440.5644257246374" height="9" rx="0" fill="#93b8db" stroke="#6d858e" />
+
+<ns0:rect xmlns:ns0="http://www.w3.org/2000/svg" x="549.4355742753626" y="460.65" width="440.5644257246374" height="9" rx="0" fill="#93b8db" stroke="#6d858e" />
+
+</g>
+<text x="670" y="888" font-size="20">Hull: 317 m × 31.7 m</text>
+<text x="670" y="916" font-size="15">Mouth ←     main receiver     reserve →</text>
+<text x="70" y="1320" font-size="21">Connections remain attached</text>
+<text x="70" y="1350" font-size="16">Lines trace each deployment back to its storage region.</text>
+<text x="70" y="1376" font-size="16">They are schematic supports / thermal connections.</text>
+<path d="M65,1460 L390.0,1460" class="link" stroke="#233d4b" stroke-dasharray=""/>
+<path d="M65,1452 L65,1468" class="link" stroke="#233d4b" stroke-dasharray=""/>
+<path d="M227.5,1452 L227.5,1468" class="link" stroke="#233d4b" stroke-dasharray=""/>
+<path d="M390.0,1452 L390.0,1468" class="link" stroke="#233d4b" stroke-dasharray=""/>
+<text x="65" y="1495" font-size="18">0</text>
+<text x="207.5" y="1495" font-size="18">250</text>
+<text x="360.0" y="1495" font-size="18">500 m</text>
+<text x="55" y="1660" font-size="17">Area convention: one physical sheet face; two-sided radiation does not double the drawn footprint.</text>
+<text x="55" y="1688" font-size="17">Square sheets and two equal solar wings are area-equivalent choices, not engineered deployment mechanisms.</text>
+<text x="55" y="1716" font-size="17">Rack 5 deploys late in coast after receiver processing / purge. Sun pointing, shadows and boom sizing remain unresolved.</text>
+</svg>

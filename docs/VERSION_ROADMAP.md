@@ -12,7 +12,7 @@ The earlier v1.0.0 inputs remain reproducible.
 |---|---|---|---|
 | **v1.0.0** | Historical publication snapshot | Front SiC and downstream aluminum plates; direct coast deployment | Integrated electric propulsion with finite-duration reboost |
 | **v1.0.1** | Accepted numerical reference | Staggered SiC/Al plates with corrected packing | Valve-only 125 m reserve; finite-duration onboard reboost |
-| **v1.1** | Simplify downstream cooling hardware | Deployable front SiC rack; fixed coolant tubes in higher-pressure gas volumes | Retain onboard propulsion |
+| **v1.1** | Simplify downstream cooling hardware | Fixed solid heat stores with embedded coast-recovery channels; front SiC deployment remains an option | Retain onboard propulsion |
 | **v2.0** | Split collector and propulsion into two craft | Diver inherits the v1.1 thermal arrangement and retains processing hardware | Mothership/tether release, capture and retrieval; bulk reboost on mothership |
 
 Versions describe study scope, not flight readiness. The [publication kit](publication/V1_0_1.md)
@@ -57,52 +57,29 @@ integration resolution. Report uncertainty and infeasible cases. Keep the v1.0
 silently replace it with new numbers. Circular-apogee delivery remains a distinct
 unimplemented mission boundary until separately resolved.
 
-## v1.1 — retain the open-mouth cooler, change downstream heat storage
+## v1.1 — fixed solid heat stores with coast coolant recovery
 
-The front material is **silicon carbide (SiC), a ceramic**. Retain its solid
-rack and direct deployment through the open mouth. It remains the front heat
-absorber, returning to its starting thermal state through coast radiation.
-The mouth stays open; this plan does not revive the rejected inlet door.
+The revised [v1.1 thermal concept](V1_1_FIXED_THERMAL_STORES.md) retains solid
+thermal storage but embeds coolant channels in fixed gas-contact structures.
+The solid accepts the short collection heat pulse; coolant primarily restores
+it during coast through deployable external radiators, with a heat pump only
+where justified. This replaces the earlier assumption of liquid carrying the
+full hot-phase load into a large coolant reservoir.
 
-Replace the passive aluminum plate racks **only in the higher-pressure volumes**
-with fixed coolant-tube heat exchangers. In the current five-volume model this
-means volumes 2–5, including the aft receiver. Gas is cooled by fluid circulating
-inside tubes; gas and coolant do not mix in the baseline arrangement. A carried
-coolant inventory accepts pass heat and an ordinary deployable radiator rejects
-it during coast. Existing ammonia investigations are a starting point, not a
-qualified final fluid or operating-temperature choice.
+The main receiver can be cooled while still pressurized, without extracting its
+rack. Downstream extraction hatches and deployment mechanisms can disappear;
+solid mass, coolant channels, supports, penetrations and recovery hardware remain.
+The front SiC choice is open: compare direct mouth deployment against a fixed
+store with suitable recovery plumbing. No inlet door is introduced.
 
-Delete the downstream rack-extraction mechanisms and their large
-pressure-retaining deployment doors. Pressure vessels remain sealed around
-fixed exchangers, with the necessary pipe penetrations, gas isolation valves
-and service interfaces still accounted for. Removing rack doors is not deleting
-all pressure boundaries or valves. The coolant radiators and solar panels still
-deploy and stow outside the atmospheric pass.
+Gas-side transfer, short-pass access to the solid's heat capacity, and coast
+conduction to embedded channels are three separate performance limits. Greater
+receiver space helps distribute surface but does not remove gas displacement,
+bypass, local flow resistance or recovery constraints. The detailed concept
+records the required mass, volume, thermal and energy accounting.
 
-The intended scope is the material/deployment distinction above, **not a newly
-assigned chamber-volume split**. In the frozen axial layout the aft receiver
-occupies roughly 247 m of the 317 m craft; the mouth chamber is not most of its
-gas volume. The front SiC rack is the dominant solid-cooler mass. Preserve those
-separate statements until a new layout is calculated.
-
-Future implementation must explicitly trade:
-
-- Removed aluminum thermal mass, extraction hardware, pressure doors and any
-  gas recovery/venting duties that become unnecessary.
-- Added fixed tubes/fins, finite gas-side and coolant-side heat transfer,
-  tube displacement, coolant inventory and its storage volume, plumbing,
-  pumps, pressure losses, insulation and radiator/deployment equipment.
-- Cold and hot coolant states, thermal gradients, usable capacity, freezing/
-  boiling/pressure limits and restoration during coast. A hot/cold split or
-  moving diaphragm is an option, not a free ideal reservoir.
-- Interaction with the existing warm loop and cryogenic plant. Avoid counting
-  shared radiator/thermal capacity twice, and do not credit a heat pump without
-  its work, mass and rejected heat.
-
-Keep the front solid-rack and downstream coolant cycles separately visible in
-closure conditions. Compare v1.1 against the accuracy-refined v1 baseline using
-the same mission boundary. This is a planned design choice, not a demonstrated
-payoff improvement.
+This is a documentation-only revision, to be investigated after the staged-model
+workflow. No numerical benefit is credited to the v1.0.1 publication result.
 
 ## v2.0 — propulsion-free diver and tether mothership
 

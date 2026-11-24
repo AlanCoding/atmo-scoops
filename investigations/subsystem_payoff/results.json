@@ -1,0 +1,190 @@
+{
+  "source": "results/transient/valve_restore/selected_refined.json.gz",
+  "source_sha256": "dd6c9825751a81c088856346b98ce5c16d58dfb85b9cf72de05c5a950b852b34",
+  "denominator": "same net new useful liquid production for all payoff contributions",
+  "product_rate_kg_day": 41906.903632842426,
+  "energy": {
+    "thrust_electric_MWh": 226.68672113741093,
+    "dive_motors_spin_idle_loss_MWh": 2.496907697444043,
+    "coast_compression_liquefaction_separation_MWh": 8.352474994453857,
+    "cryo_holding_MWh": 0.05370626290716977,
+    "auxiliary_MWh": 0.017672808465818948,
+    "load_integral_MWh": 237.60748290068182,
+    "battery_charge_input_MWh": 224.85056795629856,
+    "battery_output_MWh": 202.92763758558658,
+    "battery_loss_MWh": 21.922930376003706,
+    "solar_used_ledger_MWh": 259.5311360951921,
+    "electrical_closure_difference_MWh": 0.0007228237982985775,
+    "warm_heat_input_MWh": 50.26198062707637,
+    "warm_radiated_MWh": 50.261789670368906,
+    "solid_radiated_MWh": 54.09834741958206,
+    "shaft_work_MWh": 1.7787323976940765,
+    "rack_friction_electric_MWh": 0.33677534506351386
+  },
+  "allocation_fractions": {
+    "solar": 0.9559324416372122,
+    "battery": 0.9764895068214883,
+    "bus": 0.8693593225758881,
+    "warm_store": 0.7867268394241682,
+    "warm_radiator": 0.7867268394241682,
+    "hull": 0.3943217665615142,
+    "pressure_vessels": 0.308831899950718,
+    "thrusters": 1.0,
+    "gas_reserve_system": 1.0
+  },
+  "mass_allocation": [
+    {
+      "component": "racks",
+      "total_kg": 453191.9872831691,
+      "propulsion_kg": 0.0,
+      "collection_kg": 453191.9872831691,
+      "propulsion_fraction": 0.0
+    },
+    {
+      "component": "rack_mechanisms",
+      "total_kg": 106322.64372832779,
+      "propulsion_kg": 0.0,
+      "collection_kg": 106322.64372832779,
+      "propulsion_fraction": 0.0
+    },
+    {
+      "component": "dive_compressors",
+      "total_kg": 919112.6964827137,
+      "propulsion_kg": 0.0,
+      "collection_kg": 919112.6964827137,
+      "propulsion_fraction": 0.0
+    },
+    {
+      "component": "coast_compressors",
+      "total_kg": 46901.31555675042,
+      "propulsion_kg": 0.0,
+      "collection_kg": 46901.31555675042,
+      "propulsion_fraction": 0.0
+    },
+    {
+      "component": "refrigerator",
+      "total_kg": 140273.09982513593,
+      "propulsion_kg": 0.0,
+      "collection_kg": 140273.09982513593,
+      "propulsion_fraction": 0.0
+    },
+    {
+      "component": "external_exchangers",
+      "total_kg": 2250.0,
+      "propulsion_kg": 0.0,
+      "collection_kg": 2250.0,
+      "propulsion_fraction": 0.0
+    },
+    {
+      "component": "separator",
+      "total_kg": 2495.803425786146,
+      "propulsion_kg": 0.0,
+      "collection_kg": 2495.803425786146,
+      "propulsion_fraction": 0.0
+    },
+    {
+      "component": "solar",
+      "total_kg": 3066034.3201183937,
+      "propulsion_kg": 2930921.673774266,
+      "collection_kg": 135112.64634412757,
+      "propulsion_fraction": 0.9559324416372122
+    },
+    {
+      "component": "battery",
+      "total_kg": 2218522.213815743,
+      "propulsion_kg": 2166363.6624414516,
+      "collection_kg": 52158.55137429176,
+      "propulsion_fraction": 0.9764895068214883
+    },
+    {
+      "component": "bus",
+      "total_kg": 759999.624120715,
+      "propulsion_kg": 660712.7583835144,
+      "collection_kg": 99286.86573720061,
+      "propulsion_fraction": 0.8693593225758881
+    },
+    {
+      "component": "thrusters",
+      "total_kg": 1321425.5167670287,
+      "propulsion_kg": 1321425.5167670287,
+      "collection_kg": 0.0,
+      "propulsion_fraction": 1.0
+    },
+    {
+      "component": "warm_store",
+      "total_kg": 520950.2363386513,
+      "propulsion_kg": 409845.53293198056,
+      "collection_kg": 111104.7034066707,
+      "propulsion_fraction": 0.7867268394241682
+    },
+    {
+      "component": "warm_radiator",
+      "total_kg": 336179.9987165084,
+      "propulsion_kg": 264481.82786785957,
+      "collection_kg": 71698.17084864882,
+      "propulsion_fraction": 0.7867268394241682
+    },
+    {
+      "component": "liquid_tanks",
+      "total_kg": 6000.0,
+      "propulsion_kg": 0.0,
+      "collection_kg": 6000.0,
+      "propulsion_fraction": 0.0
+    },
+    {
+      "component": "auxiliary",
+      "total_kg": 5000.0,
+      "propulsion_kg": 0.0,
+      "collection_kg": 5000.0,
+      "propulsion_fraction": 0.0
+    },
+    {
+      "component": "gas_reserve_system",
+      "total_kg": 2500.0,
+      "propulsion_kg": 2500.0,
+      "collection_kg": 0.0,
+      "propulsion_fraction": 1.0
+    },
+    {
+      "component": "pressure_vessels",
+      "total_kg": 238739.78585789286,
+      "propulsion_kg": 73730.46166032061,
+      "collection_kg": 165009.32419757225,
+      "propulsion_fraction": 0.308831899950718
+    },
+    {
+      "component": "hull",
+      "total_kg": 126278.20166663387,
+      "propulsion_kg": 49794.243559398215,
+      "collection_kg": 76483.95810723567,
+      "propulsion_fraction": 0.3943217665615142
+    },
+    {
+      "component": "margin",
+      "total_kg": 2568044.3609258626,
+      "propulsion_kg": 1969943.919346455,
+      "collection_kg": 598100.4415794077,
+      "propulsion_fraction": 0.7670988668732447
+    }
+  ],
+  "propulsion_dry_kg": 9849719.596732276,
+  "collection_dry_kg": 2990502.207897038,
+  "propulsion_payoff_days": 235.0381140784893,
+  "collection_payoff_days": 71.3606100345095,
+  "combined_payoff_days": 306.3987241129988,
+  "continuous_screen": {
+    "isp_s": 1811.9845098969965,
+    "same_impulse_Ns": 55110540.610452734,
+    "period_s": 6362.211047694821,
+    "duty_factor": 0.1941367777215284,
+    "pulsed_power_MW": 660.7127583835144,
+    "continuous_power_MW": 128.26864591207823,
+    "removed_battery_kg": 2166363.6624414516,
+    "old_thruster_kg": 1321425.5167670287,
+    "continuous_thruster_kg": 256537.29182415645,
+    "propulsion_dry_kg": 5810654.737501871,
+    "propulsion_payoff_days": 138.6562650490852,
+    "collection_plus_continuous_days": 210.0168750835947,
+    "other_hardware": "retained without resizing, including allocated solar, bus, reserve and thermal hardware; 25% margin reapplied"
+  }
+}

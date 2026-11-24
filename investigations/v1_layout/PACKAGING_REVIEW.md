@@ -1,8 +1,7 @@
 # v1.0 packaging, gas feeds and thruster placement
 
 **Historical frozen-reference review.** The current scale image is the
-[working valve-reserve restoration](../../docs/V1_0_1_RESTORE_PLAN.md), not a
-validated numerical checkpoint. Use its [length table](DRAWING_LENGTHS.md).
+[validated valve-reserve v1.0.1 design](../../docs/publication/V1_0_1.md). Use its [length table](DRAWING_LENGTHS.md).
 No updated CM is claimed. Older locations and relocation estimates below are
 not the current drawing.
 

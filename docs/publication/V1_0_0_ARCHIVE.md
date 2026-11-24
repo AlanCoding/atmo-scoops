@@ -35,7 +35,7 @@ problem.
   Caption: “SiC up front, aluminum downstream. The coast-processing flow splits
   between useful liquid and gaseous propellant for the next pass.” This makes
   the absence of a mouth door and the liquefier bypass understandable.
-- **Evidence: [current-reference cycle histories SVG](../images/v1_cycle_history.svg)**
+- **Updated v1.0.1 comparison (not this archived design): [cycle histories SVG](../images/v1_cycle_history.svg)**
   ([PNG](../images/v1_cycle_history.png)). Caption: “Gas pressures, solid-cooler
   temperatures and inventories evolve through a complete simulated cycle.” The
   top panel zooms into the dive; the other panels show coast cooling/processing.
@@ -283,6 +283,6 @@ are not a validated mechanical/deployment layout. The literature break-out is
 now [published on Medium](https://medium.com/@alanse/atmosphere-orbital-scoop-diver-literature-db3aba700a28).
 
 The scale illustration now shows the valve-connected restoration plan, not the
-rejected boosted-reserve simulation. See the [restoration plan](../V1_0_1_RESTORE_PLAN.md)
+rejected boosted-reserve simulation. See the [finalized replacement design](V1_0_1.md)
 and [version register](../DESIGN_VERSIONS.md). Preserve this distinction when using
 it alongside frozen v1.0 publication numbers.

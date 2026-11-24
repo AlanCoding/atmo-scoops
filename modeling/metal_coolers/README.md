@@ -108,3 +108,7 @@ connects these quantities to the per-stage dynamics and remaining rear tank.
 See the [planned longer staggered plate geometry](STAGGERED_PLATES_PLAN.md) for distributing the same material through a longer serial flow region.
 
 First implementation experiment: [provisional interrupted-channel reduced model](INTERRUPTED_REDUCED_MODEL.md). It retains the existing thermal state vector and exposes correlation uncertainty.
+
+## Planned v1.1 architecture
+
+[Fixed sensible heat stores with embedded coolant channels](../../docs/V1_1_FIXED_THERMAL_STORES.md) separate rapid gas-to-solid absorption from coast recovery. This supersedes the assumption that a coolant loop must carry peak dive heat directly. It is not implemented; finite solid conduction, gas distribution and coolant hydraulics need separate treatment.

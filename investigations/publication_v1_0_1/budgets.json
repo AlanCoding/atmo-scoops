@@ -1,0 +1,240 @@
+{
+  "volume_rows": [
+    {
+      "component": "Volume 1: free gas",
+      "volume_m3": 9481.386614490597,
+      "location": "0.000\u201313.581 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Rack 1: solid",
+      "volume_m3": 118.78450399411923,
+      "location": "Inside corresponding gas chamber",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Volume 1: head/shape allowance",
+      "volume_m3": 0.0,
+      "location": "Same chamber envelope",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Compressor 1: axial envelope",
+      "volume_m3": 3617.6437765545056,
+      "location": "13.581\u201318.699 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Hatch equipment 1: envelope",
+      "volume_m3": 706.8583470577034,
+      "location": "18.699\u201319.699 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Volume 2: free gas",
+      "volume_m3": 1222.6328764537393,
+      "location": "19.699\u201322.938 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Rack 2: solid",
+      "volume_m3": 9.863647329516727,
+      "location": "Inside corresponding gas chamber",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Volume 2: head/shape allowance",
+      "volume_m3": 1056.7532288512668,
+      "location": "Same chamber envelope",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Compressor 2: axial envelope",
+      "volume_m3": 4649.313911641162,
+      "location": "22.938\u201329.515 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Hatch equipment 2: envelope",
+      "volume_m3": 706.8583470577034,
+      "location": "29.515\u201330.515 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Volume 3: free gas",
+      "volume_m3": 1150.6398084422685,
+      "location": "30.515\u201333.645 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Rack 3: solid",
+      "volume_m3": 4.783134104905695,
+      "location": "Inside corresponding gas chamber",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Volume 3: head/shape allowance",
+      "volume_m3": 1056.7532288512668,
+      "location": "Same chamber envelope",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Compressor 3: axial envelope",
+      "volume_m3": 3511.778449324337,
+      "location": "33.645\u201338.613 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Hatch equipment 3: envelope",
+      "volume_m3": 706.8583470577034,
+      "location": "38.613\u201339.613 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Volume 4: free gas",
+      "volume_m3": 1137.717567890775,
+      "location": "39.613\u201342.724 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Rack 4: solid",
+      "volume_m3": 4.3662129595502845,
+      "location": "Inside corresponding gas chamber",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Volume 4: head/shape allowance",
+      "volume_m3": 1056.7532288512666,
+      "location": "Same chamber envelope",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Compressor 4: axial envelope",
+      "volume_m3": 3091.0169279782617,
+      "location": "42.724\u201347.097 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Hatch equipment 4: envelope",
+      "volume_m3": 706.8583470577034,
+      "location": "47.097\u201348.097 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Main receiver free gas",
+      "volume_m3": 75029.09248080903,
+      "location": "48.097\u2013192 m; narrowed barrel",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Receiver rack solid",
+      "volume_m3": 7.614312814192601,
+      "location": "Inside main receiver",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Folded solar arrays",
+      "volume_m3": 11497.628700443976,
+      "location": "Around main receiver, before x=192 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Folded waste-heat radiators",
+      "volume_m3": 672.3599974330168,
+      "location": "Around main receiver, before x=192 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Batteries",
+      "volume_m3": 1232.5123410087463,
+      "location": "Around main receiver, before x=192 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Waste-heat buffer",
+      "volume_m3": 651.1877954233141,
+      "location": "Around main receiver, before x=192 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Cryogenic plant, power electronics and machinery",
+      "volume_m3": 3850.316640350277,
+      "location": "Around main receiver, before x=192 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Liquid-product tanks",
+      "volume_m3": 24.0,
+      "location": "Around main receiver, before x=192 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Reserve valve and feed hardware (tank excluded)",
+      "volume_m3": 10.0,
+      "location": "Around main receiver, before x=192 m",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Aft packing clearance",
+      "volume_m3": 7687.716631996856,
+      "location": "Around main receiver",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Main receiver head/shape allowance",
+      "volume_m3": 1056.753228851263,
+      "location": "Main receiver ends",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Thruster reserve free gas",
+      "volume_m3": 87300.54015336165,
+      "location": "192\u2013317 m; full bore",
+      "kind": "additive envelope"
+    },
+    {
+      "component": "Reserve head/shape allowance",
+      "volume_m3": 1056.753228851274,
+      "location": "Reserve ends",
+      "kind": "additive envelope"
+    }
+  ],
+  "aft_package_m3": {
+    "solar": 11497.628700443976,
+    "warm_radiator": 672.3599974330168,
+    "battery": 1232.5123410087463,
+    "warm_store": 651.1877954233141,
+    "machines": 3850.316640350277,
+    "liquid_tanks": 24.0,
+    "gas_reserve_system": 10.0
+  },
+  "aft_machinery_detail_m3": {
+    "coast_compressors": 187.60526222700167,
+    "refrigerator": 561.0923993005437,
+    "external_exchangers": 9.0,
+    "separator": 9.983213703144584,
+    "bus": 3039.99849648286,
+    "auxiliary": 20.0,
+    "receiver_rack_mechanisms": 22.637268636726866
+  },
+  "internal_bore_envelope_m3": 224074.096017292,
+  "external_hull_envelope_m3": 250188.6870520184,
+  "energy": {
+    "thrust_electric_MWh": 226.68672113741093,
+    "dive_motors_spin_idle_loss_MWh": 2.496907697444043,
+    "coast_compression_liquefaction_separation_MWh": 8.352474994453857,
+    "cryo_holding_MWh": 0.05370626290716977,
+    "auxiliary_MWh": 0.017672808465818948,
+    "load_integral_MWh": 237.60748290068182,
+    "battery_charge_input_MWh": 224.85056795629856,
+    "battery_output_MWh": 202.92763758558658,
+    "battery_loss_MWh": 21.922930376003706,
+    "solar_used_ledger_MWh": 259.5311360951921,
+    "electrical_closure_difference_MWh": 0.0007228237982985775,
+    "warm_heat_input_MWh": 50.26198062707637,
+    "warm_radiated_MWh": 50.261789670368906,
+    "solid_radiated_MWh": 54.09834741958206,
+    "shaft_work_MWh": 1.7787323976940765,
+    "rack_friction_electric_MWh": 0.33677534506351386
+  }
+}

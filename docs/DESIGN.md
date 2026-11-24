@@ -1,14 +1,13 @@
 # Spacecraft design
 
 This page describes the integrated v1 architecture. The
-[version roadmap](VERSION_ROADMAP.md) records planned v1.0.1 accuracy work,
-v1.1 fixed coolant tubes in higher-pressure volumes with retained front SiC
-racks, and the v2.0 propulsion-free diver/tether-mothership split. Those plans
-do not change the frozen v1.0 numerical reference.
+[version roadmap](VERSION_ROADMAP.md) records post-v1.0.1 accuracy work,
+v1.1 fixed solid heat stores with embedded coast-recovery channels, and the v2.0 propulsion-free diver/tether-mothership split. Those plans
+do not change the frozen v1.0.1 numerical reference.
 
 The [accepted v1.0.1 layout](images/v1_perigee_scale.svg) restores the
-125 m valve-connected aft reserve. Its [restoration plan](V1_0_1_RESTORE_PLAN.md)
-contains the algebraic orbit screen and fixed-input audit. The 275.7-day boosted
+125 m valve-connected aft reserve. Its [version document](publication/V1_0_1.md)
+contains the finalized architecture, budgets and numerical provenance. The 275.7-day boosted
 reserve candidate is [rejected and archived](design_archive/v1.0.1_rejected_boosted/README.md);
 the replacement constrained solution gives **306.4 days operating-orbit payoff**; see [numerical evidence](../investigations/valve_reserve/README.md).
 
@@ -204,7 +203,7 @@ mixed-gas reserve**. It supplies pre-entry thrust; the valve opens when main
 receiver pressure catches reserve pressure, then isolates the reserve before
 coast liquefaction draws down the main receiver. Propellant bypasses liquefaction.
 There is no reserve refill compressor or separate high-pressure storage bank.
-The [restoration plan](V1_0_1_RESTORE_PLAN.md) records the implemented changes,
+The [version document](publication/V1_0_1.md) records the implemented decisions,
 including finite valve flow, thermal/species closure and the low-pressure
 thruster-feed interface that still needs validation.
 
@@ -313,11 +312,11 @@ faces. See [equations and limitations](../modeling/metal_coolers/PLATES.md).
 
 Packaging and mass distribution will be resolved before a v1.0 Blender snapshot;
 see the [layout requirements and proposed solar location](PACKAGING_AND_BLENDER_PLAN.md).
-The planned v1.1 architecture replaces downstream extracted racks with fixed
-coolant-tube exchangers, eliminating their pressure-sealed deployment doors.
-The front SiC rack retains direct deployment through the open mouth. The
-[roadmap](VERSION_ROADMAP.md#v11--retain-the-open-mouth-cooler-change-downstream-heat-storage)
-defines the thermal and packaging accounting still required; this conversion
-is not implemented or credited in the numerical reference.
+The planned [v1.1 architecture](V1_1_FIXED_THERMAL_STORES.md) keeps solid heat
+storage but embeds coolant channels in fixed gas-contact structures. The solids
+accept dive heat; coolant restores them during coast through external radiators.
+This removes downstream rack extraction and permits receiver cooling while it
+remains pressurized. Direct front-SiC deployment is an option to compare, not a
+fixed requirement. The frozen v1.0.1 model does not implement or credit this change.
 
 The v1.0 publication snapshot uses a [provisional axial mass register](../investigations/v1_layout/MASS_REGISTER.md): about 33 m dry CM from the mouth, with heavy equipment ahead of the long aft receiver. The intended orbit is [dawn–dusk sun-synchronous](../investigations/v1_layout/SUN_SYNCHRONOUS.md), approximately 99.35° inclination by a first-order J2 screen. Seasonal illumination and 3D orbit maintenance have not been added to the saved payoff calculation. The [publication kit](publication/V1_0.md) selects current figures and tables; publication precedes Blender and further sensitivity studies.

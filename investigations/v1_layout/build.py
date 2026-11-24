@@ -129,17 +129,10 @@ labels=['Reboost','Dive compressors enabled','Coast processing','Intermediate ha
 for ext in ['svg','png']:fig.savefig(ROOT/f'docs/images/v1_orbit_cycle.{ext}',dpi=160)
 plt.close(fig)
 print(json.dumps({k:v for k,v in result.items() if k not in ['components','source_sha256']},indent=2))
-# Publish histories from this exact reference, never the earlier rod study.
-tt=np.asarray(r['time_s'])/60;history=r['history'];fig,axs=plt.subplots(3,1,figsize=(12,9),layout='constrained')
-P=np.asarray(history['pressure_Pa']);TM=np.asarray(history['rack_K']);gas=np.asarray(r['gas_species_kg']).sum(axis=2);liq=np.asarray(r['liquid_species_kg']).sum(axis=1)
-for i,(name,col) in enumerate(zip(['Front / SiC','Stage 2 / Al','Stage 3 / Al','Stage 4 / Al','Receiver / Al'],['#b34a32','#d59b24','#6e71b2','#4c9f78','#247c8c'])):
- axs[0].plot(tt,np.maximum(P[:,i],1e-6),label=name,color=col,lw=1.5);axs[1].plot(tt,TM[:,i],color=col,lw=1.5,label=name)
-axs[0].set(yscale='log',ylim=(.01,40000),xlim=(-3,12),ylabel='Chamber pressure, Pa',xlabel='Minutes from perigee — dive detail');axs[0].legend(ncol=3,fontsize=9);axs[0].set_title('v1.0 cycle — finite gas volumes and reusable heat stores',loc='left')
-axs[1].set(xlim=(-3,86),ylabel='Cooler temperature, K',xlabel='Minutes from perigee');axs[1].legend(ncol=3,fontsize=9)
-axs[2].plot(tt,gas[:,4]/1000,label='Gas in aft receiver',color='#247c8c');axs[2].plot(tt,liq/1000,label='Liquid product inventory',color='#6e71b2');axs[2].plot(tt,np.asarray(r['gas_reserve_species_kg']).sum(axis=1)/1000,label='Propellant reserve (includes preloaded gas)',color='#b34a32');axs[2].set(xlim=(-3,86),ylabel='Inventory, tonnes',xlabel='Minutes from perigee');axs[2].legend(fontsize=9)
-for ax in axs:ax.grid(alpha=.2);ax.axvline(0,color='gray',ls=':',lw=1)
-for ext in ['svg','png']:fig.savefig(ROOT/f'docs/images/v1_cycle_history.{ext}',dpi=160)
-plt.close(fig)
+# The public cycle-history filename now belongs to accepted v1.0.1.
+# Never overwrite it with this historical case-72 trajectory.
+import runpy
+runpy.run_path(str(ROOT/'investigations/publication_v1_0_1/cycle_history.py'),run_name='__main__')
 # Preserve historical artwork; update copied schematic wording for publication.
 for old,new in [('spacecraft_overview','v1_overview'),('thermal_cycle','v1_thermal_cycle')]:
  s=(ROOT/f'docs/images/{old}.svg').read_text().replace('oxygen propulsion','air-propellant propulsion').replace('Oxygen electric thrust','Air-fed electric thrust').replace('compressors + air-propellant propulsion','compressors + air-fed thrusters').replace('Sheets retract into the front rack before entry.','Sheets retract into their cooling chambers before entry.').replace('Solid precooling rack','SiC / Al plate coolers').replace('Compressor wall','Staged compressors').replace('Attached metal sheets','Attached solid-cooler plates').replace('SOLID METAL ABSORBER','SOLID HEAT ABSORBER').replace('Energy stored in the metal','Energy stored in the solid').replace('Metal stays attached','Cooler stays attached')

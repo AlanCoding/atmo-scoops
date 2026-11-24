@@ -3,7 +3,7 @@
 **Rejected architecture: v1.0.1-rejected-boosted.** These numerical results remain
 reproducible but do not describe the agreed valve-connected reserve. See the
 [frozen archive](../../docs/design_archive/v1.0.1_rejected_boosted/README.md) and
-[replacement plan](../../docs/V1_0_1_RESTORE_PLAN.md).
+[replacement design](../../docs/publication/V1_0_1.md).
 
 **COBYLA converged at 275.726 operating-orbit payoff days**, with 100 requested
 forward evaluations, status 0, and maximum scaled constraint violation

@@ -1,0 +1,67 @@
+{
+  "events": [
+    {
+      "event": "Burn starts",
+      "time_s": -617.5695759918909,
+      "reserve_kg": 3513.831050498103,
+      "reserve_Pa": 3974.6235968921333,
+      "main_receiver_Pa": 0.0,
+      "consumed_kg": 0.0,
+      "net_valve_in_kg": 0.0
+    },
+    {
+      "event": "Valve opens",
+      "time_s": -43.61639513040727,
+      "reserve_kg": 2072.644854478417,
+      "reserve_Pa": 1898.573602180344,
+      "main_receiver_Pa": 1898.5736021803434,
+      "consumed_kg": 1441.1861960196977,
+      "net_valve_in_kg": 1.1596057447604835e-11
+    },
+    {
+      "event": "Minimum reserve",
+      "time_s": -43.13230488558304,
+      "reserve_kg": 2072.3018405999424,
+      "reserve_Pa": 1898.300792361705,
+      "main_receiver_Pa": 1914.7142500442815,
+      "consumed_kg": 1442.4017379867644,
+      "net_valve_in_kg": 0.8725280886035307
+    },
+    {
+      "event": "Perigee",
+      "time_s": 0,
+      "reserve_kg": 2498.4331446172264,
+      "reserve_Pa": 2548.311969408111,
+      "main_receiver_Pa": 3067.4259188053234,
+      "consumed_kg": 1550.7061859389687,
+      "net_valve_in_kg": 535.3082800580918
+    },
+    {
+      "event": "Maximum reserve",
+      "time_s": 167.44867274386175,
+      "reserve_kg": 3990.7568157535384,
+      "reserve_Pa": 4803.476522068892,
+      "main_receiver_Pa": 4809.744283646194,
+      "consumed_kg": 1971.1668153897094,
+      "net_valve_in_kg": 2448.0925806451446
+    },
+    {
+      "event": "Burn ends / reserve isolates",
+      "time_s": 617.5695759918909,
+      "reserve_kg": 3513.821044229484,
+      "reserve_Pa": 3975.1779016528426,
+      "main_receiver_Pa": 3978.1645413490787,
+      "consumed_kg": 3101.412371877934,
+      "net_valve_in_kg": 3101.402365609315
+    }
+  ],
+  "initial_inventory_kg": 3513.831050498103,
+  "total_consumed_kg": 3101.412371877934,
+  "net_refill_kg": 3101.402365609315,
+  "closure_kg": -0.010006268619235925,
+  "initial_over_total_consumption": 1.1329776982770097,
+  "consumed_before_open_kg": 1441.1861960196977,
+  "remaining_burn_consumption_kg": 1660.2261758582365,
+  "minimum_inventory_fraction": 0.5897556856941608,
+  "note": "Net transfer inferred conservatively from inventory plus cumulative thruster outflow; bidirectional exchange is allowed."
+}

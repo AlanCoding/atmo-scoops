@@ -1,0 +1,271 @@
+{
+  "source": "results/transient/valve_restore/selected_refined.json.gz",
+  "dry_kg": 12840221.804629313,
+  "dry_CM_m": 118.48232205637824,
+  "rows": [
+    {
+      "name": "Compressor 1",
+      "category": "dive_compressors",
+      "mass_kg": 654526.5454093455,
+      "x0_m": 13.581463893643486,
+      "x1_m": 18.699382910392657,
+      "centroid_m": 16.140423402018072
+    },
+    {
+      "name": "Rack 1",
+      "category": "racks",
+      "mass_kg": 381298.25782112277,
+      "x0_m": 10.0,
+      "x1_m": 13.581463893643486,
+      "centroid_m": 11.790731946821744
+    },
+    {
+      "name": "Rack mechanism 1",
+      "category": "rack_mechanisms",
+      "mass_kg": 82960.83504481071,
+      "x0_m": 18.699382910392657,
+      "x1_m": 19.699382910392657,
+      "centroid_m": 19.199382910392657
+    },
+    {
+      "name": "Compressor 2",
+      "category": "dive_compressors",
+      "mass_kg": 192089.59947253607,
+      "x0_m": 22.938008813536506,
+      "x1_m": 29.51544251152412,
+      "centroid_m": 26.226725662530313
+    },
+    {
+      "name": "Rack 2",
+      "category": "racks",
+      "mass_kg": 26631.847789695163,
+      "x0_m": 21.199382910392657,
+      "x1_m": 21.438008813536506,
+      "centroid_m": 21.31869586196458
+    },
+    {
+      "name": "Rack mechanism 2",
+      "category": "rack_mechanisms",
+      "mass_kg": 9970.135742502885,
+      "x0_m": 29.51544251152412,
+      "x1_m": 30.51544251152412,
+      "centroid_m": 30.01544251152412
+    },
+    {
+      "name": "Compressor 3",
+      "category": "dive_compressors",
+      "mass_kg": 46053.407889126116,
+      "x0_m": 33.64503160190782,
+      "x1_m": 38.61318181749501,
+      "centroid_m": 36.12910670970142
+    },
+    {
+      "name": "Rack 3",
+      "category": "racks",
+      "mass_kg": 12914.462083245377,
+      "x0_m": 32.01544251152412,
+      "x1_m": 32.14503160190782,
+      "centroid_m": 32.08023705671597
+    },
+    {
+      "name": "Rack mechanism 3",
+      "category": "rack_mechanisms",
+      "mass_kg": 4567.07091860755,
+      "x0_m": 38.61318181749501,
+      "x1_m": 39.61318181749501,
+      "centroid_m": 39.11318181749501
+    },
+    {
+      "name": "Compressor 4",
+      "category": "dive_compressors",
+      "mass_kg": 26443.143711706012,
+      "x0_m": 42.72389985436088,
+      "x1_m": 47.09679428341391,
+      "centroid_m": 44.91034706888739
+    },
+    {
+      "name": "Rack 4",
+      "category": "racks",
+      "mass_kg": 11788.774990785769,
+      "x0_m": 41.11318181749501,
+      "x1_m": 41.22389985436088,
+      "centroid_m": 41.16854083592794
+    },
+    {
+      "name": "Rack mechanism 4",
+      "category": "rack_mechanisms",
+      "mass_kg": 3165.2848632249206,
+      "x0_m": 47.09679428341391,
+      "x1_m": 48.09679428341391,
+      "centroid_m": 47.59679428341391
+    },
+    {
+      "name": "Receiver rack",
+      "category": "racks",
+      "mass_kg": 20558.644598320025,
+      "x0_m": 49.59679428341391,
+      "x1_m": 49.816166787492875,
+      "centroid_m": 49.706480535453395
+    },
+    {
+      "name": "battery",
+      "category": "battery",
+      "mass_kg": 2218522.213815743,
+      "x0_m": 48.09679428341391,
+      "x1_m": 57.98431924860411,
+      "centroid_m": 53.040556766009004
+    },
+    {
+      "name": "bus",
+      "category": "bus",
+      "mass_kg": 759999.624120715,
+      "x0_m": 57.98431924860411,
+      "x1_m": 82.37195418580403,
+      "centroid_m": 70.17813671720407
+    },
+    {
+      "name": "coast_compressors",
+      "category": "coast_compressors",
+      "mass_kg": 46901.31555675042,
+      "x0_m": 82.37195418580403,
+      "x1_m": 83.87697093261596,
+      "centroid_m": 83.12446255921
+    },
+    {
+      "name": "refrigerator",
+      "category": "refrigerator",
+      "mass_kg": 140273.09982513593,
+      "x0_m": 83.87697093261596,
+      "x1_m": 88.37819572467119,
+      "centroid_m": 86.12758332864357
+    },
+    {
+      "name": "external_exchangers",
+      "category": "external_exchangers",
+      "mass_kg": 2250.0,
+      "x0_m": 88.37819572467119,
+      "x1_m": 88.4503959953913,
+      "centroid_m": 88.41429586003125
+    },
+    {
+      "name": "separator",
+      "category": "separator",
+      "mass_kg": 2495.803425786146,
+      "x0_m": 88.4503959953913,
+      "x1_m": 88.53048385450506,
+      "centroid_m": 88.49043992494819
+    },
+    {
+      "name": "auxiliary",
+      "category": "auxiliary",
+      "mass_kg": 5000.0,
+      "x0_m": 88.53048385450506,
+      "x1_m": 88.69092890054976,
+      "centroid_m": 88.6107063775274
+    },
+    {
+      "name": "rack_mechanisms",
+      "category": "rack_mechanisms",
+      "mass_kg": 5659.317159181716,
+      "x0_m": 88.69092890054976,
+      "x1_m": 88.87253078098705,
+      "centroid_m": 88.7817298407684
+    },
+    {
+      "name": "warm_store",
+      "category": "warm_store",
+      "mass_kg": 520950.2363386513,
+      "x0_m": 88.87253078098705,
+      "x1_m": 94.09652357200893,
+      "centroid_m": 91.48452717649799
+    },
+    {
+      "name": "liquid_tanks",
+      "category": "liquid_tanks",
+      "mass_kg": 6000.0,
+      "x0_m": 94.09652357200893,
+      "x1_m": 94.28905762726257,
+      "centroid_m": 94.19279059963574
+    },
+    {
+      "name": "gas_reserve_system",
+      "category": "gas_reserve_system",
+      "mass_kg": 2500.0,
+      "x0_m": 94.28905762726257,
+      "x1_m": 94.36928015028491,
+      "centroid_m": 94.32916888877374
+    },
+    {
+      "name": "warm_radiator",
+      "category": "warm_radiator",
+      "mass_kg": 336179.9987165084,
+      "x0_m": 94.36928015028491,
+      "x1_m": 99.7631216876225,
+      "centroid_m": 97.06620091895371
+    },
+    {
+      "name": "solar",
+      "category": "solar",
+      "mass_kg": 3066034.3201183937,
+      "x0_m": 99.7631216876225,
+      "x1_m": 192.0,
+      "centroid_m": 145.88156084381126
+    },
+    {
+      "name": "Aft thruster assemblies",
+      "category": "thrusters",
+      "mass_kg": 1321425.5167670287,
+      "x0_m": 317,
+      "x1_m": 322,
+      "centroid_m": 319.5
+    },
+    {
+      "name": "Vessel 2",
+      "category": "pressure_vessels",
+      "mass_kg": 7324.236304052985,
+      "x0_m": 19.699382910392657,
+      "x1_m": 22.938008813536506,
+      "centroid_m": 21.31869586196458
+    },
+    {
+      "name": "Vessel 3",
+      "category": "pressure_vessels",
+      "mass_kg": 23416.65008051361,
+      "x0_m": 30.51544251152412,
+      "x1_m": 33.64503160190782,
+      "centroid_m": 32.08023705671597
+    },
+    {
+      "name": "Vessel 4",
+      "category": "pressure_vessels",
+      "mass_kg": 67335.62283355136,
+      "x0_m": 39.61318181749501,
+      "x1_m": 42.72389985436088,
+      "centroid_m": 41.16854083592794
+    },
+    {
+      "name": "Vessel 5",
+      "category": "pressure_vessels",
+      "mass_kg": 66932.8149794543,
+      "x0_m": 48.09679428341391,
+      "x1_m": 191.99999999999997,
+      "centroid_m": 120.04839714170694
+    },
+    {
+      "name": "Reserve shell",
+      "category": "pressure_vessels",
+      "mass_kg": 73730.46166032061,
+      "x0_m": 192,
+      "x1_m": 317,
+      "centroid_m": 254.5
+    },
+    {
+      "name": "Hull",
+      "category": "hull",
+      "mass_kg": 126278.20166663387,
+      "x0_m": 0,
+      "x1_m": 317,
+      "centroid_m": 158.5
+    }
+  ]
+}

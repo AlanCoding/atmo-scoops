@@ -1,6 +1,6 @@
 # Model changes from the scale-image review: accepted grouped sequence
 
-**Current controlling plan:** [restore the valve-connected v1.0.1 design](V1_0_1_RESTORE_PLAN.md). The boosted-reserve candidate is rejected and archived. The sequence below is historical context; restoration planning and fixed-input reconciliation precede further implementation.
+**Completed historical plan.** The [finalized v1.0.1 design](publication/V1_0_1.md) supersedes implementation planning. The sequence below is retained only as historical context.
 
 The owner has combined the earlier six steps into three numerical checkpoints.
 The numerical baseline remains frozen plate case 72 (~278 operating-orbit days).

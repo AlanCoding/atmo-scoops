@@ -7,7 +7,7 @@ The concept was first published on AlanCoding's
 This repository develops its engineering description and numerical analysis.
 
 **Current publication reference: v1.0.1 — 306.4 days operating-orbit payoff.**
-See the [publication kit](docs/publication/V1_0_1.md), [validated results](investigations/valve_reserve/README.md)
+See the [version design document](docs/publication/V1_0_1.md), [validated results](investigations/valve_reserve/README.md)
 and [version roadmap](docs/VERSION_ROADMAP.md). v1.1 downstream coolant tubes and
 v2.0 propulsion-free diver/tether mothership remain future architectures.
 
@@ -195,7 +195,7 @@ The [gas-reserve and rack-spacing study](investigations/feed_pitch/RESULTS.md) a
 - [Staged refinement](investigations/staged_refinement/README.md): active gas bypass first, then gated pressure-loss, pitch and radius releases.
 - [Earlier joint radius/pitch experiment](investigations/rack_radius/RESULTS.md): retained research, not the active reference.
 
-Publication assets for the current snapshot: [v1.0.1 publication kit](docs/publication/V1_0_1.md), including selected-reference figures, numerical tables and the valve-only layout.
+Publication assets for the current snapshot: [v1.0.1 design and publication reference](docs/publication/V1_0_1.md), including selected-reference figures, numerical tables and the valve-only layout.
 
 Accepted v1.0.1 publication reference: **306.4 days operating-orbit payoff**, with a 125 m valve-connected reserve. The 46-variable constrained solve completed successfully. See the [results and validation](investigations/valve_reserve/README.md) and [current scale drawing](docs/images/v1_perigee_scale.svg). The 275.7-day boosted-reserve candidate is [rejected and archived](docs/design_archive/v1.0.1_rejected_boosted/README.md). Circular-apogee delivery remains unmodeled.
 
